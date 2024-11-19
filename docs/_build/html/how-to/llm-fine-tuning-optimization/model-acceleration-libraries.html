@@ -1,0 +1,987 @@
+
+<!DOCTYPE html>
+
+<html data-content_root="../../" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="How to fine-tune LLMs with ROCm" name="description"/>
+<meta content="ROCm, LLM, fine-tuning, usage, tutorial, Flash Attention, Hugging Face, xFormers, vLLM, PyTorch" name="keywords"/>
+<title>Model acceleration libraries — ROCm Documentation</title>
+<script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+<!-- Loaded before other Sphinx assets -->
+<link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../_static/pygments.css?v=a746c00c" rel="stylesheet" type="text/css"/>
+<link href="../../_static/styles/sphinx-book-theme.css?v=a3416100" rel="stylesheet" type="text/css"/>
+<link href="../../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
+<link href="../../_static/custom.css?v=da61d430" rel="stylesheet" type="text/css"/>
+<link href="../../_static/rocm_header.css?v=4044f309" rel="stylesheet" type="text/css"/>
+<link href="../../_static/rocm_footer.css?v=25204c5a" rel="stylesheet" type="text/css"/>
+<link href="../../_static/fonts.css?v=fcff5274" rel="stylesheet" type="text/css"/>
+<link href="../../_static/sphinx-design.min.css?v=87e54e7c" rel="stylesheet" type="text/css"/>
+<link href="../../_static/rocm_custom.css?v=ace7df76" rel="stylesheet" type="text/css"/>
+<link href="../../_static/rocm_rn.css?v=0e8af9ba" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" rel="preload"/>
+<link as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" rel="preload"/>
+<script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/documentation_options.js?v=bc0531d1"></script>
+<script src="../../_static/doctools.js?v=9a2dae69"></script>
+<script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+<script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+<script src="../../_static/copybutton.js?v=f281be69"></script>
+<script async="async" src="../../_static/code_word_breaks.js?v=327952c4"></script>
+<script async="async" src="../../_static/renameVersionLinks.js?v=929fe5e4"></script>
+<script async="async" src="../../_static/rdcMisc.js?v=01f88d96"></script>
+<script async="async" src="../../_static/theme_mode_captions.js?v=15f4ec5d"></script>
+<script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+<script src="../../_static/design-tabs.js?v=f930bc37"></script>
+<script>DOCUMENTATION_OPTIONS.pagename = 'how-to/llm-fine-tuning-optimization/model-acceleration-libraries';</script>
+<script async="async" src="https://download.amd.com/js/analytics/analyticsinit.js"></script>
+<link href="rocm-stg.amd.com/how-to/llm-fine-tuning-optimization/model-acceleration-libraries.html" rel="canonical"/>
+<link href="https://www.amd.com/content/dam/code/images/favicon/favicon.ico" rel="icon"/>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<link href="llm-inference-frameworks.html" rel="next" title="LLM inference frameworks"/>
+<link href="model-quantization.html" rel="prev" title="Model quantization techniques"/>
+<meta content="vo35SZt_GASsTHAEmdww7AYKPCvZyzLvOXBl8guBME4" name="google-site-verification"/>
+</head>
+<body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="" data-offset="180">
+<div class="skip-link d-print-none" id="pst-skip-link"><a href="#main-content">Skip to main content</a></div>
+<div id="pst-scroll-pixel-helper"></div>
+<button class="btn rounded-pill" id="pst-back-to-top" type="button">
+<i class="fa-solid fa-arrow-up"></i>Back to top</button>
+<input class="sidebar-toggle" id="pst-primary-sidebar-checkbox" type="checkbox"/>
+<label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+<input class="sidebar-toggle" id="pst-secondary-sidebar-checkbox" type="checkbox"/>
+<label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
+<form action="../../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input aria-label="Search..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search..." spellcheck="false" type="search"/>
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+</div>
+<div class="pst-async-banner-revealer d-none">
+<aside aria-label="Version warning" class="d-none d-print-none" id="bd-header-version-warning"></aside>
+</div>
+<aside aria-label="Announcement" class="bd-header-announcement">
+<div class="bd-header-announcement__content">This page contains proposed changes for a future release of ROCm. Read the <a href="https://rocm.docs.amd.com/en/latest/" id="rocm-banner">latest Linux release of ROCm documentation</a> for your production environments.</div>
+</aside>
+<header class="common-header">
+<nav class="navbar navbar-expand-xl">
+<div class="container-fluid main-nav rocm-header">
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler collapsed" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" data-tracking-information="mainMenuToggle" id="nav-icon" type="button">
+<span></span>
+<span></span>
+<span></span>
+</button>
+<div class="header-logo">
+<a class="navbar-brand" href="https://www.amd.com/">
+<img alt="AMD Logo" class="d-inline-block align-text-top hover-opacity" src="../../_static/images/amd-header-logo.svg" title="AMD Logo" width="90"/>
+</a>
+<div class="vr vr mx-40 my-25"></div>
+<a class="klavika-font hover-opacity" href="https://rocm.docs.amd.com/en/develop">ROCm™ Software Future Release</a>
+<a class="header-all-versions" href="https://rocm.docs.amd.com/en/latest/release/versions.html">Version List</a>
+</div>
+<div class="icon-nav text-center d-flex ms-auto">
+</div>
+</div>
+</nav>
+<nav class="navbar navbar-expand-xl second-level-nav">
+<div class="container-fluid main-nav">
+<div class="navbar-nav-container collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav nav-mega me-auto mb-2 mb-lg-0 col-xl-10">
+<li class="nav-item">
+<a aria-expanded="false" class="nav-link top-level header-menu-links" href="https://github.com/ROCm/ROCm" id="navgithub" role="button" target="_blank">
+                                GitHub
+                            </a>
+</li>
+<li class="nav-item">
+<a aria-expanded="false" class="nav-link top-level header-menu-links" href="https://github.com/ROCm/ROCm/discussions" id="navcommunity" role="button" target="_blank">
+                                Community
+                            </a>
+</li>
+<li class="nav-item">
+<a aria-expanded="false" class="nav-link top-level header-menu-links" href="https://rocm.blogs.amd.com/" id="navblogs" role="button" target="_blank">
+                                Blogs
+                            </a>
+</li>
+<li class="nav-item">
+<a aria-expanded="false" class="nav-link top-level header-menu-links" href="https://www.amd.com/en/developer/resources/infinity-hub.html" id="navinfinity-hub" role="button" target="_blank">
+                                Infinity Hub
+                            </a>
+</li>
+<li class="nav-item">
+<a aria-expanded="false" class="nav-link top-level header-menu-links" href="https://github.com/ROCm/ROCm/issues/new/choose" id="navsupport" role="button" target="_blank">
+                                Support
+                            </a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+</header>
+<div class="bd-container">
+<div class="bd-container__inner bd-page-width">
+<div class="bd-sidebar-primary bd-sidebar">
+<div class="sidebar-header-items sidebar-primary__section">
+</div>
+<div class="sidebar-primary-items__start sidebar-primary__section">
+<div class="sidebar-primary-item">
+<a class="navbar-brand logo" href="../../index.html">
+<p class="title logo__title">ROCm Documentation</p>
+</a></div>
+<div class="sidebar-primary-item">
+<script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+<div class="sidebar-primary-item"><nav aria-label="Main" class="bd-links bd-docs-nav">
+<div class="bd-toc-item navbar-nav active">
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../what-is-rocm.html">What is ROCm?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/release-notes.html">Release notes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Install</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-linux/en/develop/">ROCm on Linux</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-windows/en/develop/">HIP SDK on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deep-learning-rocm.html">Deep learning frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build-rocm.html">Build ROCm from source</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">How to</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../rocm-for-ai/index.html">Using ROCm for AI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../rocm-for-ai/install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rocm-for-ai/train-a-model.html">Training a model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rocm-for-ai/hugging-face-models.html">Running models from Hugging Face</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rocm-for-ai/deploy-your-model.html">Deploying your model</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../rocm-for-hpc/index.html">Using ROCm for HPC</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Fine-tuning LLMs and inference optimization</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Conceptual overview</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="fine-tuning-and-inference.html">Fine-tuning and inference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="single-gpu-fine-tuning-and-inference.html">Using a single accelerator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="multi-gpu-fine-tuning-and-inference.html">Using multiple accelerators</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="model-quantization.html">Model quantization techniques</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Model acceleration libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="llm-inference-frameworks.html">LLM inference frameworks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optimizing-with-composable-kernel.html">Optimizing with Composable Kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optimizing-triton-kernel.html">Optimizing Triton kernels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="profiling-and-debugging.html">Profiling and debugging</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../system-optimization/index.html">System optimization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../system-optimization/mi300x.html">AMD Instinct MI300X</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../system-optimization/mi300a.html">AMD Instinct MI300A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../system-optimization/mi200.html">AMD Instinct MI200</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../system-optimization/mi100.html">AMD Instinct MI100</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../system-optimization/w6000-v620.html">AMD RDNA 2</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tuning-guides/mi300x/index.html">AMD MI300X performance validation and tuning</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../performance-validation/mi300x/vllm-benchmark.html">Performance validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tuning-guides/mi300x/system.html">System tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tuning-guides/mi300x/workload.html">Workload tuning</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/gpu-cluster-networking/en/develop/index.html">GPU cluster networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gpu-enabled-mpi.html">Using MPI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system-debugging.html">System debugging</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../conceptual/compiler-topics.html">Using advanced compiler features</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://rocm.docs.amd.com/projects/llvm-project/en/latest/index.html">ROCm compiler infrastructure</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://rocm.docs.amd.com/projects/llvm-project/en/latest/conceptual/using-gpu-sanitizer.html">Using AddressSanitizer</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://rocm.docs.amd.com/projects/llvm-project/en/latest/conceptual/openmp.html">OpenMP support</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../setting-cus.html">Setting the number of CUs</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/amd/rocm-examples">ROCm examples</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Compatibility</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../compatibility/compatibility-matrix.html">Compatibility matrix</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-linux/en/develop/reference/system-requirements.html">Linux system requirements</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-windows/en/develop/reference/system-requirements.html">Windows system requirements</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-linux/en/develop/reference/3rd-party-support-matrix.html">Third-party support</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-linux/en/latest/reference/user-kernel-space-compat-matrix.html">User and kernel-space support matrix</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-linux/en/latest/reference/docker-image-support-matrix.html">Docker image support matrix</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/radeon/en/latest/index.html">Use ROCm on Radeon GPUs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Conceptual</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../conceptual/gpu-arch.html">GPU architecture overview</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../conceptual/gpu-arch/mi300.html">MI300 microarchitecture</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference external" href="https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/instruction-set-architectures/amd-instinct-mi300-cdna3-instruction-set-architecture.pdf">AMD Instinct MI300/CDNA3 ISA</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/white-papers/amd-cdna-3-white-paper.pdf">White paper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../conceptual/gpu-arch/mi300-mi200-performance-counters.html">MI300 and MI200 Performance counter</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../conceptual/gpu-arch/mi250.html">MI250 microarchitecture</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference external" href="https://www.amd.com/system/files/TechDocs/instinct-mi200-cdna2-instruction-set-architecture.pdf">AMD Instinct MI200/CDNA2 ISA</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://www.amd.com/system/files/documents/amd-cdna2-white-paper.pdf">White paper</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../conceptual/gpu-arch/mi100.html">MI100 microarchitecture</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference external" href="https://www.amd.com/system/files/TechDocs/instinct-mi100-cdna1-shader-instruction-set-architecture%C2%A0.pdf">AMD Instinct MI100/CDNA1 ISA</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://www.amd.com/system/files/documents/amd-cdna-whitepaper.pdf">White paper</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conceptual/gpu-memory.html">GPU memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conceptual/file-reorg.html">File structure (Linux FHS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conceptual/gpu-isolation.html">GPU isolation techniques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conceptual/cmake-packages.html">Using CMake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conceptual/More-about-how-ROCm-uses-PCIe-Atomics.html">ROCm &amp; PCIe atomics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conceptual/ai-pytorch-inception.html">Inception v3 with PyTorch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conceptual/oversubscription.html">Oversubscription of hardware resources</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../reference/api-libraries.html">ROCm libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/rocm-tools.html">ROCm tools, compilers, and runtimes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/gpu-arch-specs.html">Accelerator and GPU hardware specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/precision-support.html">Precision support</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contribute</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../contribute/contributing.html">Contributing to the ROCm docmentation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/toolchain.html">ROCm documentation toolchain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/building.html">Building documentation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/feedback.html">Providing feedback about the ROCm documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/license.html">ROCm licenses</a></li>
+</ul>
+</div>
+</nav></div>
+</div>
+<div class="sidebar-primary-items__end sidebar-primary__section">
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<main class="bd-main" id="main-content" role="main">
+<div class="sbt-scroll-pixel-helper"></div>
+<div class="bd-content">
+<div class="bd-article-container">
+<div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+<div class="header-article-items__start">
+<div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__primary" title="Toggle primary sidebar">
+<span class="fa-solid fa-angle-right"></span>
+</label></div>
+<div class="header-article-item">
+<nav aria-label="Breadcrumb" class="d-print-none">
+<ul class="bd-breadcrumbs">
+<li class="breadcrumb-item breadcrumb-home">
+<a aria-label="Home" class="nav-link" href="../../index.html">
+<i class="fa-solid fa-home"></i>
+</a>
+</li>
+<li class="breadcrumb-item"><a class="nav-link" href="index.html">Fine-tuning LLMs and inference optimization</a></li>
+<li aria-current="page" class="breadcrumb-item active">Model...</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="header-article-items__end">
+<div class="header-article-item">
+<div class="article-header-buttons">
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Toggle secondary sidebar">
+<span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+</div>
+</div>
+</div>
+<div class="onlyprint" id="jb-print-docs-body">
+<h1>Model acceleration libraries</h1>
+<!-- Table of contents -->
+<div id="print-main-content">
+<div id="jb-print-toc">
+<div>
+<h2> Contents </h2>
+</div>
+<nav aria-label="Page">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flash-attention-2">Flash Attention 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-flash-attention-2">Installing Flash Attention 2</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xformers">xFormers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-ck-xformers">Installing CK xFormers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pytorch-built-in-acceleration">PyTorch built-in acceleration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pytorch-compilation">PyTorch compilation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pytorch-tunableop">PyTorch TunableOp</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fbgemm-and-fbgemm-gpu">FBGEMM and FBGEMM_GPU</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-fbgemm-gpu">Installing FBGEMM_GPU</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-the-miniconda-environment">Set up the Miniconda environment</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#install-the-rocm-components">Install the ROCm components</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#install-pytorch">Install PyTorch</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-the-prebuild-and-build">Perform the prebuild and build</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#post-build-validation">Post-build validation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-fbgemm">Testing FBGEMM</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div id="searchbox"></div>
+<article class="bd-article">
+<section id="model-acceleration-libraries">
+<h1>Model acceleration libraries<a class="headerlink" href="#model-acceleration-libraries" title="Link to this heading">#</a></h1><div class="sd-container-fluid sd-sphinx-override sd-p-0 sd-mt-2 sd-mb-4 sd-p-2 sd-rounded-1 docutils" id="rocm-docs-core-article-info">
+<div class="sd-row sd-row-cols-2 sd-gx-2 sd-gy-1 docutils">
+<div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils" style="color:gray;">
+    Applies to Linux
+</div>
+<div class="sd-col sd-d-flex-row sd-align-minor-center docutils">
+<div class="sd-container-fluid sd-sphinx-override docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 sd-gx-3 sd-gy-1 docutils">
+<div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils">
+<p class="sd-p-0 sd-m-0" style="color:gray;"></p>
+</div>
+<div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils">
+<p class="sd-p-0 sd-m-0" style="color:gray;"><span class="sd-pr-2"><svg aria-hidden="true" class="sd-octicon sd-octicon-calendar" height="16.0px" version="1.1" viewbox="0 0 16 16" width="16.0px"><path d="M4.75 0a.75.75 0 01.75.75V2h5V.75a.75.75 0 011.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0113.25 16H2.75A1.75 1.75 0 011 14.25V3.75C1 2.784 1.784 2 2.75 2H4V.75A.75.75 0 014.75 0zm0 3.5h8.5a.25.25 0 01.25.25V6h-11V3.75a.25.25 0 01.25-.25h2zm-2.25 4v6.75c0 .138.112.25.25.25h10.5a.25.25 0 00.25-.25V7.5h-11z" fill-rule="evenodd"></path></svg></span>2024-09-09</p>
+</div>
+<div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils">
+<p class="sd-p-0 sd-m-0" style="color:gray;"><span class="sd-pr-2"><svg aria-hidden="true" class="sd-octicon sd-octicon-clock" height="16.0px" version="1.1" viewbox="0 0 16 16" width="16.0px"><path d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.5 4.75a.75.75 0 00-1.5 0v3.5a.75.75 0 00.471.696l2.5 1a.75.75 0 00.557-1.392L8.5 7.742V4.75z" fill-rule="evenodd"></path></svg></span>21 min read time</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<p>This section discusses model acceleration techniques and libraries to improve memory efficiency and performance.</p>
+<section id="flash-attention-2">
+<span id="acceleration-flash-attention"></span><h2>Flash Attention 2<a class="headerlink" href="#flash-attention-2" title="Link to this heading">#</a></h2>
+<p>Flash Attention is a technique designed to reduce memory movements between GPU SRAM and high-bandwidth memory (HBM). By
+using a tiling approach, Flash Attention 2 improves memory locality in the nested loops of query, key, and value
+computations within the Attention modules of LLMs. These modules include Multi-Head Attention (MHA), Group-Query
+Attention (GQA), and Multi-Query Attention (MQA). This reduction in memory movements significantly decreases the
+time-to-first-token (TTFT) latency for large batch sizes and long prompt sequences, thereby enhancing overall
+performance.</p>
+<img alt="Attention module of a large language module utilizing tiling" class="align-center" src="../../_images/attention-module.png"/>
+<section id="installing-flash-attention-2">
+<h3>Installing Flash Attention 2<a class="headerlink" href="#installing-flash-attention-2" title="Link to this heading">#</a></h3>
+<p>ROCm provides two different implementations of Flash Attention 2 modules. They can be deployed interchangeably:</p>
+<ul class="simple">
+<li><p>ROCm <a class="reference external" href="https://github.com/ROCm/composable_kernel/tree/develop/example/01_gemm">Composable Kernel</a>
+(CK) Flash Attention 2</p></li>
+<li><p><a class="reference external" href="https://triton-lang.org/main/index.html">OpenAI Triton</a> Flash Attention 2</p></li>
+</ul>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio"/>
+<label class="sd-tab-label" for="sd-tab-item-0">
+CK Flash Attention 2</label><div class="sd-tab-content docutils">
+<p>To install CK Flash Attention 2, use the following commands.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install from source</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ROCm/flash-attention.git
+<span class="nb">cd</span><span class="w"> </span>flash-attention/
+<span class="nv">GPU_ARCHS</span><span class="o">=</span>gfx942<span class="w"> </span>python<span class="w"> </span>setup.py<span class="w"> </span>install<span class="w"> </span><span class="c1">#MI300 series</span>
+</pre></div>
+</div>
+<p>Hugging Face Transformers can easily deploy the CK Flash Attention 2 module by passing an argument
+<code class="docutils literal notranslate"><span class="pre">attn_implementation="flash_attention_2"</span></code> in the <code class="docutils literal notranslate"><span class="pre">from_pretrained</span></code> class.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">AutoModelForCausalLM</span><span class="p">,</span> <span class="n">AutoTokenizer</span>
+<span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">"cuda:0"</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">"cpu"</span><span class="p">)</span>
+<span class="n">model_name</span> <span class="o">=</span> <span class="s2">"NousResearch/Meta-Llama-3-8B"</span>
+
+<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_name</span><span class="p">,</span> <span class="n">torch_dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float16</span><span class="p">,</span> <span class="n">use_fast</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">(</span><span class="s1">'Today is'</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="s1">'pt'</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+<span class="n">model_eager</span> <span class="o">=</span> <span class="n">AutoModelForCausalLM</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_name</span><span class="p">,</span> <span class="n">torch_dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float16</span><span class="p">,</span> <span class="n">attn_implementation</span><span class="o">=</span><span class="s2">"eager"</span><span class="p">)</span><span class="o">.</span><span class="n">cuda</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="n">model_ckFAv2</span> <span class="o">=</span> <span class="n">AutoModelForCausalLM</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_name</span><span class="p">,</span> <span class="n">torch_dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float16</span><span class="p">,</span> <span class="n">attn_implementation</span><span class="o">=</span><span class="s2">"flash_attention_2"</span><span class="p">)</span><span class="o">.</span><span class="n">cuda</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"eager GQA: "</span><span class="p">,</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">model_eager</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="o">**</span><span class="n">inputs</span><span class="p">,</span> <span class="n">max_new_tokens</span><span class="o">=</span><span class="mi">10</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">skip_special_tokens</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"ckFAv2 GQA: "</span><span class="p">,</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">model_ckFAv2</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="o">**</span><span class="n">inputs</span><span class="p">,</span> <span class="n">max_new_tokens</span><span class="o">=</span><span class="mi">10</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">skip_special_tokens</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+
+<span class="c1">#  eager GQA:  Today is the day of the Lord, and we are the</span>
+<span class="c1"># ckFAv2 GQA: Today is the day of the Lord, and we are the</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio"/>
+<label class="sd-tab-label" for="sd-tab-item-1">
+Triton Flash Attention 2</label><div class="sd-tab-content docutils">
+<p>The Triton Flash Attention 2 module is implemented in Python and uses OpenAI’s JIT compiler. This module has been
+upstreamed into the vLLM serving toolkit, discussed in :doc:’llm-inference-frameworks’.</p>
+<ol class="arabic">
+<li><p>To install Triton Flash Attention 2 and run the benchmark, use the following commands.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install from the source</span>
+pip<span class="w"> </span>uninstall<span class="w"> </span>pytorch-triton-rocm<span class="w"> </span>triton<span class="w"> </span>-y
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ROCm/triton.git
+<span class="nb">cd</span><span class="w"> </span>triton/python
+<span class="nv">GPU_ARCHS</span><span class="o">=</span>gfx942<span class="w"> </span>python<span class="w"> </span>setup.py<span class="w"> </span>install<span class="w"> </span><span class="c1">#MI300 series</span>
+pip<span class="w"> </span>install<span class="w"> </span>matplotlib<span class="w"> </span>pandas
+</pre></div>
+</div>
+</li>
+<li><p>To test, run the Triton Flash Attention 2 performance benchmark.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Test the triton FA v2 kernel</span>
+python<span class="w"> </span>https://github.com/ROCm/triton/blob/triton-mlir/python/perf-kernels/flash-attention.py
+<span class="c1"># Results (Okay to release TFLOPS number ???)</span>
+fused-attention-fwd-d128:
+<span class="w">    </span>BATCH<span class="w">    </span>HQ<span class="w">    </span>HK<span class="w">  </span>N_CTX_Q<span class="w">  </span>N_CTX_K<span class="w">      </span>TFLOPS
+<span class="m">0</span><span class="w">    </span><span class="m">16</span>.0<span class="w">  </span><span class="m">16</span>.0<span class="w">  </span><span class="m">16</span>.0<span class="w">   </span><span class="m">1024</span>.0<span class="w">   </span><span class="m">1024</span>.0<span class="w">  </span><span class="m">287</span>.528411
+<span class="m">1</span><span class="w">     </span><span class="m">8</span>.0<span class="w">  </span><span class="m">16</span>.0<span class="w">  </span><span class="m">16</span>.0<span class="w">   </span><span class="m">2048</span>.0<span class="w">   </span><span class="m">2048</span>.0<span class="w">  </span><span class="m">287</span>.490806
+<span class="m">2</span><span class="w">     </span><span class="m">4</span>.0<span class="w">  </span><span class="m">16</span>.0<span class="w">  </span><span class="m">16</span>.0<span class="w">   </span><span class="m">4096</span>.0<span class="w">   </span><span class="m">4096</span>.0<span class="w">  </span><span class="m">345</span>.966031
+<span class="m">3</span><span class="w">     </span><span class="m">2</span>.0<span class="w">  </span><span class="m">16</span>.0<span class="w">  </span><span class="m">16</span>.0<span class="w">   </span><span class="m">8192</span>.0<span class="w">   </span><span class="m">8192</span>.0<span class="w">  </span><span class="m">361</span>.369510
+<span class="m">4</span><span class="w">     </span><span class="m">1</span>.0<span class="w">  </span><span class="m">16</span>.0<span class="w">  </span><span class="m">16</span>.0<span class="w">  </span><span class="m">16384</span>.0<span class="w">  </span><span class="m">16384</span>.0<span class="w">  </span><span class="m">356</span>.873720
+<span class="m">5</span><span class="w">     </span><span class="m">2</span>.0<span class="w">  </span><span class="m">48</span>.0<span class="w">  </span><span class="m">48</span>.0<span class="w">   </span><span class="m">1024</span>.0<span class="w">   </span><span class="m">1024</span>.0<span class="w">  </span><span class="m">216</span>.916235
+<span class="m">6</span><span class="w">     </span><span class="m">2</span>.0<span class="w">  </span><span class="m">48</span>.0<span class="w">  </span><span class="m">48</span>.0<span class="w">   </span><span class="m">2048</span>.0<span class="w">   </span><span class="m">1024</span>.0<span class="w">  </span><span class="m">271</span>.027578
+<span class="m">7</span><span class="w">     </span><span class="m">2</span>.0<span class="w">  </span><span class="m">48</span>.0<span class="w">  </span><span class="m">48</span>.0<span class="w">   </span><span class="m">4096</span>.0<span class="w">   </span><span class="m">8192</span>.0<span class="w">  </span><span class="m">337</span>.367372
+<span class="m">8</span><span class="w">     </span><span class="m">2</span>.0<span class="w">  </span><span class="m">48</span>.0<span class="w">  </span><span class="m">48</span>.0<span class="w">   </span><span class="m">8192</span>.0<span class="w">   </span><span class="m">4096</span>.0<span class="w">  </span><span class="m">363</span>.481649
+<span class="m">9</span><span class="w">     </span><span class="m">2</span>.0<span class="w">  </span><span class="m">48</span>.0<span class="w">  </span><span class="m">48</span>.0<span class="w">  </span><span class="m">16384</span>.0<span class="w">   </span><span class="m">8192</span>.0<span class="w">  </span><span class="m">375</span>.013622
+<span class="m">10</span><span class="w">    </span><span class="m">8</span>.0<span class="w">  </span><span class="m">16</span>.0<span class="w">  </span><span class="m">16</span>.0<span class="w">   </span><span class="m">1989</span>.0<span class="w">  </span><span class="m">15344</span>.0<span class="w">  </span><span class="m">321</span>.791333
+<span class="m">11</span><span class="w">    </span><span class="m">4</span>.0<span class="w">  </span><span class="m">16</span>.0<span class="w">  </span><span class="m">16</span>.0<span class="w">   </span><span class="m">4097</span>.0<span class="w">    </span><span class="m">163</span>.0<span class="w">  </span><span class="m">122</span>.104888
+<span class="m">12</span><span class="w">    </span><span class="m">2</span>.0<span class="w">  </span><span class="m">16</span>.0<span class="w">  </span><span class="m">16</span>.0<span class="w">   </span><span class="m">8122</span>.0<span class="w">   </span><span class="m">2159</span>.0<span class="w">  </span><span class="m">337</span>.060283
+<span class="m">13</span><span class="w">    </span><span class="m">1</span>.0<span class="w">  </span><span class="m">16</span>.0<span class="w">  </span><span class="m">16</span>.0<span class="w">  </span><span class="m">16281</span>.0<span class="w">      </span><span class="m">7</span>.0<span class="w">    </span><span class="m">5</span>.234012
+<span class="m">14</span><span class="w">    </span><span class="m">2</span>.0<span class="w">  </span><span class="m">48</span>.0<span class="w">  </span><span class="m">48</span>.0<span class="w">   </span><span class="m">1021</span>.0<span class="w">   </span><span class="m">1020</span>.0<span class="w">  </span><span class="m">214</span>.657425
+<span class="m">15</span><span class="w">    </span><span class="m">2</span>.0<span class="w">  </span><span class="m">48</span>.0<span class="w">  </span><span class="m">48</span>.0<span class="w">   </span><span class="m">2001</span>.0<span class="w">   </span><span class="m">2048</span>.0<span class="w">  </span><span class="m">314</span>.429118
+<span class="m">16</span><span class="w">    </span><span class="m">2</span>.0<span class="w">  </span><span class="m">48</span>.0<span class="w">  </span><span class="m">48</span>.0<span class="w">   </span><span class="m">3996</span>.0<span class="w">   </span><span class="m">9639</span>.0<span class="w">  </span><span class="m">330</span>.411368
+<span class="m">17</span><span class="w">    </span><span class="m">2</span>.0<span class="w">  </span><span class="m">48</span>.0<span class="w">  </span><span class="m">48</span>.0<span class="w">   </span><span class="m">8181</span>.0<span class="w">   </span><span class="m">1021</span>.0<span class="w">  </span><span class="m">324</span>.614980
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</section>
+</section>
+<section id="xformers">
+<h2>xFormers<a class="headerlink" href="#xformers" title="Link to this heading">#</a></h2>
+<p>xFormers also improves the performance of attention modules. Although xFormers attention performs very
+similarly to Flash Attention 2 due to its tiling behavior of query, key, and value, it’s widely used for LLMs and
+Stable Diffusion models with the Hugging Face Diffusers library.</p>
+<section id="installing-ck-xformers">
+<h3>Installing CK xFormers<a class="headerlink" href="#installing-ck-xformers" title="Link to this heading">#</a></h3>
+<p>Use the following commands to install CK xFormers.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install from source</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ROCm/xformers.git
+<span class="nb">cd</span><span class="w"> </span>xformers/
+git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init<span class="w"> </span>--recursive
+<span class="nv">PYTORCH_ROCM_ARCH</span><span class="o">=</span>gfx942<span class="w"> </span>python<span class="w"> </span>setup.py<span class="w"> </span>install<span class="w"> </span><span class="c1">#Instinct MI300-series</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="pytorch-built-in-acceleration">
+<h2>PyTorch built-in acceleration<a class="headerlink" href="#pytorch-built-in-acceleration" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://pytorch.org/tutorials/intermediate/torch_compile_tutorial.html">PyTorch compilation
+mode</a>
+synthesizes the model into a graph and then lowers it to prime
+operators. These operators are compiled using TorchInductor, which uses
+OpenAI Triton as a building block for GPU acceleration. One advantage of
+PyTorch compilation mode is that its GPU kernels are written in Python,
+making modifying and extending them easier. PyTorch compilation mode
+often delivers higher performance, as model operations are fused before
+runtime, which allows for easy deployment of high-performance kernels.</p>
+<section id="pytorch-compilation">
+<h3>PyTorch compilation<a class="headerlink" href="#pytorch-compilation" title="Link to this heading">#</a></h3>
+<p>To utilize the PyTorch compilation mode, specific layers of the model
+must be explicitly assigned as compilation targets. In the case of LLM,
+where autoregressive token decoding generates dynamically changing
+key/value sizes, limiting the key/value size to a static dimension,
+<code class="docutils literal notranslate"><span class="pre">max_cache_length</span></code>, is necessary to utilize the performance benefits
+of the PyTorch compilation.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sample script to run LLM with the static key-value cache and PyTorch compilation</span>
+<span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">AutoModelForCausalLM</span><span class="p">,</span> <span class="n">AutoTokenizer</span><span class="p">,</span> <span class="n">StaticCache</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">"cuda:0"</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">"cpu"</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">"TOKENIZERS_PARALLELISM"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"false"</span>
+<span class="n">model_name</span> <span class="o">=</span> <span class="s2">"NousResearch/Meta-Llama-3-8B"</span>
+<span class="n">prompts</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">prompts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"New york city is where "</span>
+<span class="p">)</span>
+
+<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">AutoModelForCausalLM</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_name</span><span class="p">,</span> <span class="n">torch_dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float16</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">(</span><span class="n">prompts</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="s2">"pt"</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">decode_one_tokens</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">cur_token</span><span class="p">,</span> <span class="n">input_pos</span><span class="p">,</span> <span class="n">cache_position</span><span class="p">):</span>
+    <span class="n">logits</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">cur_token</span><span class="p">,</span> <span class="n">position_ids</span><span class="o">=</span><span class="n">input_pos</span><span class="p">,</span> <span class="n">cache_position</span><span class="o">=</span><span class="n">cache_position</span><span class="p">,</span> <span class="n">return_dict</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">use_cache</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">new_token</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">logits</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)[:,</span> <span class="kc">None</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">new_token</span>
+
+<span class="n">batch_size</span><span class="p">,</span> <span class="n">seq_length</span> <span class="o">=</span> <span class="n">inputs</span><span class="p">[</span><span class="s2">"input_ids"</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
+
+<span class="c1"># Static key-value cache</span>
+<span class="n">max_cache_length</span> <span class="o">=</span> <span class="mi">1024</span>
+<span class="n">max_new_tokens</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">model</span><span class="o">.</span><span class="n">_setup_cache</span><span class="p">(</span><span class="n">StaticCache</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">max_cache_len</span><span class="o">=</span><span class="n">max_cache_length</span><span class="p">)</span>
+<span class="n">cache_position</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">seq_length</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+<span class="n">generated_ids</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">seq_length</span> <span class="o">+</span> <span class="n">max_new_tokens</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">int</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+<span class="n">generated_ids</span><span class="p">[:,</span> <span class="n">cache_position</span><span class="p">]</span> <span class="o">=</span> <span class="n">inputs</span><span class="p">[</span><span class="s2">"input_ids"</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
+
+<span class="n">logits</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="o">**</span><span class="n">inputs</span><span class="p">,</span> <span class="n">cache_position</span><span class="o">=</span><span class="n">cache_position</span><span class="p">,</span> <span class="n">return_dict</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">use_cache</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">next_token</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">logits</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)[:,</span> <span class="kc">None</span><span class="p">]</span>
+
+<span class="c1"># torch compilation</span>
+<span class="n">decode_one_tokens</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">decode_one_tokens</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"max-autotune-no-cudagraphs"</span><span class="p">,</span><span class="n">fullgraph</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">generated_ids</span><span class="p">[:,</span> <span class="n">seq_length</span><span class="p">]</span> <span class="o">=</span> <span class="n">next_token</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">cache_position</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="n">seq_length</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_new_tokens</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">sdp_kernel</span><span class="p">(</span><span class="n">enable_flash</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">enable_mem_efficient</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">enable_math</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+            <span class="n">next_token</span> <span class="o">=</span> <span class="n">decode_one_tokens</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">next_token</span><span class="o">.</span><span class="n">clone</span><span class="p">(),</span> <span class="kc">None</span><span class="p">,</span> <span class="n">cache_position</span><span class="p">)</span>
+            <span class="n">generated_ids</span><span class="p">[:,</span> <span class="n">cache_position</span><span class="p">]</span> <span class="o">=</span> <span class="n">next_token</span><span class="o">.</span><span class="n">int</span><span class="p">()</span>
+        <span class="n">cache_position</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</section>
+<section id="pytorch-tunableop">
+<span id="fine-tuning-llms-pytorch-tunableop"></span><h3>PyTorch TunableOp<a class="headerlink" href="#pytorch-tunableop" title="Link to this heading">#</a></h3>
+<p>ROCm PyTorch (2.2.0 and later) allows users to use high-performance ROCm
+GEMM kernel libraries through PyTorch’s built-in TunableOp options.
+This enables users to automatically pick up the best-performing GEMM
+kernels from <a class="reference external" href="https://rocm.docs.amd.com/projects/rocBLAS/en/develop/index.html" title="(in rocBLAS Documentation v4.4.0)"><span class="xref std std-doc">rocBLAS</span></a> and <a class="reference external" href="https://rocm.docs.amd.com/projects/hipBLASLt/en/develop/index.html" title="(in hipBLASLt Documentation v0.12.0)"><span class="xref std std-doc">hipBLASLt</span></a> libraries during runtime.</p>
+<p>During warm-up runs or offline profiling steps, users can create a GEMM Table
+that enumerates the kernel information. During the model’s run, the best-performing kernel substitutes
+<code class="docutils literal notranslate"><span class="pre">torch.nn.functional.linear(input,</span> <span class="pre">weight,</span> <span class="pre">bias=None)</span></code> with the kernel specified in the GEMM table. The
+<a class="reference external" href="https://github.com/pytorch/pytorch/blob/main/aten/src/ATen/cuda/tunable/README.md">Tunable GitHub</a>
+page describes the options.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># To turn on TunableOp, simply set this environment variable</span>
+<span class="n">export</span> <span class="n">PYTORCH_TUNABLEOP_ENABLED</span><span class="o">=</span><span class="mi">1</span>
+
+<span class="c1"># Python</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+<span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s2">"cuda"</span><span class="p">)</span>
+<span class="n">W</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s2">"cuda"</span><span class="p">)</span>
+<span class="n">Out</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">linear</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">W</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Out</span><span class="o">.</span><span class="n">size</span><span class="p">())</span>
+
+<span class="c1"># tunableop_results0.csv</span>
+<span class="n">Validator</span><span class="p">,</span><span class="n">PT_VERSION</span><span class="p">,</span><span class="mf">2.4.0</span>
+<span class="n">Validator</span><span class="p">,</span><span class="n">ROCM_VERSION</span><span class="p">,</span><span class="mf">6.1.0.0</span><span class="o">-</span><span class="mi">82</span><span class="o">-</span><span class="mi">5</span><span class="n">fabb4c</span>
+<span class="n">Validator</span><span class="p">,</span><span class="n">HIPBLASLT_VERSION</span><span class="p">,</span><span class="mf">0.7.0</span><span class="o">-</span><span class="mi">1549</span><span class="n">b021</span>
+<span class="n">Validator</span><span class="p">,</span><span class="n">GCN_ARCH_NAME</span><span class="p">,</span><span class="n">gfx942</span><span class="p">:</span><span class="n">sramecc</span><span class="o">+</span><span class="p">:</span><span class="n">xnack</span><span class="o">-</span>
+<span class="n">Validator</span><span class="p">,</span><span class="n">ROCBLAS_VERSION</span><span class="p">,</span><span class="mf">4.1.0</span><span class="o">-</span><span class="n">cefa4a9b</span><span class="o">-</span><span class="n">dirty</span>
+<span class="n">GemmTunableOp_float_TN</span><span class="p">,</span><span class="n">tn_200_100_20</span><span class="p">,</span><span class="n">Gemm_Rocblas_32323</span><span class="p">,</span><span class="mf">0.00669595</span>
+</pre></div>
+</div>
+<img alt="GEMM and TunableOp" class="align-center" src="../../_images/tunableop.png"/>
+<p>Learn more about optimizing kernels with TunableOp in
+<a class="reference internal" href="../tuning-guides/mi300x/workload.html#mi300x-tunableop"><span class="std std-ref">Optimizing Triton kernels</span></a>.</p>
+</section>
+</section>
+<section id="fbgemm-and-fbgemm-gpu">
+<h2>FBGEMM and FBGEMM_GPU<a class="headerlink" href="#fbgemm-and-fbgemm-gpu" title="Link to this heading">#</a></h2>
+<p>FBGEMM (Facebook General Matrix Multiplication) is a low-precision, high-performance CPU kernel library
+for matrix-matrix multiplications and convolutions. It is used for server-side inference
+and as a back end for PyTorch quantized operators. FBGEMM offers optimized on-CPU performance for reduced precision calculations,
+strong performance on native tensor formats, and the ability to generate
+high-performance shape- and size-specific kernels at runtime.</p>
+<p>FBGEMM_GPU collects several high-performance PyTorch GPU operator libraries
+for use in training and inference. It provides efficient table-batched embedding functionality,
+data layout transformation, and quantization support.</p>
+<p>For more information about FBGEMM and FBGEMM_GPU, see the <a class="reference external" href="https://github.com/pytorch/FBGEMM">PyTorch FBGEMM GitHub</a>
+and the <a class="reference external" href="https://pytorch.org/FBGEMM/">PyTorch FBGEMM documentation</a>.
+The <a class="reference external" href="https://engineering.fb.com/2018/11/07/ml-applications/fbgemm/">Meta blog post about FBGEMM</a> provides
+additional background about the library.</p>
+<section id="installing-fbgemm-gpu">
+<h3>Installing FBGEMM_GPU<a class="headerlink" href="#installing-fbgemm-gpu" title="Link to this heading">#</a></h3>
+<p>Installing FBGEMM_GPU consists of the following steps:</p>
+<ul class="simple">
+<li><p>Set up an isolated Miniconda environment</p></li>
+<li><p>Install ROCm using Docker or the <a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-linux/en/develop/install/native-install/index.html" title="(in ROCm installation on Linux v6.2.4)"><span class="xref std std-doc">package manager</span></a></p></li>
+<li><p>Install the nightly <a class="reference external" href="https://pytorch.org/">PyTorch</a> build</p></li>
+<li><p>Complete the pre-build and build tasks</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>FBGEMM_GPU doesn’t require the installation of FBGEMM. To optionally install
+FBGEMM, see the <a class="reference external" href="https://pytorch.org/FBGEMM/fbgemm-development/BuildInstructions.html">FBGEMM install instructions</a>.</p>
+</div>
+<section id="set-up-the-miniconda-environment">
+<h4>Set up the Miniconda environment<a class="headerlink" href="#set-up-the-miniconda-environment" title="Link to this heading">#</a></h4>
+<p>To install Miniconda, use the following commands.</p>
+<ol class="arabic">
+<li><p>Install a <a class="reference external" href="https://docs.anaconda.com/miniconda/">Miniconda environment</a> for reproducible builds.
+All subsequent commands run inside this environment.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">PLATFORM_NAME</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span>uname<span class="w"> </span>-s<span class="k">)</span><span class="s2">-</span><span class="k">$(</span>uname<span class="w"> </span>-m<span class="k">)</span><span class="s2">"</span>
+
+<span class="c1"># Set the Miniconda prefix directory</span>
+<span class="nv">miniconda_prefix</span><span class="o">=</span><span class="nv">$HOME</span>/miniconda
+
+<span class="c1"># Download the Miniconda installer</span>
+wget<span class="w"> </span>-q<span class="w"> </span><span class="s2">"https://repo.anaconda.com/miniconda/Miniconda3-latest-</span><span class="si">${</span><span class="nv">PLATFORM_NAME</span><span class="si">}</span><span class="s2">.sh"</span><span class="w"> </span>-O<span class="w"> </span>miniconda.sh
+
+<span class="c1"># Run the installer</span>
+bash<span class="w"> </span>miniconda.sh<span class="w"> </span>-b<span class="w"> </span>-p<span class="w"> </span><span class="s2">"</span><span class="nv">$miniconda_prefix</span><span class="s2">"</span><span class="w"> </span>-u
+
+<span class="c1"># Load the shortcuts</span>
+.<span class="w"> </span>~/.bashrc
+
+<span class="c1"># Run updates</span>
+conda<span class="w"> </span>update<span class="w"> </span>-n<span class="w"> </span>base<span class="w"> </span>-c<span class="w"> </span>defaults<span class="w"> </span>-y<span class="w"> </span>conda
+</pre></div>
+</div>
+</li>
+<li><p>Create a Miniconda environment with Python 3.12:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">env_name</span><span class="o">=</span>&lt;ENV<span class="w"> </span>NAME&gt;
+<span class="nv">python_version</span><span class="o">=</span><span class="m">3</span>.12
+
+<span class="c1"># Create the environment</span>
+conda<span class="w"> </span>create<span class="w"> </span>-y<span class="w"> </span>--name<span class="w"> </span><span class="si">${</span><span class="nv">env_name</span><span class="si">}</span><span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">python_version</span><span class="si">}</span><span class="s2">"</span>
+
+<span class="c1"># Upgrade PIP and pyOpenSSL package</span>
+conda<span class="w"> </span>run<span class="w"> </span>-n<span class="w"> </span><span class="si">${</span><span class="nv">env_name</span><span class="si">}</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+conda<span class="w"> </span>run<span class="w"> </span>-n<span class="w"> </span><span class="si">${</span><span class="nv">env_name</span><span class="si">}</span><span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pyOpenSSL&gt;22.1.0
+</pre></div>
+</div>
+</li>
+<li><p>Install additional build tools:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>-n<span class="w"> </span><span class="si">${</span><span class="nv">env_name</span><span class="si">}</span><span class="w"> </span>-y<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>click<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>cmake<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>hypothesis<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>jinja2<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>make<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>ncurses<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>ninja<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>numpy<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>scikit-build<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>wheel
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="install-the-rocm-components">
+<h4>Install the ROCm components<a class="headerlink" href="#install-the-rocm-components" title="Link to this heading">#</a></h4>
+<p>FBGEMM_GPU can run in a ROCm Docker container or in conjunction with the full ROCm installation.
+The Docker method is recommended because it requires fewer steps and provides a stable environment.</p>
+<p>To run FBGEMM_GPU in the Docker container, pull the <a class="reference external" href="https://hub.docker.com/r/rocm/rocm-terminal">Minimal Docker image for ROCm</a>.
+This image includes all preinstalled ROCm packages required to integrate FBGEMM. To pull
+and run the ROCm Docker image, use this command:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run for ROCm 6.2.0</span>
+docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--network<span class="o">=</span>host<span class="w"> </span>--shm-size<span class="w"> </span>16G<span class="w"> </span>--device<span class="o">=</span>/dev/kfd<span class="w"> </span>--device<span class="o">=</span>/dev/dri<span class="w"> </span>--group-add<span class="w"> </span>video<span class="w"> </span><span class="se">\</span>
+--cap-add<span class="o">=</span>SYS_PTRACE<span class="w"> </span>--security-opt<span class="w"> </span><span class="nv">seccomp</span><span class="o">=</span>unconfined<span class="w"> </span>--ipc<span class="o">=</span>host<span class="w"> </span>rocm/rocm-terminal:6.2<span class="w"> </span>/bin/bash
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <a class="reference external" href="https://hub.docker.com/r/rocm/dev-ubuntu-20.04">Full Docker image for ROCm</a>, which includes all
+ROCm packages, can also be used. However, it results in a very large container, so the minimal
+Docker image is recommended.</p>
+</div>
+<p>You can also install ROCm using the package manager. FBGEMM_GPU requires the installation of the full ROCm package.
+For more information, see <a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-linux/en/develop/install/detailed-install.html" title="(in ROCm installation on Linux v6.2.4)"><span class="xref std std-doc">the ROCm installation guide</span></a>.
+The ROCm package also requires the <a class="reference external" href="https://rocm.docs.amd.com/projects/MIOpen/en/develop/index.html" title="(in MIOpen Documentation v3.3.0)"><span class="xref std std-doc">MIOpen</span></a> component as a dependency.
+To install MIOpen, use the <code class="docutils literal notranslate"><span class="pre">apt</span> <span class="pre">install</span></code> command.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>apt<span class="w"> </span>install<span class="w"> </span>hipify-clang<span class="w"> </span>miopen-hip<span class="w"> </span>miopen-hip-dev
+</pre></div>
+</div>
+</section>
+<section id="install-pytorch">
+<h4>Install PyTorch<a class="headerlink" href="#install-pytorch" title="Link to this heading">#</a></h4>
+<p>Install <a class="reference external" href="https://pytorch.org/">PyTorch</a> using <code class="docutils literal notranslate"><span class="pre">pip</span></code> for the most reliable and consistent results.</p>
+<ol class="arabic">
+<li><p>Install the nightly PyTorch build using <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install the latest nightly, ROCm variant</span>
+conda<span class="w"> </span>run<span class="w"> </span>-n<span class="w"> </span><span class="si">${</span><span class="nv">env_name</span><span class="si">}</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--pre<span class="w"> </span>torch<span class="w"> </span>--index-url<span class="w"> </span>https://download.pytorch.org/whl/nightly/rocm6.2/
+</pre></div>
+</div>
+</li>
+<li><p>Ensure PyTorch loads correctly. Verify the version and variant of the installation using an <code class="docutils literal notranslate"><span class="pre">import</span></code> test.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ensure that the package loads properly</span>
+conda<span class="w"> </span>run<span class="w"> </span>-n<span class="w"> </span><span class="si">${</span><span class="nv">env_name</span><span class="si">}</span><span class="w"> </span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import torch.distributed"</span>
+
+<span class="c1"># Verify the version and variant of the installation</span>
+conda<span class="w"> </span>run<span class="w"> </span>-n<span class="w"> </span><span class="si">${</span><span class="nv">env_name</span><span class="si">}</span><span class="w"> </span>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import torch; print(torch.__version__)"</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="perform-the-prebuild-and-build">
+<h4>Perform the prebuild and build<a class="headerlink" href="#perform-the-prebuild-and-build" title="Link to this heading">#</a></h4>
+<ol class="arabic">
+<li><p>Clone the FBGEMM repository and the relevant submodules. Use <code class="docutils literal notranslate"><span class="pre">pip</span></code> to install the
+components in <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>. Run the following commands inside the Miniconda environment.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Select a version tag</span>
+<span class="nv">FBGEMM_VERSION</span><span class="o">=</span>v0.8.0
+
+<span class="c1"># Clone the repo along with its submodules</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/pytorch/FBGEMM.git<span class="w"> </span>--branch<span class="o">=</span>v0.8.0<span class="w"> </span>--recursive<span class="w"> </span>fbgemm_<span class="si">${</span><span class="nv">FBGEMM_VERSION</span><span class="si">}</span>
+
+<span class="c1"># Install additional required packages for building and testing</span>
+<span class="nb">cd</span><span class="w"> </span>fbgemm_<span class="si">${</span><span class="nv">FBGEMM_VERSION</span><span class="si">}</span>/fbgemm_gpu
+pip<span class="w"> </span>install<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+</li>
+<li><p>Clear the build cache to remove stale build information.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># !! Run in fbgemm_gpu/ directory inside the Conda environment !!</span>
+
+python<span class="w"> </span>setup.py<span class="w"> </span>clean
+</pre></div>
+</div>
+</li>
+<li><p>Set the wheel build variables, including the package name, Python version tag, and Python platform name.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the package name depending on the build variant</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">package_name</span><span class="o">=</span>fbgemm_gpu_rocm
+
+<span class="c1"># Set the Python version tag.  It should follow the convention `py&lt;major&gt;&lt;minor&gt;`,</span>
+<span class="c1"># for example, Python 3.12 --&gt; py312</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">python_tag</span><span class="o">=</span>py312
+
+<span class="c1"># Determine the processor architecture</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ARCH</span><span class="o">=</span><span class="k">$(</span>uname<span class="w"> </span>-m<span class="k">)</span>
+
+<span class="c1"># Set the Python platform name for the Linux case</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">python_plat_name</span><span class="o">=</span><span class="s2">"manylinux2014_</span><span class="si">${</span><span class="nv">ARCH</span><span class="si">}</span><span class="s2">"</span>
+</pre></div>
+</div>
+</li>
+<li><p>Build FBGEMM_GPU for the ROCm platform. Set <code class="docutils literal notranslate"><span class="pre">ROCM_PATH</span></code> to the path to your ROCm installation.
+Run these commands from the <code class="docutils literal notranslate"><span class="pre">fbgemm_gpu/</span></code> directory inside the Miniconda environment.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># !! Run in the fbgemm_gpu/ directory inside the Conda environment !!</span>
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">ROCM_PATH</span><span class="o">=</span>&lt;/path/to/rocm&gt;
+
+<span class="c1"># Build for the target architecture of the ROCm device installed on the machine (for example, 'gfx942;gfx90a')</span>
+<span class="c1"># See :doc:`The Linux system requirements &lt;../../reference/system-requirements&gt;` for a list of supported GPUs.</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PYTORCH_ROCM_ARCH</span><span class="o">=</span><span class="k">$(</span><span class="si">${</span><span class="nv">ROCM_PATH</span><span class="si">}</span>/bin/rocminfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-o<span class="w"> </span>-m<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="s1">'gfx.*'</span><span class="k">)</span>
+
+<span class="c1"># Build the wheel artifact only</span>
+python<span class="w"> </span>setup.py<span class="w"> </span>bdist_wheel<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--package_variant<span class="o">=</span>rocm<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--python-tag<span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">python_tag</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--plat-name<span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">python_plat_name</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>-DHIP_ROOT_DIR<span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">ROCM_PATH</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>-DCMAKE_C_FLAGS<span class="o">=</span><span class="s2">"-DTORCH_USE_HIP_DSA"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>-DCMAKE_CXX_FLAGS<span class="o">=</span><span class="s2">"-DTORCH_USE_HIP_DSA"</span>
+
+<span class="c1"># Build and install the library into the Conda environment</span>
+python<span class="w"> </span>setup.py<span class="w"> </span>install<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>--package_variant<span class="o">=</span>rocm<span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>-DHIP_ROOT_DIR<span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">ROCM_PATH</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>-DCMAKE_C_FLAGS<span class="o">=</span><span class="s2">"-DTORCH_USE_HIP_DSA"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">   </span>-DCMAKE_CXX_FLAGS<span class="o">=</span><span class="s2">"-DTORCH_USE_HIP_DSA"</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+</section>
+<section id="post-build-validation">
+<h3>Post-build validation<a class="headerlink" href="#post-build-validation" title="Link to this heading">#</a></h3>
+<p>After building FBGEMM_GPU, run some verification checks to ensure the build is correct. Continue
+to run all commands inside the <code class="docutils literal notranslate"><span class="pre">fbgemm_gpu/</span></code> directory inside the Miniconda environment.</p>
+<ol class="arabic">
+<li><p>The build process generates many build artifacts and C++ templates, so
+it is important to confirm no undefined symbols remain.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># !! Run in fbgemm_gpu/ directory inside the Conda environment !!</span>
+
+<span class="c1"># Locate the built .SO file</span>
+<span class="nv">fbgemm_gpu_lib_path</span><span class="o">=</span><span class="k">$(</span>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span>fbgemm_gpu_py.so<span class="k">)</span>
+
+<span class="c1"># Check that the undefined symbols don't include fbgemm_gpu-defined functions</span>
+nm<span class="w"> </span>-gDCu<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">fbgemm_gpu_lib_path</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort
+</pre></div>
+</div>
+</li>
+<li><p>Verify the referenced version number of <code class="docutils literal notranslate"><span class="pre">GLIBCXX</span></code> and the presence of certain function symbols:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># !! Run in fbgemm_gpu/ directory inside the Conda environment !!</span>
+
+<span class="c1"># Locate the built .SO file</span>
+<span class="nv">fbgemm_gpu_lib_path</span><span class="o">=</span><span class="k">$(</span>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span>fbgemm_gpu_py.so<span class="k">)</span>
+
+<span class="c1"># Note the versions of GLIBCXX referenced by the .SO</span>
+<span class="c1"># The libstdc++.so.6 available on the install target must support these versions</span>
+objdump<span class="w"> </span>-TC<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">fbgemm_gpu_lib_path</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>GLIBCXX<span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">'s/.*GLIBCXX_\([.0-9]*\).*/GLIBCXX_\1/g'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-Vu<span class="w"> </span><span class="p">|</span><span class="w"> </span>cat
+
+<span class="c1"># Test for the existence of a given function symbol in the .SO</span>
+nm<span class="w"> </span>-gDC<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">fbgemm_gpu_lib_path</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">" fbgemm_gpu::merge_pooled_embeddings("</span>
+nm<span class="w"> </span>-gDC<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">fbgemm_gpu_lib_path</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">" fbgemm_gpu::jagged_2d_to_dense("</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="testing-fbgemm">
+<h3>Testing FBGEMM<a class="headerlink" href="#testing-fbgemm" title="Link to this heading">#</a></h3>
+<p>FBGEMM includes tests and benchmarks to validate performance. To run these tests,
+you must use ROCm 5.7 or a more recent version on the host and container. To run FBGEMM tests,
+follow these instructions:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># !! Run inside the Conda environment !!</span>
+
+<span class="c1"># From the /fbgemm_gpu/ directory</span>
+<span class="nb">cd</span><span class="w"> </span><span class="nb">test</span>
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">FBGEMM_TEST_WITH_ROCM</span><span class="o">=</span><span class="m">1</span>
+<span class="c1"># Enable for debugging failed kernel executions</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">HIP_LAUNCH_BLOCKING</span><span class="o">=</span><span class="m">1</span>
+
+<span class="c1"># Run the test</span>
+python<span class="w"> </span>-m<span class="w"> </span>pytest<span class="w"> </span>-v<span class="w"> </span>-rsx<span class="w"> </span>-s<span class="w"> </span>-W<span class="w"> </span>ignore::pytest.PytestCollectionWarning<span class="w"> </span>split_table_batched_embeddings_test.py
+</pre></div>
+</div>
+<p>To run the FBGEMM_GPU <code class="docutils literal notranslate"><span class="pre">uvm</span></code> test, use these commands. These tests only support the AMD MI210 and
+more recent accelerators.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run this inside the Conda environment from the /fbgemm_gpu/ directory</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">HSA_XNACK</span><span class="o">=</span><span class="m">1</span>
+<span class="nb">cd</span><span class="w"> </span><span class="nb">test</span>
+
+python<span class="w"> </span>-m<span class="w"> </span>pytest<span class="w"> </span>-v<span class="w"> </span>-rsx<span class="w"> </span>-s<span class="w"> </span>-W<span class="w"> </span>ignore::pytest.PytestCollectionWarning<span class="w"> </span>./uvm/uvm_test.py
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+</article>
+<footer class="prev-next-footer d-print-none">
+<div class="prev-next-area">
+<a class="left-prev" href="model-quantization.html" title="previous page">
+<i class="fa-solid fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">Model quantization techniques</p>
+</div>
+</a>
+<a class="right-next" href="llm-inference-frameworks.html" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">LLM inference frameworks</p>
+</div>
+<i class="fa-solid fa-angle-right"></i>
+</a>
+</div>
+</footer>
+</div>
+<div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+<div class="sidebar-secondary-item">
+<div class="page-toc tocsection onthispage">
+<i class="fa-solid fa-list"></i> Contents
+  </div>
+<nav class="bd-toc-nav page-toc">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flash-attention-2">Flash Attention 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-flash-attention-2">Installing Flash Attention 2</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xformers">xFormers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-ck-xformers">Installing CK xFormers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pytorch-built-in-acceleration">PyTorch built-in acceleration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pytorch-compilation">PyTorch compilation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pytorch-tunableop">PyTorch TunableOp</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fbgemm-and-fbgemm-gpu">FBGEMM and FBGEMM_GPU</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-fbgemm-gpu">Installing FBGEMM_GPU</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-the-miniconda-environment">Set up the Miniconda environment</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#install-the-rocm-components">Install the ROCm components</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#install-pytorch">Install PyTorch</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-the-prebuild-and-build">Perform the prebuild and build</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#post-build-validation">Post-build validation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-fbgemm">Testing FBGEMM</a></li>
+</ul>
+</li>
+</ul>
+</nav></div>
+</div></div>
+</div>
+<footer class="bd-footer-content">
+<p>
+</p>
+</footer>
+</main>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+<footer class="rocm-footer">
+<div class="container-lg">
+<section class="bottom-menu menu py-45">
+<div class="row d-flex align-items-center">
+<div class="col-12 text-center">
+<ul>
+<li><a href="https://www.amd.com/en/corporate/copyright" target="_blank">Terms and Conditions</a></li>
+<li><a href="https://rocm.docs.amd.com/en/develop/about/license.html">ROCm Licenses and Disclaimers</a></li>
+<li><a href="https://www.amd.com/en/corporate/privacy" target="_blank">Privacy</a></li>
+<li><a href="https://www.amd.com/en/corporate/trademarks" target="_blank">Trademarks</a></li>
+<li><a href="https://www.amd.com/system/files/documents/statement-human-trafficking-forced-labor.pdf" target="_blank">Statement on Forced Labor</a></li>
+<li><a href="https://www.amd.com/en/corporate/competition" target="_blank">Fair and Open Competition</a></li>
+<li><a href="https://www.amd.com/system/files/documents/amd-uk-tax-strategy.pdf" target="_blank">UK Tax Strategy</a></li>
+<li><a href="https://www.amd.com/en/corporate/cookies" target="_blank">Cookie Policy</a></li>
+<!-- OneTrust Cookies Settings button start -->
+<li><a class="ot-sdk-show-settings" href="#cookie-settings" id="ot-sdk-btn">Cookie Settings</a></li>
+<!-- OneTrust Cookies Settings button end -->
+</ul>
+</div>
+</div>
+<div class="row d-flex align-items-center">
+<div class="col-12 text-center">
+<div>
+<span class="copyright">© 2024 Advanced Micro Devices, Inc</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+</footer>
+<!-- <div id="rdc-watermark-container">
+    <img id="rdc-watermark" src="../../_static/images/alpha-watermark.svg" alt="DRAFT watermark"/>
+</div> -->
+</body>
+</html>

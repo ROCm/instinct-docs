@@ -1,0 +1,822 @@
+
+<!DOCTYPE html>
+
+<html data-content_root="../../../" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Learn how to validate LLM inference performance on MI300X accelerators using AMD MAD and the unified ROCm Docker image." name="description"/>
+<meta content="model, MAD, automation, dashboarding, validate" name="keywords"/>
+<title>LLM inference performance validation on AMD Instinct MI300X — ROCm Documentation</title>
+<script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+<!-- Loaded before other Sphinx assets -->
+<link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../../_static/pygments.css?v=a746c00c" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/custom.css?v=da61d430" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/rocm_header.css?v=4044f309" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/rocm_footer.css?v=25204c5a" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/fonts.css?v=fcff5274" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/sphinx-design.min.css?v=87e54e7c" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/rocm_custom.css?v=ace7df76" rel="stylesheet" type="text/css"/>
+<link href="../../../_static/rocm_rn.css?v=0e8af9ba" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" rel="preload"/>
+<link as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" rel="preload"/>
+<script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/documentation_options.js?v=bc0531d1"></script>
+<script src="../../../_static/doctools.js?v=9a2dae69"></script>
+<script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+<script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+<script src="../../../_static/copybutton.js?v=f281be69"></script>
+<script async="async" src="../../../_static/code_word_breaks.js?v=327952c4"></script>
+<script async="async" src="../../../_static/renameVersionLinks.js?v=929fe5e4"></script>
+<script async="async" src="../../../_static/rdcMisc.js?v=01f88d96"></script>
+<script async="async" src="../../../_static/theme_mode_captions.js?v=15f4ec5d"></script>
+<script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+<script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+<script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+<script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>DOCUMENTATION_OPTIONS.pagename = 'how-to/performance-validation/mi300x/vllm-benchmark';</script>
+<script async="async" src="https://download.amd.com/js/analytics/analyticsinit.js"></script>
+<link href="rocm-stg.amd.com/how-to/performance-validation/mi300x/vllm-benchmark.html" rel="canonical"/>
+<link href="https://www.amd.com/content/dam/code/images/favicon/favicon.ico" rel="icon"/>
+<link href="../../../genindex.html" rel="index" title="Index"/>
+<link href="../../../search.html" rel="search" title="Search"/>
+<link href="../../tuning-guides/mi300x/system.html" rel="next" title="AMD Instinct MI300X system optimization"/>
+<link href="../../tuning-guides/mi300x/index.html" rel="prev" title="AMD MI300X tuning guides"/>
+<meta content="vo35SZt_GASsTHAEmdww7AYKPCvZyzLvOXBl8guBME4" name="google-site-verification"/>
+</head>
+<body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="" data-offset="180">
+<div class="skip-link d-print-none" id="pst-skip-link"><a href="#main-content">Skip to main content</a></div>
+<div id="pst-scroll-pixel-helper"></div>
+<button class="btn rounded-pill" id="pst-back-to-top" type="button">
+<i class="fa-solid fa-arrow-up"></i>Back to top</button>
+<input class="sidebar-toggle" id="pst-primary-sidebar-checkbox" type="checkbox"/>
+<label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+<input class="sidebar-toggle" id="pst-secondary-sidebar-checkbox" type="checkbox"/>
+<label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
+<form action="../../../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input aria-label="Search..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search..." spellcheck="false" type="search"/>
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+</div>
+<div class="pst-async-banner-revealer d-none">
+<aside aria-label="Version warning" class="d-none d-print-none" id="bd-header-version-warning"></aside>
+</div>
+<aside aria-label="Announcement" class="bd-header-announcement">
+<div class="bd-header-announcement__content">This page contains proposed changes for a future release of ROCm. Read the <a href="https://rocm.docs.amd.com/en/latest/" id="rocm-banner">latest Linux release of ROCm documentation</a> for your production environments.</div>
+</aside>
+<header class="common-header">
+<nav class="navbar navbar-expand-xl">
+<div class="container-fluid main-nav rocm-header">
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler collapsed" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" data-tracking-information="mainMenuToggle" id="nav-icon" type="button">
+<span></span>
+<span></span>
+<span></span>
+</button>
+<div class="header-logo">
+<a class="navbar-brand" href="https://www.amd.com/">
+<img alt="AMD Logo" class="d-inline-block align-text-top hover-opacity" src="../../../_static/images/amd-header-logo.svg" title="AMD Logo" width="90"/>
+</a>
+<div class="vr vr mx-40 my-25"></div>
+<a class="klavika-font hover-opacity" href="https://rocm.docs.amd.com/en/develop">ROCm™ Software Future Release</a>
+<a class="header-all-versions" href="https://rocm.docs.amd.com/en/latest/release/versions.html">Version List</a>
+</div>
+<div class="icon-nav text-center d-flex ms-auto">
+</div>
+</div>
+</nav>
+<nav class="navbar navbar-expand-xl second-level-nav">
+<div class="container-fluid main-nav">
+<div class="navbar-nav-container collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav nav-mega me-auto mb-2 mb-lg-0 col-xl-10">
+<li class="nav-item">
+<a aria-expanded="false" class="nav-link top-level header-menu-links" href="https://github.com/ROCm/ROCm" id="navgithub" role="button" target="_blank">
+                                GitHub
+                            </a>
+</li>
+<li class="nav-item">
+<a aria-expanded="false" class="nav-link top-level header-menu-links" href="https://github.com/ROCm/ROCm/discussions" id="navcommunity" role="button" target="_blank">
+                                Community
+                            </a>
+</li>
+<li class="nav-item">
+<a aria-expanded="false" class="nav-link top-level header-menu-links" href="https://rocm.blogs.amd.com/" id="navblogs" role="button" target="_blank">
+                                Blogs
+                            </a>
+</li>
+<li class="nav-item">
+<a aria-expanded="false" class="nav-link top-level header-menu-links" href="https://www.amd.com/en/developer/resources/infinity-hub.html" id="navinfinity-hub" role="button" target="_blank">
+                                Infinity Hub
+                            </a>
+</li>
+<li class="nav-item">
+<a aria-expanded="false" class="nav-link top-level header-menu-links" href="https://github.com/ROCm/ROCm/issues/new/choose" id="navsupport" role="button" target="_blank">
+                                Support
+                            </a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+</header>
+<div class="bd-container">
+<div class="bd-container__inner bd-page-width">
+<div class="bd-sidebar-primary bd-sidebar">
+<div class="sidebar-header-items sidebar-primary__section">
+</div>
+<div class="sidebar-primary-items__start sidebar-primary__section">
+<div class="sidebar-primary-item">
+<a class="navbar-brand logo" href="../../../index.html">
+<p class="title logo__title">ROCm Documentation</p>
+</a></div>
+<div class="sidebar-primary-item">
+<script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+<div class="sidebar-primary-item"><nav aria-label="Main" class="bd-links bd-docs-nav">
+<div class="bd-toc-item navbar-nav active">
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../what-is-rocm.html">What is ROCm?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/release-notes.html">Release notes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Install</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-linux/en/develop/">ROCm on Linux</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-windows/en/develop/">HIP SDK on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../deep-learning-rocm.html">Deep learning frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../build-rocm.html">Build ROCm from source</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">How to</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../rocm-for-ai/index.html">Using ROCm for AI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../rocm-for-ai/install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rocm-for-ai/train-a-model.html">Training a model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rocm-for-ai/hugging-face-models.html">Running models from Hugging Face</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rocm-for-ai/deploy-your-model.html">Deploying your model</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rocm-for-hpc/index.html">Using ROCm for HPC</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../llm-fine-tuning-optimization/index.html">Fine-tuning LLMs and inference optimization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../llm-fine-tuning-optimization/overview.html">Conceptual overview</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../llm-fine-tuning-optimization/fine-tuning-and-inference.html">Fine-tuning and inference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../llm-fine-tuning-optimization/single-gpu-fine-tuning-and-inference.html">Using a single accelerator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../llm-fine-tuning-optimization/multi-gpu-fine-tuning-and-inference.html">Using multiple accelerators</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../llm-fine-tuning-optimization/model-quantization.html">Model quantization techniques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../llm-fine-tuning-optimization/model-acceleration-libraries.html">Model acceleration libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../llm-fine-tuning-optimization/llm-inference-frameworks.html">LLM inference frameworks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../llm-fine-tuning-optimization/optimizing-with-composable-kernel.html">Optimizing with Composable Kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../llm-fine-tuning-optimization/optimizing-triton-kernel.html">Optimizing Triton kernels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../llm-fine-tuning-optimization/profiling-and-debugging.html">Profiling and debugging</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../system-optimization/index.html">System optimization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../system-optimization/mi300x.html">AMD Instinct MI300X</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../system-optimization/mi300a.html">AMD Instinct MI300A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../system-optimization/mi200.html">AMD Instinct MI200</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../system-optimization/mi100.html">AMD Instinct MI100</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../system-optimization/w6000-v620.html">AMD RDNA 2</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../tuning-guides/mi300x/index.html">AMD MI300X performance validation and tuning</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Performance validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tuning-guides/mi300x/system.html">System tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tuning-guides/mi300x/workload.html">Workload tuning</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/gpu-cluster-networking/en/develop/index.html">GPU cluster networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../gpu-enabled-mpi.html">Using MPI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../system-debugging.html">System debugging</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../conceptual/compiler-topics.html">Using advanced compiler features</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://rocm.docs.amd.com/projects/llvm-project/en/latest/index.html">ROCm compiler infrastructure</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://rocm.docs.amd.com/projects/llvm-project/en/latest/conceptual/using-gpu-sanitizer.html">Using AddressSanitizer</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://rocm.docs.amd.com/projects/llvm-project/en/latest/conceptual/openmp.html">OpenMP support</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../setting-cus.html">Setting the number of CUs</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/amd/rocm-examples">ROCm examples</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Compatibility</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../compatibility/compatibility-matrix.html">Compatibility matrix</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-linux/en/develop/reference/system-requirements.html">Linux system requirements</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-windows/en/develop/reference/system-requirements.html">Windows system requirements</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-linux/en/develop/reference/3rd-party-support-matrix.html">Third-party support</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-linux/en/latest/reference/user-kernel-space-compat-matrix.html">User and kernel-space support matrix</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-linux/en/latest/reference/docker-image-support-matrix.html">Docker image support matrix</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/radeon/en/latest/index.html">Use ROCm on Radeon GPUs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Conceptual</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../conceptual/gpu-arch.html">GPU architecture overview</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../conceptual/gpu-arch/mi300.html">MI300 microarchitecture</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference external" href="https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/instruction-set-architectures/amd-instinct-mi300-cdna3-instruction-set-architecture.pdf">AMD Instinct MI300/CDNA3 ISA</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/white-papers/amd-cdna-3-white-paper.pdf">White paper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../conceptual/gpu-arch/mi300-mi200-performance-counters.html">MI300 and MI200 Performance counter</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../conceptual/gpu-arch/mi250.html">MI250 microarchitecture</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference external" href="https://www.amd.com/system/files/TechDocs/instinct-mi200-cdna2-instruction-set-architecture.pdf">AMD Instinct MI200/CDNA2 ISA</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://www.amd.com/system/files/documents/amd-cdna2-white-paper.pdf">White paper</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../conceptual/gpu-arch/mi100.html">MI100 microarchitecture</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference external" href="https://www.amd.com/system/files/TechDocs/instinct-mi100-cdna1-shader-instruction-set-architecture%C2%A0.pdf">AMD Instinct MI100/CDNA1 ISA</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://www.amd.com/system/files/documents/amd-cdna-whitepaper.pdf">White paper</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../conceptual/gpu-memory.html">GPU memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../conceptual/file-reorg.html">File structure (Linux FHS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../conceptual/gpu-isolation.html">GPU isolation techniques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../conceptual/cmake-packages.html">Using CMake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../conceptual/More-about-how-ROCm-uses-PCIe-Atomics.html">ROCm &amp; PCIe atomics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../conceptual/ai-pytorch-inception.html">Inception v3 with PyTorch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../conceptual/oversubscription.html">Oversubscription of hardware resources</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/api-libraries.html">ROCm libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/rocm-tools.html">ROCm tools, compilers, and runtimes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/gpu-arch-specs.html">Accelerator and GPU hardware specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference/precision-support.html">Precision support</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contribute</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../contribute/contributing.html">Contributing to the ROCm docmentation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contribute/toolchain.html">ROCm documentation toolchain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contribute/building.html">Building documentation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contribute/feedback.html">Providing feedback about the ROCm documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/license.html">ROCm licenses</a></li>
+</ul>
+</div>
+</nav></div>
+</div>
+<div class="sidebar-primary-items__end sidebar-primary__section">
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<main class="bd-main" id="main-content" role="main">
+<div class="sbt-scroll-pixel-helper"></div>
+<div class="bd-content">
+<div class="bd-article-container">
+<div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+<div class="header-article-items__start">
+<div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__primary" title="Toggle primary sidebar">
+<span class="fa-solid fa-angle-right"></span>
+</label></div>
+<div class="header-article-item">
+<nav aria-label="Breadcrumb" class="d-print-none">
+<ul class="bd-breadcrumbs">
+<li class="breadcrumb-item breadcrumb-home">
+<a aria-label="Home" class="nav-link" href="../../../index.html">
+<i class="fa-solid fa-home"></i>
+</a>
+</li>
+<li class="breadcrumb-item"><a class="nav-link" href="../../tuning-guides/mi300x/index.html">AMD MI300X tuning guides</a></li>
+<li aria-current="page" class="breadcrumb-item active">LLM...</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="header-article-items__end">
+<div class="header-article-item">
+<div class="article-header-buttons">
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Toggle secondary sidebar">
+<span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+</div>
+</div>
+</div>
+<div class="onlyprint" id="jb-print-docs-body">
+<h1>LLM inference performance validation on AMD Instinct MI300X</h1>
+<!-- Table of contents -->
+<div id="print-main-content">
+<div id="jb-print-toc">
+<div>
+<h2> Contents </h2>
+</div>
+<nav aria-label="Page">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting started</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mad-integrated-benchmarking">MAD-integrated benchmarking</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#available-models">Available models</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standalone-benchmarking">Standalone benchmarking</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#command">Command</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#options">Options</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-benchmark-on-the-mi300x-accelerator">Running the benchmark on the MI300X accelerator</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-latency-benchmark">Example 1: latency benchmark</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-throughput-benchmark">Example 2: throughput benchmark</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">Further reading</a></li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div id="searchbox"></div>
+<article class="bd-article">
+<section id="llm-inference-performance-validation-on-amd-instinct-mi300x">
+<h1>LLM inference performance validation on AMD Instinct MI300X<a class="headerlink" href="#llm-inference-performance-validation-on-amd-instinct-mi300x" title="Link to this heading">#</a></h1><div class="sd-container-fluid sd-sphinx-override sd-p-0 sd-mt-2 sd-mb-4 sd-p-2 sd-rounded-1 docutils" id="rocm-docs-core-article-info">
+<div class="sd-row sd-row-cols-2 sd-gx-2 sd-gy-1 docutils">
+<div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils" style="color:gray;">
+    Applies to Linux
+</div>
+<div class="sd-col sd-d-flex-row sd-align-minor-center docutils">
+<div class="sd-container-fluid sd-sphinx-override docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 sd-gx-3 sd-gy-1 docutils">
+<div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils">
+<p class="sd-p-0 sd-m-0" style="color:gray;"></p>
+</div>
+<div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils">
+<p class="sd-p-0 sd-m-0" style="color:gray;"><span class="sd-pr-2"><svg aria-hidden="true" class="sd-octicon sd-octicon-calendar" height="16.0px" version="1.1" viewbox="0 0 16 16" width="16.0px"><path d="M4.75 0a.75.75 0 01.75.75V2h5V.75a.75.75 0 011.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0113.25 16H2.75A1.75 1.75 0 011 14.25V3.75C1 2.784 1.784 2 2.75 2H4V.75A.75.75 0 014.75 0zm0 3.5h8.5a.25.25 0 01.25.25V6h-11V3.75a.25.25 0 01.25-.25h2zm-2.25 4v6.75c0 .138.112.25.25.25h10.5a.25.25 0 00.25-.25V7.5h-11z" fill-rule="evenodd"></path></svg></span>2024-10-30</p>
+</div>
+<div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils">
+<p class="sd-p-0 sd-m-0" style="color:gray;"><span class="sd-pr-2"><svg aria-hidden="true" class="sd-octicon sd-octicon-clock" height="16.0px" version="1.1" viewbox="0 0 16 16" width="16.0px"><path d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.5 4.75a.75.75 0 00-1.5 0v3.5a.75.75 0 00.471.696l2.5 1a.75.75 0 00.557-1.392L8.5 7.742V4.75z" fill-rule="evenodd"></path></svg></span>11 min read time</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<p id="vllm-benchmark-unified-docker">The <a class="reference external" href="https://hub.docker.com/r/rocm/vllm/tags">ROCm vLLM Docker</a> image offers
+a prebuilt, optimized environment designed for validating large language model
+(LLM) inference performance on the AMD Instinct™ MI300X accelerator. This
+ROCm vLLM Docker image integrates vLLM and PyTorch tailored specifically for the
+MI300X accelerator and includes the following components:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/ROCm/ROCm">ROCm 6.2.1</a></p></li>
+<li><p><a class="reference external" href="https://docs.vllm.ai/en/latest">vLLM 0.6.4</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pytorch/pytorch">PyTorch 2.5.0</a></p></li>
+<li><p>Tuning files (in CSV format)</p></li>
+</ul>
+<p>With this Docker image, you can quickly validate the expected inference
+performance numbers on the MI300X accelerator. This topic also provides tips on
+optimizing performance with popular AI models.</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li><p>Llama 3.1 8B</p></li>
+<li><p>Llama 3.1 70B</p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p>Llama 3.1 405B</p></li>
+<li><p>Llama 2 7B</p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p>Llama 2 70B</p></li>
+<li><p>Mixtral 8x7B</p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p>Mixtral 8x22B</p></li>
+<li><p>Mixtral 7B</p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p>Qwen2 7B</p></li>
+<li><p>Qwen2 72B</p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p>JAIS 13B</p></li>
+<li><p>JAIS 30B</p></li>
+</ul>
+</td></tr></table>
+<div class="admonition note" id="vllm-benchmark-vllm">
+<p class="admonition-title">Note</p>
+<p>vLLM is a toolkit and library for LLM inference and serving. AMD implements
+high-performance custom kernels and modules in vLLM to enhance performance.
+See <a class="reference internal" href="../../llm-fine-tuning-optimization/llm-inference-frameworks.html#fine-tuning-llms-vllm"><span class="std std-ref">vLLM inference</span></a> and <a class="reference internal" href="../../tuning-guides/mi300x/workload.html#mi300x-vllm-optimization"><span class="std std-ref">vLLM performance optimization</span></a> for
+more information.</p>
+</div>
+<section id="getting-started">
+<h2>Getting started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h2>
+<p>Use the following procedures to reproduce the benchmark results on an
+MI300X accelerator with the prebuilt vLLM Docker image.</p>
+<ol class="arabic" id="vllm-benchmark-get-started">
+<li><p>Disable NUMA auto-balancing.</p>
+<p>To optimize performance, disable automatic NUMA balancing. Otherwise, the GPU
+might hang until the periodic balancing is finalized. For more information,
+see <a class="reference internal" href="../../system-optimization/mi300x.html#mi300x-disable-numa"><span class="std std-ref">AMD Instinct MI300X system optimization</span></a>.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># disable automatic NUMA balancing</span>
+sh<span class="w"> </span>-c<span class="w"> </span><span class="s1">'echo 0 &gt; /proc/sys/kernel/numa_balancing'</span>
+<span class="c1"># check if NUMA balancing is disabled (returns 0 if disabled)</span>
+cat<span class="w"> </span>/proc/sys/kernel/numa_balancing
+<span class="m">0</span>
+</pre></div>
+</div>
+</li>
+<li><p>Download the <a class="reference internal" href="#vllm-benchmark-unified-docker"><span class="std std-ref">ROCm vLLM Docker image</span></a>.</p>
+<p>Use the following command to pull the Docker image from Docker Hub.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>pull<span class="w"> </span>rocm/vllm:rocm6.2_mi300_ubuntu20.04_py3.9_vllm_0.6.4
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Once setup is complete, you can choose between two options to reproduce the
+benchmark results:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#vllm-benchmark-mad"><span class="std std-ref">MAD-integrated benchmarking</span></a></p></li>
+<li><p><a class="reference internal" href="#vllm-benchmark-standalone"><span class="std std-ref">Standalone benchmarking</span></a></p></li>
+</ul>
+</section>
+<section id="mad-integrated-benchmarking">
+<span id="vllm-benchmark-mad"></span><h2>MAD-integrated benchmarking<a class="headerlink" href="#mad-integrated-benchmarking" title="Link to this heading">#</a></h2>
+<p>Clone the ROCm Model Automation and Dashboarding (<a class="github reference external" href="https://github.com/ROCm/MAD">ROCm/MAD</a>) repository to a local
+directory and install the required packages on the host machine.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ROCm/MAD
+<span class="nb">cd</span><span class="w"> </span>MAD
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+<p>Use this command to run a performance benchmark test of the Llama 3.1 8B model
+on one GPU with <code class="docutils literal notranslate"><span class="pre">float16</span></code> data type in the host machine.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">MAD_SECRETS_HFTOKEN</span><span class="o">=</span><span class="s2">"your personal Hugging Face token to access gated models"</span>
+python3<span class="w"> </span>tools/run_models.py<span class="w"> </span>--tags<span class="w"> </span>pyt_vllm_llama-3.1-8b<span class="w"> </span>--keep-model-dir<span class="w"> </span>--live-output<span class="w"> </span>--timeout<span class="w"> </span><span class="m">28800</span>
+</pre></div>
+</div>
+<p>ROCm MAD launches a Docker container with the name
+<code class="docutils literal notranslate"><span class="pre">container_ci-pyt_vllm_llama-3.1-8b</span></code>. The latency and throughput reports of the
+model are collected in the following path: <code class="docutils literal notranslate"><span class="pre">~/MAD/reports_float16/</span></code>.</p>
+<p>Although the following models are preconfigured to collect latency and
+throughput performance data, you can also change the benchmarking parameters.
+Refer to the <a class="reference internal" href="#vllm-benchmark-standalone"><span class="std std-ref">Standalone benchmarking</span></a> section.</p>
+<section id="available-models">
+<h3>Available models<a class="headerlink" href="#available-models" title="Link to this heading">#</a></h3>
+<table class="hlist"><tr><td><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pyt_vllm_llama-3.1-8b</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pyt_vllm_llama-3.1-70b</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pyt_vllm_llama-3.1-405b</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pyt_vllm_llama-2-7b</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pyt_vllm_llama-2-70b</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pyt_vllm_mixtral-8x7b</span></code></p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pyt_vllm_mixtral-8x22b</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pyt_vllm_mistral-7b</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pyt_vllm_qwen2-7b</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pyt_vllm_qwen2-72b</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pyt_vllm_jais-13b</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pyt_vllm_jais-30b</span></code></p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pyt_vllm_llama-3.1-8b_fp8</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pyt_vllm_llama-3.1-70b_fp8</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pyt_vllm_llama-3.1-405b_fp8</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pyt_vllm_mixtral-8x7b_fp8</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pyt_vllm_mixtral-8x22b_fp8</span></code></p></li>
+</ul>
+</td></tr></table>
+</section>
+</section>
+<section id="standalone-benchmarking">
+<span id="vllm-benchmark-standalone"></span><h2>Standalone benchmarking<a class="headerlink" href="#standalone-benchmarking" title="Link to this heading">#</a></h2>
+<p>You can run the vLLM benchmark tool independently by starting the
+<a class="reference internal" href="#vllm-benchmark-get-started"><span class="std std-ref">Docker container</span></a> as shown in the following
+snippet.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>docker pull rocm/vllm:rocm6.2_mi300_ubuntu20.04_py3.9_vllm_0.6.4
+docker run -it --device=/dev/kfd --device=/dev/dri --group-add video --shm-size 128G --security-opt seccomp=unconfined --security-opt apparmor=unconfined --cap-add=SYS_PTRACE -v $(pwd):/workspace --env HUGGINGFACE_HUB_CACHE=/workspace --name vllm_v0.6.4 rocm/vllm:rocm6.2_mi300_ubuntu20.04_py3.9_vllm_0.6.4
+</pre></div>
+</div>
+<p>In the Docker container, clone the ROCm MAD repository and navigate to the
+benchmark scripts directory at <code class="docutils literal notranslate"><span class="pre">~/MAD/scripts/vllm</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ROCm</span><span class="o">/</span><span class="n">MAD</span>
+<span class="n">cd</span> <span class="n">MAD</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">vllm</span>
+</pre></div>
+</div>
+<section id="command">
+<h3>Command<a class="headerlink" href="#command" title="Link to this heading">#</a></h3>
+<p>To start the benchmark, use the following command with the appropriate options.
+See <a class="reference internal" href="#vllm-benchmark-standalone-options"><span class="std std-ref">Options</span></a> for the list of
+options and their descriptions.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./vllm_benchmark_report.sh<span class="w"> </span>-s<span class="w"> </span><span class="nv">$test_option</span><span class="w"> </span>-m<span class="w"> </span><span class="nv">$model_repo</span><span class="w"> </span>-g<span class="w"> </span><span class="nv">$num_gpu</span><span class="w"> </span>-d<span class="w"> </span><span class="nv">$datatype</span>
+</pre></div>
+</div>
+<p>See the <a class="reference internal" href="#vllm-benchmark-run-benchmark"><span class="std std-ref">examples</span></a> for more information.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The input sequence length, output sequence length, and tensor parallel (TP) are
+already configured. You don’t need to specify them with this script.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you encounter the following error, pass your access-authorized Hugging
+Face token to the gated models.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>OSError:<span class="w"> </span>You<span class="w"> </span>are<span class="w"> </span>trying<span class="w"> </span>to<span class="w"> </span>access<span class="w"> </span>a<span class="w"> </span>gated<span class="w"> </span>repo.
+
+<span class="c1"># pass your HF_TOKEN</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">HF_TOKEN</span><span class="o">=</span><span class="nv">$your_personal_hf_token</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="options">
+<span id="vllm-benchmark-standalone-options"></span><h3>Options<a class="headerlink" href="#options" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table table-center">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Options</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">$test_option</span></code></p></td>
+<td><p>latency</p></td>
+<td><p>Measure decoding token latency</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>throughput</p></td>
+<td><p>Measure token generation throughput</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>all</p></td>
+<td><p>Measure both throughput and latency</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">$model_repo</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">meta-llama/Meta-Llama-3.1-8B-Instruct</span></code></p></td>
+<td><p>Llama 3.1 8B</p></td>
+</tr>
+<tr class="row-even"><td><p>(<code class="docutils literal notranslate"><span class="pre">float16</span></code>)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">meta-llama/Meta-Llama-3.1-70B-Instruct</span></code></p></td>
+<td><p>Llama 3.1 70B</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">meta-llama/Meta-Llama-3.1-405B-Instruct</span></code></p></td>
+<td><p>Llama 3.1 405B</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">meta-llama/Llama-2-7b-chat-hf</span></code></p></td>
+<td><p>Llama 2 7B</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">meta-llama/Llama-2-70b-chat-hf</span></code></p></td>
+<td><p>Llama 2 70B</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mistralai/Mixtral-8x7B-Instruct-v0.1</span></code></p></td>
+<td><p>Mixtral 8x7B</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mistralai/Mixtral-8x22B-Instruct-v0.1</span></code></p></td>
+<td><p>Mixtral 8x22B</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">mistralai/Mistral-7B-Instruct-v0.3</span></code></p></td>
+<td><p>Mixtral 7B</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Qwen/Qwen2-7B-Instruct</span></code></p></td>
+<td><p>Qwen2 7B</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Qwen/Qwen2-72B-Instruct</span></code></p></td>
+<td><p>Qwen2 72B</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">core42/jais-13b-chat</span></code></p></td>
+<td><p>JAIS 13B</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">core42/jais-30b-chat-v3</span></code></p></td>
+<td><p>JAIS 30B</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">$model_repo</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">amd/Meta-Llama-3.1-8B-Instruct-FP8-KV</span></code></p></td>
+<td><p>Llama 3.1 8B</p></td>
+</tr>
+<tr class="row-even"><td><p>(<code class="docutils literal notranslate"><span class="pre">float8</span></code>)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">amd/Meta-Llama-3.1-70B-Instruct-FP8-KV</span></code></p></td>
+<td><p>Llama 3.1 70B</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">amd/Meta-Llama-3.1-405B-Instruct-FP8-KV</span></code></p></td>
+<td><p>Llama 3.1 405B</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">amd/Mixtral-8x7B-Instruct-v0.1-FP8-KV</span></code></p></td>
+<td><p>Mixtral 8x7B</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">amd/Mixtral-8x22B-Instruct-v0.1-FP8-KV</span></code></p></td>
+<td><p>Mixtral 8x22B</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">$num_gpu</span></code></p></td>
+<td><p>1 or 8</p></td>
+<td><p>Number of GPUs</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">$datatype</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float16</span></code> or <code class="docutils literal notranslate"><span class="pre">float8</span></code></p></td>
+<td><p>Data type</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="running-the-benchmark-on-the-mi300x-accelerator">
+<span id="vllm-benchmark-run-benchmark"></span><h3>Running the benchmark on the MI300X accelerator<a class="headerlink" href="#running-the-benchmark-on-the-mi300x-accelerator" title="Link to this heading">#</a></h3>
+<p>Here are some examples of running the benchmark with various options.
+See <a class="reference internal" href="#vllm-benchmark-standalone-options"><span class="std std-ref">Options</span></a> for the list of
+options and their descriptions.</p>
+<section id="example-1-latency-benchmark">
+<h4>Example 1: latency benchmark<a class="headerlink" href="#example-1-latency-benchmark" title="Link to this heading">#</a></h4>
+<p>Use this command to benchmark the latency of the Llama 3.1 8B model on one GPU with the <code class="docutils literal notranslate"><span class="pre">float16</span></code> and <code class="docutils literal notranslate"><span class="pre">float8</span></code> data types.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">vllm_benchmark_report</span><span class="o">.</span><span class="n">sh</span> <span class="o">-</span><span class="n">s</span> <span class="n">latency</span> <span class="o">-</span><span class="n">m</span> <span class="n">meta</span><span class="o">-</span><span class="n">llama</span><span class="o">/</span><span class="n">Meta</span><span class="o">-</span><span class="n">Llama</span><span class="o">-</span><span class="mf">3.1</span><span class="o">-</span><span class="mi">8</span><span class="n">B</span><span class="o">-</span><span class="n">Instruct</span> <span class="o">-</span><span class="n">g</span> <span class="mi">1</span> <span class="o">-</span><span class="n">d</span> <span class="n">float16</span>
+<span class="o">./</span><span class="n">vllm_benchmark_report</span><span class="o">.</span><span class="n">sh</span> <span class="o">-</span><span class="n">s</span> <span class="n">latency</span> <span class="o">-</span><span class="n">m</span> <span class="n">amd</span><span class="o">/</span><span class="n">Meta</span><span class="o">-</span><span class="n">Llama</span><span class="o">-</span><span class="mf">3.1</span><span class="o">-</span><span class="mi">8</span><span class="n">B</span><span class="o">-</span><span class="n">Instruct</span><span class="o">-</span><span class="n">FP8</span><span class="o">-</span><span class="n">KV</span> <span class="o">-</span><span class="n">g</span> <span class="mi">1</span> <span class="o">-</span><span class="n">d</span> <span class="n">float8</span>
+</pre></div>
+</div>
+<p>Find the latency reports at:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">./reports_float16/summary/Meta-Llama-3.1-8B-Instruct_latency_report.csv</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">./reports_float8/summary/Meta-Llama-3.1-8B-Instruct-FP8-KV_latency_report.csv</span></code></p></li>
+</ul>
+</section>
+<section id="example-2-throughput-benchmark">
+<h4>Example 2: throughput benchmark<a class="headerlink" href="#example-2-throughput-benchmark" title="Link to this heading">#</a></h4>
+<p>Use this command to benchmark the throughput of the Llama 3.1 8B model on one GPU with the <code class="docutils literal notranslate"><span class="pre">float16</span></code> and <code class="docutils literal notranslate"><span class="pre">float8</span></code> data types.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./vllm_benchmark_report.sh<span class="w"> </span>-s<span class="w"> </span>throughput<span class="w"> </span>-m<span class="w"> </span>meta-llama/Meta-Llama-3.1-8B-Instruct<span class="w"> </span>-g<span class="w"> </span><span class="m">1</span><span class="w"> </span>-d<span class="w"> </span>float16
+./vllm_benchmark_report.sh<span class="w"> </span>-s<span class="w"> </span>throughput<span class="w"> </span>-m<span class="w"> </span>amd/Meta-Llama-3.1-8B-Instruct-FP8-KV<span class="w"> </span>-g<span class="w"> </span><span class="m">1</span><span class="w"> </span>-d<span class="w"> </span>float8
+</pre></div>
+</div>
+<p>Find the throughput reports at:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">./reports_float16/summary/Meta-Llama-3.1-8B-Instruct_throughput_report.csv</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">./reports_float8/summary/Meta-Llama-3.1-8B-Instruct-FP8-KV_throughput_report.csv</span></code></p></li>
+</ul>
+<style>
+mjx-container[jax="CHTML"][display="true"] {
+    text-align: left;
+    margin: 0;
+}
+</style><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Throughput is calculated as:</p>
+<ul>
+<li><div class="math notranslate nohighlight">
+\[throughput\_tot = requests \times (\mathsf{\text{input lengths}} + \mathsf{\text{output lengths}}) / elapsed\_time\]</div>
+</li>
+<li><div class="math notranslate nohighlight">
+\[throughput\_gen = requests \times \mathsf{\text{output lengths}} / elapsed\_time\]</div>
+</li>
+</ul>
+</div>
+</section>
+</section>
+</section>
+<section id="further-reading">
+<h2>Further reading<a class="headerlink" href="#further-reading" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>For application performance optimization strategies for HPC and AI workloads,
+including inference with vLLM, see <a class="reference internal" href="../../tuning-guides/mi300x/workload.html"><span class="doc">AMD Instinct MI300X workload optimization</span></a>.</p></li>
+<li><p>To learn more about the options for latency and throughput benchmark scripts,
+see <a class="github reference external" href="https://github.com/ROCm/vllm/tree/main/benchmarks">ROCm/vllm</a>.</p></li>
+<li><p>To learn more about system settings and management practices to configure your system for
+MI300X accelerators, see <a class="reference internal" href="../../system-optimization/mi300x.html"><span class="doc">AMD Instinct MI300X system optimization</span></a>.</p></li>
+<li><p>To learn how to run LLM models from Hugging Face or your own model, see
+<a class="reference internal" href="../../rocm-for-ai/index.html"><span class="doc">Using ROCm for AI</span></a>.</p></li>
+<li><p>To learn how to optimize inference on LLMs, see
+<a class="reference internal" href="../../llm-fine-tuning-optimization/index.html"><span class="doc">Fine-tuning LLMs and inference optimization</span></a>.</p></li>
+<li><p>For a list of other ready-made Docker images for ROCm, see the
+<a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-linux/en/develop/reference/docker-image-support-matrix.html" title="(in ROCm installation on Linux v6.2.4)"><span class="xref std std-doc">Docker image support matrix</span></a>.</p></li>
+<li><p>To compare with the previous version of the ROCm vLLM Docker image for performance validation, refer to
+<a class="reference external" href="https://rocm.docs.amd.com/en/docs-6.2.0/how-to/performance-validation/mi300x/vllm-benchmark.html">LLM inference performance validation on AMD Instinct MI300X (ROCm 6.2.0)</a>.</p></li>
+</ul>
+</section>
+</section>
+</article>
+<footer class="prev-next-footer d-print-none">
+<div class="prev-next-area">
+<a class="left-prev" href="../../tuning-guides/mi300x/index.html" title="previous page">
+<i class="fa-solid fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">AMD MI300X tuning guides</p>
+</div>
+</a>
+<a class="right-next" href="../../tuning-guides/mi300x/system.html" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">AMD Instinct MI300X system optimization</p>
+</div>
+<i class="fa-solid fa-angle-right"></i>
+</a>
+</div>
+</footer>
+</div>
+<div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+<div class="sidebar-secondary-item">
+<div class="page-toc tocsection onthispage">
+<i class="fa-solid fa-list"></i> Contents
+  </div>
+<nav class="bd-toc-nav page-toc">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting started</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mad-integrated-benchmarking">MAD-integrated benchmarking</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#available-models">Available models</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standalone-benchmarking">Standalone benchmarking</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#command">Command</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#options">Options</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-benchmark-on-the-mi300x-accelerator">Running the benchmark on the MI300X accelerator</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-latency-benchmark">Example 1: latency benchmark</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-throughput-benchmark">Example 2: throughput benchmark</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">Further reading</a></li>
+</ul>
+</nav></div>
+</div></div>
+</div>
+<footer class="bd-footer-content">
+<p>
+</p>
+</footer>
+</main>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+<footer class="rocm-footer">
+<div class="container-lg">
+<section class="bottom-menu menu py-45">
+<div class="row d-flex align-items-center">
+<div class="col-12 text-center">
+<ul>
+<li><a href="https://www.amd.com/en/corporate/copyright" target="_blank">Terms and Conditions</a></li>
+<li><a href="https://rocm.docs.amd.com/en/develop/about/license.html">ROCm Licenses and Disclaimers</a></li>
+<li><a href="https://www.amd.com/en/corporate/privacy" target="_blank">Privacy</a></li>
+<li><a href="https://www.amd.com/en/corporate/trademarks" target="_blank">Trademarks</a></li>
+<li><a href="https://www.amd.com/system/files/documents/statement-human-trafficking-forced-labor.pdf" target="_blank">Statement on Forced Labor</a></li>
+<li><a href="https://www.amd.com/en/corporate/competition" target="_blank">Fair and Open Competition</a></li>
+<li><a href="https://www.amd.com/system/files/documents/amd-uk-tax-strategy.pdf" target="_blank">UK Tax Strategy</a></li>
+<li><a href="https://www.amd.com/en/corporate/cookies" target="_blank">Cookie Policy</a></li>
+<!-- OneTrust Cookies Settings button start -->
+<li><a class="ot-sdk-show-settings" href="#cookie-settings" id="ot-sdk-btn">Cookie Settings</a></li>
+<!-- OneTrust Cookies Settings button end -->
+</ul>
+</div>
+</div>
+<div class="row d-flex align-items-center">
+<div class="col-12 text-center">
+<div>
+<span class="copyright">© 2024 Advanced Micro Devices, Inc</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+</footer>
+<!-- <div id="rdc-watermark-container">
+    <img id="rdc-watermark" src="../../../_static/images/alpha-watermark.svg" alt="DRAFT watermark"/>
+</div> -->
+</body>
+</html>

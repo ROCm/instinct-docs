@@ -1,0 +1,925 @@
+
+<!DOCTYPE html>
+
+<html data-content_root="../../" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Model fine-tuning and inference on a single-GPU system" name="description"/>
+<meta content="ROCm, LLM, fine-tuning, usage, tutorial, single-GPU, LoRA, PEFT, inference" name="keywords"/>
+<title>Fine-tuning and inference using a single accelerator — ROCm Documentation</title>
+<script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+<!-- Loaded before other Sphinx assets -->
+<link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../_static/pygments.css?v=a746c00c" rel="stylesheet" type="text/css"/>
+<link href="../../_static/styles/sphinx-book-theme.css?v=a3416100" rel="stylesheet" type="text/css"/>
+<link href="../../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
+<link href="../../_static/custom.css?v=da61d430" rel="stylesheet" type="text/css"/>
+<link href="../../_static/rocm_header.css?v=4044f309" rel="stylesheet" type="text/css"/>
+<link href="../../_static/rocm_footer.css?v=25204c5a" rel="stylesheet" type="text/css"/>
+<link href="../../_static/fonts.css?v=fcff5274" rel="stylesheet" type="text/css"/>
+<link href="../../_static/sphinx-design.min.css?v=87e54e7c" rel="stylesheet" type="text/css"/>
+<link href="../../_static/rocm_custom.css?v=ace7df76" rel="stylesheet" type="text/css"/>
+<link href="../../_static/rocm_rn.css?v=0e8af9ba" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" rel="preload"/>
+<link as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" rel="preload"/>
+<script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/documentation_options.js?v=bc0531d1"></script>
+<script src="../../_static/doctools.js?v=9a2dae69"></script>
+<script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+<script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+<script src="../../_static/copybutton.js?v=f281be69"></script>
+<script async="async" src="../../_static/code_word_breaks.js?v=327952c4"></script>
+<script async="async" src="../../_static/renameVersionLinks.js?v=929fe5e4"></script>
+<script async="async" src="../../_static/rdcMisc.js?v=01f88d96"></script>
+<script async="async" src="../../_static/theme_mode_captions.js?v=15f4ec5d"></script>
+<script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+<script src="../../_static/design-tabs.js?v=f930bc37"></script>
+<script>DOCUMENTATION_OPTIONS.pagename = 'how-to/llm-fine-tuning-optimization/single-gpu-fine-tuning-and-inference';</script>
+<script async="async" src="https://download.amd.com/js/analytics/analyticsinit.js"></script>
+<link href="rocm-stg.amd.com/how-to/llm-fine-tuning-optimization/single-gpu-fine-tuning-and-inference.html" rel="canonical"/>
+<link href="https://www.amd.com/content/dam/code/images/favicon/favicon.ico" rel="icon"/>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<link href="multi-gpu-fine-tuning-and-inference.html" rel="next" title="Fine-tuning and inference using multiple accelerators"/>
+<link href="fine-tuning-and-inference.html" rel="prev" title="Fine-tuning and inference"/>
+<meta content="vo35SZt_GASsTHAEmdww7AYKPCvZyzLvOXBl8guBME4" name="google-site-verification"/>
+</head>
+<body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="" data-offset="180">
+<div class="skip-link d-print-none" id="pst-skip-link"><a href="#main-content">Skip to main content</a></div>
+<div id="pst-scroll-pixel-helper"></div>
+<button class="btn rounded-pill" id="pst-back-to-top" type="button">
+<i class="fa-solid fa-arrow-up"></i>Back to top</button>
+<input class="sidebar-toggle" id="pst-primary-sidebar-checkbox" type="checkbox"/>
+<label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+<input class="sidebar-toggle" id="pst-secondary-sidebar-checkbox" type="checkbox"/>
+<label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
+<form action="../../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input aria-label="Search..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search..." spellcheck="false" type="search"/>
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+</div>
+<div class="pst-async-banner-revealer d-none">
+<aside aria-label="Version warning" class="d-none d-print-none" id="bd-header-version-warning"></aside>
+</div>
+<aside aria-label="Announcement" class="bd-header-announcement">
+<div class="bd-header-announcement__content">This page contains proposed changes for a future release of ROCm. Read the <a href="https://rocm.docs.amd.com/en/latest/" id="rocm-banner">latest Linux release of ROCm documentation</a> for your production environments.</div>
+</aside>
+<header class="common-header">
+<nav class="navbar navbar-expand-xl">
+<div class="container-fluid main-nav rocm-header">
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler collapsed" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" data-tracking-information="mainMenuToggle" id="nav-icon" type="button">
+<span></span>
+<span></span>
+<span></span>
+</button>
+<div class="header-logo">
+<a class="navbar-brand" href="https://www.amd.com/">
+<img alt="AMD Logo" class="d-inline-block align-text-top hover-opacity" src="../../_static/images/amd-header-logo.svg" title="AMD Logo" width="90"/>
+</a>
+<div class="vr vr mx-40 my-25"></div>
+<a class="klavika-font hover-opacity" href="https://rocm.docs.amd.com/en/develop">ROCm™ Software Future Release</a>
+<a class="header-all-versions" href="https://rocm.docs.amd.com/en/latest/release/versions.html">Version List</a>
+</div>
+<div class="icon-nav text-center d-flex ms-auto">
+</div>
+</div>
+</nav>
+<nav class="navbar navbar-expand-xl second-level-nav">
+<div class="container-fluid main-nav">
+<div class="navbar-nav-container collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav nav-mega me-auto mb-2 mb-lg-0 col-xl-10">
+<li class="nav-item">
+<a aria-expanded="false" class="nav-link top-level header-menu-links" href="https://github.com/ROCm/ROCm" id="navgithub" role="button" target="_blank">
+                                GitHub
+                            </a>
+</li>
+<li class="nav-item">
+<a aria-expanded="false" class="nav-link top-level header-menu-links" href="https://github.com/ROCm/ROCm/discussions" id="navcommunity" role="button" target="_blank">
+                                Community
+                            </a>
+</li>
+<li class="nav-item">
+<a aria-expanded="false" class="nav-link top-level header-menu-links" href="https://rocm.blogs.amd.com/" id="navblogs" role="button" target="_blank">
+                                Blogs
+                            </a>
+</li>
+<li class="nav-item">
+<a aria-expanded="false" class="nav-link top-level header-menu-links" href="https://www.amd.com/en/developer/resources/infinity-hub.html" id="navinfinity-hub" role="button" target="_blank">
+                                Infinity Hub
+                            </a>
+</li>
+<li class="nav-item">
+<a aria-expanded="false" class="nav-link top-level header-menu-links" href="https://github.com/ROCm/ROCm/issues/new/choose" id="navsupport" role="button" target="_blank">
+                                Support
+                            </a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+</header>
+<div class="bd-container">
+<div class="bd-container__inner bd-page-width">
+<div class="bd-sidebar-primary bd-sidebar">
+<div class="sidebar-header-items sidebar-primary__section">
+</div>
+<div class="sidebar-primary-items__start sidebar-primary__section">
+<div class="sidebar-primary-item">
+<a class="navbar-brand logo" href="../../index.html">
+<p class="title logo__title">ROCm Documentation</p>
+</a></div>
+<div class="sidebar-primary-item">
+<script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+<div class="sidebar-primary-item"><nav aria-label="Main" class="bd-links bd-docs-nav">
+<div class="bd-toc-item navbar-nav active">
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../what-is-rocm.html">What is ROCm?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/release-notes.html">Release notes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Install</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-linux/en/develop/">ROCm on Linux</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-windows/en/develop/">HIP SDK on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deep-learning-rocm.html">Deep learning frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build-rocm.html">Build ROCm from source</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">How to</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../rocm-for-ai/index.html">Using ROCm for AI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../rocm-for-ai/install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rocm-for-ai/train-a-model.html">Training a model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rocm-for-ai/hugging-face-models.html">Running models from Hugging Face</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rocm-for-ai/deploy-your-model.html">Deploying your model</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../rocm-for-hpc/index.html">Using ROCm for HPC</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Fine-tuning LLMs and inference optimization</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="overview.html">Conceptual overview</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="fine-tuning-and-inference.html">Fine-tuning and inference</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Using a single accelerator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="multi-gpu-fine-tuning-and-inference.html">Using multiple accelerators</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="model-quantization.html">Model quantization techniques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="model-acceleration-libraries.html">Model acceleration libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="llm-inference-frameworks.html">LLM inference frameworks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optimizing-with-composable-kernel.html">Optimizing with Composable Kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optimizing-triton-kernel.html">Optimizing Triton kernels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="profiling-and-debugging.html">Profiling and debugging</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../system-optimization/index.html">System optimization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../system-optimization/mi300x.html">AMD Instinct MI300X</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../system-optimization/mi300a.html">AMD Instinct MI300A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../system-optimization/mi200.html">AMD Instinct MI200</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../system-optimization/mi100.html">AMD Instinct MI100</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../system-optimization/w6000-v620.html">AMD RDNA 2</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tuning-guides/mi300x/index.html">AMD MI300X performance validation and tuning</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../performance-validation/mi300x/vllm-benchmark.html">Performance validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tuning-guides/mi300x/system.html">System tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tuning-guides/mi300x/workload.html">Workload tuning</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/gpu-cluster-networking/en/develop/index.html">GPU cluster networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gpu-enabled-mpi.html">Using MPI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system-debugging.html">System debugging</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../conceptual/compiler-topics.html">Using advanced compiler features</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://rocm.docs.amd.com/projects/llvm-project/en/latest/index.html">ROCm compiler infrastructure</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://rocm.docs.amd.com/projects/llvm-project/en/latest/conceptual/using-gpu-sanitizer.html">Using AddressSanitizer</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://rocm.docs.amd.com/projects/llvm-project/en/latest/conceptual/openmp.html">OpenMP support</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../setting-cus.html">Setting the number of CUs</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/amd/rocm-examples">ROCm examples</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Compatibility</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../compatibility/compatibility-matrix.html">Compatibility matrix</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-linux/en/develop/reference/system-requirements.html">Linux system requirements</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-windows/en/develop/reference/system-requirements.html">Windows system requirements</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-linux/en/develop/reference/3rd-party-support-matrix.html">Third-party support</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-linux/en/latest/reference/user-kernel-space-compat-matrix.html">User and kernel-space support matrix</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-linux/en/latest/reference/docker-image-support-matrix.html">Docker image support matrix</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/radeon/en/latest/index.html">Use ROCm on Radeon GPUs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Conceptual</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../conceptual/gpu-arch.html">GPU architecture overview</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../conceptual/gpu-arch/mi300.html">MI300 microarchitecture</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference external" href="https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/instruction-set-architectures/amd-instinct-mi300-cdna3-instruction-set-architecture.pdf">AMD Instinct MI300/CDNA3 ISA</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/white-papers/amd-cdna-3-white-paper.pdf">White paper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../conceptual/gpu-arch/mi300-mi200-performance-counters.html">MI300 and MI200 Performance counter</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../conceptual/gpu-arch/mi250.html">MI250 microarchitecture</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference external" href="https://www.amd.com/system/files/TechDocs/instinct-mi200-cdna2-instruction-set-architecture.pdf">AMD Instinct MI200/CDNA2 ISA</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://www.amd.com/system/files/documents/amd-cdna2-white-paper.pdf">White paper</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../conceptual/gpu-arch/mi100.html">MI100 microarchitecture</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference external" href="https://www.amd.com/system/files/TechDocs/instinct-mi100-cdna1-shader-instruction-set-architecture%C2%A0.pdf">AMD Instinct MI100/CDNA1 ISA</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://www.amd.com/system/files/documents/amd-cdna-whitepaper.pdf">White paper</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conceptual/gpu-memory.html">GPU memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conceptual/file-reorg.html">File structure (Linux FHS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conceptual/gpu-isolation.html">GPU isolation techniques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conceptual/cmake-packages.html">Using CMake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conceptual/More-about-how-ROCm-uses-PCIe-Atomics.html">ROCm &amp; PCIe atomics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conceptual/ai-pytorch-inception.html">Inception v3 with PyTorch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conceptual/oversubscription.html">Oversubscription of hardware resources</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../reference/api-libraries.html">ROCm libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/rocm-tools.html">ROCm tools, compilers, and runtimes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/gpu-arch-specs.html">Accelerator and GPU hardware specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/precision-support.html">Precision support</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contribute</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../contribute/contributing.html">Contributing to the ROCm docmentation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/toolchain.html">ROCm documentation toolchain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/building.html">Building documentation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/feedback.html">Providing feedback about the ROCm documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/license.html">ROCm licenses</a></li>
+</ul>
+</div>
+</nav></div>
+</div>
+<div class="sidebar-primary-items__end sidebar-primary__section">
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<main class="bd-main" id="main-content" role="main">
+<div class="sbt-scroll-pixel-helper"></div>
+<div class="bd-content">
+<div class="bd-article-container">
+<div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+<div class="header-article-items__start">
+<div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__primary" title="Toggle primary sidebar">
+<span class="fa-solid fa-angle-right"></span>
+</label></div>
+<div class="header-article-item">
+<nav aria-label="Breadcrumb" class="d-print-none">
+<ul class="bd-breadcrumbs">
+<li class="breadcrumb-item breadcrumb-home">
+<a aria-label="Home" class="nav-link" href="../../index.html">
+<i class="fa-solid fa-home"></i>
+</a>
+</li>
+<li class="breadcrumb-item"><a class="nav-link" href="index.html">Fine-tuning LLMs and inference optimization</a></li>
+<li class="breadcrumb-item"><a class="nav-link" href="fine-tuning-and-inference.html">Fine-tuning and inference</a></li>
+<li aria-current="page" class="breadcrumb-item active">Fine-tuning...</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="header-article-items__end">
+<div class="header-article-item">
+<div class="article-header-buttons">
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Toggle secondary sidebar">
+<span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+</div>
+</div>
+</div>
+<div class="onlyprint" id="jb-print-docs-body">
+<h1>Fine-tuning and inference using a single accelerator</h1>
+<!-- Table of contents -->
+<div id="print-main-content">
+<div id="jb-print-toc">
+<div>
+<h2> Contents </h2>
+</div>
+<nav aria-label="Page">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-setup">Environment setup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-the-base-implementation-environment">Setting up the base implementation environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-the-base-model-and-fine-tuning-dataset">Download the base model and fine-tuning dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-fine-tuning-parameters">Configure fine-tuning parameters</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fine-tuning">Fine-tuning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-adapters-or-fully-fine-tuned-models">Saving adapters or fully fine-tuned models</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-model-inference">Basic model inference</a></li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div id="searchbox"></div>
+<article class="bd-article">
+<section id="fine-tuning-and-inference-using-a-single-accelerator">
+<h1>Fine-tuning and inference using a single accelerator<a class="headerlink" href="#fine-tuning-and-inference-using-a-single-accelerator" title="Link to this heading">#</a></h1><div class="sd-container-fluid sd-sphinx-override sd-p-0 sd-mt-2 sd-mb-4 sd-p-2 sd-rounded-1 docutils" id="rocm-docs-core-article-info">
+<div class="sd-row sd-row-cols-2 sd-gx-2 sd-gy-1 docutils">
+<div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils" style="color:gray;">
+    Applies to Linux
+</div>
+<div class="sd-col sd-d-flex-row sd-align-minor-center docutils">
+<div class="sd-container-fluid sd-sphinx-override docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 sd-gx-3 sd-gy-1 docutils">
+<div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils">
+<p class="sd-p-0 sd-m-0" style="color:gray;"></p>
+</div>
+<div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils">
+<p class="sd-p-0 sd-m-0" style="color:gray;"><span class="sd-pr-2"><svg aria-hidden="true" class="sd-octicon sd-octicon-calendar" height="16.0px" version="1.1" viewbox="0 0 16 16" width="16.0px"><path d="M4.75 0a.75.75 0 01.75.75V2h5V.75a.75.75 0 011.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0113.25 16H2.75A1.75 1.75 0 011 14.25V3.75C1 2.784 1.784 2 2.75 2H4V.75A.75.75 0 014.75 0zm0 3.5h8.5a.25.25 0 01.25.25V6h-11V3.75a.25.25 0 01.25-.25h2zm-2.25 4v6.75c0 .138.112.25.25.25h10.5a.25.25 0 00.25-.25V7.5h-11z" fill-rule="evenodd"></path></svg></span>2024-10-15</p>
+</div>
+<div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils">
+<p class="sd-p-0 sd-m-0" style="color:gray;"><span class="sd-pr-2"><svg aria-hidden="true" class="sd-octicon sd-octicon-clock" height="16.0px" version="1.1" viewbox="0 0 16 16" width="16.0px"><path d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.5 4.75a.75.75 0 00-1.5 0v3.5a.75.75 0 00.471.696l2.5 1a.75.75 0 00.557-1.392L8.5 7.742V4.75z" fill-rule="evenodd"></path></svg></span>18 min read time</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<p>This section explains model fine-tuning and inference techniques on a single-accelerator system. See
+<a class="reference internal" href="multi-gpu-fine-tuning-and-inference.html"><span class="doc">Multi-accelerator fine-tuning</span></a> for a setup with multiple accelerators or
+GPUs.</p>
+<section id="environment-setup">
+<span id="fine-tuning-llms-single-gpu-env"></span><h2>Environment setup<a class="headerlink" href="#environment-setup" title="Link to this heading">#</a></h2>
+<p>This section was tested using the following hardware and software environment.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><th class="stub"><p>Hardware</p></th>
+<td><p>AMD Instinct MI300X accelerator</p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Software</p></th>
+<td><p>ROCm 6.1, Ubuntu 22.04, PyTorch 2.1.2, Python 3.10</p></td>
+</tr>
+<tr class="row-odd"><th class="stub"><p>Libraries</p></th>
+<td><p><code class="docutils literal notranslate"><span class="pre">transformers</span></code> <code class="docutils literal notranslate"><span class="pre">datasets</span></code> <code class="docutils literal notranslate"><span class="pre">huggingface-hub</span></code> <code class="docutils literal notranslate"><span class="pre">peft</span></code> <code class="docutils literal notranslate"><span class="pre">trl</span></code> <code class="docutils literal notranslate"><span class="pre">scipy</span></code></p></td>
+</tr>
+<tr class="row-even"><th class="stub"><p>Base model</p></th>
+<td><p><code class="docutils literal notranslate"><span class="pre">meta-llama/Llama-2-7b-chat-hf</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="setting-up-the-base-implementation-environment">
+<span id="fine-tuning-llms-single-gpu-env-setup"></span><h3>Setting up the base implementation environment<a class="headerlink" href="#setting-up-the-base-implementation-environment" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p>Install PyTorch for ROCm. Refer to the
+<a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-linux/en/develop/install/3rd-party/pytorch-install.html" title="(in ROCm installation on Linux v6.2.4)"><span class="xref std std-doc">PyTorch installation guide</span></a>. For a consistent
+installation, it’s recommended to use official ROCm prebuilt Docker images with the framework pre-installed.</p></li>
+<li><p>In the Docker container, check the availability of ROCm-capable accelerators using the following command.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rocm-smi<span class="w"> </span>--showproductname
+</pre></div>
+</div>
+<p>Your output should look like this:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">============================</span><span class="w"> </span>ROCm<span class="w"> </span>System<span class="w"> </span>Management<span class="w"> </span><span class="nv">Interface</span><span class="w"> </span><span class="o">============================</span>
+<span class="o">======================================</span><span class="w"> </span>Product<span class="w"> </span><span class="nv">Info</span><span class="w"> </span><span class="o">======================================</span>
+GPU<span class="o">[</span><span class="m">0</span><span class="o">]</span><span class="w">          </span>:<span class="w"> </span>Card<span class="w"> </span>series:<span class="w">          </span>AMD<span class="w"> </span>Instinct<span class="w"> </span>MI300X<span class="w"> </span>OAM
+GPU<span class="o">[</span><span class="m">0</span><span class="o">]</span><span class="w">          </span>:<span class="w"> </span>Card<span class="w"> </span>model:<span class="w">           </span>0x74a1
+GPU<span class="o">[</span><span class="m">0</span><span class="o">]</span><span class="w">          </span>:<span class="w"> </span>Card<span class="w"> </span>vendor:<span class="w">          </span>Advanced<span class="w"> </span>Micro<span class="w"> </span>Devices,<span class="w"> </span>Inc.<span class="w"> </span><span class="o">[</span>AMD/ATI<span class="o">]</span>
+GPU<span class="o">[</span><span class="m">0</span><span class="o">]</span><span class="w">          </span>:<span class="w"> </span>Card<span class="w"> </span>SKU:<span class="w">             </span><span class="nv">MI3SRIOV</span>
+<span class="o">==========================================================================================</span>
+<span class="o">==================================</span><span class="w"> </span>End<span class="w"> </span>of<span class="w"> </span>ROCm<span class="w"> </span>SMI<span class="w"> </span><span class="nv">Log</span><span class="w"> </span><span class="o">===================================</span>
+</pre></div>
+</div>
+</li>
+<li><p>Check that your accelerators are available to PyTorch.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Is a ROCm-GPU detected? "</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"How many ROCm-GPUs are detected? "</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">device_count</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>If successful, your output should look like this:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt;<span class="w"> </span>print<span class="o">(</span><span class="s2">"Is a ROCm-GPU detected? "</span>,<span class="w"> </span>torch.cuda.is_available<span class="o">())</span>
+Is<span class="w"> </span>a<span class="w"> </span>ROCm-GPU<span class="w"> </span>detected?<span class="w">  </span>True
+&gt;&gt;&gt;<span class="w"> </span>print<span class="o">(</span><span class="s2">"How many ROCm-GPUs are detected? "</span>,<span class="w"> </span>torch.cuda.device_count<span class="o">())</span>
+How<span class="w"> </span>many<span class="w"> </span>ROCm-GPUs<span class="w"> </span>are<span class="w"> </span>detected?<span class="w">  </span><span class="m">4</span>
+</pre></div>
+</div>
+</li>
+<li><p>Install the required dependencies.</p>
+<p>bitsandbytes is a library that facilitates quantization to improve the efficiency of deep learning models. Learn more
+about its use in <a class="reference internal" href="model-quantization.html"><span class="doc">Model quantization techniques</span></a>.</p>
+<p>See the <a class="reference internal" href="overview.html#fine-tuning-llms-concept-optimizations"><span class="std std-ref">Optimizations for model fine-tuning</span></a> for a brief discussion on
+PEFT and TRL.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install `bitsandbytes` for ROCm 6.0+.</span>
+<span class="c1"># Use -DBNB_ROCM_ARCH to target a specific GPU architecture.</span>
+git<span class="w"> </span>clone<span class="w"> </span>--recurse<span class="w"> </span>https://github.com/ROCm/bitsandbytes.git
+<span class="nb">cd</span><span class="w"> </span>bitsandbytes
+git<span class="w"> </span>checkout<span class="w"> </span>rocm_enabled_multi_backend
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements-dev.txt
+cmake<span class="w"> </span>-DBNB_ROCM_ARCH<span class="o">=</span><span class="s2">"gfx942"</span><span class="w"> </span>-DCOMPUTE_BACKEND<span class="o">=</span>hip<span class="w"> </span>-S<span class="w"> </span>.
+python<span class="w"> </span>setup.py<span class="w"> </span>install
+
+<span class="c1"># To leverage the SFTTrainer in TRL for model fine-tuning.</span>
+pip<span class="w"> </span>install<span class="w"> </span>trl
+
+<span class="c1"># To leverage PEFT for efficiently adapting pre-trained language models .</span>
+pip<span class="w"> </span>install<span class="w"> </span>peft
+
+<span class="c1"># Install the other dependencies.</span>
+pip<span class="w"> </span>install<span class="w"> </span>transformers<span class="w"> </span>datasets<span class="w"> </span>huggingface-hub<span class="w"> </span>scipy
+</pre></div>
+</div>
+</li>
+<li><p>Check that the required packages can be imported.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">datasets</span> <span class="kn">import</span> <span class="n">load_dataset</span>
+<span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">AutoModelForCausalLM</span><span class="p">,</span>
+    <span class="n">AutoTokenizer</span><span class="p">,</span>
+    <span class="n">TrainingArguments</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">peft</span> <span class="kn">import</span> <span class="n">LoraConfig</span>
+<span class="kn">from</span> <span class="nn">trl</span> <span class="kn">import</span> <span class="n">SFTTrainer</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="download-the-base-model-and-fine-tuning-dataset">
+<span id="fine-tuning-llms-single-gpu-download-model-dataset"></span><h3>Download the base model and fine-tuning dataset<a class="headerlink" href="#download-the-base-model-and-fine-tuning-dataset" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p>Request to access to download the <a class="reference external" href="https://huggingface.co/meta-llama">Meta’s official Llama model</a> from Hugging
+Face. After permission is granted, log in with the following command using your personal access tokens:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>huggingface-cli<span class="w"> </span>login
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can also use the <a class="reference external" href="https://huggingface.co/NousResearch/Llama-2-7b-chat-hf">NousResearch Llama-2-7b-chat-hf</a>
+as a substitute. It has the same model weights as the original.</p>
+</div>
+</li>
+<li><p>Run the following code to load the base model and tokenizer.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Base model and tokenizer names.</span>
+<span class="n">base_model_name</span> <span class="o">=</span> <span class="s2">"meta-llama/Llama-2-7b-chat-hf"</span>
+
+<span class="c1"># Load base model to GPU memory.</span>
+<span class="n">device</span> <span class="o">=</span> <span class="s2">"cuda:0"</span>
+<span class="n">base_model</span> <span class="o">=</span> <span class="n">AutoModelForCausalLM</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">base_model_name</span><span class="p">,</span> <span class="n">trust_remote_code</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+<span class="c1"># Load tokenizer.</span>
+<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span>
+        <span class="n">base_model_name</span><span class="p">,</span>
+        <span class="n">trust_remote_code</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">tokenizer</span><span class="o">.</span><span class="n">pad_token</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">eos_token</span>
+<span class="n">tokenizer</span><span class="o">.</span><span class="n">padding_side</span> <span class="o">=</span> <span class="s2">"right"</span>
+</pre></div>
+</div>
+</li>
+<li><p>Now, let’s fine-tune the base model for a question-and-answer task using a small dataset called
+<a class="reference external" href="https://huggingface.co/datasets/mlabonne/guanaco-llama2-1k">mlabonne/guanaco-llama2-1k</a>, which is a 1000 sample
+subset of the <a class="reference external" href="https://huggingface.co/datasets/OpenAssistant/oasst1">timdettmers/openassistant-guanaco</a> dataset.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dataset for fine-tuning.</span>
+<span class="n">training_dataset_name</span> <span class="o">=</span> <span class="s2">"mlabonne/guanaco-llama2-1k"</span>
+<span class="n">training_dataset</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="n">training_dataset_name</span><span class="p">,</span> <span class="n">split</span> <span class="o">=</span> <span class="s2">"train"</span><span class="p">)</span>
+
+<span class="c1"># Check the data.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">training_dataset</span><span class="p">)</span>
+
+<span class="c1"># Dataset 11 is a QA sample in English.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">training_dataset</span><span class="p">[</span><span class="mi">11</span><span class="p">])</span>
+</pre></div>
+</div>
+</li>
+<li><p>With the base model and the dataset, let’s start fine-tuning!</p></li>
+</ol>
+</section>
+<section id="configure-fine-tuning-parameters">
+<span id="fine-tuning-llms-single-gpu-configure-params"></span><h3>Configure fine-tuning parameters<a class="headerlink" href="#configure-fine-tuning-parameters" title="Link to this heading">#</a></h3>
+<p>To set up <code class="docutils literal notranslate"><span class="pre">SFTTrainer</span></code> parameters, you can use the following code as reference.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Training parameters for SFTTrainer.</span>
+<span class="n">training_arguments</span> <span class="o">=</span> <span class="n">TrainingArguments</span><span class="p">(</span>
+    <span class="n">output_dir</span> <span class="o">=</span> <span class="s2">"./results"</span><span class="p">,</span>
+         <span class="n">num_train_epochs</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+         <span class="n">per_device_train_batch_size</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span>
+         <span class="n">gradient_accumulation_steps</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+         <span class="n">optim</span> <span class="o">=</span> <span class="s2">"paged_adamw_32bit"</span><span class="p">,</span>
+         <span class="n">save_steps</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span>
+         <span class="n">logging_steps</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span>
+         <span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">4e-5</span><span class="p">,</span>
+         <span class="n">weight_decay</span> <span class="o">=</span> <span class="mf">0.001</span><span class="p">,</span>
+         <span class="n">fp16</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+         <span class="n">bf16</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+         <span class="n">max_grad_norm</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span>
+         <span class="n">max_steps</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+         <span class="n">warmup_ratio</span> <span class="o">=</span> <span class="mf">0.03</span><span class="p">,</span>
+         <span class="n">group_by_length</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+         <span class="n">lr_scheduler_type</span> <span class="o">=</span> <span class="s2">"constant"</span><span class="p">,</span>
+         <span class="n">report_to</span> <span class="o">=</span> <span class="s2">"tensorboard"</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="fine-tuning">
+<span id="fine-tuning-llms-single-gpu-start"></span><h2>Fine-tuning<a class="headerlink" href="#fine-tuning" title="Link to this heading">#</a></h2>
+<p>In this section, you’ll see two ways of training: with the LoRA technique and without. See <a class="reference internal" href="overview.html#fine-tuning-llms-concept-optimizations"><span class="std std-ref">Optimizations for model
+fine-tuning</span></a> for an introduction to LoRA. Training with LoRA uses the
+<code class="docutils literal notranslate"><span class="pre">SFTTrainer</span></code> API with its PEFT integration. Training without LoRA forgoes these benefits.</p>
+<p>Compare the number of trainable parameters and training time under the two different methodologies.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio"/>
+<label class="sd-tab-label" data-sync-group="tab" data-sync-id="with" for="sd-tab-item-0">
+Fine-tuning with LoRA and PEFT</label><div class="sd-tab-content docutils">
+<ol class="arabic">
+<li><p>Configure LoRA using the following code snippet.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">peft_config</span> <span class="o">=</span> <span class="n">LoraConfig</span><span class="p">(</span>
+        <span class="n">lora_alpha</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span>
+        <span class="n">lora_dropout</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="mi">64</span><span class="p">,</span>
+        <span class="n">bias</span> <span class="o">=</span> <span class="s2">"none"</span><span class="p">,</span>
+        <span class="n">task_type</span> <span class="o">=</span> <span class="s2">"CAUSAL_LM"</span>
+<span class="p">)</span>
+<span class="c1"># View the number of trainable parameters.</span>
+<span class="kn">from</span> <span class="nn">peft</span> <span class="kn">import</span> <span class="n">get_peft_model</span>
+<span class="n">peft_model</span> <span class="o">=</span> <span class="n">get_peft_model</span><span class="p">(</span><span class="n">base_model</span><span class="p">,</span> <span class="n">peft_config</span><span class="p">)</span>
+<span class="n">peft_model</span><span class="o">.</span><span class="n">print_trainable_parameters</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The output should look like this. Compare the number of trainable parameters to that when fine-tuning without
+LoRA and PEFT.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>trainable<span class="w"> </span>params:<span class="w"> </span><span class="m">33</span>,554,432<span class="w"> </span><span class="o">||</span><span class="w"> </span>all<span class="w"> </span>params:<span class="w"> </span><span class="m">6</span>,771,970,048<span class="w"> </span><span class="o">||</span><span class="w"> </span>trainable%:<span class="w"> </span><span class="m">0</span>.49548996469513035
+</pre></div>
+</div>
+</li>
+<li><p>Initialize <code class="docutils literal notranslate"><span class="pre">SFTTrainer</span></code> with a PEFT LoRA configuration and run the trainer.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize an SFT trainer.</span>
+<span class="n">sft_trainer</span> <span class="o">=</span> <span class="n">SFTTrainer</span><span class="p">(</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">base_model</span><span class="p">,</span>
+        <span class="n">train_dataset</span> <span class="o">=</span> <span class="n">training_dataset</span><span class="p">,</span>
+        <span class="n">peft_config</span> <span class="o">=</span> <span class="n">peft_config</span><span class="p">,</span>
+        <span class="n">dataset_text_field</span> <span class="o">=</span> <span class="s2">"text"</span><span class="p">,</span>
+        <span class="n">tokenizer</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">,</span>
+        <span class="n">args</span> <span class="o">=</span> <span class="n">training_arguments</span>
+<span class="p">)</span>
+
+<span class="c1"># Run the trainer.</span>
+<span class="n">sft_trainer</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The output should look like this:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">{</span><span class="s1">'loss'</span>:<span class="w"> </span><span class="m">1</span>.5973,<span class="w"> </span><span class="s1">'grad_norm'</span>:<span class="w"> </span><span class="m">0</span>.25271978974342346,<span class="w"> </span><span class="s1">'learning_rate'</span>:<span class="w"> </span>4e-05,<span class="w"> </span><span class="s1">'epoch'</span>:<span class="w"> </span><span class="m">0</span>.16<span class="o">}</span>
+<span class="o">{</span><span class="s1">'loss'</span>:<span class="w"> </span><span class="m">2</span>.0519,<span class="w"> </span><span class="s1">'grad_norm'</span>:<span class="w"> </span><span class="m">0</span>.21817368268966675,<span class="w"> </span><span class="s1">'learning_rate'</span>:<span class="w"> </span>4e-05,<span class="w"> </span><span class="s1">'epoch'</span>:<span class="w"> </span><span class="m">0</span>.32<span class="o">}</span>
+<span class="o">{</span><span class="s1">'loss'</span>:<span class="w"> </span><span class="m">1</span>.6147,<span class="w"> </span><span class="s1">'grad_norm'</span>:<span class="w"> </span><span class="m">0</span>.3046981394290924,<span class="w"> </span><span class="s1">'learning_rate'</span>:<span class="w"> </span>4e-05,<span class="w"> </span><span class="s1">'epoch'</span>:<span class="w"> </span><span class="m">0</span>.48<span class="o">}</span>
+<span class="o">{</span><span class="s1">'loss'</span>:<span class="w"> </span><span class="m">1</span>.4124,<span class="w"> </span><span class="s1">'grad_norm'</span>:<span class="w"> </span><span class="m">0</span>.11534837633371353,<span class="w"> </span><span class="s1">'learning_rate'</span>:<span class="w"> </span>4e-05,<span class="w"> </span><span class="s1">'epoch'</span>:<span class="w"> </span><span class="m">0</span>.64<span class="o">}</span>
+<span class="o">{</span><span class="s1">'loss'</span>:<span class="w"> </span><span class="m">1</span>.5627,<span class="w"> </span><span class="s1">'grad_norm'</span>:<span class="w"> </span><span class="m">0</span>.09108350425958633,<span class="w"> </span><span class="s1">'learning_rate'</span>:<span class="w"> </span>4e-05,<span class="w"> </span><span class="s1">'epoch'</span>:<span class="w"> </span><span class="m">0</span>.8<span class="o">}</span>
+<span class="o">{</span><span class="s1">'loss'</span>:<span class="w"> </span><span class="m">1</span>.417,<span class="w"> </span><span class="s1">'grad_norm'</span>:<span class="w"> </span><span class="m">0</span>.2536439299583435,<span class="w"> </span><span class="s1">'learning_rate'</span>:<span class="w"> </span>4e-05,<span class="w"> </span><span class="s1">'epoch'</span>:<span class="w"> </span><span class="m">0</span>.96<span class="o">}</span>
+<span class="o">{</span><span class="s1">'train_runtime'</span>:<span class="w"> </span><span class="m">197</span>.4947,<span class="w"> </span><span class="s1">'train_samples_per_second'</span>:<span class="w"> </span><span class="m">5</span>.063,<span class="w"> </span><span class="s1">'train_steps_per_second'</span>:<span class="w"> </span><span class="m">0</span>.633,<span class="w"> </span><span class="s1">'train_loss'</span>:<span class="w"> </span><span class="m">1</span>.6194254455566406,<span class="w"> </span><span class="s1">'epoch'</span>:<span class="w"> </span><span class="m">1</span>.0<span class="o">}</span>
+<span class="m">100</span>%<span class="p">|</span>██████████████████████████████████████████████████████████████████████████████████████████████████████<span class="p">|</span><span class="w"> </span><span class="m">125</span>/125<span class="w"> </span><span class="o">[</span><span class="m">03</span>:17&lt;<span class="m">00</span>:00,<span class="w">  </span><span class="m">1</span>.58s/it<span class="o">]</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio"/>
+<label class="sd-tab-label" data-sync-group="tab" data-sync-id="without" for="sd-tab-item-1">
+Fine-tuning without LoRA and PEFT</label><div class="sd-tab-content docutils">
+<ol class="arabic">
+<li><p>Use the following code to get started.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_trainable_parameters</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
+    <span class="c1"># Prints the number of trainable parameters in the model.</span>
+    <span class="n">trainable_params</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">all_param</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">named_parameters</span><span class="p">():</span>
+        <span class="n">all_param</span> <span class="o">+=</span> <span class="n">param</span><span class="o">.</span><span class="n">numel</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">param</span><span class="o">.</span><span class="n">requires_grad</span><span class="p">:</span>
+            <span class="n">trainable_params</span> <span class="o">+=</span> <span class="n">param</span><span class="o">.</span><span class="n">numel</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"trainable params: </span><span class="si">{</span><span class="n">trainable_params</span><span class="si">}</span><span class="s2"> || all params: </span><span class="si">{</span><span class="n">all_param</span><span class="si">}</span><span class="s2"> || trainable%: </span><span class="si">{</span><span class="mi">100</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">trainable_params</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">all_param</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="n">sft_trainer</span><span class="o">.</span><span class="n">peft_config</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">print_trainable_parameters</span><span class="p">(</span><span class="n">sft_trainer</span><span class="o">.</span><span class="n">model</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The output should look like this. Compare the number of trainable parameters to that when fine-tuning with LoRA
+and PEFT.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>trainable<span class="w"> </span>params:<span class="w"> </span><span class="m">6</span>,738,415,616<span class="w"> </span><span class="o">||</span><span class="w"> </span>all<span class="w"> </span>params:<span class="w"> </span><span class="m">6</span>,738,415,616<span class="w"> </span><span class="o">||</span><span class="w"> </span>trainable%:<span class="w"> </span><span class="m">100</span>.00
+</pre></div>
+</div>
+</li>
+<li><p>Run the trainer.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Trainer without LoRA config.</span>
+<span class="n">trainer_full</span> <span class="o">=</span> <span class="n">SFTTrainer</span><span class="p">(</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">base_model</span><span class="p">,</span>
+        <span class="n">train_dataset</span> <span class="o">=</span> <span class="n">training_dataset</span><span class="p">,</span>
+        <span class="n">dataset_text_field</span> <span class="o">=</span> <span class="s2">"text"</span><span class="p">,</span>
+        <span class="n">tokenizer</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="p">,</span>
+        <span class="n">args</span> <span class="o">=</span> <span class="n">training_arguments</span>
+<span class="p">)</span>
+
+<span class="c1"># Training.</span>
+<span class="n">trainer_full</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The output should look like this:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">{</span><span class="s1">'loss'</span>:<span class="w"> </span><span class="m">1</span>.5975,<span class="w"> </span><span class="s1">'grad_norm'</span>:<span class="w"> </span><span class="m">0</span>.25113457441329956,<span class="w"> </span><span class="s1">'learning_rate'</span>:<span class="w"> </span>4e-05,<span class="w"> </span><span class="s1">'epoch'</span>:<span class="w"> </span><span class="m">0</span>.16<span class="o">}</span>
+<span class="o">{</span><span class="s1">'loss'</span>:<span class="w"> </span><span class="m">2</span>.0524,<span class="w"> </span><span class="s1">'grad_norm'</span>:<span class="w"> </span><span class="m">0</span>.2180655151605606,<span class="w"> </span><span class="s1">'learning_rate'</span>:<span class="w"> </span>4e-05,<span class="w"> </span><span class="s1">'epoch'</span>:<span class="w"> </span><span class="m">0</span>.32<span class="o">}</span>
+<span class="o">{</span><span class="s1">'loss'</span>:<span class="w"> </span><span class="m">1</span>.6145,<span class="w"> </span><span class="s1">'grad_norm'</span>:<span class="w"> </span><span class="m">0</span>.2949850261211395,<span class="w"> </span><span class="s1">'learning_rate'</span>:<span class="w"> </span>4e-05,<span class="w"> </span><span class="s1">'epoch'</span>:<span class="w"> </span><span class="m">0</span>.48<span class="o">}</span>
+<span class="o">{</span><span class="s1">'loss'</span>:<span class="w"> </span><span class="m">1</span>.4118,<span class="w"> </span><span class="s1">'grad_norm'</span>:<span class="w"> </span><span class="m">0</span>.11036080121994019,<span class="w"> </span><span class="s1">'learning_rate'</span>:<span class="w"> </span>4e-05,<span class="w"> </span><span class="s1">'epoch'</span>:<span class="w"> </span><span class="m">0</span>.64<span class="o">}</span>
+<span class="o">{</span><span class="s1">'loss'</span>:<span class="w"> </span><span class="m">1</span>.5595,<span class="w"> </span><span class="s1">'grad_norm'</span>:<span class="w"> </span><span class="m">0</span>.08962831646203995,<span class="w"> </span><span class="s1">'learning_rate'</span>:<span class="w"> </span>4e-05,<span class="w"> </span><span class="s1">'epoch'</span>:<span class="w"> </span><span class="m">0</span>.8<span class="o">}</span>
+<span class="o">{</span><span class="s1">'loss'</span>:<span class="w"> </span><span class="m">1</span>.4119,<span class="w"> </span><span class="s1">'grad_norm'</span>:<span class="w"> </span><span class="m">0</span>.25422757863998413,<span class="w"> </span><span class="s1">'learning_rate'</span>:<span class="w"> </span>4e-05,<span class="w"> </span><span class="s1">'epoch'</span>:<span class="w"> </span><span class="m">0</span>.96<span class="o">}</span>
+<span class="o">{</span><span class="s1">'train_runtime'</span>:<span class="w"> </span><span class="m">419</span>.5154,<span class="w"> </span><span class="s1">'train_samples_per_second'</span>:<span class="w"> </span><span class="m">2</span>.384,<span class="w"> </span><span class="s1">'train_steps_per_second'</span>:<span class="w"> </span><span class="m">0</span>.298,<span class="w"> </span><span class="s1">'train_loss'</span>:<span class="w"> </span><span class="m">1</span>.6171623611450194,<span class="w"> </span><span class="s1">'epoch'</span>:<span class="w"> </span><span class="m">1</span>.0<span class="o">}</span>
+<span class="m">100</span>%<span class="p">|</span>██████████████████████████████████████████████████████████████████████████████████████████████████████<span class="p">|</span><span class="w"> </span><span class="m">125</span>/125<span class="w"> </span><span class="o">[</span><span class="m">06</span>:59&lt;<span class="m">00</span>:00,<span class="w">  </span><span class="m">3</span>.36s/it<span class="o">]</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<section id="saving-adapters-or-fully-fine-tuned-models">
+<span id="fine-tuning-llms-single-gpu-saving"></span><h3>Saving adapters or fully fine-tuned models<a class="headerlink" href="#saving-adapters-or-fully-fine-tuned-models" title="Link to this heading">#</a></h3>
+<p>PEFT methods freeze the pre-trained model parameters during fine-tuning and add a smaller number of trainable
+parameters, namely the adapters, on top of it. The adapters are trained to learn specific task information. The adapters
+trained with PEFT are usually an order of magnitude smaller than the full base model, making them convenient to share,
+store, and load.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio"/>
+<label class="sd-tab-label" data-sync-group="tab" data-sync-id="with" for="sd-tab-item-2">
+Saving a PEFT adapter</label><div class="sd-tab-content docutils">
+<p>If you’re using LoRA and PEFT, use the following code to save a PEFT adapter to your system once the fine-tuning
+is completed.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># PEFT adapter name.</span>
+<span class="n">adapter_name</span> <span class="o">=</span> <span class="s2">"llama-2-7b-enhanced-adapter"</span>
+
+<span class="c1"># Save PEFT adapter.</span>
+<span class="n">sft_trainer</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">save_pretrained</span><span class="p">(</span><span class="n">adapter_name</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The saved PEFT adapter should look like this on your system:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Access adapter directory.</span>
+<span class="nb">cd</span><span class="w"> </span>llama-2-7b-enhanced-adapter
+
+<span class="c1"># List all adapter files.</span>
+README.md<span class="w">  </span>adapter_config.json<span class="w">  </span>adapter_model.safetensors
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio"/>
+<label class="sd-tab-label" data-sync-group="tab" data-sync-id="without" for="sd-tab-item-3">
+Saving a fully fine-tuned model</label><div class="sd-tab-content docutils">
+<p>If you’re not using LoRA and PEFT so there is no PEFT LoRA configuration used for training, use the following code
+to save your fine-tuned model to your system.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fully fine-tuned model name.</span>
+<span class="n">new_model_name</span> <span class="o">=</span> <span class="s2">"llama-2-7b-enhanced"</span>
+
+<span class="c1"># Save the fully fine-tuned model.</span>
+<span class="n">full_trainer</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">save_pretrained</span><span class="p">(</span><span class="n">new_model_name</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The saved new full model should look like this on your system:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Access new model directory.</span>
+<span class="nb">cd</span><span class="w"> </span>llama-2-7b-enhanced
+
+<span class="c1"># List all model files.</span>
+config.json<span class="w">                       </span>model-00002-of-00006.safetensors<span class="w">  </span>model-00005-of-00006.safetensors
+generation_config.json<span class="w">            </span>model-00003-of-00006.safetensors<span class="w">  </span>model-00006-of-00006.safetensors
+model-00001-of-00006.safetensors<span class="w">  </span>model-00004-of-00006.safetensors<span class="w">  </span>model.safetensors.index.json
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>PEFT adapters can’t be loaded by <code class="docutils literal notranslate"><span class="pre">AutoModelForCausalLM</span></code> from the Transformers library as they do not contain
+full model parameters and model configurations, for example, <code class="docutils literal notranslate"><span class="pre">config.json</span></code>. To use it as a normal transformer
+model, you need to merge them into the base model.</p>
+</div>
+</section>
+</section>
+<section id="basic-model-inference">
+<h2>Basic model inference<a class="headerlink" href="#basic-model-inference" title="Link to this heading">#</a></h2>
+<p>A trained model can be classified into one of three types:</p>
+<ul class="simple">
+<li><p>A PEFT adapter</p></li>
+<li><p>A pre-trained language model in Hugging Face</p></li>
+<li><p>A fully fine-tuned model not using PEFT</p></li>
+</ul>
+<p>Let’s look at achieving model inference using these types of models.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio"/>
+<label class="sd-tab-label" for="sd-tab-item-4">
+Inference using PEFT adapters</label><div class="sd-tab-content docutils">
+<p>To use PEFT adapters like a normal transformer model, you can run the generation by loading a base model along with PEFT
+adapters as follows.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">peft</span> <span class="kn">import</span> <span class="n">PeftModel</span>
+<span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">AutoModelForCausalLM</span>
+
+<span class="c1"># Set the path of the model or the name on Hugging face hub</span>
+<span class="n">base_model_name</span> <span class="o">=</span> <span class="s2">"meta-llama/Llama-2-7b-chat-hf"</span>
+
+<span class="c1"># Set the path of the adapter</span>
+<span class="n">adapter_name</span> <span class="o">=</span> <span class="s2">"Llama-2-7b-enhanced-adpater"</span>
+
+<span class="c1"># Load base model</span>
+<span class="n">base_model</span> <span class="o">=</span> <span class="n">AutoModelForCausalLM</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">base_model_name</span><span class="p">)</span>
+
+<span class="c1"># Adapt the base model with the adapter</span>
+<span class="n">new_model</span> <span class="o">=</span> <span class="n">PeftModel</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">base_model</span><span class="p">,</span> <span class="n">adapter_name</span><span class="p">)</span>
+
+<span class="c1"># Then, run generation as the same with a normal model outlined in 2.1</span>
+</pre></div>
+</div>
+<p>The PEFT library provides a <code class="docutils literal notranslate"><span class="pre">merge_and_unload</span></code> method, which merges the adapter layers into the base model. This is
+needed if someone wants to save the adapted model into local storage and use it as a normal standalone model.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load base model</span>
+<span class="n">base_model</span> <span class="o">=</span> <span class="n">AutoModelForCausalLM</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">base_model_name</span><span class="p">)</span>
+
+<span class="c1"># Adapt the base model with the adapter</span>
+<span class="n">new_model</span> <span class="o">=</span> <span class="n">PeftModel</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">base_model</span><span class="p">,</span> <span class="n">adapter_name</span><span class="p">)</span>
+
+<span class="c1"># Merge adapter</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">merge_and_unload</span><span class="p">()</span>
+
+<span class="c1"># Save the merged model into local</span>
+<span class="n">model</span><span class="o">.</span><span class="n">save_pretrained</span><span class="p">(</span><span class="s2">"merged_adpaters"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio"/>
+<label class="sd-tab-label" for="sd-tab-item-5">
+Inference using pre-trained or fully fine-tuned models</label><div class="sd-tab-content docutils">
+<p>If you have a fully fine-tuned model not using PEFT, you can load it like any other pre-trained language model in
+<a class="reference external" href="https://huggingface.co/docs/hub/en/index">Hugging Face Hub</a> using the <a class="reference external" href="https://huggingface.co/docs/transformers/en/index">Transformers</a> library.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import relevant class for loading model and tokenizer</span>
+<span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">AutoTokenizer</span><span class="p">,</span> <span class="n">AutoModelForCausalLM</span>
+
+<span class="c1"># Set the pre-trained model name on Hugging face hub</span>
+<span class="n">model_name</span> <span class="o">=</span> <span class="s2">"meta-llama/Llama-2-7b-chat-hf"</span>
+
+<span class="c1"># Set device type</span>
+<span class="n">device</span> <span class="o">=</span> <span class="s2">"cuda:0"</span>
+
+<span class="c1"># Load model and tokenizer</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">AutoModelForCausalLM</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span>
+
+<span class="c1"># Input prompt encoding</span>
+<span class="n">query</span> <span class="o">=</span> <span class="s2">"What is a large language model?"</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="s2">"pt"</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+<span class="c1"># Token generation</span>
+<span class="n">outputs</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+
+<span class="c1"># Outputs decoding</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tokenizer</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">outputs</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+</pre></div>
+</div>
+<p>In addition, pipelines from Transformers offer simple APIs to use pre-trained models for different tasks, including
+sentiment analysis, feature extraction, question answering and so on. You can use the pipeline abstraction to achieve
+model inference easily.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import relevant class for loading model and tokenizer</span>
+<span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">pipeline</span>
+
+<span class="c1"># Set the path of your model or the name on Hugging face hub</span>
+<span class="n">model_name_or_path</span> <span class="o">=</span> <span class="s2">"meta-llama/Llama-2-7b-chat-hf"</span>
+
+<span class="c1"># Set pipeline</span>
+<span class="c1"># A positive device value will run the model on associated CUDA device id</span>
+<span class="n">pipe</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="s2">"text-generation"</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="n">model_name_or_path</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Token generation</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pipe</span><span class="p">(</span><span class="s2">"What is a large language model?"</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s2">"generated_text"</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If using multiple accelerators, see
+<a class="reference internal" href="multi-gpu-fine-tuning-and-inference.html#fine-tuning-llms-multi-gpu-hugging-face-accelerate"><span class="std std-ref">Multi-accelerator fine-tuning and inference</span></a> to explore
+popular libraries that simplify fine-tuning and inference in a multi-accelerator system.</p>
+<p>Read more about inference frameworks like vLLM and Hugging Face TGI in
+<a class="reference internal" href="llm-inference-frameworks.html"><span class="doc">LLM inference frameworks</span></a>.</p>
+</section>
+</section>
+</article>
+<footer class="prev-next-footer d-print-none">
+<div class="prev-next-area">
+<a class="left-prev" href="fine-tuning-and-inference.html" title="previous page">
+<i class="fa-solid fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">Fine-tuning and inference</p>
+</div>
+</a>
+<a class="right-next" href="multi-gpu-fine-tuning-and-inference.html" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">Fine-tuning and inference using multiple accelerators</p>
+</div>
+<i class="fa-solid fa-angle-right"></i>
+</a>
+</div>
+</footer>
+</div>
+<div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+<div class="sidebar-secondary-item">
+<div class="page-toc tocsection onthispage">
+<i class="fa-solid fa-list"></i> Contents
+  </div>
+<nav class="bd-toc-nav page-toc">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-setup">Environment setup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-the-base-implementation-environment">Setting up the base implementation environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-the-base-model-and-fine-tuning-dataset">Download the base model and fine-tuning dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-fine-tuning-parameters">Configure fine-tuning parameters</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fine-tuning">Fine-tuning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-adapters-or-fully-fine-tuned-models">Saving adapters or fully fine-tuned models</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-model-inference">Basic model inference</a></li>
+</ul>
+</nav></div>
+</div></div>
+</div>
+<footer class="bd-footer-content">
+<p>
+</p>
+</footer>
+</main>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+<footer class="rocm-footer">
+<div class="container-lg">
+<section class="bottom-menu menu py-45">
+<div class="row d-flex align-items-center">
+<div class="col-12 text-center">
+<ul>
+<li><a href="https://www.amd.com/en/corporate/copyright" target="_blank">Terms and Conditions</a></li>
+<li><a href="https://rocm.docs.amd.com/en/develop/about/license.html">ROCm Licenses and Disclaimers</a></li>
+<li><a href="https://www.amd.com/en/corporate/privacy" target="_blank">Privacy</a></li>
+<li><a href="https://www.amd.com/en/corporate/trademarks" target="_blank">Trademarks</a></li>
+<li><a href="https://www.amd.com/system/files/documents/statement-human-trafficking-forced-labor.pdf" target="_blank">Statement on Forced Labor</a></li>
+<li><a href="https://www.amd.com/en/corporate/competition" target="_blank">Fair and Open Competition</a></li>
+<li><a href="https://www.amd.com/system/files/documents/amd-uk-tax-strategy.pdf" target="_blank">UK Tax Strategy</a></li>
+<li><a href="https://www.amd.com/en/corporate/cookies" target="_blank">Cookie Policy</a></li>
+<!-- OneTrust Cookies Settings button start -->
+<li><a class="ot-sdk-show-settings" href="#cookie-settings" id="ot-sdk-btn">Cookie Settings</a></li>
+<!-- OneTrust Cookies Settings button end -->
+</ul>
+</div>
+</div>
+<div class="row d-flex align-items-center">
+<div class="col-12 text-center">
+<div>
+<span class="copyright">© 2024 Advanced Micro Devices, Inc</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+</footer>
+<!-- <div id="rdc-watermark-container">
+    <img id="rdc-watermark" src="../../_static/images/alpha-watermark.svg" alt="DRAFT watermark"/>
+</div> -->
+</body>
+</html>

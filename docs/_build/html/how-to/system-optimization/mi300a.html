@@ -1,0 +1,834 @@
+
+<!DOCTYPE html>
+
+<html data-content_root="../../" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="AMD Instinct MI300A system settings" name="description"/>
+<meta content="AMD, Instinct, MI300A, HPC, tuning, BIOS settings, NBIO, ROCm, environment variable, performance, accelerator, GPU, EPYC, GRUB, operating system" name="keywords"/>
+<title>AMD Instinct MI300A system optimization — ROCm Documentation</title>
+<script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+<!-- Loaded before other Sphinx assets -->
+<link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../../_static/pygments.css?v=a746c00c" rel="stylesheet" type="text/css"/>
+<link href="../../_static/styles/sphinx-book-theme.css?v=a3416100" rel="stylesheet" type="text/css"/>
+<link href="../../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
+<link href="../../_static/custom.css?v=da61d430" rel="stylesheet" type="text/css"/>
+<link href="../../_static/rocm_header.css?v=4044f309" rel="stylesheet" type="text/css"/>
+<link href="../../_static/rocm_footer.css?v=25204c5a" rel="stylesheet" type="text/css"/>
+<link href="../../_static/fonts.css?v=fcff5274" rel="stylesheet" type="text/css"/>
+<link href="../../_static/sphinx-design.min.css?v=87e54e7c" rel="stylesheet" type="text/css"/>
+<link href="../../_static/rocm_custom.css?v=ace7df76" rel="stylesheet" type="text/css"/>
+<link href="../../_static/rocm_rn.css?v=0e8af9ba" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" rel="preload"/>
+<link as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" rel="preload"/>
+<script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/documentation_options.js?v=bc0531d1"></script>
+<script src="../../_static/doctools.js?v=9a2dae69"></script>
+<script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+<script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+<script src="../../_static/copybutton.js?v=f281be69"></script>
+<script async="async" src="../../_static/code_word_breaks.js?v=327952c4"></script>
+<script async="async" src="../../_static/renameVersionLinks.js?v=929fe5e4"></script>
+<script async="async" src="../../_static/rdcMisc.js?v=01f88d96"></script>
+<script async="async" src="../../_static/theme_mode_captions.js?v=15f4ec5d"></script>
+<script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+<script src="../../_static/design-tabs.js?v=f930bc37"></script>
+<script>DOCUMENTATION_OPTIONS.pagename = 'how-to/system-optimization/mi300a';</script>
+<script async="async" src="https://download.amd.com/js/analytics/analyticsinit.js"></script>
+<link href="rocm-stg.amd.com/how-to/system-optimization/mi300a.html" rel="canonical"/>
+<link href="https://www.amd.com/content/dam/code/images/favicon/favicon.ico" rel="icon"/>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<link href="mi200.html" rel="next" title="AMD Instinct MI200 system optimization"/>
+<link href="mi300x.html" rel="prev" title="AMD Instinct MI300X system optimization"/>
+<meta content="vo35SZt_GASsTHAEmdww7AYKPCvZyzLvOXBl8guBME4" name="google-site-verification"/>
+</head>
+<body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="" data-offset="180">
+<div class="skip-link d-print-none" id="pst-skip-link"><a href="#main-content">Skip to main content</a></div>
+<div id="pst-scroll-pixel-helper"></div>
+<button class="btn rounded-pill" id="pst-back-to-top" type="button">
+<i class="fa-solid fa-arrow-up"></i>Back to top</button>
+<input class="sidebar-toggle" id="pst-primary-sidebar-checkbox" type="checkbox"/>
+<label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+<input class="sidebar-toggle" id="pst-secondary-sidebar-checkbox" type="checkbox"/>
+<label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
+<form action="../../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input aria-label="Search..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search..." spellcheck="false" type="search"/>
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+</div>
+<div class="pst-async-banner-revealer d-none">
+<aside aria-label="Version warning" class="d-none d-print-none" id="bd-header-version-warning"></aside>
+</div>
+<aside aria-label="Announcement" class="bd-header-announcement">
+<div class="bd-header-announcement__content">This page contains proposed changes for a future release of ROCm. Read the <a href="https://rocm.docs.amd.com/en/latest/" id="rocm-banner">latest Linux release of ROCm documentation</a> for your production environments.</div>
+</aside>
+<header class="common-header">
+<nav class="navbar navbar-expand-xl">
+<div class="container-fluid main-nav rocm-header">
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler collapsed" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" data-tracking-information="mainMenuToggle" id="nav-icon" type="button">
+<span></span>
+<span></span>
+<span></span>
+</button>
+<div class="header-logo">
+<a class="navbar-brand" href="https://www.amd.com/">
+<img alt="AMD Logo" class="d-inline-block align-text-top hover-opacity" src="../../_static/images/amd-header-logo.svg" title="AMD Logo" width="90"/>
+</a>
+<div class="vr vr mx-40 my-25"></div>
+<a class="klavika-font hover-opacity" href="https://rocm.docs.amd.com/en/develop">ROCm™ Software Future Release</a>
+<a class="header-all-versions" href="https://rocm.docs.amd.com/en/latest/release/versions.html">Version List</a>
+</div>
+<div class="icon-nav text-center d-flex ms-auto">
+</div>
+</div>
+</nav>
+<nav class="navbar navbar-expand-xl second-level-nav">
+<div class="container-fluid main-nav">
+<div class="navbar-nav-container collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav nav-mega me-auto mb-2 mb-lg-0 col-xl-10">
+<li class="nav-item">
+<a aria-expanded="false" class="nav-link top-level header-menu-links" href="https://github.com/ROCm/ROCm" id="navgithub" role="button" target="_blank">
+                                GitHub
+                            </a>
+</li>
+<li class="nav-item">
+<a aria-expanded="false" class="nav-link top-level header-menu-links" href="https://github.com/ROCm/ROCm/discussions" id="navcommunity" role="button" target="_blank">
+                                Community
+                            </a>
+</li>
+<li class="nav-item">
+<a aria-expanded="false" class="nav-link top-level header-menu-links" href="https://rocm.blogs.amd.com/" id="navblogs" role="button" target="_blank">
+                                Blogs
+                            </a>
+</li>
+<li class="nav-item">
+<a aria-expanded="false" class="nav-link top-level header-menu-links" href="https://www.amd.com/en/developer/resources/infinity-hub.html" id="navinfinity-hub" role="button" target="_blank">
+                                Infinity Hub
+                            </a>
+</li>
+<li class="nav-item">
+<a aria-expanded="false" class="nav-link top-level header-menu-links" href="https://github.com/ROCm/ROCm/issues/new/choose" id="navsupport" role="button" target="_blank">
+                                Support
+                            </a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+</header>
+<div class="bd-container">
+<div class="bd-container__inner bd-page-width">
+<div class="bd-sidebar-primary bd-sidebar">
+<div class="sidebar-header-items sidebar-primary__section">
+</div>
+<div class="sidebar-primary-items__start sidebar-primary__section">
+<div class="sidebar-primary-item">
+<a class="navbar-brand logo" href="../../index.html">
+<p class="title logo__title">ROCm Documentation</p>
+</a></div>
+<div class="sidebar-primary-item">
+<script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+<div class="sidebar-primary-item"><nav aria-label="Main" class="bd-links bd-docs-nav">
+<div class="bd-toc-item navbar-nav active">
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../what-is-rocm.html">What is ROCm?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/release-notes.html">Release notes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Install</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-linux/en/develop/">ROCm on Linux</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-windows/en/develop/">HIP SDK on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deep-learning-rocm.html">Deep learning frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../build-rocm.html">Build ROCm from source</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">How to</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../rocm-for-ai/index.html">Using ROCm for AI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../rocm-for-ai/install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rocm-for-ai/train-a-model.html">Training a model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rocm-for-ai/hugging-face-models.html">Running models from Hugging Face</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rocm-for-ai/deploy-your-model.html">Deploying your model</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../rocm-for-hpc/index.html">Using ROCm for HPC</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../llm-fine-tuning-optimization/index.html">Fine-tuning LLMs and inference optimization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../llm-fine-tuning-optimization/overview.html">Conceptual overview</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../llm-fine-tuning-optimization/fine-tuning-and-inference.html">Fine-tuning and inference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../llm-fine-tuning-optimization/single-gpu-fine-tuning-and-inference.html">Using a single accelerator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../llm-fine-tuning-optimization/multi-gpu-fine-tuning-and-inference.html">Using multiple accelerators</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../llm-fine-tuning-optimization/model-quantization.html">Model quantization techniques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../llm-fine-tuning-optimization/model-acceleration-libraries.html">Model acceleration libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../llm-fine-tuning-optimization/llm-inference-frameworks.html">LLM inference frameworks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../llm-fine-tuning-optimization/optimizing-with-composable-kernel.html">Optimizing with Composable Kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../llm-fine-tuning-optimization/optimizing-triton-kernel.html">Optimizing Triton kernels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../llm-fine-tuning-optimization/profiling-and-debugging.html">Profiling and debugging</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">System optimization</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="mi300x.html">AMD Instinct MI300X</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">AMD Instinct MI300A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mi200.html">AMD Instinct MI200</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mi100.html">AMD Instinct MI100</a></li>
+<li class="toctree-l2"><a class="reference internal" href="w6000-v620.html">AMD RDNA 2</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tuning-guides/mi300x/index.html">AMD MI300X performance validation and tuning</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../performance-validation/mi300x/vllm-benchmark.html">Performance validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tuning-guides/mi300x/system.html">System tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tuning-guides/mi300x/workload.html">Workload tuning</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/gpu-cluster-networking/en/develop/index.html">GPU cluster networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gpu-enabled-mpi.html">Using MPI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../system-debugging.html">System debugging</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../conceptual/compiler-topics.html">Using advanced compiler features</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://rocm.docs.amd.com/projects/llvm-project/en/latest/index.html">ROCm compiler infrastructure</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://rocm.docs.amd.com/projects/llvm-project/en/latest/conceptual/using-gpu-sanitizer.html">Using AddressSanitizer</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://rocm.docs.amd.com/projects/llvm-project/en/latest/conceptual/openmp.html">OpenMP support</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../setting-cus.html">Setting the number of CUs</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/amd/rocm-examples">ROCm examples</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Compatibility</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../compatibility/compatibility-matrix.html">Compatibility matrix</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-linux/en/develop/reference/system-requirements.html">Linux system requirements</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-windows/en/develop/reference/system-requirements.html">Windows system requirements</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-linux/en/develop/reference/3rd-party-support-matrix.html">Third-party support</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-linux/en/latest/reference/user-kernel-space-compat-matrix.html">User and kernel-space support matrix</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-linux/en/latest/reference/docker-image-support-matrix.html">Docker image support matrix</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/radeon/en/latest/index.html">Use ROCm on Radeon GPUs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Conceptual</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../conceptual/gpu-arch.html">GPU architecture overview</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../conceptual/gpu-arch/mi300.html">MI300 microarchitecture</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference external" href="https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/instruction-set-architectures/amd-instinct-mi300-cdna3-instruction-set-architecture.pdf">AMD Instinct MI300/CDNA3 ISA</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/white-papers/amd-cdna-3-white-paper.pdf">White paper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../conceptual/gpu-arch/mi300-mi200-performance-counters.html">MI300 and MI200 Performance counter</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../conceptual/gpu-arch/mi250.html">MI250 microarchitecture</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference external" href="https://www.amd.com/system/files/TechDocs/instinct-mi200-cdna2-instruction-set-architecture.pdf">AMD Instinct MI200/CDNA2 ISA</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://www.amd.com/system/files/documents/amd-cdna2-white-paper.pdf">White paper</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../conceptual/gpu-arch/mi100.html">MI100 microarchitecture</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference external" href="https://www.amd.com/system/files/TechDocs/instinct-mi100-cdna1-shader-instruction-set-architecture%C2%A0.pdf">AMD Instinct MI100/CDNA1 ISA</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://www.amd.com/system/files/documents/amd-cdna-whitepaper.pdf">White paper</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conceptual/gpu-memory.html">GPU memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conceptual/file-reorg.html">File structure (Linux FHS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conceptual/gpu-isolation.html">GPU isolation techniques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conceptual/cmake-packages.html">Using CMake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conceptual/More-about-how-ROCm-uses-PCIe-Atomics.html">ROCm &amp; PCIe atomics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conceptual/ai-pytorch-inception.html">Inception v3 with PyTorch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conceptual/oversubscription.html">Oversubscription of hardware resources</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../reference/api-libraries.html">ROCm libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/rocm-tools.html">ROCm tools, compilers, and runtimes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/gpu-arch-specs.html">Accelerator and GPU hardware specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference/precision-support.html">Precision support</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contribute</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../contribute/contributing.html">Contributing to the ROCm docmentation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/toolchain.html">ROCm documentation toolchain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../contribute/building.html">Building documentation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contribute/feedback.html">Providing feedback about the ROCm documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/license.html">ROCm licenses</a></li>
+</ul>
+</div>
+</nav></div>
+</div>
+<div class="sidebar-primary-items__end sidebar-primary__section">
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<main class="bd-main" id="main-content" role="main">
+<div class="sbt-scroll-pixel-helper"></div>
+<div class="bd-content">
+<div class="bd-article-container">
+<div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+<div class="header-article-items__start">
+<div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__primary" title="Toggle primary sidebar">
+<span class="fa-solid fa-angle-right"></span>
+</label></div>
+<div class="header-article-item">
+<nav aria-label="Breadcrumb" class="d-print-none">
+<ul class="bd-breadcrumbs">
+<li class="breadcrumb-item breadcrumb-home">
+<a aria-label="Home" class="nav-link" href="../../index.html">
+<i class="fa-solid fa-home"></i>
+</a>
+</li>
+<li class="breadcrumb-item"><a class="nav-link" href="index.html">System optimization</a></li>
+<li aria-current="page" class="breadcrumb-item active">AMD...</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="header-article-items__end">
+<div class="header-article-item">
+<div class="article-header-buttons">
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Toggle secondary sidebar">
+<span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+</div>
+</div>
+</div>
+<div class="onlyprint" id="jb-print-docs-body">
+<h1>AMD Instinct MI300A system optimization</h1>
+<!-- Table of contents -->
+<div id="print-main-content">
+<div id="jb-print-toc">
+<div>
+<h2> Contents </h2>
+</div>
+<nav aria-label="Page">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-settings">System settings</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#system-bios-settings">System BIOS settings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grub-settings">GRUB settings</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appending-strings-using-the-linux-command-line">Appending strings using the Linux command line</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#validating-the-iommu-setting">Validating the IOMMU setting</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#update-grub">Update GRUB</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operating-system-settings">Operating system settings</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-management">System management</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hardware-verification-with-rocm">Hardware verification with ROCm</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-inter-device-bandwidth">Testing inter-device bandwidth</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#abbreviations">Abbreviations</a></li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div id="searchbox"></div>
+<article class="bd-article">
+<section id="amd-instinct-mi300a-system-optimization">
+<h1>AMD Instinct MI300A system optimization<a class="headerlink" href="#amd-instinct-mi300a-system-optimization" title="Link to this heading">#</a></h1><div class="sd-container-fluid sd-sphinx-override sd-p-0 sd-mt-2 sd-mb-4 sd-p-2 sd-rounded-1 docutils" id="rocm-docs-core-article-info">
+<div class="sd-row sd-row-cols-2 sd-gx-2 sd-gy-1 docutils">
+<div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils" style="color:gray;">
+    Applies to Linux and Windows
+</div>
+<div class="sd-col sd-d-flex-row sd-align-minor-center docutils">
+<div class="sd-container-fluid sd-sphinx-override docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 sd-gx-3 sd-gy-1 docutils">
+<div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils">
+<p class="sd-p-0 sd-m-0" style="color:gray;"></p>
+</div>
+<div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils">
+<p class="sd-p-0 sd-m-0" style="color:gray;"><span class="sd-pr-2"><svg aria-hidden="true" class="sd-octicon sd-octicon-calendar" height="16.0px" version="1.1" viewbox="0 0 16 16" width="16.0px"><path d="M4.75 0a.75.75 0 01.75.75V2h5V.75a.75.75 0 011.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0113.25 16H2.75A1.75 1.75 0 011 14.25V3.75C1 2.784 1.784 2 2.75 2H4V.75A.75.75 0 014.75 0zm0 3.5h8.5a.25.25 0 01.25.25V6h-11V3.75a.25.25 0 01.25-.25h2zm-2.25 4v6.75c0 .138.112.25.25.25h10.5a.25.25 0 00.25-.25V7.5h-11z" fill-rule="evenodd"></path></svg></span>2024-09-03</p>
+</div>
+<div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils">
+<p class="sd-p-0 sd-m-0" style="color:gray;"><span class="sd-pr-2"><svg aria-hidden="true" class="sd-octicon sd-octicon-clock" height="16.0px" version="1.1" viewbox="0 0 16 16" width="16.0px"><path d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.5 4.75a.75.75 0 00-1.5 0v3.5a.75.75 0 00.471.696l2.5 1a.75.75 0 00.557-1.392L8.5 7.742V4.75z" fill-rule="evenodd"></path></svg></span>16 min read time</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<p>This topic discusses the operating system settings and system management commands for
+the AMD Instinct MI300A accelerator. This topic can help you optimize performance.</p>
+<section id="system-settings">
+<h2>System settings<a class="headerlink" href="#system-settings" title="Link to this heading">#</a></h2>
+<p>This section reviews the system settings required to configure a MI300A SOC system and
+optimize its performance.</p>
+<p>The MI300A system-on-a-chip (SOC) design requires you to review and potentially adjust your OS configuration as explained in
+the <a class="reference internal" href="#operating-system-settings-label"><span class="std std-ref">Operating system settings</span></a> section. These settings are critical for
+performance because the OS on an accelerated processing unit (APU) is responsible for memory management across the CPU and GPU accelerators.
+In the APU memory model, system settings are available to limit GPU memory allocation.
+This limit is important because legacy software often determines the
+amount of allowable memory at start-up time
+by probing discrete memory until it is exhausted. If left unchecked, this practice
+can starve the OS of resources.</p>
+<section id="system-bios-settings">
+<h3>System BIOS settings<a class="headerlink" href="#system-bios-settings" title="Link to this heading">#</a></h3>
+<p>System BIOS settings are preconfigured for optimal performance from the
+platform vendor. This means that you do not need to adjust these settings
+when using MI300A. If you have any questions regarding these settings,
+contact your MI300A platform vendor.</p>
+</section>
+<section id="grub-settings">
+<h3>GRUB settings<a class="headerlink" href="#grub-settings" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">/etc/default/grub</span></code> file is used to configure the GRUB bootloader on modern Linux distributions.
+Linux uses the string assigned to <code class="docutils literal notranslate"><span class="pre">GRUB_CMDLINE_LINUX</span></code> in this file as
+its command line parameters during boot.</p>
+<section id="appending-strings-using-the-linux-command-line">
+<h4>Appending strings using the Linux command line<a class="headerlink" href="#appending-strings-using-the-linux-command-line" title="Link to this heading">#</a></h4>
+<p>It is recommended that you append the following string to <code class="docutils literal notranslate"><span class="pre">GRUB_CMDLINE_LINUX</span></code>.</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">pci=realloc=off</span></code></dt><dd><p>This setting disables the automatic reallocation
+of PCI resources, so Linux is able to unambiguously detect all GPUs on the
+MI300A-based system. It’s used when Single Root I/O Virtualization (SR-IOV) Base
+Address Registers (BARs) have not been allocated by the BIOS. This can help
+avoid potential issues with certain hardware configurations.</p>
+</dd>
+</dl>
+</section>
+<section id="validating-the-iommu-setting">
+<h4>Validating the IOMMU setting<a class="headerlink" href="#validating-the-iommu-setting" title="Link to this heading">#</a></h4>
+<p>IOMMU is a system-specific IO mapping mechanism for DMA mapping
+and isolation. IOMMU is turned off by default in the operating system settings
+for optimal performance.</p>
+<p>To verify IOMMU is turned off, first install the <code class="docutils literal notranslate"><span class="pre">acpica-tools</span></code> package using your
+package manager.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>acpica-tools
+</pre></div>
+</div>
+<p>Then confirm that the following commands do not return any results.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>acpidump<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>IVRS
+sudo<span class="w"> </span>acpidump<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>DMAR
+</pre></div>
+</div>
+</section>
+<section id="update-grub">
+<h4>Update GRUB<a class="headerlink" href="#update-grub" title="Link to this heading">#</a></h4>
+<p>Use this command to update GRUB to use the modified configuration:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>grub2-mkconfig<span class="w"> </span>-o<span class="w"> </span>/boot/grub2/grub.cfg
+</pre></div>
+</div>
+<p>On some Red Hat-based systems, the <code class="docutils literal notranslate"><span class="pre">grub2-mkconfig</span></code> command might not be available. In this case,
+use <code class="docutils literal notranslate"><span class="pre">grub-mkconfig</span></code> instead. Verify that you have the
+correct version by using the following command:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>grub-mkconfig<span class="w"> </span>-version
+</pre></div>
+</div>
+</section>
+</section>
+<section id="operating-system-settings">
+<span id="operating-system-settings-label"></span><h3>Operating system settings<a class="headerlink" href="#operating-system-settings" title="Link to this heading">#</a></h3>
+<p>The operating system provides several options to customize and tune performance. For more information
+about supported operating systems, see the <a class="reference internal" href="../../compatibility/compatibility-matrix.html"><span class="doc">Compatibility matrix</span></a>.</p>
+<p>If you are using a distribution other than RHEL or SLES, the latest Linux kernel is recommended.
+Performance considerations for the Zen4, which is the core architecture in the MI300A,
+require a Linux kernel running version 5.18 or higher.</p>
+<p>This section describes performance-based settings.</p>
+<ul>
+<li><p><strong>Enable transparent huge pages</strong></p>
+<p>To enable transparent huge pages, use one of the following methods:</p>
+<ul>
+<li><p>From the command line, run the following command:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span>always<span class="w"> </span>&gt;<span class="w"> </span>/sys/kernel/mm/transparent_hugepage/enabled
+</pre></div>
+</div>
+</li>
+<li><p>Set the Linux kernel parameter <code class="docutils literal notranslate"><span class="pre">transparent_hugepage</span></code> as follows in the
+relevant <code class="docutils literal notranslate"><span class="pre">.cfg</span></code> file for your system.</p>
+<div class="highlight-cfg notranslate"><div class="highlight"><pre><span></span><span class="na">transparent_hugepage</span><span class="o">=</span><span class="s">always</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>Increase the amount of allocatable memory</strong></p>
+<p>By default, when using a device allocator via HIP, it is only possible to allocate 96 GiB out of
+a possible 128 GiB of memory on the MI300A. This limitation does not affect host allocations.
+To increase the available system memory, load the <code class="docutils literal notranslate"><span class="pre">amdttm</span></code> module with new values for
+<code class="docutils literal notranslate"><span class="pre">pages_limit</span></code> and <code class="docutils literal notranslate"><span class="pre">page_pool_size</span></code>. These numbers correspond to the number of 4 KiB pages of memory.
+To make 128 GiB of memory available across all four devices, for a total amount of 512 GiB,
+set <code class="docutils literal notranslate"><span class="pre">pages_limit</span></code> and <code class="docutils literal notranslate"><span class="pre">page_pool_size</span></code> to <code class="docutils literal notranslate"><span class="pre">134217728</span></code>. For a two-socket system, divide these values
+by two. After setting these values, reload the AMDGPU driver.</p>
+<p>First, review the current settings using this shell command:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>/sys/module/amdttm/parameters/pages_limit
+</pre></div>
+</div>
+<p>To set the amount of allocatable memory to all available memory on all four APU devices, run these commands:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>modprobe<span class="w"> </span>amdttm<span class="w"> </span><span class="nv">pages_limit</span><span class="o">=</span><span class="m">134217728</span><span class="w"> </span><span class="nv">page_pool_size</span><span class="o">=</span><span class="m">134217728</span>
+sudo<span class="w"> </span>modprobe<span class="w"> </span>amdgpu
+</pre></div>
+</div>
+<p>These settings can also be hardcoded in the <code class="docutils literal notranslate"><span class="pre">/etc/modprobe.d/amdttm.conf</span></code> file or specified as boot
+parameters.</p>
+<p>To use the hardcoded method,
+the filesystem must already be set up when the kernel driver is loaded.
+To hardcode the settings, add the following lines to <code class="docutils literal notranslate"><span class="pre">/etc/modprobe.d/amdttm.conf</span></code>:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>options<span class="w"> </span>amdttm<span class="w"> </span><span class="nv">pages_limit</span><span class="o">=</span><span class="m">134217728</span>
+options<span class="w"> </span>amdttm<span class="w"> </span><span class="nv">page_pool_size</span><span class="o">=</span><span class="m">134217728</span>
+</pre></div>
+</div>
+<p>If the filesystem is not already set up when the kernel driver is loaded, then the options
+must be specified as boot parameters. To specify the settings
+as boot parameters when loading the kernel, use this example as a guideline:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>vmlinux-<span class="o">[</span>...<span class="o">]</span><span class="w"> </span>amdttm.pages_limit<span class="o">=</span><span class="m">134217728</span><span class="w"> </span>amdttm.page_pool_size<span class="o">=</span><span class="m">134217728</span><span class="w"> </span><span class="o">[</span>...<span class="o">]</span>
+</pre></div>
+</div>
+<p>To verify the new settings and confirm the change, use this command:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>/sys/module/amdttm/parameters/pages_limit
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The system settings for <code class="docutils literal notranslate"><span class="pre">pages_limit</span></code> and <code class="docutils literal notranslate"><span class="pre">page_pool_size</span></code> are calculated by multiplying the
+per-APU limit of 4 KiB pages, which is <code class="docutils literal notranslate"><span class="pre">33554432</span></code>, by the number of APUs on the node. The limit for a system with
+two APUs <code class="docutils literal notranslate"><span class="pre">33554432</span> <span class="pre">x</span> <span class="pre">2</span></code> or <code class="docutils literal notranslate"><span class="pre">67108864</span></code>.
+This means the <code class="docutils literal notranslate"><span class="pre">modprobe</span></code> command for two APUs is <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">modprobe</span> <span class="pre">amdttm</span> <span class="pre">pages_limit=67108864</span> <span class="pre">page_pool_size=67108864</span></code>.</p>
+</div>
+</li>
+<li><p><strong>Limit the maximum and single memory allocations on the GPU</strong></p>
+<p>Many AI-related applications were originally developed on discrete GPUs. Some of these applications
+have fixed problem sizes associated with the targeted GPU size, and some attempt to determine the
+system memory limits by allocating chunks until failure. These techniques can cause issues in an
+APU with a shared space.</p>
+<p>To allow these applications to run on the APU without further changes,
+ROCm supports a default memory policy that restricts the percentage of the GPU that can be allocated.
+The following environment variables control this feature:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">GPU_MAX_ALLOC_PERCENT</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GPU_SINGLE_ALLOC_PERCENT</span></code></p></li>
+</ul>
+<p>These settings can be added to the default shell environment or the user environment. The effect of the memory allocation
+settings varies depending on the system, configuration, and task. They might require adjustment, especially when performing GPU benchmarks. Setting these values to <code class="docutils literal notranslate"><span class="pre">100</span></code>
+lets the GPU allocate any amount of free memory. However, the risk of encountering
+an operating system out-of-memory (OMM) condition increases when almost
+all the available memory is used.</p>
+<p>Before setting either of these items to 100 percent,
+carefully consider the expected CPU workload allocation and the anticipated OS usage.
+For instance, if the OS requires 8GB on a 128GB system, setting these
+variables to <code class="docutils literal notranslate"><span class="pre">100</span></code> authorizes a single
+workload to allocate up to 120GB of memory. Unless the system has swap space configured
+any over-allocation attempts will be handled by the OMM policies.</p>
+</li>
+<li><p><strong>Disable NUMA (Non-uniform memory access) balancing</strong></p>
+<p>ROCm uses information from the compiled application to ensure an affinity exists
+between the GPU agent processes and their CPU hosts or co-processing agents.
+Because the APU has OS threads,
+including threads with memory management, the default kernel NUMA policies can
+adversely impact workload performance without additional tuning.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>At the kernel level, <code class="docutils literal notranslate"><span class="pre">pci_relloc</span></code> can also be set to <code class="docutils literal notranslate"><span class="pre">off</span></code> as an additional tuning measure.</p>
+</div>
+<p>To disable NUMA balancing, use one of the following methods:</p>
+<ul>
+<li><p>From the command line, run the following command:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>&gt;<span class="w"> </span>/proc/sys/kernel/numa_balancing
+</pre></div>
+</div>
+</li>
+<li><p>Set the following Linux kernel parameters in the
+relevant <code class="docutils literal notranslate"><span class="pre">.cfg</span></code> file for your system.</p>
+<div class="highlight-cfg notranslate"><div class="highlight"><pre><span></span><span class="na">pci</span><span class="o">=</span><span class="s">realloc=off numa_balancing=disable</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>Enable compaction</strong></p>
+<p>Compaction is necessary for proper MI300A operation because the APU dynamically shares memory
+between the CPU and GPU. Compaction can be done proactively, which reduces
+allocation costs, or performed during allocation, in which case it is part of the background activities.
+Without compaction, the MI300A application performance eventually degrades as fragmentation increases.
+In RHEL distributions, compaction is disabled by default. In Ubuntu, it’s enabled by default.</p>
+<p>To enable compaction, enter the following commands using the command line:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="m">20</span><span class="w"> </span>&gt;<span class="w"> </span>/proc/sys/vm/compaction_proactiveness
+<span class="nb">echo</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>&gt;<span class="w"> </span>/proc/sys/vm/compact_unevictable_allowed
+</pre></div>
+</div>
+</li>
+</ul>
+<ul id="mi300a-processor-affinity">
+<li><p><strong>Change affinity of ROCm helper threads</strong></p>
+<p>Changing the affinity prevents internal ROCm threads from having their CPU core affinity mask
+set to all CPU cores available. With this setting, the threads inherit their parent’s
+CPU core affinity mask. Before adjusting this setting, ensure you thoroughly understand
+your system topology and how the application, runtime environment, and batch system
+set the thread-to-core affinity. If you have any questions regarding this setting,
+contact your MI300A platform vendor or the AMD support team.
+To enable this setting, enter the following command:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">HSA_OVERRIDE_CPU_AFFINITY_DEBUG</span><span class="o">=</span><span class="m">0</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>CPU core states and C-states</strong></p>
+<p>The system BIOS handles these settings for the MI300A.
+They don’t need to be configured on the operating system.</p>
+</li>
+</ul>
+</section>
+</section>
+<section id="system-management">
+<h2>System management<a class="headerlink" href="#system-management" title="Link to this heading">#</a></h2>
+<p>For a complete guide on installing, managing, and uninstalling ROCm on Linux, see
+<a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-linux/en/develop/install/quick-start.html" title="(in ROCm installation on Linux v6.2.4)"><span class="xref std std-doc">Quick-start (Linux)</span></a>. To verify that the
+installation was successful, see the
+<a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-linux/en/develop/install/post-install.html" title="(in ROCm installation on Linux v6.2.4)"><span class="xref std std-doc">Post-installation instructions</span></a> and
+<a class="reference internal" href="../../reference/rocm-tools.html"><span class="doc">ROCm tools</span></a> guides. If verification
+fails, consult the <a class="reference internal" href="../system-debugging.html"><span class="doc">System debugging guide</span></a>.</p>
+<section id="hardware-verification-with-rocm">
+<span id="hw-verification-rocm-label"></span><h3>Hardware verification with ROCm<a class="headerlink" href="#hardware-verification-with-rocm" title="Link to this heading">#</a></h3>
+<p>ROCm includes tools to query the system structure. To query
+the GPU hardware, use the <code class="docutils literal notranslate"><span class="pre">rocm-smi</span></code> command.</p>
+<p><code class="docutils literal notranslate"><span class="pre">rocm-smi</span></code> reports statistics per socket, so the power results combine CPU and GPU utilization.
+In an idle state on a multi-socket system, some power imbalances are expected because
+the distribution of OS threads can keep some APU devices at higher power states.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The MI300A VRAM settings show as <code class="docutils literal notranslate"><span class="pre">N/A</span></code>.</p>
+</div>
+<img alt="Output from the rocm-smi command" src="../../_images/mi300a-rocm-smi-output.png"/>
+<p>The <code class="docutils literal notranslate"><span class="pre">rocm-smi</span> <span class="pre">--showhw</span></code> command shows the available system
+GPUs and their device ID and firmware details.</p>
+<p>In the MI300A hardware settings, the system BIOS handles the UMC RAS. The
+ROCm-supplied GPU driver does not manage this setting.
+This results in a value of <code class="docutils literal notranslate"><span class="pre">DISABLED</span></code> for the <code class="docutils literal notranslate"><span class="pre">UMC</span> <span class="pre">RAS</span></code> setting.</p>
+<img alt="Output from the ``rocm-smi showhw`` command" src="../../_images/mi300a-rocm-smi-showhw-output.png"/>
+<p>To see the system structure, the localization of the GPUs in the system, and the
+fabric connections between the system components, use the <code class="docutils literal notranslate"><span class="pre">rocm-smi</span> <span class="pre">--showtopo</span></code> command.</p>
+<ul class="simple">
+<li><p>The first block of the output shows the distance between the GPUs. The weight is a qualitative
+measure of the “distance” data must travel to reach one GPU from another.
+While the values do not have a precise physical meaning, the higher the value the
+more hops are required to reach the destination from the source GPU.</p></li>
+<li><p>The second block contains a matrix named “Hops between two GPUs”, where <code class="docutils literal notranslate"><span class="pre">1</span></code> means
+the two GPUs are directly connected with XGMI, <code class="docutils literal notranslate"><span class="pre">2</span></code> means both GPUs are linked to the
+same CPU socket and GPU communications go through the CPU, and <code class="docutils literal notranslate"><span class="pre">3</span></code> means
+both GPUs are linked to different CPU sockets so communications go
+through both CPU sockets.</p></li>
+<li><p>The third block indicates the link types between the GPUs. This can either be
+<code class="docutils literal notranslate"><span class="pre">XGMI</span></code> for AMD Infinity Fabric links or <code class="docutils literal notranslate"><span class="pre">PCIE</span></code> for PCIe Gen4 links.</p></li>
+<li><p>The fourth block reveals the localization of a GPU with respect to the NUMA organization
+of the shared memory of the AMD EPYC processors.</p></li>
+</ul>
+<img alt="Output from the ``rocm-smi showtopo`` command" src="../../_images/mi300a-rocm-smi-showtopo-output.png"/>
+</section>
+<section id="testing-inter-device-bandwidth">
+<h3>Testing inter-device bandwidth<a class="headerlink" href="#testing-inter-device-bandwidth" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">rocm-smi</span> <span class="pre">--showtopo</span></code> command from the <a class="reference internal" href="#hw-verification-rocm-label"><span class="std std-ref">Hardware verification with ROCm</span></a> section
+displays the system structure and shows how the GPUs are located and connected within this
+structure. For more information, use the <a class="reference external" href="https://rocm.docs.amd.com/projects/rocm_bandwidth_test/en/master/index.html" title="(in rocm_bandwidth_test)"><span class="xref std std-doc">ROCm Bandwidth Test</span></a>, which can run benchmarks to
+show the effective link bandwidth between the system components.</p>
+<p>For information on how to install the ROCm Bandwidth Test, see <a class="reference external" href="https://rocm.docs.amd.com/projects/rocm_bandwidth_test/en/master/install/install.html" title="(in rocm_bandwidth_test)"><span class="xref std std-doc">Building the environment</span></a>.</p>
+<p>The output lists the available compute devices (CPUs and GPUs), including
+their device ID and PCIe ID:</p>
+<img alt="Output from the rocm-bandwidth-test utility" src="../../_images/mi300a-rocm-bandwidth-test-output.png"/>
+<p>It also displays the measured bandwidth for unidirectional and
+bidirectional transfers between the devices on the CPU and GPU:</p>
+<img alt="Bandwidth information from the rocm-bandwidth-test utility" src="../../_images/mi300a-rocm-peak-bandwidth-output.png"/>
+</section>
+</section>
+<section id="abbreviations">
+<h2>Abbreviations<a class="headerlink" href="#abbreviations" title="Link to this heading">#</a></h2>
+<dl class="simple">
+<dt>APBDIS</dt><dd><p>Algorithmic Performance Boost Disable</p>
+</dd>
+<dt>APU</dt><dd><p>Accelerated processing unit</p>
+</dd>
+<dt>BAR</dt><dd><p>Base Address Register</p>
+</dd>
+<dt>BIOS</dt><dd><p>Basic Input/Output System</p>
+</dd>
+<dt>CBS</dt><dd><p>Common BIOS Settings</p>
+</dd>
+<dt>CCD</dt><dd><p>Compute Core Die</p>
+</dd>
+<dt>CDNA</dt><dd><p>Compute DNA</p>
+</dd>
+<dt>CLI</dt><dd><p>Command Line Interface</p>
+</dd>
+<dt>CPU</dt><dd><p>Central Processing Unit</p>
+</dd>
+<dt>cTDP</dt><dd><p>Configurable Thermal Design Power</p>
+</dd>
+<dt>DF</dt><dd><p>Data Fabric</p>
+</dd>
+<dt>DMA</dt><dd><p>Direct Memory Access</p>
+</dd>
+<dt>GPU</dt><dd><p>Graphics Processing Unit</p>
+</dd>
+<dt>GRUB</dt><dd><p>Grand Unified Bootloader</p>
+</dd>
+<dt>HBM</dt><dd><p>High Bandwidth Memory</p>
+</dd>
+<dt>HPC</dt><dd><p>High Performance Computing</p>
+</dd>
+<dt>IOMMU</dt><dd><p>Input-Output Memory Management Unit</p>
+</dd>
+<dt>ISA</dt><dd><p>Instruction Set Architecture</p>
+</dd>
+<dt>NBIO</dt><dd><p>North Bridge Input/Output</p>
+</dd>
+<dt>NUMA</dt><dd><p>Non-Uniform Memory Access</p>
+</dd>
+<dt>OMM</dt><dd><p>Out of Memory</p>
+</dd>
+<dt>PCI</dt><dd><p>Peripheral Component Interconnect</p>
+</dd>
+<dt>PCIe</dt><dd><p>PCI Express</p>
+</dd>
+<dt>POR</dt><dd><p>Power-On Reset</p>
+</dd>
+<dt>RAS</dt><dd><p>Reliability, availability and serviceability</p>
+</dd>
+<dt>SMI</dt><dd><p>System Management Interface</p>
+</dd>
+<dt>SMT</dt><dd><p>Simultaneous Multi-threading</p>
+</dd>
+<dt>SOC</dt><dd><p>System On Chip</p>
+</dd>
+<dt>SR-IOV</dt><dd><p>Single Root I/O Virtualization</p>
+</dd>
+<dt>TSME</dt><dd><p>Transparent Secure Memory Encryption</p>
+</dd>
+<dt>UMC</dt><dd><p>Unified Memory Controller</p>
+</dd>
+<dt>VRAM</dt><dd><p>Video RAM</p>
+</dd>
+<dt>xGMI</dt><dd><p>Inter-chip Global Memory Interconnect</p>
+</dd>
+</dl>
+</section>
+</section>
+</article>
+<footer class="prev-next-footer d-print-none">
+<div class="prev-next-area">
+<a class="left-prev" href="mi300x.html" title="previous page">
+<i class="fa-solid fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">AMD Instinct MI300X system optimization</p>
+</div>
+</a>
+<a class="right-next" href="mi200.html" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">AMD Instinct MI200 system optimization</p>
+</div>
+<i class="fa-solid fa-angle-right"></i>
+</a>
+</div>
+</footer>
+</div>
+<div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+<div class="sidebar-secondary-item">
+<div class="page-toc tocsection onthispage">
+<i class="fa-solid fa-list"></i> Contents
+  </div>
+<nav class="bd-toc-nav page-toc">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-settings">System settings</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#system-bios-settings">System BIOS settings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grub-settings">GRUB settings</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#appending-strings-using-the-linux-command-line">Appending strings using the Linux command line</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#validating-the-iommu-setting">Validating the IOMMU setting</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#update-grub">Update GRUB</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operating-system-settings">Operating system settings</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-management">System management</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hardware-verification-with-rocm">Hardware verification with ROCm</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-inter-device-bandwidth">Testing inter-device bandwidth</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#abbreviations">Abbreviations</a></li>
+</ul>
+</nav></div>
+</div></div>
+</div>
+<footer class="bd-footer-content">
+<p>
+</p>
+</footer>
+</main>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+<footer class="rocm-footer">
+<div class="container-lg">
+<section class="bottom-menu menu py-45">
+<div class="row d-flex align-items-center">
+<div class="col-12 text-center">
+<ul>
+<li><a href="https://www.amd.com/en/corporate/copyright" target="_blank">Terms and Conditions</a></li>
+<li><a href="https://rocm.docs.amd.com/en/develop/about/license.html">ROCm Licenses and Disclaimers</a></li>
+<li><a href="https://www.amd.com/en/corporate/privacy" target="_blank">Privacy</a></li>
+<li><a href="https://www.amd.com/en/corporate/trademarks" target="_blank">Trademarks</a></li>
+<li><a href="https://www.amd.com/system/files/documents/statement-human-trafficking-forced-labor.pdf" target="_blank">Statement on Forced Labor</a></li>
+<li><a href="https://www.amd.com/en/corporate/competition" target="_blank">Fair and Open Competition</a></li>
+<li><a href="https://www.amd.com/system/files/documents/amd-uk-tax-strategy.pdf" target="_blank">UK Tax Strategy</a></li>
+<li><a href="https://www.amd.com/en/corporate/cookies" target="_blank">Cookie Policy</a></li>
+<!-- OneTrust Cookies Settings button start -->
+<li><a class="ot-sdk-show-settings" href="#cookie-settings" id="ot-sdk-btn">Cookie Settings</a></li>
+<!-- OneTrust Cookies Settings button end -->
+</ul>
+</div>
+</div>
+<div class="row d-flex align-items-center">
+<div class="col-12 text-center">
+<div>
+<span class="copyright">© 2024 Advanced Micro Devices, Inc</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+</footer>
+<!-- <div id="rdc-watermark-container">
+    <img id="rdc-watermark" src="../../_static/images/alpha-watermark.svg" alt="DRAFT watermark"/>
+</div> -->
+</body>
+</html>

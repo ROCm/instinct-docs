@@ -1,0 +1,1175 @@
+
+<!DOCTYPE html>
+
+<html data-content_root="../" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>ROCm 6.2.2 release notes — ROCm Documentation</title>
+<script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+<!-- Loaded before other Sphinx assets -->
+<link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" rel="preload" type="font/woff2"/>
+<link href="../_static/pygments.css?v=a746c00c" rel="stylesheet" type="text/css"/>
+<link href="../_static/styles/sphinx-book-theme.css?v=a3416100" rel="stylesheet" type="text/css"/>
+<link href="../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
+<link href="../_static/custom.css?v=da61d430" rel="stylesheet" type="text/css"/>
+<link href="../_static/rocm_header.css?v=4044f309" rel="stylesheet" type="text/css"/>
+<link href="../_static/rocm_footer.css?v=25204c5a" rel="stylesheet" type="text/css"/>
+<link href="../_static/fonts.css?v=fcff5274" rel="stylesheet" type="text/css"/>
+<link href="../_static/sphinx-design.min.css?v=87e54e7c" rel="stylesheet" type="text/css"/>
+<link href="../_static/rocm_custom.css?v=ace7df76" rel="stylesheet" type="text/css"/>
+<link href="../_static/rocm_rn.css?v=0e8af9ba" rel="stylesheet" type="text/css"/>
+<!-- Pre-loaded scripts that we'll load fully later -->
+<link as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" rel="preload"/>
+<link as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" rel="preload"/>
+<script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/documentation_options.js?v=bc0531d1"></script>
+<script src="../_static/doctools.js?v=9a2dae69"></script>
+<script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+<script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+<script src="../_static/copybutton.js?v=f281be69"></script>
+<script async="async" src="../_static/code_word_breaks.js?v=327952c4"></script>
+<script async="async" src="../_static/renameVersionLinks.js?v=929fe5e4"></script>
+<script async="async" src="../_static/rdcMisc.js?v=01f88d96"></script>
+<script async="async" src="../_static/theme_mode_captions.js?v=15f4ec5d"></script>
+<script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+<script src="../_static/design-tabs.js?v=f930bc37"></script>
+<script>DOCUMENTATION_OPTIONS.pagename = 'about/release-notes';</script>
+<script async="async" src="https://download.amd.com/js/analytics/analyticsinit.js"></script>
+<link href="rocm-stg.amd.com/about/release-notes.html" rel="canonical"/>
+<link href="https://www.amd.com/content/dam/code/images/favicon/favicon.ico" rel="icon"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="../how-to/deep-learning-rocm.html" rel="next" title="Installing deep learning frameworks for ROCm"/>
+<link href="../what-is-rocm.html" rel="prev" title="What is ROCm?"/>
+<meta content="vo35SZt_GASsTHAEmdww7AYKPCvZyzLvOXBl8guBME4" name="google-site-verification"/>
+</head>
+<body data-bs-root-margin="0px 0px -60%" data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-default-mode="" data-offset="180">
+<div class="skip-link d-print-none" id="pst-skip-link"><a href="#main-content">Skip to main content</a></div>
+<div id="pst-scroll-pixel-helper"></div>
+<button class="btn rounded-pill" id="pst-back-to-top" type="button">
+<i class="fa-solid fa-arrow-up"></i>Back to top</button>
+<input class="sidebar-toggle" id="pst-primary-sidebar-checkbox" type="checkbox"/>
+<label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+<input class="sidebar-toggle" id="pst-secondary-sidebar-checkbox" type="checkbox"/>
+<label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+<div class="search-button__wrapper">
+<div class="search-button__overlay"></div>
+<div class="search-button__search-container">
+<form action="../search.html" class="bd-search d-flex align-items-center" method="get">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input aria-label="Search..." autocapitalize="off" autocomplete="off" autocorrect="off" class="form-control" id="search-input" name="q" placeholder="Search..." spellcheck="false" type="search"/>
+<span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+</div>
+<div class="pst-async-banner-revealer d-none">
+<aside aria-label="Version warning" class="d-none d-print-none" id="bd-header-version-warning"></aside>
+</div>
+<aside aria-label="Announcement" class="bd-header-announcement">
+<div class="bd-header-announcement__content">This page contains proposed changes for a future release of ROCm. Read the <a href="https://rocm.docs.amd.com/en/latest/" id="rocm-banner">latest Linux release of ROCm documentation</a> for your production environments.</div>
+</aside>
+<header class="common-header">
+<nav class="navbar navbar-expand-xl">
+<div class="container-fluid main-nav rocm-header">
+<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler collapsed" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" data-tracking-information="mainMenuToggle" id="nav-icon" type="button">
+<span></span>
+<span></span>
+<span></span>
+</button>
+<div class="header-logo">
+<a class="navbar-brand" href="https://www.amd.com/">
+<img alt="AMD Logo" class="d-inline-block align-text-top hover-opacity" src="../_static/images/amd-header-logo.svg" title="AMD Logo" width="90"/>
+</a>
+<div class="vr vr mx-40 my-25"></div>
+<a class="klavika-font hover-opacity" href="https://rocm.docs.amd.com/en/develop">ROCm™ Software Future Release</a>
+<a class="header-all-versions" href="https://rocm.docs.amd.com/en/latest/release/versions.html">Version List</a>
+</div>
+<div class="icon-nav text-center d-flex ms-auto">
+</div>
+</div>
+</nav>
+<nav class="navbar navbar-expand-xl second-level-nav">
+<div class="container-fluid main-nav">
+<div class="navbar-nav-container collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav nav-mega me-auto mb-2 mb-lg-0 col-xl-10">
+<li class="nav-item">
+<a aria-expanded="false" class="nav-link top-level header-menu-links" href="https://github.com/ROCm/ROCm" id="navgithub" role="button" target="_blank">
+                                GitHub
+                            </a>
+</li>
+<li class="nav-item">
+<a aria-expanded="false" class="nav-link top-level header-menu-links" href="https://github.com/ROCm/ROCm/discussions" id="navcommunity" role="button" target="_blank">
+                                Community
+                            </a>
+</li>
+<li class="nav-item">
+<a aria-expanded="false" class="nav-link top-level header-menu-links" href="https://rocm.blogs.amd.com/" id="navblogs" role="button" target="_blank">
+                                Blogs
+                            </a>
+</li>
+<li class="nav-item">
+<a aria-expanded="false" class="nav-link top-level header-menu-links" href="https://www.amd.com/en/developer/resources/infinity-hub.html" id="navinfinity-hub" role="button" target="_blank">
+                                Infinity Hub
+                            </a>
+</li>
+<li class="nav-item">
+<a aria-expanded="false" class="nav-link top-level header-menu-links" href="https://github.com/ROCm/ROCm/issues/new/choose" id="navsupport" role="button" target="_blank">
+                                Support
+                            </a>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+</header>
+<div class="bd-container">
+<div class="bd-container__inner bd-page-width">
+<div class="bd-sidebar-primary bd-sidebar">
+<div class="sidebar-header-items sidebar-primary__section">
+</div>
+<div class="sidebar-primary-items__start sidebar-primary__section">
+<div class="sidebar-primary-item">
+<a class="navbar-brand logo" href="../index.html">
+<p class="title logo__title">ROCm Documentation</p>
+</a></div>
+<div class="sidebar-primary-item">
+<script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+<div class="sidebar-primary-item"><nav aria-label="Main" class="bd-links bd-docs-nav">
+<div class="bd-toc-item navbar-nav active">
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../what-is-rocm.html">What is ROCm?</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Release notes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Install</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-linux/en/develop/">ROCm on Linux</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-windows/en/develop/">HIP SDK on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how-to/deep-learning-rocm.html">Deep learning frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how-to/build-rocm.html">Build ROCm from source</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">How to</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../how-to/rocm-for-ai/index.html">Using ROCm for AI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/rocm-for-ai/install.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/rocm-for-ai/train-a-model.html">Training a model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/rocm-for-ai/hugging-face-models.html">Running models from Hugging Face</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/rocm-for-ai/deploy-your-model.html">Deploying your model</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../how-to/rocm-for-hpc/index.html">Using ROCm for HPC</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../how-to/llm-fine-tuning-optimization/index.html">Fine-tuning LLMs and inference optimization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/llm-fine-tuning-optimization/overview.html">Conceptual overview</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../how-to/llm-fine-tuning-optimization/fine-tuning-and-inference.html">Fine-tuning and inference</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../how-to/llm-fine-tuning-optimization/single-gpu-fine-tuning-and-inference.html">Using a single accelerator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../how-to/llm-fine-tuning-optimization/multi-gpu-fine-tuning-and-inference.html">Using multiple accelerators</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/llm-fine-tuning-optimization/model-quantization.html">Model quantization techniques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/llm-fine-tuning-optimization/model-acceleration-libraries.html">Model acceleration libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/llm-fine-tuning-optimization/llm-inference-frameworks.html">LLM inference frameworks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/llm-fine-tuning-optimization/optimizing-with-composable-kernel.html">Optimizing with Composable Kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/llm-fine-tuning-optimization/optimizing-triton-kernel.html">Optimizing Triton kernels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/llm-fine-tuning-optimization/profiling-and-debugging.html">Profiling and debugging</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../how-to/system-optimization/index.html">System optimization</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/system-optimization/mi300x.html">AMD Instinct MI300X</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/system-optimization/mi300a.html">AMD Instinct MI300A</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/system-optimization/mi200.html">AMD Instinct MI200</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/system-optimization/mi100.html">AMD Instinct MI100</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/system-optimization/w6000-v620.html">AMD RDNA 2</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../how-to/tuning-guides/mi300x/index.html">AMD MI300X performance validation and tuning</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/performance-validation/mi300x/vllm-benchmark.html">Performance validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/tuning-guides/mi300x/system.html">System tuning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../how-to/tuning-guides/mi300x/workload.html">Workload tuning</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/gpu-cluster-networking/en/develop/index.html">GPU cluster networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how-to/gpu-enabled-mpi.html">Using MPI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how-to/system-debugging.html">System debugging</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../conceptual/compiler-topics.html">Using advanced compiler features</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference external" href="https://rocm.docs.amd.com/projects/llvm-project/en/latest/index.html">ROCm compiler infrastructure</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://rocm.docs.amd.com/projects/llvm-project/en/latest/conceptual/using-gpu-sanitizer.html">Using AddressSanitizer</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://rocm.docs.amd.com/projects/llvm-project/en/latest/conceptual/openmp.html">OpenMP support</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../how-to/setting-cus.html">Setting the number of CUs</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/amd/rocm-examples">ROCm examples</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Compatibility</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../compatibility/compatibility-matrix.html">Compatibility matrix</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-linux/en/develop/reference/system-requirements.html">Linux system requirements</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-windows/en/develop/reference/system-requirements.html">Windows system requirements</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-linux/en/develop/reference/3rd-party-support-matrix.html">Third-party support</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-linux/en/latest/reference/user-kernel-space-compat-matrix.html">User and kernel-space support matrix</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-linux/en/latest/reference/docker-image-support-matrix.html">Docker image support matrix</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://rocm.docs.amd.com/projects/radeon/en/latest/index.html">Use ROCm on Radeon GPUs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Conceptual</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../conceptual/gpu-arch.html">GPU architecture overview</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../conceptual/gpu-arch/mi300.html">MI300 microarchitecture</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference external" href="https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/instruction-set-architectures/amd-instinct-mi300-cdna3-instruction-set-architecture.pdf">AMD Instinct MI300/CDNA3 ISA</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/white-papers/amd-cdna-3-white-paper.pdf">White paper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../conceptual/gpu-arch/mi300-mi200-performance-counters.html">MI300 and MI200 Performance counter</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../conceptual/gpu-arch/mi250.html">MI250 microarchitecture</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference external" href="https://www.amd.com/system/files/TechDocs/instinct-mi200-cdna2-instruction-set-architecture.pdf">AMD Instinct MI200/CDNA2 ISA</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://www.amd.com/system/files/documents/amd-cdna2-white-paper.pdf">White paper</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../conceptual/gpu-arch/mi100.html">MI100 microarchitecture</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference external" href="https://www.amd.com/system/files/TechDocs/instinct-mi100-cdna1-shader-instruction-set-architecture%C2%A0.pdf">AMD Instinct MI100/CDNA1 ISA</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://www.amd.com/system/files/documents/amd-cdna-whitepaper.pdf">White paper</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../conceptual/gpu-memory.html">GPU memory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conceptual/file-reorg.html">File structure (Linux FHS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conceptual/gpu-isolation.html">GPU isolation techniques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conceptual/cmake-packages.html">Using CMake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conceptual/More-about-how-ROCm-uses-PCIe-Atomics.html">ROCm &amp; PCIe atomics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conceptual/ai-pytorch-inception.html">Inception v3 with PyTorch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conceptual/oversubscription.html">Oversubscription of hardware resources</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../reference/api-libraries.html">ROCm libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/rocm-tools.html">ROCm tools, compilers, and runtimes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/gpu-arch-specs.html">Accelerator and GPU hardware specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/precision-support.html">Precision support</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contribute</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../contribute/contributing.html">Contributing to the ROCm docmentation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/toolchain.html">ROCm documentation toolchain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contribute/building.html">Building documentation</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribute/feedback.html">Providing feedback about the ROCm documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">ROCm licenses</a></li>
+</ul>
+</div>
+</nav></div>
+</div>
+<div class="sidebar-primary-items__end sidebar-primary__section">
+</div>
+<div id="rtd-footer-container"></div>
+</div>
+<main class="bd-main" id="main-content" role="main">
+<div class="sbt-scroll-pixel-helper"></div>
+<div class="bd-content">
+<div class="bd-article-container">
+<div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+<div class="header-article-items__start">
+<div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" for="__primary" title="Toggle primary sidebar">
+<span class="fa-solid fa-angle-right"></span>
+</label></div>
+<div class="header-article-item">
+<nav aria-label="Breadcrumb" class="d-print-none">
+<ul class="bd-breadcrumbs">
+<li class="breadcrumb-item breadcrumb-home">
+<a aria-label="Home" class="nav-link" href="../index.html">
+<i class="fa-solid fa-home"></i>
+</a>
+</li>
+<li aria-current="page" class="breadcrumb-item active">ROCm 6.2.2...</li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="header-article-items__end">
+<div class="header-article-item">
+<div class="article-header-buttons">
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Toggle secondary sidebar">
+<span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+</div>
+</div>
+</div>
+<div class="onlyprint" id="jb-print-docs-body">
+<h1>ROCm 6.2.2 release notes</h1>
+<!-- Table of contents -->
+<div id="print-main-content">
+<div id="jb-print-toc">
+<div>
+<h2> Contents </h2>
+</div>
+<nav aria-label="Page">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#release-highlights">Release highlights</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fixed-instinct-mi300x-error-recovery-failure">Fixed Instinct MI300X error recovery failure</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rocm-6-2-1-release-notes">ROCm 6.2.1 release notes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Release highlights</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rocal-major-version-change">rocAL major version change</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#new-support-for-fbgemm-facebook-general-matrix-multiplication">New support for FBGEMM (Facebook General Matrix Multiplication)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rocm-offline-installer-creator-changes">ROCm Offline Installer Creator changes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rocm-documentation-changes">ROCm documentation changes</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operating-system-and-hardware-support-changes">Operating system and hardware support changes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rocm-components">ROCm components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#detailed-component-changes">Detailed component changes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#amd-smi-24-6-3"><strong>AMD SMI</strong> (24.6.3)</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#changes">Changes</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#removals">Removals</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#resolved-issues">Resolved issues</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hip-6-2-1"><strong>HIP</strong> (6.2.1)</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Resolved issues</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hipify-18-0-0"><strong>HIPIFY</strong> (18.0.0)</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Changes</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#omnitrace-1-11-2"><strong>Omnitrace</strong> (1.11.2)</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#known-issues">Known issues</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rccl-2-20-5"><strong>RCCL</strong> (2.20.5)</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Known issues</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rocal-2-0-0"><strong>rocAL</strong> (2.0.0)</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Changes</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Known issues</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rocblas-4-2-1"><strong>rocBLAS</strong> (4.2.1)</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Removals</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Resolved issues</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rocfft-1-0-29"><strong>rocFFT</strong> (1.0.29)</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#optimizations">Optimizations</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rocm-smi-7-3-0"><strong>ROCm SMI</strong> (7.3.0)</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Optimizations</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Resolved issues</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Known issues</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rocprim-3-2-1"><strong>rocPRIM</strong> (3.2.1)</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Optimizations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rocm-known-issues">ROCm known issues</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#instinct-mi300x-gpu-recovery-failure-on-uncorrectable-errors">Instinct MI300X GPU recovery failure on uncorrectable errors</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rocm-upcoming-changes">ROCm upcoming changes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rocm-llvm-alt">rocm-llvm-alt</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rccl-rdma-sharp-plugins">rccl-rdma-sharp-plugins</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div id="searchbox"></div>
+<article class="bd-article">
+<section class="tex2jax_ignore mathjax_ignore" id="rocm-6-2-2-release-notes">
+<h1>ROCm 6.2.2 release notes<a class="headerlink" href="#rocm-6-2-2-release-notes" title="Link to this heading">#</a></h1><div class="sd-container-fluid sd-sphinx-override sd-p-0 sd-mt-2 sd-mb-4 sd-p-2 sd-rounded-1 docutils" id="rocm-docs-core-article-info">
+<div class="sd-row sd-row-cols-2 sd-gx-2 sd-gy-1 docutils">
+<div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils" style="color:gray;">
+    Applies to Linux and Windows
+</div>
+<div class="sd-col sd-d-flex-row sd-align-minor-center docutils">
+<div class="sd-container-fluid sd-sphinx-override docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 sd-gx-3 sd-gy-1 docutils">
+<div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils">
+<p class="sd-p-0 sd-m-0" style="color:gray;"></p>
+</div>
+<div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils">
+<p class="sd-p-0 sd-m-0" style="color:gray;"><span class="sd-pr-2"><svg aria-hidden="true" class="sd-octicon sd-octicon-calendar" height="16.0px" version="1.1" viewbox="0 0 16 16" width="16.0px"><path d="M4.75 0a.75.75 0 01.75.75V2h5V.75a.75.75 0 011.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0113.25 16H2.75A1.75 1.75 0 011 14.25V3.75C1 2.784 1.784 2 2.75 2H4V.75A.75.75 0 014.75 0zm0 3.5h8.5a.25.25 0 01.25.25V6h-11V3.75a.25.25 0 01.25-.25h2zm-2.25 4v6.75c0 .138.112.25.25.25h10.5a.25.25 0 00.25-.25V7.5h-11z" fill-rule="evenodd"></path></svg></span>2024-09-27</p>
+</div>
+<div class="sd-col sd-col-auto sd-d-flex-row sd-align-minor-center docutils">
+<p class="sd-p-0 sd-m-0" style="color:gray;"><span class="sd-pr-2"><svg aria-hidden="true" class="sd-octicon sd-octicon-clock" height="16.0px" version="1.1" viewbox="0 0 16 16" width="16.0px"><path d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zm.5 4.75a.75.75 0 00-1.5 0v3.5a.75.75 0 00.471.696l2.5 1a.75.75 0 00.557-1.392L8.5 7.742V4.75z" fill-rule="evenodd"></path></svg></span>15 min read time</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<p>These release notes provide a summary of notable changes since the previous ROCm release.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As ROCm 6.2.2 was released shortly after 6.2.1, the changes between these versions
+are minimal. For a comprehensive overview of recent updates, the ROCm 6.2.1 release
+notes are appended to the end of this document.</p>
+<p>For detailed information about the changes in ROCm 6.2.1, refer to the appended
+section: <a class="reference internal" href="#rocm-6-2-1-release-notes"><span class="xref myst">ROCm 6.2.1 release notes</span></a>.</p>
+</div>
+<p>The <a class="reference external" href="https://rocm.docs.amd.com/en/docs-6.2.2/compatibility/compatibility-matrix.html">Compatibility matrix</a>
+provides the full list of supported hardware, operating systems, ecosystems, third-party components, and ROCm components
+for each ROCm release.</p>
+<p>Release notes for previous ROCm releases are available in earlier versions of the documentation.
+See the <a class="reference external" href="https://rocm.docs.amd.com/en/latest/release/versions.html">ROCm documentation release history</a>.</p>
+<section id="release-highlights">
+<h2>Release highlights<a class="headerlink" href="#release-highlights" title="Link to this heading">#</a></h2>
+<p>The following is a significant fix introduced in ROCm 6.2.2.</p>
+<section id="fixed-instinct-mi300x-error-recovery-failure">
+<h3>Fixed Instinct MI300X error recovery failure<a class="headerlink" href="#fixed-instinct-mi300x-error-recovery-failure" title="Link to this heading">#</a></h3>
+<p>Improved the reliability of AMD Instinct MI300X accelerators in scenarios involving
+uncorrectable errors. Previously, error recovery did not occur as expected,
+potentially leaving the system in an undefined state. This fix ensures that error
+recovery functions as expected, maintaining system stability.</p>
+<p>See the <a class="reference internal" href="#instinct-mi300x-gpu-recovery-failure-on-uncorrectable-errors"><span class="xref myst">original issue</span></a>
+noted in the ROCm 6.2.1 release notes.</p>
+</section>
+</section>
+<hr class="docutils"/>
+<section id="rocm-6-2-1-release-notes">
+<h2>ROCm 6.2.1 release notes<a class="headerlink" href="#rocm-6-2-1-release-notes" title="Link to this heading">#</a></h2>
+<p>The ROCm 6.2.1 release notes document newly added ecosystem support, ROCm Offline Installer Creator updates,
+and improvements to several ROCm libraries and tools.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#release-highlights"><span class="xref myst">Release highlights</span></a></p></li>
+<li><p><a class="reference internal" href="#operating-system-and-hardware-support-changes"><span class="xref myst">Operating system and hardware support changes</span></a></p></li>
+<li><p><a class="reference internal" href="#rocm-components"><span class="xref myst">ROCm components versioning</span></a></p></li>
+<li><p><a class="reference internal" href="#detailed-component-changes"><span class="xref myst">Detailed component changes</span></a></p></li>
+<li><p><a class="reference internal" href="#rocm-known-issues"><span class="xref myst">ROCm known issues</span></a></p></li>
+<li><p><a class="reference internal" href="#rocm-upcoming-changes"><span class="xref myst">ROCm upcoming changes</span></a></p></li>
+</ul>
+<section id="id1">
+<h3>Release highlights<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>The following are notable new features and improvements in ROCm 6.2.1. For changes to individual components, see <a class="reference internal" href="#detailed-component-changes">Detailed component changes</a>.</p>
+<section id="rocal-major-version-change">
+<h4>rocAL major version change<a class="headerlink" href="#rocal-major-version-change" title="Link to this heading">#</a></h4>
+<p>The new version of rocAL introduces many new features, but does not modify any of the existing public API functions. However, the version number was incremented from 1.3 to 2.0.
+Applications linked to version 1.3 must be recompiled to link against version 2.0.</p>
+<p>See <a class="reference internal" href="#rocal-2-0-0"><span class="xref myst">the rocAL detailed changes</span></a> for more information.</p>
+</section>
+<section id="new-support-for-fbgemm-facebook-general-matrix-multiplication">
+<h4>New support for FBGEMM (Facebook General Matrix Multiplication)<a class="headerlink" href="#new-support-for-fbgemm-facebook-general-matrix-multiplication" title="Link to this heading">#</a></h4>
+<p>As of ROCm 6.2.1, ROCm supports Facebook General Matrix Multiplication (FBGEMM) and the related FBGEMM_GPU library.</p>
+<p>FBGEMM is a low-precision, high-performance CPU kernel library for convolution and matrix multiplication. It is used for server-side inference and as a back end for PyTorch quantized operators. FBGEMM_GPU includes a collection of PyTorch GPU operator libraries for training and inference. For more information, see the ROCm <a class="reference external" href="https://rocm.docs.amd.com/en/docs-6.2.1/how-to/llm-fine-tuning-optimization/model-acceleration-libraries.html">Model acceleration libraries guide</a>
+and <a class="reference external" href="https://github.com/pytorch/FBGEMM">PyTorch’s FBGEMM GitHub repository</a>.</p>
+</section>
+<section id="rocm-offline-installer-creator-changes">
+<h4>ROCm Offline Installer Creator changes<a class="headerlink" href="#rocm-offline-installer-creator-changes" title="Link to this heading">#</a></h4>
+<p>The <a class="reference external" href="https://rocm.docs.amd.com/projects/install-on-linux/en/docs-6.2.1/install/rocm-offline-installer.html">ROCm Offline Installer Creator 6.2.1</a> introduces several new features and improvements including:</p>
+<ul class="simple">
+<li><p>Logging support for create and install logs</p></li>
+<li><p>More stringent checks for Linux versions and distributions</p></li>
+<li><p>Updated prerequisite repositories</p></li>
+<li><p>Fixed CTest issues</p></li>
+</ul>
+</section>
+<section id="rocm-documentation-changes">
+<h4>ROCm documentation changes<a class="headerlink" href="#rocm-documentation-changes" title="Link to this heading">#</a></h4>
+<p>There have been no changes to supported hardware or operating systems from ROCm 6.2.0 to ROCm 6.2.1.</p>
+<ul class="simple">
+<li><p>The Programming Model Reference and Understanding the Programming Model topics in HIP have been consolidated into one topic,
+<a class="reference external" href="https://rocm.docs.amd.com/projects/HIP/en/docs-6.2.1/understand/programming_model.html">HIP programming model (conceptual)</a>.</p></li>
+<li><p>The <a class="reference external" href="https://rocm.docs.amd.com/projects/HIP/en/docs-6.2.1/how-to/virtual_memory.html">HIP virtual memory management</a> and <a class="reference external" href="https://rocm.docs.amd.com/projects/HIP/en/docs-6.2.1/reference/virtual_memory_reference.html">HIP virtual memory management API</a> topics have been added.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The ROCm documentation, like all ROCm projects, is open source and available on GitHub. To contribute to ROCm documentation, see the <a class="reference external" href="https://rocm.docs.amd.com/en/latest/contribute/contributing.html">ROCm documentation contribution guidelines</a>.</p>
+</div>
+</section>
+</section>
+<section id="operating-system-and-hardware-support-changes">
+<h3>Operating system and hardware support changes<a class="headerlink" href="#operating-system-and-hardware-support-changes" title="Link to this heading">#</a></h3>
+<p>ROCm 6.2.1 adds support for Ubuntu 24.04.1 (kernel: 6.8 [GA]).</p>
+<p>See the <a class="reference external" href="https://rocm.docs.amd.com/en/docs-6.2.1/compatibility/compatibility-matrix.html">Compatibility matrix</a> for the full list of supported operating systems and hardware architectures.</p>
+</section>
+<section id="rocm-components">
+<h3>ROCm components<a class="headerlink" href="#rocm-components" title="Link to this heading">#</a></h3>
+<p>The following table lists the versions of ROCm components for ROCm 6.2.1, including any version changes from 6.2.0 to 6.2.1.</p>
+<p>Click the component’s updated version to go to a detailed list of its changes. Click <i class="fab fa-github fa-lg"></i> to go to the component’s source code on GitHub.</p>
+<div class="pst-scrollable-table-container">
+<table class="table" id="rocm-rn-components">
+<thead>
+<tr>
+<th>Category</th>
+<th>Group</th>
+<th>Name</th>
+<th>Version</th>
+<th></th>
+</tr>
+</thead>
+<colgroup>
+<col span="1"/>
+<col span="1"/>
+</colgroup>
+<tbody class="rocm-components-libs rocm-components-ml">
+<tr>
+<th rowspan="8">Libraries</th>
+<th rowspan="8">Machine learning and computer vision</th>
+<td><a href="https://rocm.docs.amd.com/projects/composable_kernel/en/docs-6.2.1">Composable Kernel</a>
+</td>
+<td>1.1.0</td>
+<td><a href="https://github.com/ROCm/composable_kernel/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+<tr>
+<td><a href="https://rocm.docs.amd.com/projects/AMDMIGraphX/en/docs-6.2.1">MIGraphX</a></td>
+<td>2.10</td>
+<td><a href="https://github.com/ROCm/AMDMIGraphX/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+<tr>
+<td><a href="https://rocm.docs.amd.com/projects/MIOpen/en/docs-6.2.1">MIOpen</a></td>
+<td>3.2.0</td>
+<td><a href="https://github.com/ROCm/MIOpen/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+<tr>
+<td><a href="https://rocm.docs.amd.com/projects/MIVisionX/en/docs-6.2.1">MIVisionX</a></td>
+<td>3.0.0</td>
+<td><a href="https://github.com/ROCm/MIVisionX/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+<tr>
+<td><a href="https://rocm.docs.amd.com/projects/rocAL/en/docs-6.2.1">rocAL</a></td>
+<td>1.0.0 ⇒ <a href="#rocal-2-0-0">2.0.0</a></td>
+<td><a href="https://github.com/ROCm/rocAL/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+<tr>
+<td><a href="https://rocm.docs.amd.com/projects/rocDecode/en/docs-6.2.1">rocDecode</a></td>
+<td>0.6.0</td>
+<td><a href="https://github.com/ROCm/rocDecode/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+<tr>
+<td><a href="https://rocm.docs.amd.com/projects/rocPyDecode/en/docs-6.2.1">rocPyDecode</a></td>
+<td>0.1.0</td>
+<td><a href="https://github.com/ROCm/rocPyDecode/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+<tr>
+<td><a href="https://rocm.docs.amd.com/projects/rpp/en/docs-6.2.1">RPP</a></td>
+<td>1.8.0</td>
+<td><a href="https://github.com/ROCm/rpp/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+</tbody>
+<tbody class="rocm-components-libs rocm-components-communication">
+<tr>
+<th rowspan="1"></th>
+<th rowspan="1">Communication</th>
+<td><a href="https://rocm.docs.amd.com/projects/rccl/en/docs-6.2.1">RCCL</a></td>
+<td>2.20.5 ⇒ <a href="#rccl-2-20-5">2.20.5</a></td>
+<td><a href="https://github.com/ROCm/rccl/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+</tbody>
+<tbody class="rocm-components-libs rocm-components-math tbody-reverse-zebra">
+<tr>
+<th rowspan="16"></th>
+<th rowspan="16">Math</th>
+<td><a href="https://rocm.docs.amd.com/projects/hipBLAS/en/docs-6.2.1">hipBLAS</a></td>
+<td>2.2.0</td>
+<td><a href="https://github.com/ROCm/hipBLAS/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+<tr>
+<td><a href="https://rocm.docs.amd.com/projects/hipBLASLt/en/docs-6.2.1">hipBLASLt</a></td>
+<td>0.8.0</td>
+<td><a href="https://github.com/ROCm/hipBLASLt/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+<tr>
+<td><a href="https://rocm.docs.amd.com/projects/hipFFT/en/docs-6.2.1">hipFFT</a></td>
+<td>1.0.15</td>
+<td><a href="https://github.com/ROCm/hipFFT/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+<tr>
+<td><a href="https://rocm.docs.amd.com/projects/hipfort/en/docs-6.2.1">hipfort</a></td>
+<td>0.4.0</td>
+<td><a href="https://github.com/ROCm/hipfort/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+<tr>
+<td><a href="https://rocm.docs.amd.com/projects/hipRAND/en/docs-6.2.1">hipRAND</a></td>
+<td>2.11.0</td>
+<td><a href="https://github.com/ROCm/hipRAND/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+<tr>
+<td><a href="https://rocm.docs.amd.com/projects/hipSOLVER/en/docs-6.2.1">hipSOLVER</a></td>
+<td>2.2.0</td>
+<td><a href="https://github.com/ROCm/hipSOLVER/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+<tr>
+<td><a href="https://rocm.docs.amd.com/projects/hipSPARSE/en/docs-6.2.1">hipSPARSE</a></td>
+<td>3.1.1</td>
+<td><a href="https://github.com/ROCm/hipSPARSE/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+<tr>
+<td><a href="https://rocm.docs.amd.com/projects/hipSPARSELt/en/docs-6.2.1">hipSPARSELt</a></td>
+<td>0.2.1</td>
+<td><a href="https://github.com/ROCm/hipSPARSELt/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+<tr>
+<td><a href="https://rocm.docs.amd.com/projects/rocALUTION/en/docs-6.2.1">rocALUTION</a></td>
+<td>3.2.0</td>
+<td><a href="https://github.com/ROCm/rocALUTION/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+<tr>
+<td><a href="https://rocm.docs.amd.com/projects/rocBLAS/en/docs-6.2.1">rocBLAS</a></td>
+<td>4.1.2 ⇒ <a href="#rocblas-4-2-1">4.2.1</a></td>
+<td><a href="https://github.com/ROCm/rocBLAS/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+<tr>
+<td><a href="https://rocm.docs.amd.com/projects/rocFFT/en/docs-6.2.1">rocFFT</a></td>
+<td>1.0.28 ⇒ <a href="#rocfft-1-0-29">1.0.29</a></td>
+<td><a href="https://github.com/ROCm/rocFFT/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+<tr>
+<td><a href="https://rocm.docs.amd.com/projects/rocRAND/en/docs-6.2.1">rocRAND</a></td>
+<td>3.1.0</td>
+<td><a href="https://github.com/ROCm/rocRAND/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+<tr>
+<td><a href="https://rocm.docs.amd.com/projects/rocSOLVER/en/docs-6.2.1">rocSOLVER</a></td>
+<td>3.26.0</td>
+<td><a href="https://github.com/ROCm/rocSOLVER/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+<tr>
+<td><a href="https://rocm.docs.amd.com/projects/rocSPARSE/en/docs-6.2.1">rocSPARSE</a></td>
+<td>3.2.0</td>
+<td><a href="https://github.com/ROCm/rocSPARSE/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+<tr>
+<td><a href="https://rocm.docs.amd.com/projects/rocWMMA/en/docs-6.2.1">rocWMMA</a></td>
+<td>1.5.0</td>
+<td><a href="https://github.com/ROCm/rocWMMA/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ROCm/Tensile">Tensile</a></td>
+<td>4.41.0</td>
+<td><a href="https://github.com/ROCm/tensile/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+</tbody>
+<tbody class="rocm-components-libs rocm-components-primitives tbody-reverse-zebra">
+<tr>
+<th rowspan="4"></th>
+<th rowspan="4">Primitives</th>
+<td><a href="https://rocm.docs.amd.com/projects/hipCUB/en/docs-6.2.1">hipCUB</a></td>
+<td>3.2.0</td>
+<td><a href="https://github.com/ROCm/hipCUB/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+<tr>
+<td><a href="https://rocm.docs.amd.com/projects/hipTensor/en/docs-6.2.1">hipTensor</a></td>
+<td>1.3.0</td>
+<td><a href="https://github.com/ROCm/hipTensor/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+<tr>
+<td><a href="https://rocm.docs.amd.com/projects/rocPRIM/en/docs-6.2.1">rocPRIM</a></td>
+<td>3.2.0 ⇒ <a href="#rocprim-3-2-1">3.2.1</a></td>
+<td><a href="https://github.com/ROCm/rocPRIM/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+<tr>
+<td><a href="https://rocm.docs.amd.com/projects/rocThrust/en/docs-6.2.1">rocThrust</a></td>
+<td>3.1.0</td>
+<td><a href="https://github.com/ROCm/rocThrust/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+</tbody>
+<tbody class="rocm-components-tools rocm-components-system tbody-reverse-zebra">
+<tr>
+<th rowspan="6">Tools</th>
+<th rowspan="6">System management</th>
+<td><a href="https://rocm.docs.amd.com/projects/amdsmi/en/docs-6.2.1">AMD SMI</a></td>
+<td>24.6.2 ⇒ <a href="#amd-smi-24-6-3">24.6.3</a></td>
+<td><a href="https://github.com/ROCm/amdsmi/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+<tr>
+<td><a href="https://rocm.docs.amd.com/projects/rocminfo/en/docs-6.2.1">rocminfo</a></td>
+<td>1.0.0</td>
+<td><a href="https://github.com/ROCm/rocminfo/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+<tr>
+<td><a href="https://rocm.docs.amd.com/projects/rdc/en/docs-6.2.1">ROCm Data Center Tool</a></td>
+<td>1.0.0</td>
+<td><a href="https://github.com/ROCm/rdc/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+<tr>
+<td><a href="https://rocm.docs.amd.com/projects/rocm_smi_lib/en/docs-6.2.1">ROCm SMI</a></td>
+<td>7.3.0 ⇒ <a href="#rocm-smi-7-3-0">7.3.0</a></td>
+<td><a href="https://github.com/ROCm/rocm_smi_lib/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+<tr>
+<td><a href="https://rocm.docs.amd.com/projects/ROCmValidationSuite/en/docs-6.2.1">ROCm Validation Suite</a></td>
+<td>1.0.0</td>
+<td><a href="https://github.com/ROCm/ROCmValidationSuite/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+</tbody>
+<tbody class="rocm-components-tools rocm-components-perf">
+<tr>
+<th rowspan="6"></th>
+<th rowspan="6">Performance</th>
+<td><a href="https://rocm.docs.amd.com/projects/omniperf/en/docs-6.2.1">Omniperf</a></td>
+<td>2.0.1</td>
+<td><a href="https://github.com/ROCm/omniperf/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+<tr>
+<td><a href="https://rocm.docs.amd.com/projects/omnitrace/en/docs-6.2.1">Omnitrace</a></td>
+<td>1.11.2 ⇒ <a href="#omnitrace-1-11-2">1.11.2</a></td>
+<td><a href="https://github.com/ROCm/omnitrace/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+<tr>
+<td><a href="https://rocm.docs.amd.com/projects/rocm_bandwidth_test/en/docs-6.2.1">ROCm Bandwidth
+                        Test</a></td>
+<td>1.4.0</td>
+<td><a href="https://github.com/ROCm/rocm_bandwidth_test/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+<tr>
+<td><a href="https://rocm.docs.amd.com/projects/rocprofiler/en/docs-6.2.1/">ROCProfiler</a></td>
+<td>2.0.0</td>
+<td><a href="https://github.com/ROCm/ROCProfiler/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+<tr>
+<td><a href="https://rocm.docs.amd.com/projects/rocprofiler-sdk/en/docs-6.2.1">ROCprofiler-SDK</a></td>
+<td>0.4.0</td>
+<td><a href="https://github.com/ROCm/rocprofiler-sdk/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+<tr>
+<td><a href="https://rocm.docs.amd.com/projects/roctracer/en/docs-6.2.1/">ROCTracer</a></td>
+<td>4.1.0</td>
+<td><a href="https://github.com/ROCm/ROCTracer/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+</tbody>
+<tbody class="rocm-components-tools rocm-components-dev">
+<tr>
+<th rowspan="5"></th>
+<th rowspan="5">Development</th>
+<td><a href="https://rocm.docs.amd.com/projects/HIPIFY/en/docs-6.2.1/">HIPIFY</a></td>
+<td>18.0.0 ⇒ <a href="#hipify-18-0-0">18.0.0</a></td>
+<td><a href="https://github.com/ROCm/HIPIFY/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+<tr>
+<td><a href="https://rocm.docs.amd.com/projects/ROCdbgapi/en/docs-6.2.1">ROCdbgapi</a></td>
+<td>0.76.0</td>
+<td><a href="https://github.com/ROCm/ROCdbgapi/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+<tr>
+<td><a href="https://rocm.docs.amd.com/projects/ROCmCMakeBuildTools/en/docs-6.2.1/">ROCm CMake</a></td>
+<td>0.13.0</td>
+<td><a href="https://github.com/ROCm/rocm-cmake/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+<tr>
+<td><a href="https://rocm.docs.amd.com/projects/ROCgdb/en/docs-6.2.1">ROCm Debugger (ROCgdb)</a>
+</td>
+<td>14.2</td>
+<td><a href="https://github.com/ROCm/ROCgdb/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+<tr>
+<td><a href="https://rocm.docs.amd.com/projects/rocr_debug_agent/en/docs-6.2.1">ROCr Debug Agent</a>
+</td>
+<td>2.0.3</td>
+<td><a href="https://github.com/ROCm/rocr_debug_agent/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+</tbody>
+<tbody class="rocm-components-compilers tbody-reverse-zebra">
+<tr>
+<th colspan="2" rowspan="2">Compilers</th>
+<td><a href="https://rocm.docs.amd.com/projects/HIPCC/en/docs-6.2.1">HIPCC</a></td>
+<td>1.1.1</td>
+<td><a href="https://github.com/ROCm/llvm-project/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+<tr>
+<td><a href="https://rocm.docs.amd.com/projects/llvm-project/en/docs-6.2.1">llvm-project</a></td>
+<td>18.0.0</td>
+<td><a href="https://github.com/ROCm/llvm-project/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+</tbody>
+<tbody class="rocm-components-runtimes tbody-reverse-zebra">
+<tr>
+<th colspan="2" rowspan="2">Runtimes</th>
+<td><a href="https://rocm.docs.amd.com/projects/HIP/en/docs-6.2.1">HIP</a></td>
+<td>6.2 ⇒ <a href="#hip-6-2-1">6.2.1</a></td>
+<td><a href="https://github.com/ROCm/HIP/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+<tr>
+<td><a href="https://rocm.docs.amd.com/projects/ROCR-Runtime/en/docs-6.2.1">ROCr Runtime</a></td>
+<td>1.14.0</td>
+<td><a href="https://github.com/ROCm/ROCR-Runtime/releases/tag/rocm-6.2.1"><i class="fab fa-github fa-lg"></i></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="detailed-component-changes">
+<h3>Detailed component changes<a class="headerlink" href="#detailed-component-changes" title="Link to this heading">#</a></h3>
+<p>The following sections describe key changes to ROCm components.</p>
+<section id="amd-smi-24-6-3">
+<h4><strong>AMD SMI</strong> (24.6.3)<a class="headerlink" href="#amd-smi-24-6-3" title="Link to this heading">#</a></h4>
+<section id="changes">
+<h5>Changes<a class="headerlink" href="#changes" title="Link to this heading">#</a></h5>
+<ul class="simple">
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">amd-smi</span> <span class="pre">static</span> <span class="pre">--ras</span></code> on Guest VMs. Guest VMs can view enabled/disabled RAS features on Host cards.</p></li>
+</ul>
+</section>
+<section id="removals">
+<h5>Removals<a class="headerlink" href="#removals" title="Link to this heading">#</a></h5>
+<ul class="simple">
+<li><p>Removed <code class="docutils literal notranslate"><span class="pre">amd-smi</span> <span class="pre">metric</span> <span class="pre">--ecc</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">amd-smi</span> <span class="pre">metric</span> <span class="pre">--ecc-blocks</span></code> on Guest VMs. Guest VMs do not support getting current ECC counts from the Host cards.</p></li>
+</ul>
+</section>
+<section id="resolved-issues">
+<h5>Resolved issues<a class="headerlink" href="#resolved-issues" title="Link to this heading">#</a></h5>
+<ul class="simple">
+<li><p>Fixed TypeError in <code class="docutils literal notranslate"><span class="pre">amd-smi</span> <span class="pre">process</span> <span class="pre">-G</span></code>.</p></li>
+<li><p>Updated CLI error strings to handle empty and invalid GPU/CPU inputs.</p></li>
+<li><p>Fixed Guest VM showing passthrough options.</p></li>
+<li><p>Fixed firmware formatting where leading 0s were missing.</p></li>
+</ul>
+</section>
+</section>
+<section id="hip-6-2-1">
+<h4><strong>HIP</strong> (6.2.1)<a class="headerlink" href="#hip-6-2-1" title="Link to this heading">#</a></h4>
+<section id="id2">
+<h5>Resolved issues<a class="headerlink" href="#id2" title="Link to this heading">#</a></h5>
+<ul class="simple">
+<li><p>Soft hang when using <code class="docutils literal notranslate"><span class="pre">AMD_SERIALIZE_KERNEL</span></code></p></li>
+<li><p>Memory leak in <code class="docutils literal notranslate"><span class="pre">hipIpcCloseMemHandle</span></code></p></li>
+</ul>
+</section>
+</section>
+<section id="hipify-18-0-0">
+<h4><strong>HIPIFY</strong> (18.0.0)<a class="headerlink" href="#hipify-18-0-0" title="Link to this heading">#</a></h4>
+<section id="id3">
+<h5>Changes<a class="headerlink" href="#id3" title="Link to this heading">#</a></h5>
+<ul class="simple">
+<li><p>Added CUDA 12.5.1 support</p></li>
+<li><p>Added cuDNN 9.2.1 support</p></li>
+<li><p>Added LLVM 18.1.8 support</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">hipBLAS</span></code> 64-bit APIs support</p></li>
+<li><p>Added Support for math constants <code class="docutils literal notranslate"><span class="pre">math_constants.h</span></code></p></li>
+</ul>
+</section>
+</section>
+<section id="omnitrace-1-11-2">
+<h4><strong>Omnitrace</strong> (1.11.2)<a class="headerlink" href="#omnitrace-1-11-2" title="Link to this heading">#</a></h4>
+<section id="known-issues">
+<h5>Known issues<a class="headerlink" href="#known-issues" title="Link to this heading">#</a></h5>
+<p>Perfetto can no longer open Omnitrace proto files. Loading Perfetto trace output <code class="docutils literal notranslate"><span class="pre">.proto</span></code> files in the latest version of <code class="docutils literal notranslate"><span class="pre">ui.perfetto.dev</span></code> can result in a dialog with the message, “Oops, something went wrong! Please file a bug.” The information in the dialog will refer to an “Unknown field type.” The workaround is to open the files with the previous version of the Perfetto UI found at <a class="reference external" href="https://ui.perfetto.dev/v46.0-35b3d9845/#!/">https://ui.perfetto.dev/v46.0-35b3d9845/#!/</a>.</p>
+<p>See <a class="reference external" href="https://github.com/ROCm/ROCm/issues/3767">issue #3767</a> on GitHub.</p>
+</section>
+</section>
+<section id="rccl-2-20-5">
+<h4><strong>RCCL</strong> (2.20.5)<a class="headerlink" href="#rccl-2-20-5" title="Link to this heading">#</a></h4>
+<section id="id4">
+<h5>Known issues<a class="headerlink" href="#id4" title="Link to this heading">#</a></h5>
+<p>On systems running Linux kernel 6.8.0, such as Ubuntu 24.04, Direct Memory Access (DMA) transfers between the GPU and NIC are disabled and impacts multi-node RCCL performance.
+This issue was reproduced with RCCL 2.20.5 (ROCm 6.2.0 and 6.2.1) on systems with Broadcom Thor-2 NICs and affects other systems with RoCE networks using Linux 6.8.0 or newer.
+Older RCCL versions are also impacted.</p>
+<p>This issue will be addressed in a future ROCm release.</p>
+<p>See <a class="reference external" href="https://github.com/ROCm/ROCm/issues/3772">issue #3772</a> on GitHub.</p>
+</section>
+</section>
+<section id="rocal-2-0-0">
+<h4><strong>rocAL</strong> (2.0.0)<a class="headerlink" href="#rocal-2-0-0" title="Link to this heading">#</a></h4>
+<section id="id5">
+<h5>Changes<a class="headerlink" href="#id5" title="Link to this heading">#</a></h5>
+<ul class="simple">
+<li><p>The new version of rocAL introduces many new features, but does not modify any of the existing public API functions.However, the version number was incremented from 1.3 to 2.0.
+Applications linked to version 1.3 must be recompiled to link against version 2.0.</p></li>
+<li><p>Added development and test packages.</p></li>
+<li><p>Added C++ rocAL audio unit test and Python script to run and compare the outputs.</p></li>
+<li><p>Added Python support for audio decoders.</p></li>
+<li><p>Added Pytorch iterator for audio.</p></li>
+<li><p>Added Python audio unit test and support to verify outputs.</p></li>
+<li><p>Added rocDecode for HW decode.</p></li>
+<li><p>Added support for:</p>
+<ul>
+<li><p>Audio loader and decoder, which uses libsndfile library to decode wav files</p></li>
+<li><p>Audio augmentation - PreEmphasis filter, Spectrogram, ToDecibels, Resample, NonSilentRegionDetection, MelFilterBank</p></li>
+<li><p>Generic augmentation - Slice, Normalize</p></li>
+<li><p>Reading from file lists in file reader</p></li>
+<li><p>Downmixing audio channels during decoding</p></li>
+<li><p>TensorTensorAdd and TensorScalarMultiply operations</p></li>
+<li><p>Uniform and Normal distribution nodes</p></li>
+</ul>
+</li>
+<li><p>Image to tensor updates</p></li>
+<li><p>ROCm install - use case graphics removed</p></li>
+</ul>
+</section>
+<section id="id6">
+<h5>Known issues<a class="headerlink" href="#id6" title="Link to this heading">#</a></h5>
+<ul class="simple">
+<li><p>Dependencies are not installed with the rocAL package installer. Dependencies must be installed with the prerequisite setup script provided. See the <a class="reference external" href="https://github.com/ROCm/rocAL/blob/docs/6.2.1/README.md#prerequisites-setup-script">rocAL README on GitHub</a> for details.</p></li>
+</ul>
+</section>
+</section>
+<section id="rocblas-4-2-1">
+<h4><strong>rocBLAS</strong> (4.2.1)<a class="headerlink" href="#rocblas-4-2-1" title="Link to this heading">#</a></h4>
+<section id="id7">
+<h5>Removals<a class="headerlink" href="#id7" title="Link to this heading">#</a></h5>
+<ul class="simple">
+<li><p>Removed Device_Memory_Allocation.pdf link in documentation.</p></li>
+</ul>
+</section>
+<section id="id8">
+<h5>Resolved issues<a class="headerlink" href="#id8" title="Link to this heading">#</a></h5>
+<ul class="simple">
+<li><p>Fixed error/warning message during <code class="docutils literal notranslate"><span class="pre">rocblas_set_stream()</span></code> call.</p></li>
+</ul>
+</section>
+</section>
+<section id="rocfft-1-0-29">
+<h4><strong>rocFFT</strong> (1.0.29)<a class="headerlink" href="#rocfft-1-0-29" title="Link to this heading">#</a></h4>
+<section id="optimizations">
+<h5>Optimizations<a class="headerlink" href="#optimizations" title="Link to this heading">#</a></h5>
+<ul class="simple">
+<li><p>Implemented 1D kernels for factorizable sizes less than 1024.</p></li>
+</ul>
+</section>
+</section>
+<section id="rocm-smi-7-3-0">
+<h4><strong>ROCm SMI</strong> (7.3.0)<a class="headerlink" href="#rocm-smi-7-3-0" title="Link to this heading">#</a></h4>
+<section id="id9">
+<h5>Optimizations<a class="headerlink" href="#id9" title="Link to this heading">#</a></h5>
+<ul class="simple">
+<li><p>Improved handling of UnicodeEncodeErrors with non UTF-8 locales. Non UTF-8 locales were causing crashes on UTF-8 special characters.</p></li>
+</ul>
+</section>
+<section id="id10">
+<h5>Resolved issues<a class="headerlink" href="#id10" title="Link to this heading">#</a></h5>
+<ul class="simple">
+<li><p>Fixed an issue where the Compute Partition tests segfaulted when AMDGPU was loaded with optional parameters.</p></li>
+</ul>
+</section>
+<section id="id11">
+<h5>Known issues<a class="headerlink" href="#id11" title="Link to this heading">#</a></h5>
+<ul class="simple">
+<li><p>When setting CPX as a partition mode, there is a DRM node limit of 64. This is a known limitation when multiple drivers are using the DRM nodes. The <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">/sys/class/drm</span></code> command can be used to see the number of DRM nodes, and the following steps can be used to remove unnecessary drivers:</p>
+<ol class="arabic simple">
+<li><p>Unload AMDGPU: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">rmmod</span> <span class="pre">amdgpu</span></code>.</p></li>
+<li><p>Remove any unnecessary drivers using <code class="docutils literal notranslate"><span class="pre">rmmod</span></code>. For example, to remove an AST driver, run <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">rmmod</span> <span class="pre">ast</span></code>.</p></li>
+<li><p>Reload AMDGPU using <code class="docutils literal notranslate"><span class="pre">modprobe</span></code>: <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">modprobe</span> <span class="pre">amdgpu</span></code>.</p></li>
+</ol>
+</li>
+</ul>
+</section>
+</section>
+<section id="rocprim-3-2-1">
+<h4><strong>rocPRIM</strong> (3.2.1)<a class="headerlink" href="#rocprim-3-2-1" title="Link to this heading">#</a></h4>
+<section id="id12">
+<h5>Optimizations<a class="headerlink" href="#id12" title="Link to this heading">#</a></h5>
+<ul class="simple">
+<li><p>Improved performance of <code class="docutils literal notranslate"><span class="pre">block_reduce_warp_reduce</span></code> when warp size equals block size.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="rocm-known-issues">
+<h3>ROCm known issues<a class="headerlink" href="#rocm-known-issues" title="Link to this heading">#</a></h3>
+<p>ROCm known issues are tracked on <a class="reference external" href="https://github.com/ROCm/ROCm/labels/Verified%20Issue">GitHub</a>. Known issues related to
+individual components are listed in the <a class="reference internal" href="#detailed-component-changes"><span class="xref myst">Detailed component changes</span></a> section.</p>
+<section id="instinct-mi300x-gpu-recovery-failure-on-uncorrectable-errors">
+<h4>Instinct MI300X GPU recovery failure on uncorrectable errors<a class="headerlink" href="#instinct-mi300x-gpu-recovery-failure-on-uncorrectable-errors" title="Link to this heading">#</a></h4>
+<p>For the AMD Instinct MI300X accelerator, GPU recovery resets triggered by uncorrectable errors (UE) might not complete
+successfully, which can result in the system being left in an undefined state. A system reboot is needed to recover from
+this state. Additionally, error logging might fail in these situations, hindering diagnostics.</p>
+<p>This issue is under investigation and will be resolved in a future ROCm release.</p>
+<p>See <a class="reference external" href="https://github.com/ROCm/ROCm/issues/3766">issue #3766</a> on GitHub.</p>
+</section>
+</section>
+<section id="rocm-upcoming-changes">
+<h3>ROCm upcoming changes<a class="headerlink" href="#rocm-upcoming-changes" title="Link to this heading">#</a></h3>
+<p>The following changes to the ROCm software stack are anticipated for future releases.</p>
+<section id="rocm-llvm-alt">
+<h4>rocm-llvm-alt<a class="headerlink" href="#rocm-llvm-alt" title="Link to this heading">#</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">rocm-llvm-alt</span></code> package will be removed in an upcoming release. Users relying on the functionality provided by the closed-source compiler should transition to the open-source compiler. Once the <code class="docutils literal notranslate"><span class="pre">rocm-llvm-alt</span></code> package is removed, any compilation requesting functionality provided by the closed-source compiler will result in a Clang warning: “<em>[AMD] proprietary optimization compiler has been removed</em>”.</p>
+</section>
+<section id="rccl-rdma-sharp-plugins">
+<h4>rccl-rdma-sharp-plugins<a class="headerlink" href="#rccl-rdma-sharp-plugins" title="Link to this heading">#</a></h4>
+<p>The RCCL plugin package, <code class="docutils literal notranslate"><span class="pre">rccl-rdma-sharp-plugins</span></code>, will be removed in an upcoming ROCm release.</p>
+</section>
+</section>
+</section>
+</section>
+</article>
+<footer class="prev-next-footer d-print-none">
+<div class="prev-next-area">
+<a class="left-prev" href="../what-is-rocm.html" title="previous page">
+<i class="fa-solid fa-angle-left"></i>
+<div class="prev-next-info">
+<p class="prev-next-subtitle">previous</p>
+<p class="prev-next-title">What is ROCm?</p>
+</div>
+</a>
+<a class="right-next" href="../how-to/deep-learning-rocm.html" title="next page">
+<div class="prev-next-info">
+<p class="prev-next-subtitle">next</p>
+<p class="prev-next-title">Installing deep learning frameworks for ROCm</p>
+</div>
+<i class="fa-solid fa-angle-right"></i>
+</a>
+</div>
+</footer>
+</div>
+<div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+<div class="sidebar-secondary-item">
+<div class="page-toc tocsection onthispage">
+<i class="fa-solid fa-list"></i> Contents
+  </div>
+<nav class="bd-toc-nav page-toc">
+<ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#release-highlights">Release highlights</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fixed-instinct-mi300x-error-recovery-failure">Fixed Instinct MI300X error recovery failure</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rocm-6-2-1-release-notes">ROCm 6.2.1 release notes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Release highlights</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rocal-major-version-change">rocAL major version change</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#new-support-for-fbgemm-facebook-general-matrix-multiplication">New support for FBGEMM (Facebook General Matrix Multiplication)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rocm-offline-installer-creator-changes">ROCm Offline Installer Creator changes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rocm-documentation-changes">ROCm documentation changes</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operating-system-and-hardware-support-changes">Operating system and hardware support changes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rocm-components">ROCm components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#detailed-component-changes">Detailed component changes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#amd-smi-24-6-3"><strong>AMD SMI</strong> (24.6.3)</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#changes">Changes</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#removals">Removals</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#resolved-issues">Resolved issues</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hip-6-2-1"><strong>HIP</strong> (6.2.1)</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Resolved issues</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hipify-18-0-0"><strong>HIPIFY</strong> (18.0.0)</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Changes</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#omnitrace-1-11-2"><strong>Omnitrace</strong> (1.11.2)</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#known-issues">Known issues</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rccl-2-20-5"><strong>RCCL</strong> (2.20.5)</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Known issues</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rocal-2-0-0"><strong>rocAL</strong> (2.0.0)</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Changes</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Known issues</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rocblas-4-2-1"><strong>rocBLAS</strong> (4.2.1)</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Removals</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Resolved issues</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rocfft-1-0-29"><strong>rocFFT</strong> (1.0.29)</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#optimizations">Optimizations</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rocm-smi-7-3-0"><strong>ROCm SMI</strong> (7.3.0)</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Optimizations</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Resolved issues</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Known issues</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rocprim-3-2-1"><strong>rocPRIM</strong> (3.2.1)</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Optimizations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rocm-known-issues">ROCm known issues</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#instinct-mi300x-gpu-recovery-failure-on-uncorrectable-errors">Instinct MI300X GPU recovery failure on uncorrectable errors</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rocm-upcoming-changes">ROCm upcoming changes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rocm-llvm-alt">rocm-llvm-alt</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rccl-rdma-sharp-plugins">rccl-rdma-sharp-plugins</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav></div>
+</div></div>
+</div>
+<footer class="bd-footer-content">
+<p>
+</p>
+</footer>
+</main>
+</div>
+</div>
+<!-- Scripts loaded after <body> so the DOM is not blocked -->
+<script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+<footer class="rocm-footer">
+<div class="container-lg">
+<section class="bottom-menu menu py-45">
+<div class="row d-flex align-items-center">
+<div class="col-12 text-center">
+<ul>
+<li><a href="https://www.amd.com/en/corporate/copyright" target="_blank">Terms and Conditions</a></li>
+<li><a href="https://rocm.docs.amd.com/en/develop/about/license.html">ROCm Licenses and Disclaimers</a></li>
+<li><a href="https://www.amd.com/en/corporate/privacy" target="_blank">Privacy</a></li>
+<li><a href="https://www.amd.com/en/corporate/trademarks" target="_blank">Trademarks</a></li>
+<li><a href="https://www.amd.com/system/files/documents/statement-human-trafficking-forced-labor.pdf" target="_blank">Statement on Forced Labor</a></li>
+<li><a href="https://www.amd.com/en/corporate/competition" target="_blank">Fair and Open Competition</a></li>
+<li><a href="https://www.amd.com/system/files/documents/amd-uk-tax-strategy.pdf" target="_blank">UK Tax Strategy</a></li>
+<li><a href="https://www.amd.com/en/corporate/cookies" target="_blank">Cookie Policy</a></li>
+<!-- OneTrust Cookies Settings button start -->
+<li><a class="ot-sdk-show-settings" href="#cookie-settings" id="ot-sdk-btn">Cookie Settings</a></li>
+<!-- OneTrust Cookies Settings button end -->
+</ul>
+</div>
+</div>
+<div class="row d-flex align-items-center">
+<div class="col-12 text-center">
+<div>
+<span class="copyright">© 2024 Advanced Micro Devices, Inc</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+</footer>
+<!-- <div id="rdc-watermark-container">
+    <img id="rdc-watermark" src="../_static/images/alpha-watermark.svg" alt="DRAFT watermark"/>
+</div> -->
+</body>
+</html>
