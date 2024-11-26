@@ -1,6 +1,6 @@
 # AMD Data Center GPU Documentation
 
-Welcome to the documentation site for AMD Data Center GPUs. This site provides comprehensive technical documentation, guides, and best practices for deploying and managing AMD Data Center GPUs in enterprise and cloud environments.
+Welcome to the documentation site for AMD Data Center GPUs. This site provides comprehensive technical documentation, guides, and best practices for deploying and managing AMD Data Center GPUs.
 
 ## Additional Resources
 
