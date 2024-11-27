@@ -1,0 +1,6 @@
+root: index.md
+subtrees:
+  - caption: Documentation
+    entries:
+    - file: placeholder.md
+    
