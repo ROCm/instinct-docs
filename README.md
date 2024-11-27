@@ -1,4 +1,4 @@
-# AMD Insticnt Datacenter GPU Documentation
+# AMD Instinct Datacenter GPU Documentation
 
 Welcome to the documentation site for AMD Instinct Datacenter GPUs. This site provides comprehensive technical documentation, guides, and best practices for deploying and managing AMD Instinct Datacenter GPUs.
 
