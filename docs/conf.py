@@ -26,8 +26,7 @@ html_theme_options = {
     "nav_secondary_items": {
         "Community": "https://github.com/ROCm/ROCm/discussions",
         "Blogs": "https://rocm.blogs.amd.com/",
-        "ROCm docs": "https://rocm.docs.amd.com",
-        "Support": repo_url + "/issues/new/choose"
+        "ROCm docs": "https://rocm.docs.amd.com"
     },
     # Add any additional theme options here
 }
