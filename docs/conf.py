@@ -24,8 +24,13 @@ html_theme_options = {
     "flavor": "generic",
     "header_title": "Instinct&#8482 Software",
     "nav_secondary_items": {
-        "GitHub": "https://github.com/rocm/dcgpu-docs",
-        "Documentation": "https://dcgpu.docs.amd.com"
+        #"GitHub": "https://github.com/rocm/dcgpu-docs",
+        #"Documentation": "https://dcgpu.docs.amd.com",
+        #"GitHub": repo_url,
+        "Community": "https://github.com/ROCm/ROCm/discussions",
+        "Blogs": "https://rocm.blogs.amd.com/",
+        "ROCm docs": "https://rocm.docs.amd.com",
+        "Support": repo_url + "/issues/new/choose"
     },
     # Add any additional theme options here
 }
