@@ -2,5 +2,5 @@ version: 1
 
 projects:
   dcgpu: https://dcgpu.docs.amd.com/en/${version}
-  gpu-operator: https://dcgpu.docs.amd.com/gpu-operator/en/${version}
-  metrics-exporter: https://dcgpu.docs.amd.com/metrics-exporter/en/${version}
+  gpu-operator: https://dcgpu.docs.amd.com/projects/gpu-operator/en/${version}
+  metrics-exporter: https://dcgpu.docs.amd.com/projects/metrics-exporter/en/${version}
