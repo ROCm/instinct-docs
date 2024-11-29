@@ -10,7 +10,7 @@ html_baseurl = os.environ.get("READTHEDOCS_CANONICAL_URL", "dcgpu.docs.amd.com")
 html_context = {}
 if os.environ.get("READTHEDOCS", "") == "True":
     html_context["READTHEDOCS"] = True
-project = "AMD Instinct Documentation"
+project = "instinct"
 
 version = "1.0.0"
 release = version
@@ -21,8 +21,8 @@ copyright = "Copyright (c) 2024 Advanced Micro Devices, Inc. All rights reserved
 # Required settings
 html_theme = "rocm_docs_theme"
 html_theme_options = {
-    "flavor": "generic",
-    "header_title": "Instinct&#8482 Hub",
+    "flavor": "instinct",
+    "link_main_doc": True,
     "nav_secondary_items": {
         "Community": "https://github.com/ROCm/ROCm/discussions",
         "Blogs": "https://rocm.blogs.amd.com/",
