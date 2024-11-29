@@ -21,8 +21,7 @@ copyright = "Copyright (c) 2024 Advanced Micro Devices, Inc. All rights reserved
 # Required settings
 html_theme = "rocm_docs_theme"
 html_theme_options = {
-    "flavor": "generic",
-    "header_title": "Instinct&#8482 Hub",
+    "flavor": "instinct",
     "nav_secondary_items": {
         "Community": "https://github.com/ROCm/ROCm/discussions",
         "Blogs": "https://rocm.blogs.amd.com/",
