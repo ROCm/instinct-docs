@@ -4,6 +4,3 @@ subtrees:
     entries:
     - url: https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/
       title: GPU Operator
-    - url: https://dcgpu.docs.amd.com/projects/device-metrics-exporter/en/latest/
-      title: Device Metrics Exporter
-    
