@@ -59,7 +59,7 @@ Welcome to the documentation site for AMD Instinct Data Center GPUs. Targeted fo
 
 :::{grid-item-card}
 :padding: 1
-:img-top: generic.jpg
+:img-top: ./images/generic.jpg
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
