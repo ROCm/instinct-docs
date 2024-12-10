@@ -67,7 +67,7 @@ Welcome to the documentation site for AMD Instinct Data Center GPUs. Targeted fo
 <a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
   <h2 class="card-header">GPU Operators</h2>
 </a>
-<p class="paragraph">GPU Operators</p>
+<p class="paragraph">The AMD GPU Operator simplifies the deployment and management of AMD Instinct GPU accelerators within Kubernetes clusters. This project enables seamless configuration and operation of GPU-accelerated workloads, including machine learning, Generative AI, and other GPU-intensive applications.</p>
 :::
 
 ::::
