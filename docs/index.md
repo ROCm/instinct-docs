@@ -112,9 +112,7 @@ Welcome to the documentation site for AMD Instinct Data Center GPUs. Targeted fo
 
 ::::
 
-## Run workloads at scale
-
-### Kubernetes
+## Kubernetes
 ::::{grid} 1 3 3 3
 :margin 2
 
@@ -159,7 +157,7 @@ Welcome to the documentation site for AMD Instinct Data Center GPUs. Targeted fo
 
 ::::  
 
-### Traditional Job Scheduling
+## Traditional Job Scheduling
 
 ::::{grid} 1 3 3 3
 :margin 2
@@ -175,8 +173,6 @@ Welcome to the documentation site for AMD Instinct Data Center GPUs. Targeted fo
   <h2 class="card-header">SLURM Integration</h2>
 </a>
 <p class="paragraph"> </p>
-
-
 :::
 
 ::::  
@@ -226,6 +222,3 @@ Welcome to the documentation site for AMD Instinct Data Center GPUs. Targeted fo
 :::
 
 ::::  
-
-
-
