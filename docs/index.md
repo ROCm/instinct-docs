@@ -229,8 +229,3 @@ Welcome to the documentation site for AMD Instinct Data Center GPUs. Targeted fo
 
 
 
-:::
-
-::::  
-
-
