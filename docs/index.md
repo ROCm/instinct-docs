@@ -111,7 +111,7 @@ Welcome to the documentation site for AMD Instinct Data Center GPUs. Targeted fo
 :class: small-sd-card
 +++
 <a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
-  <h2 class="card-header">GPU Driver</h2>
+  <h2 class="card-header">Kubernetes Device Plugin</h2>
 </a>
 <p class="paragraph">Install the Instinct Driver.</p>
 :::
@@ -137,9 +137,9 @@ Welcome to the documentation site for AMD Instinct Data Center GPUs. Targeted fo
 :class: small-sd-card
 +++
 <a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
-  <h2 class="card-header">GPU Operators</h2>
+  <h2 class="card-header">Device Exporter</h2>
 </a>
-<p class="paragraph">The AMD GPU Operator simplifies the deployment and management of AMD Instinct GPU accelerators within Kubernetes clusters. This project enables seamless configuration and operation of GPU-accelerated workloads, including machine learning, Generative AI, and other GPU-intensive applications.</p>
+<p class="paragraph">Collect realtime information on K8s</p>
 :::
 
 ::::  
