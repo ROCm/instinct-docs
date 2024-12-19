@@ -92,7 +92,7 @@ Welcome to the documentation site for AMD Instinct Data Center GPUs. Targeted fo
 :class: small-sd-card
 +++
 <a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
-  <h2 class="card-header">Networking configuration</h2>
+  <h2 class="card-header">Network configuration</h2>
 </a>
 <p class="paragraph">How to setup Ethernet, RoCE, IB and other networks. List of validated topologies with full configuration details.</p>
 :::
@@ -157,7 +157,7 @@ Welcome to the documentation site for AMD Instinct Data Center GPUs. Targeted fo
 
 ::::  
 
-## Traditional Job Scheduling
+## Job Schedulers
 
 ::::{grid} 1 3 3 3
 :margin 2
