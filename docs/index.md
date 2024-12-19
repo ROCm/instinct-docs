@@ -31,7 +31,7 @@
   }
   .small-sd-card-img-top.sd-card-img-top {
     width: 100%;
-    height: 15vw;
+    height: 5vw;
     object-fit: cover;
   }
   .small-sd-card.sd-card-body {
