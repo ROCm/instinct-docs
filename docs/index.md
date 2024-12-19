@@ -98,7 +98,6 @@ Welcome to the documentation site for AMD Instinct Data Center GPUs. Targeted fo
 
 ::::
 
-
 ## Kubernetes
 
 ::::{grid} 1 3 3 3
@@ -144,7 +143,6 @@ Welcome to the documentation site for AMD Instinct Data Center GPUs. Targeted fo
 :::
 
 ::::  
-- [Device Metrics Exporter](https://dcgpu.docs.amd.com/projects/device-metrics-exporter/en/latest/)
 
 ## Telemetry
 
