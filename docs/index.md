@@ -176,6 +176,11 @@ Welcome to the documentation site for AMD Instinct Data Center GPUs. Targeted fo
 </a>
 <p class="paragraph"> </p>
 
+
+:::
+
+::::  
+
 ## Telemetry
 
 ::::{grid} 1 3 3 3
