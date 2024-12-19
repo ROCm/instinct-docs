@@ -92,6 +92,19 @@ Welcome to the documentation site for AMD Instinct Data Center GPUs. Targeted fo
 :class: small-sd-card
 +++
 <a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+  <h2 class="card-header">Networking configuration</h2>
+</a>
+<p class="paragraph">How to setup Ethernet, RoCE, IB and other networks. List of validated topologies with full configuration details.</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
   <h2 class="card-header">System Acceptance Testing</h2>
 </a>
 <p class="paragraph">What do you do after installation? Ensure your system is performant with our step by step guide.</p>
