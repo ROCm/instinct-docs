@@ -161,7 +161,7 @@ Welcome to the documentation site for AMD Instinct Data Center GPUs. Targeted fo
 <a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
   <h2 class="card-header">AMD-SMI</h2>
 </a>
-<p class="paragraph">Command line utility and library for base GPU </p>
+<p class="paragraph">The AMD System Management Interface (AMD SMI) library offers a unified tool for managing and monitoring GPUs.</p>
 :::
 
 :::{grid-item-card}
@@ -174,7 +174,7 @@ Welcome to the documentation site for AMD Instinct Data Center GPUs. Targeted fo
 <a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
   <h2 class="card-header">AMD GPU Validation Suite</h2>
 </a>
-<p class="paragraph">The AMD GPU Operator simplifies the deployment and management of AMD Instinct GPU accelerators within Kubernetes clusters. This project enables seamless configuration and operation of GPU-accelerated workloads, including machine learning, Generative AI, and other GPU-intensive applications.</p>
+<p class="paragraph">The ROCm Validation Suite (RVS) is a system validation and diagnostics tool for monitoring, stress testing, detecting, and troubleshooting issues.</p>
 :::
 
 :::{grid-item-card}
@@ -185,9 +185,9 @@ Welcome to the documentation site for AMD Instinct Data Center GPUs. Targeted fo
 :class: small-sd-card
 +++
 <a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
-  <h2 class="card-header">Datacenter Tool</h2>
+  <h2 class="card-header">Instinct Datacenter Tool</h2>
 </a>
-<p class="paragraph">The </p>
+<p class="paragraph">The Instinct Data Center tool (IDC) simplifies the administration of, and addresses key infrastructure challenges on Instinct GPUs in cluster and datacenter environments.</p>
 :::
 
 ::::  
