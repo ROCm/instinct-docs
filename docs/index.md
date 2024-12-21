@@ -63,7 +63,7 @@ Welcome to the documentation site for AMD Instinct Data Center GPUs. Targeted fo
 :class: small-sd-card
 +++
 <a href="https://github.com/ROCm/k8s-device-plugin" class="card-header-link">
-  <h2 class="card-header">Kubernetes Device Plugin</h2>
+  <h2 class="card-header">AMD Kubernetes Device Plugin</h2>
 </a>
 <p class="paragraph">Kubernetes (k8s) device plugin to enable registration of AMD GPU to a container cluster</p>
 :::
@@ -74,7 +74,7 @@ Welcome to the documentation site for AMD Instinct Data Center GPUs. Targeted fo
 :class: small-sd-card
 +++
 <a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
-  <h2 class="card-header">GPU Operators</h2>
+  <h2 class="card-header">AMD GPU Operator</h2>
 </a>
 <p class="paragraph">The AMD GPU Operator simplifies the deployment and management of AMD Instinct GPU accelerators within Kubernetes clusters.</p>
 :::
@@ -85,7 +85,7 @@ Welcome to the documentation site for AMD Instinct Data Center GPUs. Targeted fo
 :class: small-sd-card
 +++
 <a href="https://dcgpu.docs.amd.com/projects/device-metrics-exporter/en/latest/" class="card-header-link">
-  <h2 class="card-header">Device Exporter</h2>
+  <h2 class="card-header">AMD Kubernetes Device Exporter</h2>
 </a>
 <p class="paragraph">Kubernetes (k8s) device plugin to enable registration of AMD GPU to a container cluster</p>
 :::
