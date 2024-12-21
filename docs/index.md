@@ -52,8 +52,8 @@
 
 Welcome to the documentation site for AMD Instinct Data Center GPUs. Targeted for system administrators and power users, this site provides comprehensive technical documentation, guides, and best practices for deploying and managing AMD Instinct Data Center GPUs. Content for GPU software development and applications are located at [ROCm documentation](https://rocm.docs.amd.com).
 
-
 ## Kubernetes
+
 ::::{grid} 1 3 3 3
 :margin 2
 
