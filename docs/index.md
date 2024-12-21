@@ -53,73 +53,12 @@
 Welcome to the documentation site for AMD Instinct Data Center GPUs. Targeted for system administrators and power users, this site provides comprehensive technical documentation, guides, and best practices for deploying and managing AMD Instinct Data Center GPUs. Content for GPU software development and applications are located at [ROCm documentation](https://rocm.docs.amd.com).
 
 
-## Installation
-
-::::{grid} 1 3 3 3
-:margin 2
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/generic.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
-  <h2 class="card-header">Instinct GPU Driver</h2>
-</a>
-<p class="paragraph">Install the Instinct Driver, GPU BIOS and driver compatitiblity, hardware and software lifecycle and more.</p>
-:::
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/generic.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
-  <h2 class="card-header">Instinct Virtualization Driver</h2>
-</a>
-<p class="paragraph">Enable virtualization using SRIOV on Linux with KVM and VMWare.</p>
-:::
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/generic.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
-  <h2 class="card-header">Network configuration</h2>
-</a>
-<p class="paragraph">How to setup Ethernet, RoCE, IB and other networks. List of validated topologies with full configuration details.</p>
-:::
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/generic.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
-  <h2 class="card-header">System Acceptance Testing</h2>
-</a>
-<p class="paragraph">What do you do after installation? Ensure your system is performant with our step by step guide.</p>
-:::
-
-::::
-
 ## Kubernetes
 ::::{grid} 1 3 3 3
 :margin 2
 
 :::{grid-item-card}
 :padding: 1
-:img-top: ./images/generic.jpg
-:class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
 +++
@@ -153,72 +92,6 @@ Welcome to the documentation site for AMD Instinct Data Center GPUs. Targeted fo
   <h2 class="card-header">Device Exporter</h2>
 </a>
 <p class="paragraph">Collect realtime information on K8s</p>
-:::
-
-::::  
-
-## Job Schedulers
-
-::::{grid} 1 3 3 3
-:margin 2
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/generic.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
-  <h2 class="card-header">SLURM Integration</h2>
-</a>
-<p class="paragraph"> </p>
-:::
-
-::::  
-
-## Telemetry
-
-::::{grid} 1 3 3 3
-:margin 2
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/generic.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
-  <h2 class="card-header">AMD-SMI</h2>
-</a>
-<p class="paragraph">The AMD System Management Interface (AMD SMI) library offers a unified tool for managing and monitoring GPUs.</p>
-:::
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/generic.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
-  <h2 class="card-header">AMD GPU Validation Suite</h2>
-</a>
-<p class="paragraph">The ROCm Validation Suite (RVS) is a system validation and diagnostics tool for monitoring, stress testing, detecting, and troubleshooting issues.</p>
-:::
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/generic.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
-  <h2 class="card-header">Instinct Datacenter Tool</h2>
-</a>
-<p class="paragraph">The Instinct Data Center tool (IDC) simplifies the administration of, and addresses key infrastructure challenges on Instinct GPUs in cluster and datacenter environments.</p>
 :::
 
 ::::  
