@@ -85,9 +85,9 @@ Welcome to the documentation site for AMD Instinct Data Center GPUs. Targeted fo
 :class: small-sd-card
 +++
 <a href="https://dcgpu.docs.amd.com/projects/device-metrics-exporter/en/latest/" class="card-header-link">
-  <h2 class="card-header">AMD Kubernetes Device Exporter</h2>
+  <h2 class="card-header">AMD Kubernetes Device Metrics Exporter</h2>
 </a>
-<p class="paragraph">Kubernetes (k8s) device plugin to enable registration of AMD GPU to a container cluster</p>
+<p class="paragraph">AMD Device Metrics Exporter enables Prometheus-format metrics collection for AMD GPUs in HPC and AI environments. </p>
 :::
 
 ::::  
