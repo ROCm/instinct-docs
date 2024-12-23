@@ -52,9 +52,27 @@
 
 Welcome to the documentation site for AMD Instinct Data Center GPUs. Targeted for system administrators and power users, this site provides comprehensive technical documentation, guides, and best practices for deploying and managing AMD Instinct Data Center GPUs. Content for GPU software development and applications are located at [ROCm documentation](https://rocm.docs.amd.com).
 
+## System deployment and configuration
+
+::::{grid} 1 2 2 2
+:margin 2
+
+:::{grid-item-card}
+:padding: 2
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://dcgpu.docs.amd.com/projects/gpu-cluster-networking/en/latest/" class="card-header-link">
+  <h2 class="card-header">Cluster Networking</h2>
+</a>
+<p class="paragraph">Optimize the network for Instinct GPU applications </p>
+:::
+
+::::  
+
 ## Kubernetes
 
-::::{grid} 1 3 3 3
+::::{grid} 1 2 2 2
 :margin 2
 
 :::{grid-item-card}
@@ -79,6 +97,14 @@ Welcome to the documentation site for AMD Instinct Data Center GPUs. Targeted fo
 <p class="paragraph">The AMD GPU Operator simplifies the deployment and management of AMD Instinct GPU accelerators within Kubernetes clusters.</p>
 :::
 
+::::  
+
+
+## Telemetry
+
+::::{grid} 1 2 2 2
+:margin 2
+
 :::{grid-item-card}
 :padding: 2
 :class-body: small-sd-card
@@ -91,3 +117,4 @@ Welcome to the documentation site for AMD Instinct Data Center GPUs. Targeted fo
 :::
 
 ::::  
+
