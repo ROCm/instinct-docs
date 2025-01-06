@@ -99,7 +99,6 @@ Welcome to the documentation site for AMD Instinct Data Center GPUs. Targeted fo
 
 ::::  
 
-
 ## Telemetry
 
 ::::{grid} 1 2 2 2
@@ -117,4 +116,3 @@ Welcome to the documentation site for AMD Instinct Data Center GPUs. Targeted fo
 :::
 
 ::::  
-
