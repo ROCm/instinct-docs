@@ -62,7 +62,7 @@ Welcome to the documentation site for AMD Instinct Data Center GPUs. Targeted fo
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="https://dcgpu.docs.amd.com/projects/gpu-cluster-networking/en/latest/" class="card-header-link">
+<a href="https://instinct.docs.amd.com/projects/gpu-cluster-networking/en/latest/" class="card-header-link">
   <h2 class="card-header">Cluster Networking</h2>
 </a>
 <p class="paragraph">Optimize the network for Instinct GPU applications </p>
@@ -91,14 +91,13 @@ Welcome to the documentation site for AMD Instinct Data Center GPUs. Targeted fo
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+<a href="https://instinct.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
   <h2 class="card-header">AMD GPU Operator</h2>
 </a>
 <p class="paragraph">The AMD GPU Operator simplifies the deployment and management of AMD Instinct GPU accelerators within Kubernetes clusters.</p>
 :::
 
 ::::  
-
 
 ## Telemetry
 
@@ -110,11 +109,10 @@ Welcome to the documentation site for AMD Instinct Data Center GPUs. Targeted fo
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="https://dcgpu.docs.amd.com/projects/device-metrics-exporter/en/latest/" class="card-header-link">
+<a href="https://instinct.docs.amd.com/projects/device-metrics-exporter/en/latest/" class="card-header-link">
   <h2 class="card-header">AMD Device Metrics Exporter</h2>
 </a>
 <p class="paragraph">AMD Device Metrics Exporter enables Prometheus-format metrics collection for AMD GPUs in HPC and AI environments. </p>
 :::
 
 ::::  
-
