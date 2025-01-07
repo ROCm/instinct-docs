@@ -1,218 +1,10 @@
-|A black background with a black square Description automatically
-generated with medium confidence|
-
-| AMD Instinct MI300X Customer
-| Acceptance Test Guide
-
-Publication Number: 58708 v0.9
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-October 2024
-^^^^^^^^^^^^
-
-Contents
-========
-
-`Chapter 1: Introduction <#chapter-1-introduction>`__
-`5 <#chapter-1-introduction>`__
-
-`Chapter 2: Prerequisites <#chapter-2-prerequisites>`__
-`5 <#chapter-2-prerequisites>`__
-
-`2.1 System BIOS Settings <#system-bios-settings>`__
-`6 <#system-bios-settings>`__
-
-`2.2 Supported Operating Systems <#supported-operating-systems>`__
-`6 <#supported-operating-systems>`__
-
-`2.3 GRUB Settings <#grub-settings>`__ `6 <#grub-settings>`__
-
-`2.4 Operating System Settings <#operating-system-settings>`__
-`6 <#operating-system-settings>`__
-
-`2.5 Updating System Firmware <#updating-system-firmware>`__
-`6 <#updating-system-firmware>`__
-
-`2.6 ROCm Installation <#rocm-installation>`__
-`7 <#rocm-installation>`__
-
-`Chapter 3: Basic System Health
-Checks <#chapter-3-basic-system-health-checks>`__
-`7 <#chapter-3-basic-system-health-checks>`__
-
-`3.1 Check OS and host system
-checks <#check-os-and-host-system-checks>`__
-`8 <#check-os-and-host-system-checks>`__
-
-`3.1.1 Check OS distribution
-(os-release) <#check-os-distribution-os-release>`__
-`8 <#check-os-distribution-os-release>`__
-
-`3.1.2 Check kernel boot arguments
-(cmdline) <#check-kernel-boot-arguments-cmdline>`__
-`8 <#check-kernel-boot-arguments-cmdline>`__
-
-`3.1.3 Check for driver errors
-(dmesg) <#check-for-driver-errors-dmesg>`__
-`9 <#check-for-driver-errors-dmesg>`__
-
-`3.1.4 Check for available memory
-(lsmem) <#check-for-available-memory-lsmem>`__
-`9 <#check-for-available-memory-lsmem>`__
-
-`3.2 Check GPU Presence (lspci) <#check-gpu-presence-lspci>`__
-`9 <#check-gpu-presence-lspci>`__
-
-`3.3 Check GPU link speed and width on PCIe bus (sudo lspci
--vvv) <#check-gpu-link-speed-and-width-on-pcie-bus-sudo-lspci--vvv>`__
-`10 <#check-gpu-link-speed-and-width-on-pcie-bus-sudo-lspci--vvv>`__
-
-`3.4 Monitoring Utilization Metrics
-(amd-smi) <#monitoring-utilization-metrics-amd-smi>`__
-`11 <#monitoring-utilization-metrics-amd-smi>`__
-
-`3.5 Check the System Kernel Logs for Other Errors
-(dmesg) <#check-the-system-kernel-logs-for-other-errors-dmesg>`__
-`11 <#check-the-system-kernel-logs-for-other-errors-dmesg>`__
-
-`Chapter 4: System Validation
-Tests <#chapter-4-system-validation-tests>`__
-`13 <#chapter-4-system-validation-tests>`__
-
-`4.1 Compute / GPU <#compute-gpu>`__ `13 <#compute-gpu>`__
-
-`4.1.1 Properties <#properties>`__ `14 <#properties>`__
-
-`4.1.2 Benchmark / Stress /
-Qualification <#benchmark-stress-qualification>`__
-`15 <#benchmark-stress-qualification>`__
-
-`4.2 Memory <#memory>`__ `18 <#memory>`__
-
-`4.2.1 MEM <#mem>`__ `18 <#mem>`__
-
-`4.2.2 BABEL <#babel>`__ `19 <#babel>`__
-
-`4.3 IO <#io>`__ `19 <#io>`__
-
-`4.3.1 PEBB (PCIe Bandwidth
-Benchmark) <#pebb-pcie-bandwidth-benchmark>`__
-`20 <#pebb-pcie-bandwidth-benchmark>`__
-
-`4.3.2 PEQT (PCIe Qualification Tool) <#peqt-pcie-qualification-tool>`__
-`21 <#peqt-pcie-qualification-tool>`__
-
-`4.3.3 PBQT (P2P Benchmark and Qualification
-Tool) <#pbqt-p2p-benchmark-and-qualification-tool>`__
-`22 <#pbqt-p2p-benchmark-and-qualification-tool>`__
-
-`Chapter 5: Performance
-Benchmarking <#chapter-5-performance-benchmarking>`__
-`24 <#chapter-5-performance-benchmarking>`__
-
-`5.1 TransferBench Benchmarking
-Results <#transferbench-benchmarking-results>`__
-`24 <#transferbench-benchmarking-results>`__
-
-`5.1.1 TransferBench Qualification <#transferbench-qualification>`__
-`24 <#transferbench-qualification>`__
-
-`5.2 RCCL Benchmarking Results <#rccl-benchmarking-results>`__
-`29 <#rccl-benchmarking-results>`__
-
-`5.2.1 RCCL Qualification <#rccl-qualification>`__
-`30 <#rccl-qualification>`__
-
-`5.3 rocBLAS Benchmarking Results <#rocblas-benchmarking-results>`__
-`32 <#rocblas-benchmarking-results>`__
-
-`5.3.1 rocBLAS Qualification <#rocblas-qualification>`__
-`33 <#rocblas-qualification>`__
-
-`5.4 BabelStream Benchmarking
-Results <#babelstream-benchmarking-results>`__
-`34 <#babelstream-benchmarking-results>`__
-
-`5.4.1 BabelStream Qualification <#babelstream-qualification>`__
-`35 <#babelstream-qualification>`__
-
-`Chapter 6: Acceptance Criteria <#chapter-6-acceptance-criteria>`__
-`38 <#chapter-6-acceptance-criteria>`__
-
-`Chapter 7: Next Steps <#chapter-7-next-steps>`__
-`40 <#chapter-7-next-steps>`__
-
-`7.1 MI300X AI Model Performance Validation
-Guide <#mi300x-ai-model-performance-validation-guide>`__
-`40 <#mi300x-ai-model-performance-validation-guide>`__
-
-`7.2 MI300X Cluster Network Performance Validation
-Guide <#mi300x-cluster-network-performance-validation-guide>`__
-`40 <#mi300x-cluster-network-performance-validation-guide>`__
-
-`7.3 MI300X Workload Optimization
-Guide <#mi300x-workload-optimization-guide>`__
-`40 <#mi300x-workload-optimization-guide>`__
-
-`Appendix A: Acronyms <#appendix-a-acronyms>`__
-`41 <#appendix-a-acronyms>`__
-
-`Appendix B: Reference Documents <#appendix-b-reference-documents>`__
-`42 <#appendix-b-reference-documents>`__
-
-`Appendix C: Collecting Logs
-(rocm_techsupport.sh) <#pappendix-c-collecting-logs-rocm_techsupport.sh>`__
-`43 <#pappendix-c-collecting-logs-rocm_techsupport.sh>`__
-
-`Appendix D: Revision History <#appendix-d-revision-history>`__
-`43 <#appendix-d-revision-history>`__
-
-`Appendix E: Notices <#appendix-e-notices>`__
-`44 <#appendix-e-notices>`__
-
-`Trademarks <#trademarks>`__ `44 <#trademarks>`__
-
-**
-**
-
-**List of Tables**
-
-`Table 1: Average, Pass/Fail Bandwidth in GB/s for TransferBench
-All-to-All Benchmarking <#_Toc180918271>`__ `25 <#_Toc180918271>`__
-
-`Table 2: Average, Pass/Fail Bandwidth in GB/s for TransferBench
-Peer-to-Peer Benchmarking <#_Toc180918272>`__ `27 <#_Toc180918272>`__
-
-`Table 3: Average, Pass/Fail Bandwidth in GB/s for TransferBench
-Benchmarking <#_Toc180918273>`__ `29 <#_Toc180918273>`__
-
-`Table 4: Average, Pass/Fail Bandwidth in GB/s for RCCL
-Benchmarking <#_Toc180918274>`__ `32 <#_Toc180918274>`__
-
-`Table 5: Average, Pass/Fail Bandwidth in TFLOPS for GEMM
-Benchmarking <#_Toc180918275>`__ `34 <#_Toc180918275>`__
-
-`Table 6: Average, Pass/Fail Memory Bandwidth in MB/s for BabelStream
-Benchmarking <#_Toc180918276>`__ `36 <#_Toc180918276>`__
-
-`Table 7: Summary of the Basic System Health Checks <#_Toc180918277>`__
-`38 <#_Toc180918277>`__
-
-`Table 8: Summary of System Validation Tests <#_Toc180918278>`__
-`38 <#_Toc180918278>`__
-
-`Table 9: Summary of Performance Benchmarking Tests <#_Toc180918279>`__
-`39 <#_Toc180918279>`__
-
-`Table 10: Acronyms <#_Toc180918280>`__ `41 <#_Toc180918280>`__
-
-`Table 11: Reference Documents <#_Toc180918281>`__
-`42 <#_Toc180918281>`__
-
-`Table 12: Revision History <#_Toc180918282>`__ `43 <#_Toc180918282>`__
-
-Chapter 1: Introduction
-=======================
+.. meta::
+   :description lang=en: AMD Instinct MI300X system validation guide for customer acceptance testing.
+   :keywords: validate, CAT
+
+*****************************************
+AMD Instinct MI300X acceptance test guide
+*****************************************
 
 This guide provides detailed instructions for qualified data center
 system operators to test the proper functioning and optimal performance
@@ -255,8 +47,10 @@ documents in `Appendix B <#appendix-b-reference-documents>`__ and move
 to the next stage of performance validation testing and optimization
 outlined in `Chapter 7: Next Steps <#chapter-7-next-steps>`__.
 
-Chapter 2: Prerequisites
-========================
+.. _mi300x-sv-prerequisites:
+
+Prerequisites
+=============
 
 Prior to proceeding to the prerequisites in this section, the operator
 should ensure the system does not have visible damage and is installed
@@ -289,8 +83,10 @@ testing including:
 recommended to record existing production system settings to allow the
 system to be returned to the original settings.
 
-2.1 System BIOS Settings
-------------------------
+.. _mi300x-sv-bios-settings:
+
+System BIOS settings
+--------------------
 
 Some server manufacturers offer tools that allow the current BIOS
 configuration settings to be exported to a file, modified with needed
@@ -308,8 +104,10 @@ values in the system BIOS. Analogous settings for other non-AMI System
 BIOS providers could be set similarly. For systems with Intel
 processors, some settings may not apply or be available.
 
-2.2 Supported Operating Systems
--------------------------------
+.. _mi300x-sv-supported-os:
+
+Supported operating systems
+---------------------------
 
 AMD ROCm software supports certain Linux distributions. Refer to the
 list of `Support Operating
@@ -323,8 +121,10 @@ with the OS already installed, refer to the `Installation
 Prerequisites <https://rocm.docs.amd.com/projects/install-on-linux/en/latest/install/prerequisites.html>`__
 for ROCm.
 
-2.3 GRUB Settings
------------------
+.. _mi300x-sv-grub-settings:
+
+GRUB settings
+-------------
 
 GRUB, or GNU Grand Unified Bootloader, is a boot loader and boot manager
 for Linux that allows the operator to select which operating system and
@@ -336,8 +136,10 @@ settings <https://rocm.docs.amd.com/en/latest/how-to/system-optimization/mi300x.
 for MI300X. After updating GRUB and rebooting the system, it is
 recommended to check the GRUB configuration file before proceeding.
 
-2.4 Operating System Settings
------------------------------
+.. _mi300x-sv-os-settings:
+
+Operating system settings
+-------------------------
 
 To ensure the system is operating at maximum performance prior to
 running the validations and performance tests in this document, the
@@ -349,16 +151,20 @@ for MI300X. For the purposes of illustration, in all the sections to
 follow the commands and their output shown, are for Ubuntu 22.04 Linux
 unless otherwise specified.
 
-2.5 Updating System Firmware
-----------------------------
+.. _mi300x-sv-system-firmware:
+
+Updating system firmware
+------------------------
 
 Ensure that the system under test is running the latest firmware
 versions by contacting your system manufacturer. Systems with older
 firmware versions may not fully be validated, and performance or
 functionality could be sub-optimal.
 
-2.6 ROCm Installation
----------------------
+.. _mi300x-sv-rocm-installation:
+
+ROCm installation
+-----------------
 
 Once the system is properly configured, ROCm software can be installed.
 Prior to validating the system, ensure that ROCm 6.2 or greater is
@@ -392,8 +198,10 @@ version 6.2.0-66
 ensure this version of ROCm installed is compatible with the system
 firmware.
 
-Chapter 3: Basic System Health Checks
-=====================================
+.. _mi300x-sv-system-health-checks:
+
+Basic system health checks
+==========================
 
 Prior to proceeding to more extensive system validation, it is important
 to ensure all components in the system are operating at peak performance
@@ -441,8 +249,8 @@ one of the supported distributions for ROCm 6.2 at the time of release
 of this guide. Running other supported distributions on the SUT may
 result in slightly different output.
 
-3.1 Check OS and host system checks
------------------------------------
+Check OS and host system checks
+-------------------------------
 
 The following sub-sections lists items to check for the operating system
 and host CPU and memory checks. For each, a sample command along with
@@ -452,8 +260,8 @@ results and serves as a guideline.
 **NOTE:** If results vary from the sample expected output, contact your
 system manufacturer support representative for further assistance.
 
-3.1.1 Check OS distribution (os-release)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Check OS distribution (os-release)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Check the OS distribution installed on the SUT using the following
 command.
@@ -483,8 +291,8 @@ Result:
     steps. Instead, install a supported distribution and then proceed
     with the installation of ROCm 6.2 or a newer version.
 
-3.1.2 Check kernel boot arguments (cmdline)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Check kernel boot arguments (cmdline)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Correct boot arguments must be utilized by the Linux kernel during the
 startup of the System Under Test (SUT). Once the system has booted, run
@@ -522,8 +330,8 @@ Result:
     Note that if pci=realloc=off is not in GRUB configuration in Ubuntu
     distribution, not all GPUs may be recognized.
 
-3.1.3 Check for driver errors (dmesg)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Check for driver errors (dmesg)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Use the following command to check for driver errors in the Linux OS
 diagnostic messages (dmesg).
@@ -541,8 +349,8 @@ Result:
   - Action: Don’t proceed further. Reinstall amdgpu driver and then
     start the acceptance testing from this section.
 
-3.1.4 Check for available memory (lsmem)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Check for available memory (lsmem)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Confirm there is at least 1.5T of memory in the system.
 
@@ -560,8 +368,8 @@ If the available memory is less than 1.5T, the system may not function
 properly when a large workload is run. But you can continue to next
 check.
 
-3.2 Check GPU Presence (lspci)
-------------------------------
+Check GPU presence (lspci)
+--------------------------
 
 Confirm all GPU accelerators are present and available on the PCIe bus
 by running the following command.
@@ -614,8 +422,8 @@ Result:
     - If adjusting the torque does not resolve the problem, contact your
       system manufacturer for further assistance.
 
-3.3 Check GPU link speed and width on PCIe bus (sudo lspci -vvv)
-----------------------------------------------------------------
+Check GPU link speed and width on PCIe bus (sudo lspci -vvv)
+------------------------------------------------------------
 
 Confirm PCIe links to each of the GPUs are running at full speed and
 width. Use the following lspci command with the highest verbosity mode
@@ -681,8 +489,10 @@ Result:
   - Action: Do not proceed further. Report this issue to your system
     manufacturer immediately.
 
-3.4 Monitoring Utilization Metrics (amd-smi)
---------------------------------------------
+.. _mi300x-sv-monitoring-utilization-metrics:
+
+Monitoring utilization metrics (amd-smi)
+----------------------------------------
 
 The amd-smi monitor command-line tool, typically installed with ROCm,
 can be used to monitor AMD GPU hardware, including thermal, power,
@@ -743,8 +553,8 @@ Result for an idle system:
     Power cycle the system. If the issue persists, report this issue to
     your system manufacturer.
 
-3.5 Check the System Kernel Logs for Other Errors (dmesg)
----------------------------------------------------------
+Check the system kernel logs for other errors (dmesg)
+-----------------------------------------------------
 
 The command line utility *dmesg* prints boot-time message and on-going
 kernel event messages about the state of the system hardware and
@@ -774,8 +584,8 @@ Logs <#pappendix-c-collecting-logs-rocm_techsupport.sh>`__ for
 information on the rocm_techsupport.sh script utility from AMD which
 collect system logs for purpose of support and troubleshooting.
 
-Chapter 4: System Validation Tests
-==================================
+System validation tests
+=======================
 
 The validation tests in this section are intended to ensure that a
 system is operating correctly as expected. In this section, ROCm
@@ -835,8 +645,8 @@ provided. Most of the rvs tests do not have strict PASS / FAIL
 conditions reported, rather it is expected that when they are run on the
 SUT, the output observed are within a reasonable range provided.
 
-4.1 Compute / GPU
------------------
+Compute / GPU
+-------------
 
 The rvs has three different *types* of modules to validate the Compute
 subsystem. These are:
@@ -896,8 +706,8 @@ Result:
   - Action: Don’t proceed further. Debug the issue of not being able to
     see all GPUs.
 
-4.1.1 Properties 
-~~~~~~~~~~~~~~~~~
+Properties
+~~~~~~~~~~
 
 The GPU Properties module queries the configuration of a targeted GPU
 and returns the device’s static characteristics. These static values can
@@ -989,8 +799,8 @@ Result:
 
   - Typically, it is not expected that this module will fail
 
-4.1.2 Benchmark / Stress / Qualification
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Benchmark, stress, qualification
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 These categories of modules perform qualification of the GPU subsystem,
 execute stress test, and compute and display bandwidth. The modules do
@@ -998,8 +808,8 @@ not produce a PASS / FAIL result. When bandwidth is measured it only
 reports the bandwidth and doesn’t make any comparisons with existing set
 of numbers. Only exceptions are GST and IET modules.
 
-4.1.2.1 Benchmark
-^^^^^^^^^^^^^^^^^
+Benchmark
+^^^^^^^^^
 
 The GPU Stress Test (GST) module stresses the GPU FLOPS performance for
 SGEMM, DGEMM and HGEMM operations and computes and displays peak
@@ -1209,8 +1019,8 @@ Result:
 
 - 
 
-4.1.2.2 Stress
-^^^^^^^^^^^^^^
+Stress
+^^^^^^
 
 The Input Energy Delay Product (EDPp) test (IET) module runs GEMM
 workloads to stress the GPU power, i.e. Total Graphics Power (TGP).
@@ -1289,8 +1099,8 @@ Result:
   - Action: Do not proceed further. Report this issue to your system
     manufacturer immediately.
 
-4.1.2.3 Qualification
-^^^^^^^^^^^^^^^^^^^^^
+Qualification
+^^^^^^^^^^^^^
 
 The GPU monitor (GM) module is used to report and validate the following
 system attributes.
@@ -1343,8 +1153,8 @@ Result:
   - Action: Continue with the next step but periodically monitor by
     running this module.
 
-4.2 Memory
-----------
+Memory
+------
 
 To validate the GPU memory subsystem, rvs has the following two *types*
 of modules:
@@ -1353,8 +1163,8 @@ of modules:
 
 - BABEL
 
-4.2.1 MEM
-~~~~~~~~~
+MEM
+~~~
 
 The Memory module, MEM, tests the GPU memory for hardware errors and
 soft errors using HIP. It consists of various tests that use algorithms
@@ -1484,14 +1294,14 @@ Result:
   - Action: Do not proceed further. Report this issue to your system
     manufacturer immediately.
 
-4.2.2 BABEL
-~~~~~~~~~~~
+BABEL
+~~~~~
 
 Refer to section `5.4 BabelStream <#babelstream-benchmarking-results>`__
 for instructions on how to run this module to test memory.
 
-4.3 IO
-------
+IO
+--
 
 To validate the GPU interfaces, rvs has the following three *types* of
 modules:
