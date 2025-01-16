@@ -68,6 +68,17 @@ Welcome to the documentation site for AMD Instinct Data Center GPUs. Targeted fo
 <p class="paragraph">Optimize the network for Instinct GPU applications </p>
 :::
 
+:::{grid-item-card}
+:padding: 2
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://instinct.docs.amd.com/projects/system-acceptance/en/latest/" class="card-header-link">
+  <h2 class="card-header">System Acceptance Test Guide</h2>
+</a>
+<p class="paragraph">Detailed instructions to test the proper functioning and optimal performance of server systems equipped with AMD Instinct MI300X GPU accelerators. </p>
+:::
+
 ::::  
 
 ## Kubernetes
