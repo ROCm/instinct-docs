@@ -130,4 +130,4 @@ Targeted for system administrators and power users, this site provides comprehen
 
 ## Beta status
 
-This project is in beta status. The information here is accurate to our best efforts. The organization, layout and structure of this site will change rapidly. Feedback is appreciated via the [ROCm discussions forum](https://github.com/ROCm/ROCm/discussions).
+This website is in beta status. The information here is accurate to our best efforts. The organization, layout and structure of this site will change rapidly. Feedback is appreciated via the [ROCm discussions forum](https://github.com/ROCm/ROCm/discussions).
