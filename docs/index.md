@@ -70,7 +70,8 @@ AI Stuff
 :img-top: ./images/generic.jpg
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
-
+:class: small-sd-card
++++
 <a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
   <h2 class="card-header">Instinct Virtualization Driver</h2>
 </a>
