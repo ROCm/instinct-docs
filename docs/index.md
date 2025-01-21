@@ -39,7 +39,7 @@
     height: 15%;
   }
   .small-sd-card {
-    width: 45px;
+    width: 145px;
     height: 0;
     display: none;
   }
@@ -63,7 +63,25 @@ This website is in beta status. The information here is accurate to our best eff
 :::::{tab-item} AI USER
 AI Stuff
 
-::::{grid} 1 1 1 1
+::::{grid} 3 3 2 1
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+
+How-to use ROCm for AI on Instinct GPUs
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+
+How-to use ROCm for AI on Instinct GPUs
+:::
 
 :::{grid-item-card}
 :padding: 1
