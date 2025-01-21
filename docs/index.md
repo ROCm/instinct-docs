@@ -91,7 +91,7 @@ AI Stuff
 :::::::
 
 :::::::{tab-item} Instinct for HPC
-
+HPC Stuff
 :::::::
 
 ::::::::
