@@ -114,11 +114,11 @@ This website is in beta status. The information here is accurate to our best eff
 HPC Stuff
 :::::::
 
-:::::::{tab-item} Instinct for System Administrators
+:::::::{tab-item} System Administrators
 System Administrator Stuff
 :::::::
 
-:::::::{tab-item} Instinct Technical Documentation
+:::::::{tab-item} Technical Documentation
 Technical Documentation Information
 :::::::
 
