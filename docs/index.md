@@ -31,7 +31,7 @@
   }
   .small-sd-card-img-top.sd-card-img-top {
     width: 100%;
-    height: 15%;
+    height: 30%;
     object-fit: cover;
   }
   .small-sd-card.sd-card-body {
@@ -71,7 +71,10 @@ AI Stuff
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 
-How-to use ROCm for AI on Instinct GPUs
+<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+  <h2 class="card-header">Instinct Virtualization Driver</h2>
+</a>
+<p class="paragraph">Enable virtualization using SRIOV on Linux with KVM and VMWare.</p>
 :::
 
 :::{grid-item-card}
