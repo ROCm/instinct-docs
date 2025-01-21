@@ -58,12 +58,22 @@ This website is in beta status. The information here is accurate to our best eff
 
 ## System deployment and configuration
 
-.. tabs::
-  .. tab:: AI User
-    AI Stuff
-  .. tab:: HPC User
-    HPC STUFF
-  .. tab:: System Administrator
-    System Adiminstrator Stuff
-  .. tab:: Core API Developers
-    Core API Stuff
+::::{tab-set}
+
+:::{tab-item} AI USER
+AI Stuff
+:::
+
+:::{tab-item} HPC USER
+HPC Stuff
+:::
+
+:::{tab-item}  System Administrator
+System Administrator Stuff
+:::
+
+:::{tab-item} CORE API Developers
+Core API developers stuff
+:::
+
+::::
