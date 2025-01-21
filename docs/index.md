@@ -58,18 +58,18 @@ This website is in beta status. The information here is accurate to our best eff
 
 ## System deployment and configuration
 
-:::::::{tab-set}
+::::::::{tab-set}
 
-::::::{tab-item} Instinct for AI
+:::::::{tab-item} Instinct for AI
 AI Stuff
 
-:::::{tab-set}
+::::::{tab-set}
 
-::::{tab-item} AI USER
+:::::{tab-item} AI USER
 
-:::{grid} 2 2 2 2
+::::{grid} 2 2 2 2
 
-::{grid-item-card}
+:::{grid-item-card}
 :padding: 1
 :img-top: ./images/generic.jpg
 :class-img-top: small-sd-card-img-top
@@ -80,9 +80,9 @@ AI Stuff
   <h2 class="card-header">Instinct Virtualization Driver</h2>
 </a>
 <p class="paragraph">Enable virtualization using SRIOV on Linux with KVM and VMWare.</p>
-::
+:::
 
-::{grid-item-card}
+:::{grid-item-card}
 :padding: 1
 :img-top: ./images/generic.jpg
 :class-img-top: small-sd-card-img-top
@@ -93,9 +93,9 @@ AI Stuff
   <h2 class="card-header">Instinct Virtualization Driver</h2>
 </a>
 <p class="paragraph">Enable virtualization using SRIOV on Linux with KVM and VMWare.</p>
-::
+:::
 
-::{grid-item-card}
+:::{grid-item-card}
 :padding: 1
 :img-top: ./images/generic.jpg
 :class-img-top: small-sd-card-img-top
@@ -106,8 +106,6 @@ AI Stuff
   <h2 class="card-header">Instinct Virtualization Driver</h2>
 </a>
 <p class="paragraph">Enable virtualization using SRIOV on Linux with KVM and VMWare.</p>
-::
-
 :::
 
 ::::
@@ -116,16 +114,6 @@ AI Stuff
 
 ::::::
 
-::::::{tab-item} HPC USER
-HPC Stuff
-::::::
-
-::::::{tab-item}  System Administrator
-System Administrator Stuff
-::::::
-
-::::::{tab-item} CORE API Developers
-Core API developers stuff
-::::::
-
 :::::::
+
+::::::::
