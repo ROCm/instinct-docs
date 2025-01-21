@@ -61,7 +61,6 @@ This website is in beta status. The information here is accurate to our best eff
 ::::::::{tab-set}
 
 :::::::{tab-item} Instinct for AI
-AI Stuff
 
 ::::::{tab-set}
 
@@ -113,6 +112,14 @@ AI Stuff
 
 :::::::{tab-item} Instinct for HPC
 HPC Stuff
+:::::::
+
+:::::::{tab-item} Instinct for System Administrators
+System Administrator Stuff
+:::::::
+
+:::::::{tab-item} Instinct Technical Documentation
+Technical Documentation Information
 :::::::
 
 ::::::::
