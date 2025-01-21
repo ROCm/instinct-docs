@@ -58,31 +58,33 @@ This website is in beta status. The information here is accurate to our best eff
 
 ## System deployment and configuration
 
-:::::{tab-set}
+::::::{tab-set}
 
-::::{tab-item} AI USER
+:::::{tab-item} AI USER
 AI Stuff
 
-:::{grid} 1 1 1 1
+::::{grid} 1 1 1 1
 
-::{grid-item-card}
+:::{grid-item-card}
+:padding: 1
+
 Test
-::
-
 :::
 
 ::::
 
-::::{tab-item} HPC USER
-HPC Stuff
-::::
-
-::::{tab-item}  System Administrator
-System Administrator Stuff
-::::
-
-::::{tab-item} CORE API Developers
-Core API developers stuff
-::::
-
 :::::
+
+:::::{tab-item} HPC USER
+HPC Stuff
+:::::
+
+:::::{tab-item}  System Administrator
+System Administrator Stuff
+:::::
+
+:::::{tab-item} CORE API Developers
+Core API developers stuff
+:::::
+
+::::::
