@@ -82,32 +82,6 @@ AI Stuff
 <p class="paragraph">Enable virtualization using SRIOV on Linux with KVM and VMWare.</p>
 :::
 
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/generic.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
-  <h2 class="card-header">Instinct Virtualization Driver</h2>
-</a>
-<p class="paragraph">Enable virtualization using SRIOV on Linux with KVM and VMWare.</p>
-:::
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/generic.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
-  <h2 class="card-header">Instinct Virtualization Driver</h2>
-</a>
-<p class="paragraph">Enable virtualization using SRIOV on Linux with KVM and VMWare.</p>
-:::
-
 ::::
 
 :::::
@@ -118,9 +92,7 @@ AI Stuff
 
 ::::::
 
-::::::{tab-item} Instinct for HPC
-
-::::::
+:::::::{tab-item} Instinct for HPC
 
 :::::::
 
