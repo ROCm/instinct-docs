@@ -63,7 +63,7 @@ This website is in beta status. The information here is accurate to our best eff
 :::::{tab-item} AI USER
 AI Stuff
 
-::::{grid} 3 3 2 1
+::::{grid} 3 3 3 3
 
 :::{grid-item-card}
 :padding: 1
