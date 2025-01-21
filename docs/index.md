@@ -67,8 +67,11 @@ AI Stuff
 
 :::{grid-item-card}
 :padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
 
-Test
+How-to use ROCm for AI on Instinct GPUs
 :::
 
 ::::
