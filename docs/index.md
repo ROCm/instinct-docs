@@ -54,7 +54,7 @@ Targeted for system administrators and power users, this site provides comprehen
 
 ::::::::{tab-set}
 
-:::::::{tab-item} Instinct for AI
+:::::::{tab-item} AI
 
 ::::::{tab-set}
 
@@ -104,7 +104,7 @@ Targeted for system administrators and power users, this site provides comprehen
 
 :::::::
 
-:::::::{tab-item} Instinct for HPC
+:::::::{tab-item} HPC
 HPC Stuff
 :::::::
 
@@ -112,7 +112,7 @@ HPC Stuff
 System Administrator Stuff
 :::::::
 
-:::::::{tab-item} Technical Documentation
+:::::::{tab-item} Core Reference
 Technical Documentation Information
 :::::::
 
