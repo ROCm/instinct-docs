@@ -65,7 +65,28 @@ AI Stuff
 
 ::::::{tab-set}
 
-:::::{tab-item} AI USER
+:::::{tab-item} AI User
+
+::::{grid} 2 2 2 2
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+  <h2 class="card-header">Instinct Virtualization Driver</h2>
+</a>
+<p class="paragraph">Enable virtualization using SRIOV on Linux with KVM and VMWare.</p>
+:::
+
+::::
+
+:::::
+
+:::::{tab-item} AI Developer
 
 ::::{grid} 2 2 2 2
 
