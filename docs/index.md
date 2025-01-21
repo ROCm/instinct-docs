@@ -52,12 +52,6 @@
 
 Targeted for system administrators and power users, this site provides comprehensive technical documentation, guides, and best practices for deploying and managing AMD Instinct Data Center GPUs. Content for GPU software development and applications are located at [ROCm documentation](https://rocm.docs.amd.com).
 
-## Beta status
-
-This website is in beta status. The information here is accurate to our best efforts. The organization, layout and structure of this site will change rapidly. Feedback is appreciated via the [ROCm discussions forum](https://github.com/ROCm/ROCm/discussions).
-
-## System deployment and configuration
-
 ::::::::{tab-set}
 
 :::::::{tab-item} Instinct for AI
