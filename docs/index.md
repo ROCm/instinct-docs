@@ -63,7 +63,7 @@ This website is in beta status. The information here is accurate to our best eff
 :::::{tab-item} AI USER
 AI Stuff
 
-::::{grid} 3 3 3 3
+::::{grid} 2 2 2 2
 
 :::{grid-item-card}
 :padding: 1
@@ -83,8 +83,12 @@ AI Stuff
 :img-top: ./images/generic.jpg
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
-
-How-to use ROCm for AI on Instinct GPUs
+:class: small-sd-card
++++
+<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+  <h2 class="card-header">Instinct Virtualization Driver</h2>
+</a>
+<p class="paragraph">Enable virtualization using SRIOV on Linux with KVM and VMWare.</p>
 :::
 
 :::{grid-item-card}
@@ -92,8 +96,12 @@ How-to use ROCm for AI on Instinct GPUs
 :img-top: ./images/generic.jpg
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
-
-How-to use ROCm for AI on Instinct GPUs
+:class: small-sd-card
++++
+<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+  <h2 class="card-header">Instinct Virtualization Driver</h2>
+</a>
+<p class="paragraph">Enable virtualization using SRIOV on Linux with KVM and VMWare.</p>
 :::
 
 ::::
