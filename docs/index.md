@@ -86,11 +86,9 @@ AI Stuff
 
 :::::
 
-:::::{tab-item} AI Developer
-
-:::::
-
 ::::::
+
+:::::::
 
 :::::::{tab-item} Instinct for HPC
 
