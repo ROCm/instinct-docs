@@ -112,13 +112,13 @@ AI Stuff
 
 :::::
 
-::::: {tab-item} AI Developer
+:::::{tab-item} AI Developer
 
 :::::
 
 ::::::
 
-:::::: {tab-item} Instinct for HPC
+::::::{tab-item} Instinct for HPC
 
 ::::::
 
