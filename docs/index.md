@@ -60,12 +60,16 @@ This website is in beta status. The information here is accurate to our best eff
 
 :::::::{tab-set}
 
-::::::{tab-item} AI USER
+::::::{tab-item} Instinct for AI
 AI Stuff
 
-:::::{grid} 2 2 2 2
+:::::{tab-set}
 
-::::{grid-item-card}
+::::{tab-item} AI USER
+
+:::{grid} 2 2 2 2
+
+::{grid-item-card}
 :padding: 1
 :img-top: ./images/generic.jpg
 :class-img-top: small-sd-card-img-top
@@ -76,9 +80,9 @@ AI Stuff
   <h2 class="card-header">Instinct Virtualization Driver</h2>
 </a>
 <p class="paragraph">Enable virtualization using SRIOV on Linux with KVM and VMWare.</p>
-::::
+::
 
-::::{grid-item-card}
+::{grid-item-card}
 :padding: 1
 :img-top: ./images/generic.jpg
 :class-img-top: small-sd-card-img-top
@@ -89,9 +93,9 @@ AI Stuff
   <h2 class="card-header">Instinct Virtualization Driver</h2>
 </a>
 <p class="paragraph">Enable virtualization using SRIOV on Linux with KVM and VMWare.</p>
-::::
+::
 
-::::{grid-item-card}
+::{grid-item-card}
 :padding: 1
 :img-top: ./images/generic.jpg
 :class-img-top: small-sd-card-img-top
@@ -102,6 +106,10 @@ AI Stuff
   <h2 class="card-header">Instinct Virtualization Driver</h2>
 </a>
 <p class="paragraph">Enable virtualization using SRIOV on Linux with KVM and VMWare.</p>
+::
+
+:::
+
 ::::
 
 :::::
