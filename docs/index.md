@@ -62,6 +62,17 @@ This website is in beta status. The information here is accurate to our best eff
 
 :::{tab-item} AI USER
 AI Stuff
+
+::::{grid-card-items}
+
+:::{grid-item-card}
+
+Test
+
+:::
+
+::::
+
 :::
 
 :::{tab-item} HPC USER
