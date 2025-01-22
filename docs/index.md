@@ -109,7 +109,7 @@ Targeted for system administrators and power users, this site provides comprehen
 :::::::{tab-item} HPC
 ::::::{tab-set}
 
-:::::{tab-item} HPC Scientists
+:::::{tab-item} HPC Solutions Architect 
 
 ::::{grid} 2 2 2 2
 
