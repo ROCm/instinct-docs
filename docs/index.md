@@ -167,7 +167,7 @@ Targeted for system administrators and power users, this site provides comprehen
 <a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
   <h2 class="card-header">Content placeholder</h2>
 </a>
-<p class="paragraph"> Showcase our open source HPC partners
+<p class="paragraph"> Showcase our open source HPC partners (Kokkos, Trilinos, HPCToolkit, etc.)
 </p>
 :::
 
