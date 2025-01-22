@@ -58,7 +58,7 @@ Targeted for system administrators and power users, this site provides comprehen
 
 ::::::{tab-set}
 
-:::::{tab-item} AI Developer
+:::::{tab-item} AI Solutions Architect 
 
 ::::{grid} 2 2 2 2
 
