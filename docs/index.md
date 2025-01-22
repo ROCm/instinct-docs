@@ -159,8 +159,6 @@ System Administrator Stuff
 
 :::::
 
-::::::
-
 :::::{tab-item} Virtualization
 
 ::::{grid} 2 2 2 2
