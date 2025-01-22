@@ -80,7 +80,7 @@ Targeted for system administrators and power users, this site provides comprehen
 
 :::::
 
-:::::{tab-item} AI Scientist
+:::::{tab-item} AI Core Developer
 
 ::::{grid} 2 2 2 2
 
