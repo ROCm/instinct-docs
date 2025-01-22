@@ -369,7 +369,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+<a href="https://amdresearch.github.io/omnistat/" class="card-header-link">
   <h2 class="card-header">Omnistat</h2>
 </a>
 <p class="paragraph">Profile across the cluster.</p>
