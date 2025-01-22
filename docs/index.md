@@ -107,7 +107,53 @@ Targeted for system administrators and power users, this site provides comprehen
 :::::::
 
 :::::::{tab-item} HPC
-HPC Stuff
+::::::{tab-set}
+
+:::::{tab-item} HPC Scientists
+
+::::{grid} 2 2 2 2
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+  <h2 class="card-header">Content placeholder</h2>
+</a>
+<p class="paragraph">Content for the user that works on running and building models efficiently
+.</p>
+:::
+
+::::
+
+:::::
+
+:::::{tab-item} HPC Developer
+
+::::{grid} 2 2 2 2
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+  <h2 class="card-header">Content placeholder</h2>
+</a>
+<p class="paragraph"> Content for user who works to understand the core libraries and optimize performance via low level coding (e.g. C++)
+</p>
+:::
+
+::::
+
+:::::
+
+::::::
 :::::::
 
 :::::::{tab-item} System Administrators
