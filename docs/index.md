@@ -92,9 +92,10 @@ Targeted for system administrators and power users, this site provides comprehen
 :class: small-sd-card
 +++
 <a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
-  <h2 class="card-header">Instinct Virtualization Driver</h2>
+  <h2 class="card-header">Content placeholder</h2>
 </a>
-<p class="paragraph">Enable virtualization using SRIOV on Linux with KVM and VMWare.</p>
+<p class="paragraph"> Content for user who works to understand the core libraries and optimize performance via low level coding (e.g. C++)
+</p>
 :::
 
 ::::
