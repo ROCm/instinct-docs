@@ -153,6 +153,50 @@ Targeted for system administrators and power users, this site provides comprehen
 
 :::::
 
+:::::{tab-item} Open Source HPC Applications
+
+::::{grid} 2 2 2 2
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+  <h2 class="card-header">Content placeholder</h2>
+</a>
+<p class="paragraph"> Showcase our open source HPC partners
+</p>
+:::
+
+::::
+
+:::::
+
+:::::{tab-item} ISV Partners
+
+::::{grid} 2 2 2 2
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+  <h2 class="card-header">Content placeholder</h2>
+</a>
+<p class="paragraph"> Showcase our ISV HPC partners
+</p>
+:::
+
+::::
+
+:::::
+
 ::::::
 :::::::
 
