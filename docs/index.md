@@ -58,7 +58,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 ::::::{tab-set}
 
-:::::{tab-item} AI Solutions Architect 
+:::::{tab-item} AI Solutions Architect
 
 ::::{grid} 2 2 2 2
 
@@ -109,7 +109,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :::::::{tab-item} HPC
 ::::::{tab-set}
 
-:::::{tab-item} HPC Solutions Architect 
+:::::{tab-item} HPC Solutions Architect
 
 ::::{grid} 2 2 2 2
 
@@ -345,7 +345,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 :::::
 
-:::::{tab-item} Cluster Management 
+:::::{tab-item} Cluster Management
 
 ::::{grid} 2 2 2 2
 
