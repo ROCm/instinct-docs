@@ -161,6 +161,147 @@ System Administrator Stuff
 
 ::::::
 
+:::::{tab-item} Virtualization
+
+::::{grid} 2 2 2 2
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+  <h2 class="card-header">Instinct Virtualization Driver</h2>
+</a>
+<p class="paragraph">Enable virtualization using SRIOV on Linux with KVM and VMWare.</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+  <h2 class="card-header">GPU Partitioning</h2>
+</a>
+<p class="paragraph">Learn how to split the compute units and memory to partition a GPU.</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+  <h2 class="card-header">AMD SMI</h2>
+</a>
+<p class="paragraph"></p>
+:::
+
+::::
+
+:::::
+
+:::::{tab-item} Kubernetes
+
+::::{grid} 2 2 2 2
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+  <h2 class="card-header">Instinct Virtualization Driver</h2>
+</a>
+<p class="paragraph">Enable virtualization using SRIOV on Linux with KVM and VMWare.</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+  <h2 class="card-header">GPU Partitioning</h2>
+</a>
+<p class="paragraph">Learn how to split the compute units and memory to partition a GPU.</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+  <h2 class="card-header">AMD SMI</h2>
+</a>
+<p class="paragraph"></p>
+:::
+
+::::
+
+:::::
+
+:::::{tab-item} Cluster
+
+::::{grid} 2 2 2 2
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+  <h2 class="card-header">Instinct Virtualization Driver</h2>
+</a>
+<p class="paragraph">Enable virtualization using SRIOV on Linux with KVM and VMWare.</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+  <h2 class="card-header">GPU Partitioning</h2>
+</a>
+<p class="paragraph">Learn how to split the compute units and memory to partition a GPU.</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+  <h2 class="card-header">AMD SMI</h2>
+</a>
+<p class="paragraph"></p>
+:::
+
+::::
+
+:::::
+
 :::::::
 
 :::::::{tab-item} Core Reference
