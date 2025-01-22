@@ -175,7 +175,7 @@ Targeted for system administrators and power users, this site provides comprehen
 
 :::::
 
-:::::{tab-item} ISV Partners
+:::::{tab-item} ISV Applications
 
 ::::{grid} 2 2 2 2
 
@@ -189,7 +189,7 @@ Targeted for system administrators and power users, this site provides comprehen
 <a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
   <h2 class="card-header">Content placeholder</h2>
 </a>
-<p class="paragraph"> Showcase our ISV HPC partners
+<p class="paragraph"> Showcase our ISV HPC partners (Devito, Ansys, etc.)
 </p>
 :::
 
@@ -345,7 +345,7 @@ Targeted for system administrators and power users, this site provides comprehen
 
 :::::
 
-:::::{tab-item} Cluster
+:::::{tab-item} Cluster Management 
 
 ::::{grid} 2 2 2 2
 
