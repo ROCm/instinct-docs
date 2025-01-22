@@ -31,15 +31,15 @@
   }
   .small-sd-card-img-top.sd-card-img-top {
     width: 100%;
-    height: 5vw;
+    height: 30%;
     object-fit: cover;
   }
   .small-sd-card.sd-card-body {
     width: 100%;
-    height: 15%;
+    height: 60%;
   }
   .small-sd-card {
-    width: 45px;
+    width: 145px;
     height: 0;
     display: none;
   }
@@ -50,84 +50,408 @@
 
 # AMD Instinct Data Center GPU Documentation
 
-Targeted for system administrators and power users, this site provides comprehensive technical documentation, guides, and best practices for deploying and managing AMD Instinct Data Center GPUs. Content for GPU software development and applications are located at [ROCm documentation](https://rocm.docs.amd.com).
+The AMD Instinct Documentation site provides comprehensive guides and technical documentation for system administrators and technical users deploying AMD Instinct Data Center GPUs in enterprise environments. This site focuses on large-scale deployment, cluster management, monitoring, and operational best practices for both HPC and AI workloads. For API documentation and core software stack details, please visit the [ROCm documentation](https://rocm.docs.amd.com).
 
-## Beta status
+::::::::{tab-set}
 
-This website is in beta status. The information here is accurate to our best efforts. The organization, layout and structure of this site will change rapidly. Feedback is appreciated via the [ROCm discussions forum](https://github.com/ROCm/ROCm/discussions).
+:::::::{tab-item} AI
 
-## System deployment and configuration
+::::::{tab-set}
 
-::::{grid} 1 2 2 2
-:margin 2
+:::::{tab-item} AI Solutions Architect
+
+::::{grid} 2 2 2 2
 
 :::{grid-item-card}
-:padding: 2
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="https://instinct.docs.amd.com/projects/gpu-cluster-networking/en/latest/" class="card-header-link">
-  <h2 class="card-header">Cluster Networking</h2>
+<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+  <h2 class="card-header">GPU AI Dev Hub</h2>
 </a>
-<p class="paragraph">Optimize the network for Instinct GPU applications </p>
+<p class="paragraph">Content for the user that works on running and building models efficiently. They are creating chat bots, using OpenAI APIs to build something, using vLLM to build another model, etc.
+.</p>
 :::
 
+::::
+
+:::::
+
+:::::{tab-item} AI Core Developer
+
+::::{grid} 2 2 2 2
+
 :::{grid-item-card}
-:padding: 2
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="https://instinct.docs.amd.com/projects/system-acceptance/en/latest/" class="card-header-link">
-  <h2 class="card-header">System Acceptance Test Guide</h2>
+<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+  <h2 class="card-header">Content placeholder</h2>
 </a>
-<p class="paragraph">Detailed instructions to test the proper functioning and optimal performance of server systems equipped with AMD Instinct MI300X GPU accelerators. </p>
+<p class="paragraph"> Content for user who works to understand the core libraries and optimize performance via low level coding (e.g. C++). How to guides for expert model builders and tips and tricks.
+</p>
 :::
 
-::::  
+::::
 
-## Kubernetes
+:::::
 
-::::{grid} 1 2 2 2
-:margin 2
+::::::
+
+:::::::
+
+:::::::{tab-item} HPC
+::::::{tab-set}
+
+:::::{tab-item} HPC Solutions Architect
+
+::::{grid} 2 2 2 2
 
 :::{grid-item-card}
-:padding: 2
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="https://github.com/ROCm/k8s-device-plugin" class="card-header-link">
-  <h2 class="card-header">AMD Kubernetes Device Plugin</h2>
+<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+  <h2 class="card-header">Content placeholder</h2>
 </a>
-<p class="paragraph">Kubernetes (k8s) device plugin to enable registration of AMD GPU to a container cluster</p>
+<p class="paragraph">Content for the user that works on running and building models efficiently
+.</p>
+:::
+
+::::
+
+:::::
+
+:::::{tab-item} HPC Core Developer
+
+::::{grid} 2 2 2 2
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+  <h2 class="card-header">Content placeholder</h2>
+</a>
+<p class="paragraph"> Content for user who works to understand the core libraries and optimize performance via low level coding (e.g. C++)
+</p>
+:::
+
+::::
+
+:::::
+
+:::::{tab-item} Open Source Applications
+
+::::{grid} 2 2 2 2
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+  <h2 class="card-header">Content placeholder</h2>
+</a>
+<p class="paragraph"> Showcase our open source HPC partners (Kokkos, Trilinos, HPCToolkit, etc.)
+</p>
+:::
+
+::::
+
+:::::
+
+:::::{tab-item} ISV Applications
+
+::::{grid} 2 2 2 2
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+  <h2 class="card-header">Content placeholder</h2>
+</a>
+<p class="paragraph"> Showcase our ISV HPC partners (Devito, Ansys, etc.)
+</p>
+:::
+
+::::
+
+:::::
+
+::::::
+:::::::
+
+:::::::{tab-item} System Administrators
+
+::::::{tab-set}
+
+:::::{tab-item} Bare Metal
+
+::::{grid} 2 2 2 2
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+  <h2 class="card-header">Instinct Virtualization Driver</h2>
+</a>
+<p class="paragraph">Enable virtualization using SRIOV on Linux with KVM and VMWare.</p>
 :::
 
 :::{grid-item-card}
 :padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="https://instinct.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
-  <h2 class="card-header">AMD GPU Operator</h2>
+<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+  <h2 class="card-header">GPU Partitioning</h2>
+</a>
+<p class="paragraph">Learn how to split the compute units and memory to partition a GPU.</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+  <h2 class="card-header">AMD SMI</h2>
+</a>
+<p class="paragraph"></p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+  <h2 class="card-header">Tools placeholder</h2>
+</a>
+<p class="paragraph">any Tools related to BM SYS admin</p>
+:::
+
+::::
+
+:::::
+
+:::::{tab-item} Virtualization
+
+::::{grid} 2 2 2 2
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+  <h2 class="card-header">Passthrough</h2>
+</a>
+<p class="paragraph">Enable virtualization using PCIe passthrough on Linux with KVM and VMWare.</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+  <h2 class="card-header">SRIOV</h2>
+</a>
+<p class="paragraph">Enable virtualization using SRIOV on Linux with KVM and VMWare.</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+  <h2 class="card-header">Tools</h2>
+</a>
+<p class="paragraph">Placeholder for tools relevant to virtualization</p>
+:::
+
+::::
+
+:::::
+
+:::::{tab-item} Kubernetes
+
+::::{grid} 2 2 2 2
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+  <h2 class="card-header">GPU Operator</h2>
 </a>
 <p class="paragraph">The AMD GPU Operator simplifies the deployment and management of AMD Instinct GPU accelerators within Kubernetes clusters.</p>
 :::
 
-::::  
-
-## Telemetry
-
-::::{grid} 1 2 2 2
-:margin 2
-
 :::{grid-item-card}
-:padding: 2
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="https://instinct.docs.amd.com/projects/device-metrics-exporter/en/latest/" class="card-header-link">
-  <h2 class="card-header">AMD Device Metrics Exporter</h2>
+<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+  <h2 class="card-header">Device Plugin</h2>
 </a>
-<p class="paragraph">AMD Device Metrics Exporter enables Prometheus-format metrics collection for AMD GPUs in HPC and AI environments. </p>
+<p class="paragraph">Kubernetes (k8s) device plugin to enable registration of AMD GPU to a container cluster</p>
 :::
 
-::::  
+::::
+
+:::::
+
+:::::{tab-item} Cluster Management
+
+::::{grid} 2 2 2 2
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+  <h2 class="card-header">Telemetry</h2>
+</a>
+<p class="paragraph">Telemtry tools.</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://amdresearch.github.io/omnistat/" class="card-header-link">
+  <h2 class="card-header">Omnistat</h2>
+</a>
+<p class="paragraph">Profile across the cluster.</p>
+:::
+
+::::
+
+:::::
+
+:::::::
+
+:::::::{tab-item} Core Reference Material
+::::::{tab-set}
+
+:::::{tab-item} GPU Architecture
+
+::::{grid} 2 2 2 2
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+  <h2 class="card-header">MI300 series</h2>
+</a>
+<p class="paragraph">Enable virtualization using SRIOV on Linux with KVM and VMWare.</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+  <h2 class="card-header">MI200 Series</h2>
+</a>
+<p class="paragraph">Learn how to split the compute units and memory to partition a GPU.</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+  <h2 class="card-header">MI100 Series</h2>
+</a>
+<p class="paragraph"></p>
+:::
+
+::::
+
+:::::
+
+:::::{tab-item} System Management APIs
+
+::::{grid} 2 2 2 2
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+  <h2 class="card-header">AMD SMI API doc </h2>
+</a>
+<p class="paragraph">AMD SMI documentation covering all use cases.</p>
+:::
+
+::::
+
+:::::
+
+:::::::
+
+::::::::
