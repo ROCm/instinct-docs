@@ -131,7 +131,7 @@ Targeted for system administrators and power users, this site provides comprehen
 
 :::::
 
-:::::{tab-item} HPC Developer
+:::::{tab-item} HPC Core Developer
 
 ::::{grid} 2 2 2 2
 
