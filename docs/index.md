@@ -58,7 +58,7 @@ Targeted for system administrators and power users, this site provides comprehen
 
 ::::::{tab-set}
 
-:::::{tab-item} AI Scientists
+:::::{tab-item} AI Developer
 
 ::::{grid} 2 2 2 2
 
@@ -70,9 +70,9 @@ Targeted for system administrators and power users, this site provides comprehen
 :class: small-sd-card
 +++
 <a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
-  <h2 class="card-header">Content placeholder</h2>
+  <h2 class="card-header">GPU AI Dev Hub</h2>
 </a>
-<p class="paragraph">Content for the user that works on running and building models efficiently
+<p class="paragraph">Content for the user that works on running and building models efficiently. They are creating chat bots, using OpenAI APIs to build something, using vLLM to build another model, etc.
 .</p>
 :::
 
@@ -80,7 +80,7 @@ Targeted for system administrators and power users, this site provides comprehen
 
 :::::
 
-:::::{tab-item} AI Developer
+:::::{tab-item} AI Scientist
 
 ::::{grid} 2 2 2 2
 
