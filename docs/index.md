@@ -153,7 +153,7 @@ Targeted for system administrators and power users, this site provides comprehen
 
 :::::
 
-:::::{tab-item} Open Source HPC Applications
+:::::{tab-item} Open Source Applications
 
 ::::{grid} 2 2 2 2
 
