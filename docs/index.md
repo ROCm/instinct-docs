@@ -357,9 +357,9 @@ Targeted for system administrators and power users, this site provides comprehen
 :class: small-sd-card
 +++
 <a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
-  <h2 class="card-header">Instinct Virtualization Driver</h2>
+  <h2 class="card-header">Telemetry</h2>
 </a>
-<p class="paragraph">Enable virtualization using SRIOV on Linux with KVM and VMWare.</p>
+<p class="paragraph">Telemtry tools.</p>
 :::
 
 :::{grid-item-card}
@@ -370,22 +370,9 @@ Targeted for system administrators and power users, this site provides comprehen
 :class: small-sd-card
 +++
 <a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
-  <h2 class="card-header">GPU Partitioning</h2>
+  <h2 class="card-header">Omnistat</h2>
 </a>
-<p class="paragraph">Learn how to split the compute units and memory to partition a GPU.</p>
-:::
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/generic.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
-  <h2 class="card-header">AMD SMI</h2>
-</a>
-<p class="paragraph"></p>
+<p class="paragraph">Profile across the cluster.</p>
 :::
 
 ::::
