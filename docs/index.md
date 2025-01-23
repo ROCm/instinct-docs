@@ -123,7 +123,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
   <h2 class="card-header">Content placeholder</h2>
 </a>
-<p class="paragraph">Content for the user that works on running and building models efficiently
+<p class="paragraph">Content for HPC developers who would like to unleash performance via GPU-Powered Computational Toolkit for Scientific Domains 
 .</p>
 :::
 
