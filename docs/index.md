@@ -120,7 +120,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+<a href="https://provide-url" class="card-header-link">
   <h2 class="card-header">Content placeholder</h2>
 </a>
 <p class="paragraph">Content for the user that works on running and building models efficiently
