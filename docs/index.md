@@ -102,6 +102,108 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 :::::
 
+:::::{tab-item} Data Science
+
+::::{grid} 2 2 2 2
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://rocmds.docs.amd.com" class="card-header-link">
+  <h2 class="card-header">ROCm-DS</h2>
+</a>
+<p class="paragraph"> The ROCm Data Science Toolkit provides a collection of software libraries which enable GPU acceleration for data science workloads on AMD Instinct devices.
+</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://link-place-holder" class="card-header-link">
+  <h2 class="card-header">Data processing for AI</h2>
+</a>
+<p class="paragraph"> Tools for pre- and post-processing of data in larger AI workloads using GPU acceleration on AMD Instinct devices.
+</p>
+:::
+
+::::
+
+:::::
+
+:::::{tab-item} Vision
+
+::::{grid} 2 2 2 2
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://rocmcv.docs.amd.com" class="card-header-link">
+  <h2 class="card-header">ROCm-CV</h2>
+</a>
+<p class="paragraph"> The ROCm Computer Vision Toolkit provides a collection of software libraries which enable GPU acceleration for computer vision workloads on AMD Instinct devices.
+</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://link-place-holder" class="card-header-link">
+  <h2 class="card-header">Classification and Recognition</h2>
+</a>
+<p class="paragraph"> Tools for detecting and classifying objects in images and videos using AMD Instinct GPUs.
+</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://link-place-holder" class="card-header-link">
+  <h2 class="card-header">Segmentation</h2>
+</a>
+<p class="paragraph"> Tools for GPU accelerated image segmentation on AMD Instinct devices.
+</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://link-place-holder" class="card-header-link">
+  <h2 class="card-header">Image and Video Processing</h2>
+</a>
+<p class="paragraph"> Tools to perform image and video processing operations, for stand-alone or AI workloads, on AMD Instinct GPUs.
+</p>
+:::
+
+::::
+
+:::::
+
+::::::
+
 ::::::
 
 :::::::
