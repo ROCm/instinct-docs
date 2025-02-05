@@ -189,7 +189,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <a href="https://dummy-url" class="card-header-link">
   <h2 class="card-header">Ansys Fluent</h2>
 </a>
-<p class="paragraph"> Showcase support for MI200 and MI300 series, [e.g.](https://rocm.blogs.amd.com/ecosystems-and-partners/ansys-fluent-performance/README.html) 
+<p class="paragraph"> Showcase support for MI200 and MI300 series, <a href=https://rocm.blogs.amd.com/ecosystems-and-partners/ansys-fluent-performance/README.html>e.g.</a>
 </p>
 :::
 
@@ -231,7 +231,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <a href="https://dummy-url" class="card-header-link">
   <h2 class="card-header">Siemens STAR-CCM+</h2>
 </a>
-<p class="paragraph"> Showcase support for MI200 series, [e.g.](https://rocm.blogs.amd.com/ecosystems-and-partners/Siemens/README.html)
+<p class="paragraph"> Showcase support for MI200 series, <a href=https://rocm.blogs.amd.com/ecosystems-and-partners/Siemens/README.html>e.g.</a>
 </p>
 :::
 
@@ -245,7 +245,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <a href="https://dummy-url" class="card-header-link">
   <h2 class="card-header">Stone Ridge Technology, ECHELON</h2>
 </a>
-<p class="paragraph"> Showcase support for MI200 series, [e.g.](https://rocm.blogs.amd.com/ecosystems-and-partners/stone-ridge/README.html)
+<p class="paragraph"> Showcase support for MI200 series, <a href=https://rocm.blogs.amd.com/ecosystems-and-partners/stone-ridge/README.html>e.g.</a>
 </p>
 :::
 
