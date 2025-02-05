@@ -259,7 +259,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <a href="https://dummy-url" class="card-header-link">
   <h2 class="card-header">Altair PBS Pro</h2>
 </a>
-<p class="paragraph"> Showcase support for MI200 series
+<p class="paragraph"> Showcase support for MI200 series.
 </p>
 :::
 
@@ -273,7 +273,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <a href="https://dummy-url" class="card-header-link">
   <h2 class="card-header">Cadence Fidelity CharLES</h2>
 </a>
-<p class="paragraph"> <a hfer=https://community.cadence.com/cadence_blogs_8/b/cfd/posts/introducing-fidelity-charles---accelerated-accurate-large-eddy-simulation>Fidelity CharLES supports MI200.</a>
+<p class="paragraph"> <a href=https://community.cadence.com/cadence_blogs_8/b/cfd/posts/introducing-fidelity-charles---accelerated-accurate-large-eddy-simulation>Fidelity CharLES supports MI200.</a>
 </p>
 :::
 
