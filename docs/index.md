@@ -189,7 +189,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <a href="https://dummy-url" class="card-header-link">
   <h2 class="card-header">Ansys Fluent</h2>
 </a>
-<p class="paragraph"> Showcase support for MI200 and MI300 series, <a href=https://rocm.blogs.amd.com/ecosystems-and-partners/ansys-fluent-performance/README.html>e.g.</a>
+<p class="paragraph"> <a href=https://rocm.blogs.amd.com/ecosystems-and-partners/ansys-fluent-performance/README.html>Ansys Fluent Solver 2024R2+ support MI200 and MI300.</a>
 </p>
 :::
 
@@ -203,7 +203,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <a href="https://dummy-url" class="card-header-link">
   <h2 class="card-header">Ansys Mechanical</h2>
 </a>
-<p class="paragraph"> Showcase support for MI200 series
+<p class="paragraph"> Ansys Mechanical 2023R2+ support MI200
 </p>
 :::
 
@@ -217,7 +217,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <a href="https://dummy-url" class="card-header-link">
   <h2 class="card-header">Devito Codes, DevitoPRO</h2>
 </a>
-<p class="paragraph"> Showcase support for MI200 and MI300 series
+<p class="paragraph"> <a href=https://community.amd.com/t5/instinct-accelerators/devito-revolutionizes-high-performance-computing-for-the-oil-and/ba-p/625392>DevitoPRO 4.8.2+ support for MI200 and MI300X.</a>
 </p>
 :::
 
@@ -231,7 +231,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <a href="https://dummy-url" class="card-header-link">
   <h2 class="card-header">Siemens STAR-CCM+</h2>
 </a>
-<p class="paragraph"> Showcase support for MI200 series, <a href=https://rocm.blogs.amd.com/ecosystems-and-partners/Siemens/README.html>e.g.</a>
+<p class="paragraph"> <a href=https://rocm.blogs.amd.com/ecosystems-and-partners/Siemens/README.html>Siemens Simcenter STAR-CCM+ 2402+ support MI200.</a>
 </p>
 :::
 
@@ -245,7 +245,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <a href="https://dummy-url" class="card-header-link">
   <h2 class="card-header">Stone Ridge Technology, ECHELON</h2>
 </a>
-<p class="paragraph"> Showcase support for MI200 series, <a href=https://rocm.blogs.amd.com/ecosystems-and-partners/stone-ridge/README.html>e.g.</a>
+<p class="paragraph"> <a href=https://rocm.blogs.amd.com/ecosystems-and-partners/stone-ridge/README.html>ECHELON 2023.3+ support MI200.</a>
 </p>
 :::
 
