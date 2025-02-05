@@ -187,9 +187,79 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :class: small-sd-card
 +++
 <a href="https://dummy-url" class="card-header-link">
-  <h2 class="card-header">Content placeholder</h2>
+  <h2 class="card-header">Ansys Fluent</h2>
 </a>
-<p class="paragraph"> Showcase our ISV HPC partners (Devito, Ansys, etc.)
+<p class="paragraph"> Showcase support for MI200 and MI300 series, [e.g.](https://rocm.blogs.amd.com/ecosystems-and-partners/ansys-fluent-performance/README.html) 
+</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://dummy-url" class="card-header-link">
+  <h2 class="card-header">Ansys Mechanical</h2>
+</a>
+<p class="paragraph"> Showcase support for MI200 series
+</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://dummy-url" class="card-header-link">
+  <h2 class="card-header">Devito Codes, DevitoPRO</h2>
+</a>
+<p class="paragraph"> Showcase support for MI200 and MI300 series
+</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://dummy-url" class="card-header-link">
+  <h2 class="card-header">Siemens STAR-CCM+</h2>
+</a>
+<p class="paragraph"> Showcase support for MI200 series, [e.g.](https://rocm.blogs.amd.com/ecosystems-and-partners/Siemens/README.html)
+</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://dummy-url" class="card-header-link">
+  <h2 class="card-header">Stone Ridge Technology, ECHELON</h2>
+</a>
+<p class="paragraph"> Showcase support for MI200 series, [e.g.](https://rocm.blogs.amd.com/ecosystems-and-partners/stone-ridge/README.html)
+</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://dummy-url" class="card-header-link">
+  <h2 class="card-header">Altair PBS Pro</h2>
+</a>
+<p class="paragraph"> Showcase support for MI200 series
 </p>
 :::
 
