@@ -263,6 +263,20 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 </p>
 :::
 
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://dummy-url" class="card-header-link">
+  <h2 class="card-header">Cadence Fidelity CharLES</h2>
+</a>
+<p class="paragraph"> <a hfer=https://community.cadence.com/cadence_blogs_8/b/cfd/posts/introducing-fidelity-charles---accelerated-accurate-large-eddy-simulation>Fidelity CharLES support MI200.</a>
+</p>
+:::
+
 ::::
 
 :::::
