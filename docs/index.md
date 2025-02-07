@@ -214,7 +214,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="https://community.amd.com/t5/instinct-accelerators/devito-revolutionizes-high-performance-computing-for-the-oil-and/ba-p/625392>" class="card-header-link">
+<a href="https://community.amd.com/t5/instinct-accelerators/devito-revolutionizes-high-performance-computing-for-the-oil-and/ba-p/625392" class="card-header-link">
   <h2 class="card-header">Devito Codes DevitoPRO</h2>
 </a>
 <p class="paragraph">DevitoPRO 4.8.2+ supports MI200 and MI300X.
