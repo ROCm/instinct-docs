@@ -128,6 +128,9 @@ Targeted for system administrators and power users, this site provides comprehen
 
 ::::  
 
-## Disclaimer
 
- The information here is accurate to our best efforts. The organization, layout and structure of this site is under active development and may change frequently. Feedback is appreciated via the [ROCm discussions forum](https://github.com/ROCm/ROCm/discussions).
+:::{note}
+ The information here is accurate to our best efforts. The organization, layout and structure of this site is 
+ under active development and may change frequently. Feedback is appreciated via the 
+ [ROCm discussions forum](https://github.com/ROCm/ROCm/discussions).
+:::
