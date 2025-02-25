@@ -256,7 +256,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="https://community.cadence.com/cadence_blogs_8/b/cfd/posts/introducing-fidelity-charles---accelerated-accurate-large-eddy-simulation" class="card-header-link">
+<a href="https://www.cadence.com/en_US/home/resources/technical-briefs/fidelity-les-solver-tb.html" class="card-header-link">
   <h2 class="card-header">Cadence Fidelity LES Solver</h2>
 </a>
 <p class="paragraph">Fidelity LES Solver supports MI200.
