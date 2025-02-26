@@ -1,6 +1,6 @@
 version: 1
 
 projects:
-  dcgpu: https://dcgpu.docs.amd.com/en/${version}
-  gpu-operator: https://dcgpu.docs.amd.com/projects/gpu-operator/en/${version}
-  metrics-exporter: https://dcgpu.docs.amd.com/projects/metrics-exporter/en/${version}
+  dcgpu: https://instinct.docs.amd.com/en/${version}
+  gpu-operator: https://instinct.docs.amd.com/projects/gpu-operator/en/${version}
+  metrics-exporter: https://instinct.docs.amd.com/projects/metrics-exporter/en/${version}
