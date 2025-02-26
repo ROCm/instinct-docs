@@ -6,7 +6,7 @@ external_projects_current_project = "dcgpu"
 external_projects = ["gpu-operator", "device-metrics-exporter"]
 external_projects_path = "projects.yaml"
 
-html_baseurl = os.environ.get("READTHEDOCS_CANONICAL_URL", "dcgpu.docs.amd.com")
+html_baseurl = os.environ.get("READTHEDOCS_CANONICAL_URL", "instinct.docs.amd.com")
 html_context = {}
 if os.environ.get("READTHEDOCS", "") == "True":
     html_context["READTHEDOCS"] = True
