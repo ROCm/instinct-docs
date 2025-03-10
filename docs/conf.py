@@ -32,6 +32,8 @@ html_theme_options = {
 }
 extensions = ["rocm_docs"]
 
+html_css_files = ["css/custom.css"]
+
 # Table of contents
 external_toc_path = "./sphinx/_toc.yml"
 
