@@ -181,15 +181,85 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 :::{grid-item-card}
 :padding: 1
-:img-top: ./images/generic.jpg
+:img-top: ./images/AnsysFluent-tile.png
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
-  <h2 class="card-header">Content placeholder</h2>
+<a href="https://rocm.blogs.amd.com/ecosystems-and-partners/ansys-fluent-performance/README.html" class="card-header-link">
+  <h2 class="card-header">Ansys Fluent</h2>
 </a>
-<p class="paragraph"> Showcase our ISV HPC partners (Devito, Ansys, etc.)
+<p class="paragraph"> Ansys Fluent Solver 2024R2+ supports MI200 and MI300.
+</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/AnsysMech-tile.png
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://github.com/amd/InfinityHub-CI/tree/main/ansys-mechanical" class="card-header-link">
+  <h2 class="card-header">Ansys Mechanical</h2>
+</a>
+<p class="paragraph"> Ansys Mechanical 2023R2+ supports MI200
+</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/DevitoPRO-tile.png
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://community.amd.com/t5/instinct-accelerators/devito-revolutionizes-high-performance-computing-for-the-oil-and/ba-p/625392" class="card-header-link">
+  <h2 class="card-header">Devito Codes DevitoPRO</h2>
+</a>
+<p class="paragraph">DevitoPRO 4.8.2+ supports MI200 and MI300X.
+</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/Starccm-tile.png
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://rocm.blogs.amd.com/ecosystems-and-partners/Siemens/README.html" class="card-header-link">
+  <h2 class="card-header">Siemens Sincenter STAR-CCM+</h2>
+</a>
+<p class="paragraph">Simcenter STAR-CCM+ 2402+ supports MI200.
+</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/ECHELON-tile.png
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://rocm.blogs.amd.com/ecosystems-and-partners/stone-ridge/README.html" class="card-header-link">
+  <h2 class="card-header">Stone Ridge Technology ECHELON</h2>
+</a>
+<p class="paragraph">ECHELON 2023.3+ supports MI200.
+</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/FCharLES-tile.png
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://www.cadence.com/en_US/home/resources/technical-briefs/fidelity-les-solver-tb.html" class="card-header-link">
+  <h2 class="card-header">Cadence Fidelity LES Solver</h2>
+</a>
+<p class="paragraph">Fidelity LES Solver supports MI200.
 </p>
 :::
 
