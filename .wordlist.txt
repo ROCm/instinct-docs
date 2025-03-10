@@ -1,2 +1,2 @@
 GPUs
-ROCm-DS
+DS
