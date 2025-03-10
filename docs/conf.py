@@ -33,7 +33,7 @@ html_theme_options = {
 }
 extensions = ["rocm_docs"]
 
-html_css_files = ["css/custom.css"]
+html_css_files = ["css/index.css"]
 
 # Table of contents
 external_toc_path = "./sphinx/_toc.yml"
@@ -43,4 +43,4 @@ exclude_patterns = ['.venv']
 
 
 def setup(app):
-    app.add_css_file("css/custom.css")
+    app.add_css_file("css/index.css")
