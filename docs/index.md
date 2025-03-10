@@ -63,9 +63,9 @@ Targeted for system administrators and power users, this site provides comprehen
 :class: small-sd-card
 +++
 <a href="https://instinct.docs.amd.com/projects/amdgpu-docs/en/latest/" class="card-header-link">
-  <h2 class="card-header">Instinct Driver documentation</h2>
+  <h2 class="card-header">Instinct Driver</h2>
 </a>
-<p class="paragraph">Driver features, system configuration, error codes and other features </p>
+<p class="paragraph">Configure systems with the amdgpu driver built for Instinct GPUs</p>
 :::
 
 :::{grid-item-card}
