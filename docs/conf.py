@@ -1,5 +1,6 @@
 """Configuration file for the Sphinx documentation builder."""
 import os
+from sphinx import addnodes
 
 external_projects_remote_repository = ""
 external_projects_current_project = "dcgpu"
@@ -39,18 +40,7 @@ external_toc_path = "./sphinx/_toc.yml"
 
 exclude_patterns = ['.venv']
 
+
+
 def setup(app):
-    app.connect("autodoc-process-docstring", cut_lines(4, what=["module"]))
     app.add_css_file("css/custom.css")
-    app.add_object_type(
-        "confval",
-        "confval",
-        objname="configuration value",
-        indextemplate="pair: %s; configuration value",
-    )
-    fdesc = GroupedField(
-        "parameter", label="Parameters", names=["param"], can_collapse=True
-    )
-    app.add_object_type(
-        "event", "event", "pair: %s; event", parse_event, doc_field_types=[fdesc]
-    )
