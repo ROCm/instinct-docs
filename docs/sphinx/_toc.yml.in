@@ -17,4 +17,5 @@ subtrees:
     - url: https://instinct.docs.amd.com/projects/device-metrics-exporter/en/latest/
       title: Device Metrics Exporter      
   - caption: ROCm Toolkits
+    entries:
     - file: rocm-ds.md
