@@ -25,9 +25,11 @@ subtrees:
       title: ISV Applications    
       subtrees:
       - entries:
-        - file: isv-apps\ansys-fluent.md     
+        - file: isv-apps/nsys-fluent.md     
           title: Ansys Fluent
-        - file: isv-apps\ansys-mechanical.md
+        - file: isv-apps/ansys-mechanical.md
           title: Ansys Mechnical
-        - file: isv-apps\devito.md  
-          title: DevitoPRO               
+        - file: isv-apps/devito.md  
+          title: DevitoPRO
+        - file: isv-apps/siemens.md  
+          title: Siemens  
