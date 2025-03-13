@@ -11,3 +11,13 @@ subtrees:
       title: GPU Operator       
     - url: https://instinct.docs.amd.com/projects/system-acceptance/en/latest/      
       title: System Acceptance Tests
+    - file: virtualization/index.md      
+      title: Virtualization      
+      subtrees:
+      - entries:
+        - url: https://instinct.docs.amd.com/projects/system-acceptance/en/latest/      
+          title: Instinct Virtualization Driver
+        - url: https://instinct.docs.amd.com/projects/system-acceptance/en/latest/      
+          title: Passthrough virtulization (amdgpu)
+        - url: https://instinct.docs.amd.com/projects/system-acceptance/en/latest/      
+          title: VMWare                      
