@@ -32,4 +32,8 @@ subtrees:
         - file: isv-apps/devito.md  
           title: DevitoPRO
         - file: isv-apps/siemens.md  
-          title: Siemens  
+          title: Siemens 
+        - file: isv-apps/cadence-fidelity.md
+          title: Cadence Fidelity
+        - file: isv-apps/stone-ridge.md
+          title: Stone Ridge

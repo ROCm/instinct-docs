@@ -242,7 +242,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="https://rocm.blogs.amd.com/ecosystems-and-partners/stone-ridge/README.html" class="card-header-link">
+<a href="isv-apps\stone-ridge.html" class="card-header-link">
   <h2 class="card-header">Stone Ridge Technology ECHELON</h2>
 </a>
 <p class="paragraph">ECHELON 2023.3+ supports MI200.
@@ -256,7 +256,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="https://www.cadence.com/en_US/home/resources/technical-briefs/fidelity-les-solver-tb.html" class="card-header-link">
+<a href="isv-apps\cadence-fidelity.html" class="card-header-link">
   <h2 class="card-header">Cadence Fidelity LES Solver</h2>
 </a>
 <p class="paragraph">Fidelity LES Solver supports MI200.
