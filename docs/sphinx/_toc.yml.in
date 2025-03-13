@@ -27,7 +27,7 @@ subtrees:
       - entries:
         - file: isv-apps\ansys-fluent.md     
           title: Ansys Fluent
-        - url: isv-apps\ansys-mechanical.md
+        - file: isv-apps\ansys-mechanical.md
           title: Ansys Mechnical
-        - url: isv-apps\devito.md  
+        - file: isv-apps\devito.md  
           title: DevitoPRO               
