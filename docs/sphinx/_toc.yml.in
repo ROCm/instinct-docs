@@ -20,4 +20,14 @@ subtrees:
         - url: https://instinct.docs.amd.com/projects/system-acceptance/en/latest/      
           title: Passthrough virtulization (amdgpu)
         - url: https://instinct.docs.amd.com/projects/system-acceptance/en/latest/      
-          title: VMWare                      
+          title: VMWare    
+    - file: isv-apps/index.md      
+      title: Virtualization      
+      subtrees:
+      - entries:
+        - file: isv-apps\ansys-fluent.md     
+          title: Ansys Fluent
+        - url: isv-apps\ansys-mechanical.md
+          title: Ansys Mechnical
+        - url: isv-apps\devito.md  
+          title: DevitoPRO               

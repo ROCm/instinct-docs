@@ -200,7 +200,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="isv-apps/ansys-mechnical.html" class="card-header-link">
+<a href="isv-apps\ansys-mechanical.html" class="card-header-link">
   <h2 class="card-header">Ansys Mechanical</h2>
 </a>
 <p class="paragraph"> Ansys Mechanical 2023R2+ supports MI200
@@ -214,7 +214,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="isv-apps/devito.html" class="card-header-link">
+<a href="isv-apps\devito.html" class="card-header-link">
   <h2 class="card-header">Devito Codes DevitoPRO</h2>
 </a>
 <p class="paragraph">DevitoPRO 4.8.2+ supports MI200 and MI300X.
@@ -228,7 +228,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="isv-apps/siemens.html" class="card-header-link">
+<a href="isv-apps\siemens.html" class="card-header-link">
   <h2 class="card-header">Siemens Sincenter STAR-CCM+</h2>
 </a>
 <p class="paragraph">Simcenter STAR-CCM+ 2402+ supports MI200.
