@@ -12,9 +12,16 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 0px 10px 20px;
   box-sizing: border-box;
   width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+  contain: layout style; 
 }
 .date {
   font-size: 13px;
@@ -24,9 +31,16 @@ h2 {
   margin-bottom: 10px;
 }
 .paragraph {
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 14px;
+  line-height: 1.5;
   margin-bottom: 10px;
+  color: var(--paragraph-color-light);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-rendering: optimizeSpeed; 
 }
 .small-sd-card-img-top.sd-card-img-top {
   width: 100%;
@@ -34,15 +48,34 @@ h2 {
   object-fit: cover;
 }
 .small-sd-card.sd-card-body {
-  width: 100%;
-  height: 15%;
+  display: none;
+  padding: 0 !important;
+  margin: 0 !important;
+  height: 0 !important;
 }
 .small-sd-card {
-  width: 45px;
-  height: 0;
-  display: none;
+  border-radius: 0 !important;
+  box-shadow: 0 4px 12px var(--shadow-light) !important;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out !important;
+  overflow: hidden;
+  margin-bottom: 20px;
+  background-color: var(--card-bg-light);
+  border: none !important;
+  height: 510px !important; 
+  display: flex !important;
+  flex-direction: column !important;
+  will-change: transform, box-shadow; 
+  transform: translateZ(0) !important; 
+  backface-visibility: hidden; 
+  contain: layout style; 
 }
-.bd-content .sd-card .sd-card-footer {
-  border-top: none;
+.sd-card-footer {
+  border-top: none !important;
+  background-color: var(--card-bg-light) !important;
+  padding: 16px !important;
+  flex-grow: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  contain: content; 
 }
 
