@@ -22,7 +22,7 @@ subtrees:
         - url: https://instinct.docs.amd.com/projects/system-acceptance/en/latest/      
           title: VMWare    
     - file: isv-apps/index.md      
-      title: Virtualization      
+      title: ISV Applications    
       subtrees:
       - entries:
         - file: isv-apps\ansys-fluent.md     
