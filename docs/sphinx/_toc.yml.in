@@ -25,7 +25,7 @@ subtrees:
       title: ISV Applications    
       subtrees:
       - entries:
-        - file: isv-apps/nsys-fluent.md     
+        - file: isv-apps/ansys-fluent.md     
           title: Ansys Fluent
         - file: isv-apps/ansys-mechanical.md
           title: Ansys Mechnical
