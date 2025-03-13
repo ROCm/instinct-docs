@@ -8,28 +8,6 @@ h2 {
   margin: 0;
   font-size: 1.5em;
 }
-.container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0px 10px 20px;
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-  gap: 10px;
-  contain: layout style; 
-}
-.date {
-  font-size: 13px;
-  font-weight: 300;
-  line-height: 22.5px;
-  text-transform: none;
-  margin-bottom: 10px;
-}
 .card-header {
   font-size: 18px;
   font-weight: 700;
@@ -42,6 +20,21 @@ h2 {
   overflow: hidden;
   text-overflow: ellipsis;
   text-rendering: optimizeSpeed; 
+}
+.small-sd-card-img-top.sd-card-img-top {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block;
+  border-bottom: none !important;
+  border-radius: 0 !important;
+  flex-shrink: 0 !important;
+  content-visibility: auto; 
+  will-change: transform, filter; 
+  contain: layout paint style; 
+  transition: filter 0.2s ease-in-out !important;
 }
 .paragraph {
   font-size: 14px;
