@@ -7,11 +7,14 @@ Ansys Fluent is a computational fluid dynamics (CFD) software that leverages AMD
 - ROCm-accelerated pressure-based coupled solver
 - GPU-optimized algebraic multigrid (AMG) solver
 
-**Supported AMD GPUs:**
-- AMD Instinct™ MI300 series
-- AMD Instinct™ MI200 series
+## Single-Node Server Requirements
 
-**Supported Versions:**
+| CPUs | GPUs | Operating Systems | ROCm™ Driver | 
+|---- |---- |----------------- |------------ |
+| X86_64 CPU(s) |[ AMD Instinct MI200 GPU(s) <br>  AMD Instinct MI300 GPU(s)](https://rocm.docs.amd.com/projects/install-on-linux/en/latest/reference/system-requirements.html#supported-gpus) | Ubuntu <br> RHEL <br>  SLES | [ROCm 5.x ](https://rocm.docs.amd.com/en/latest/release/versions.html) 
+
+## Supported Versions
+
 - Ansys 2025 R1 
 - Ansys 2024 R2
 

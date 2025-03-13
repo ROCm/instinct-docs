@@ -42,7 +42,7 @@ h2 {
   margin-bottom: 10px;
   color: var(--paragraph-color-light);
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
