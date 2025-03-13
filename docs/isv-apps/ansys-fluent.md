@@ -1,14 +1,26 @@
 # Ansys Fluent
 
-Martin: Add some facts:
-WHen did they first support AMD GPUs
-What GPUs do they support
-What versions of their product support AMD GPUs
+Ansys Fluent is a computational fluid dynamics (CFD) software that leverages AMD GPU acceleration through ROCm for high-performance simulations. The AMD partnership enables exascale-ready CFD solutions for complex engineering challenges.
 
-## Related news
+## Key Features
+- Multi-GPU support for large-scale simulations
+- ROCm-accelerated pressure-based coupled solver
+- GPU-optimized algebraic multigrid (AMG) solver
 
-Blog posts and announcements
+**Supported AMD GPUs:**
+- AMD Instinct™ MI200 series
+- AMD Instinct™ MI300 series
 
-## Related docs
+**Supported Versions:**
+- Ansys 2024 R2
+- Ansys 2025 R1 
 
-Link: How to install the driver
+## Related News
+
+- [AMD Ansys Partnership](https://www.ansys.com/partner-ecosystem/high-performance-computing-partners/amd)
+- [Boosting Computational Fluid Dynamics Performance with AMD Instinct™ MI300X](https://rocm.blogs.amd.com/ecosystems-and-partners/ansys-fluent-performance/README.html)
+- [Ansys Fluent® Adds AMD Instinct™ MI200 and MI300 Acceleration to Power CFD Simulations](https://www.hpcwire.com/2024/09/23/ansys-fluent-adds-amd-instinct-mi200-and-mi300-acceleration-to-power-cfd-simulations/)
+
+## Technical Documentation
+- [Installing AMD ROCm](https://docs.amd.com/en/latest/deploy/linux/install.html) - Step-by-step guide for ROCm 5.7+ installation
+- [Ansys Fluent GPU Acceleration Guide](https://www.ansys.com/resources/documentation) - Best practices for GPU-accelerated workflows

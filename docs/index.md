@@ -189,7 +189,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <a href="https://rocm.blogs.amd.com/ecosystems-and-partners/ansys-fluent-performance/README.html" class="card-header-link">
   <h2 class="card-header">Ansys Fluent</h2>
 </a>
-<p class="paragraph"> Ansys Fluent Solver 2024R2+ supports MI200 and MI300.
+<p class="paragraph"> Ansys Fluent is a computational fluid dynamics (CFD) software that leverages AMD GPU acceleration through ROCm for high-performance simulations. The AMD partnership enables exascale-ready CFD solutions for complex engineering challenges.
 </p>
 :::
 
