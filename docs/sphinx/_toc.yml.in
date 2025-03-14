@@ -45,6 +45,12 @@ subtrees:
                         file: virtualization/vmware/sriov/README.md
               - title: Microsft Hyper-V
                 file: virtualization/hyperv/README.md
+                subtrees:
+                  - entries:
+                      - title: Passthrough virtualization (amdgpu)
+                        file: virtualization/hyperv/passthrough/README.md
+                      - title: SRIOV
+                        file: virtualization/hyperv/sriov/README.md
       - file: isv-apps/index.md
         title: ISV Applications
         subtrees:
@@ -59,7 +65,5 @@ subtrees:
                 title: Cadence Fidelity
               - file: isv-apps/stone-ridge.md
                 title: Stone Ridge
-              - file: isv-apps/seismic-processing.md
-                title: Seismic Processing
               - file: isv-apps/devito.md
                 title: DevitoPRO
