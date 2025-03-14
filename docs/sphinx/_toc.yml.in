@@ -12,12 +12,14 @@ subtrees:
     - url: https://instinct.docs.amd.com/projects/system-acceptance/en/latest/      
       title: System Acceptance Tests
     - file: virtualization/index.md      
-      title: Virtualization      
+      title: Virtualization Hypervisors  
       subtrees:
       - entries:
-        - url: https://instinct.docs.amd.com/projects/system-acceptance/en/latest/      
-          title: Instinct Virtualization Driver
-        - url: https://instinct.docs.amd.com/projects/system-acceptance/en/latest/      
+        - file: virtualization/kvm/README.md
+          title: KVM
+        - file: virtualization/kvm/ubuntu/README.md
+          title: Ubuntu
+        - file: virtualization/kvm/ubuntu/passthrough/README.md 
           title: Passthrough virtulization (amdgpu)
         - url: https://instinct.docs.amd.com/projects/system-acceptance/en/latest/      
           title: VMWare    
