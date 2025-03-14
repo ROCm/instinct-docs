@@ -9,10 +9,10 @@ subtrees:
       title: Cluster Networking
     - url: https://instinct.docs.amd.com/projects/gpu-operator/en/latest/
       title: GPU Operator       
-    - url: https://instinct.docs.amd.com/projects/system-acceptance/en/latest/      
+    - url: https://instinct.docs.amd.com/projects/system-acceptance/en/latest/
       title: System Acceptance Tests
-    - file: virtualization/index.md      
-      title: Virtualization Hypervisors  
+    - file: virtualization/index.md
+      title: Virtualization Hypervisors
       subtrees:
         - entries:
             - title: KVM
@@ -35,21 +35,21 @@ subtrees:
                               file: virtualization/kvm/redhat/passthrough/README.md
                             - title: SRIOV
                               file: virtualization/kvm/redhat/sriov/README.md
-    - file: isv-apps/index.md      
-      title: ISV Applications    
+    - file: isv-apps/index.md
+      title: ISV Applications
       subtrees:
         - entries:
-          - file: isv-apps/ansys-fluent.md
-            title: Fluent
-          - file: isv-apps/ansys-mechanical.md
-            title: Mechanical
-          - file: isv-apps/siemens.md
-            title: Siemens
-          - file: isv-apps/cadence-fidelity.md
-            title: Cadence Fidelity
-          - file: isv-apps/stone-ridge.md
-            title: Stone Ridge
-          - file: isv-apps/seismic-processing.md  
-            title: Seismic Processing
-          - file: isv-apps/devito.md
-            title: DevitoPRO
+            - file: isv-apps/ansys-fluent.md
+              title: Fluent
+            - file: isv-apps/ansys-mechanical.md
+              title: Mechanical
+            - file: isv-apps/siemens.md
+              title: Siemens
+            - file: isv-apps/cadence-fidelity.md
+              title: Cadence Fidelity
+            - file: isv-apps/stone-ridge.md
+              title: Stone Ridge
+            - file: isv-apps/seismic-processing.md
+              title: Seismic Processing
+            - file: isv-apps/devito.md
+              title: DevitoPRO
