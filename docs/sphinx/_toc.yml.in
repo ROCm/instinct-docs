@@ -15,17 +15,16 @@ subtrees:
       title: Virtualization Hypervisors  
       subtrees:
         - entries:
-          - file: virtualization/kvm/README.md
-            title: KVM
+          - title: KVM
+            file: virtualization/kvm/README.md
             subtrees:
               - entries:
-                - file: virtualization/kvm/ubuntu/README.md
-                  title: Ubuntu
+                - title: Ubuntu
+                  file: virtualization/kvm/ubuntu/README.md
                   subtrees:
                     - entries:
-                      - file: virtualization/kvm/ubuntu/passthrough/README.md
-                        title: Passthrough virtualization (amdgpu)
-        - entries:
+                      - title: Passthrough virtualization (amdgpu)
+                        file: virtualization/kvm/ubuntu/passthrough/README.md
           - url: https://instinct.docs.amd.com/projects/system-acceptance/en/latest/      
             title: VMWare    
     - file: isv-apps/index.md      
