@@ -36,9 +36,9 @@ subtrees:
                               - title: SRIOV
                                 file: virtualization/kvm/redhat/sriov/README.md
               - title: VMWare vSphere/ESXi
-                file: virtualization/kvm/redhat/sriov/README.md
+                file: virtualization/vmware/README.md
               - title: Microsft Hyper-V
-                file: virtualization/kvm/redhat/sriov/README.md
+                file: virtualization/hyperv/README.md
       - file: isv-apps/index.md
         title: ISV Applications
         subtrees:
