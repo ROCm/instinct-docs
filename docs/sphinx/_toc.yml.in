@@ -25,8 +25,9 @@ subtrees:
                     - entries:
                       - title: Passthrough virtualization (amdgpu)
                         file: virtualization/kvm/ubuntu/passthrough/README.md
-        - url: https://instinct.docs.amd.com/projects/system-acceptance/en/latest/      
-          title: VMWare    
+        - entries:
+          - url: https://instinct.docs.amd.com/projects/system-acceptance/en/latest/      
+            title: VMWare    
     - file: isv-apps/index.md      
       title: ISV Applications    
       subtrees:
