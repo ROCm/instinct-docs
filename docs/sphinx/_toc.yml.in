@@ -25,6 +25,16 @@ subtrees:
                         - entries:
                             - title: Passthrough virtualization (amdgpu)
                               file: virtualization/kvm/ubuntu/passthrough/README.md
+                            - title: SRIOV
+                              file: virtualization/kvm/ubuntu/sriov/README.md
+                    - title: Redhat
+                      file: virtualization/kvm/redhat/README.md
+                      subtrees:
+                        - entries:
+                            - title: Passthrough virtualization (amdgpu)
+                              file: virtualization/kvm/redhat/passthrough/README.md
+                            - title: SRIOV
+                              file: virtualization/kvm/redhat/sriov/README.md
     - file: isv-apps/index.md      
       title: ISV Applications    
       subtrees:
