@@ -1,57 +1,59 @@
 root: index.md
 subtrees:
   - entries:
-    - url: https://instinct.docs.amd.com/projects/device-metrics-exporter/en/latest/
-      title: Device Metrics Exporter
-    - url: https://github.com/ROCm/k8s-device-plugin
-      title: Device Plugin      
-    - url: https://instinct.docs.amd.com/projects/gpu-cluster-networking/en/latest/
-      title: Cluster Networking
-    - url: https://instinct.docs.amd.com/projects/gpu-operator/en/latest/
-      title: GPU Operator       
-    - url: https://instinct.docs.amd.com/projects/system-acceptance/en/latest/      
-      title: System Acceptance Tests
-    - file: virtualization/index.md      
-      title: Virtualization Hypervisors  
-      subtrees:
-        - entries:
-          - title: KVM
-            file: virtualization/kvm/README.md
-            subtrees:
-              - entries:
-                - title: Ubuntu
-                  file: virtualization/kvm/ubuntu/README.md
-                  subtrees:
-                    - entries:
-                      - title: Passthrough virtualization (amdgpu)
-                        file: virtualization/kvm/ubuntu/passthrough/README.md
-    - file: isv-apps/index.md      
-      title: ISV Applications    
-      subtrees:
-        - file: isv-apps/engineering-simulation.md
-          title: Engineering Simulation
-          subtrees:
-            - file: isv-apps/ansys.md
-              title: Ansys
-              subtrees:
-                - entries:
-                  - file: isv-apps/ansys-fluent.md
-                    title: Fluent
-                  - file: isv-apps/ansys-mechanical.md
-                    title: Mechanical
-            - file: isv-apps/siemens.md
-              title: Siemens
-        - file: isv-apps/cfd-applications.md
-          title: CFD Applications
-          subtrees:
-            - entries:
-              - file: isv-apps/cadence-fidelity.md
-                title: Cadence Fidelity
-              - file: isv-apps/stone-ridge.md
-                title: Stone Ridge
-        - file: isv-apps/seismic-processing.md  
-          title: Seismic Processing
-          subtrees:
-            - entries:
-              - file: isv-apps/devito.md
-                title: DevitoPRO
+      - url: https://instinct.docs.amd.com/projects/device-metrics-exporter/en/latest/
+        title: Device Metrics Exporter
+      - url: https://github.com/ROCm/k8s-device-plugin
+        title: Device Plugin      
+      - url: https://instinct.docs.amd.com/projects/gpu-cluster-networking/en/latest/
+        title: Cluster Networking
+      - url: https://instinct.docs.amd.com/projects/gpu-operator/en/latest/
+        title: GPU Operator       
+      - url: https://instinct.docs.amd.com/projects/system-acceptance/en/latest/      
+        title: System Acceptance Tests
+      - file: virtualization/index.md      
+        title: Virtualization Hypervisors  
+        subtrees:
+          - entries:
+              - title: KVM
+                file: virtualization/kvm/README.md
+                subtrees:
+                  - entries:
+                      - title: Ubuntu
+                        file: virtualization/kvm/ubuntu/README.md
+                        subtrees:
+                          - entries:
+                              - title: Passthrough virtualization (amdgpu)
+                                file: virtualization/kvm/ubuntu/passthrough/README.md
+      - file: isv-apps/index.md      
+        title: ISV Applications    
+        subtrees:
+          - entries:
+              - file: isv-apps/engineering-simulation.md
+                title: Engineering Simulation
+                subtrees:
+                  - entries:
+                      - file: isv-apps/ansys.md
+                        title: Ansys
+                        subtrees:
+                          - entries:
+                              - file: isv-apps/ansys-fluent.md
+                                title: Fluent
+                              - file: isv-apps/ansys-mechanical.md
+                                title: Mechanical
+                      - file: isv-apps/siemens.md
+                        title: Siemens
+              - file: isv-apps/cfd-applications.md
+                title: CFD Applications
+                subtrees:
+                  - entries:
+                      - file: isv-apps/cadence-fidelity.md
+                        title: Cadence Fidelity
+                      - file: isv-apps/stone-ridge.md
+                        title: Stone Ridge
+              - file: isv-apps/seismic-processing.md  
+                title: Seismic Processing
+                subtrees:
+                  - entries:
+                      - file: isv-apps/devito.md
+                        title: DevitoPRO
