@@ -37,6 +37,12 @@ subtrees:
                                 file: virtualization/kvm/redhat/sriov/README.md
               - title: VMWare vSphere/ESXi
                 file: virtualization/vmware/README.md
+                subtrees:
+                  - entries:
+                      - title: Passthrough virtualization (amdgpu)
+                        file: virtualization/vmware/passthrough/README.md
+                      - title: SRIOV
+                        file: virtualization/vmware/sriov/README.md
               - title: Microsft Hyper-V
                 file: virtualization/hyperv/README.md
       - file: isv-apps/index.md
