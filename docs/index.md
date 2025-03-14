@@ -113,7 +113,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href=./vision/ai.md class="card-header-link">
+<a href=./vision/ai.html class="card-header-link">
   <h2 class="card-header">Models and applications</h2>
 </a>
 <p class="paragraph"> Design, develop, train, finetune, and infer your computer vision models on AMD Instinct GPUs.
@@ -127,7 +127,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href=./vision/decode.md class="card-header-link">
+<a href=./vision/decode.html class="card-header-link">
   <h2 class="card-header">Image and video decoding</h2>
 </a>
 <p class="paragraph"> Decode a wide variety of image and video formats leveraging the speed of AMD Instinct GPUs.
@@ -141,7 +141,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href=./vision/preprocess.md class="card-header-link">
+<a href=./vision/preprocess.html class="card-header-link">
   <h2 class="card-header">Image processing</h2>
 </a>
 <p class="paragraph"> Eliminate the image preprocessing bottleneck in your computer vision workloads with AMD Instinct GPUs.
