@@ -17,10 +17,10 @@ subtrees:
       - entries:
         - file: virtualization/kvm/README.md
           title: KVM
-        - file: virtualization/kvm/ubuntu/README.md
-          title: Ubuntu
-        - file: virtualization/kvm/ubuntu/passthrough/README.md 
-          title: Passthrough virtulization (amdgpu)
+          - file: virtualization/kvm/ubuntu/README.md
+            title: Ubuntu
+            - file: virtualization/kvm/ubuntu/passthrough/README.md 
+              title: Passthrough virtulization (amdgpu)
         - url: https://instinct.docs.amd.com/projects/system-acceptance/en/latest/      
           title: VMWare    
     - file: isv-apps/index.md      
