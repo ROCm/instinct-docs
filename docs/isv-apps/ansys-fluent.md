@@ -1,6 +1,6 @@
 # Ansys Fluent
 
-Ansys Fluent is a computational fluid dynamics (CFD) software that leverages AMD GPU acceleration through ROCm for high-performance simulations. The AMD partnership enables exascale-ready CFD solutions for complex engineering challenges.
+Ansys Fluent is a computational fluid dynamics (CFD) software that leverages AMD GPU acceleration through ROCm for high-performance simulations. The partnership between AMD and Ansys enables exascale-ready CFD solutions for complex engineering challenges.
 
 ## Key Features
 - Multi-GPU support for large-scale simulations
