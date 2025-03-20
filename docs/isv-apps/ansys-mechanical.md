@@ -6,7 +6,7 @@
 
 ## Single-Node Server Requirements
 
-| CPUs | GPUs | Operating Systems | ROCm™ Driver | 
+| CPUs | GPUs | Operating Systems | ROCm™ Driver |
 |---- |---- |----------------- |------------ |
 | X86_64 CPU(s) |[ AMD Instinct MI300 GPU(s) <br>  AMD Instinct MI200 GPU(s)](https://rocm.docs.amd.com/projects/install-on-linux/en/latest/reference/system-requirements.html#supported-gpus) | Ubuntu <br> RHEL <br>  SLES | [ROCm 5.x ](https://rocm.docs.amd.com/en/latest/release/versions.html) 
 
@@ -17,7 +17,6 @@
 - Ansys Mechnical 2024 R2
 - Ansys Mechnical 2024 R1
 - Ansys Mechnical 2023 R2
-
 
 ## Licensing Information
 
