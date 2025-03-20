@@ -6,7 +6,7 @@ CFD
 CharLES
 aeroacoustics
 multiphase
-turbo-machinery
+turbomachinery
 AMDInstinct
 SRT
 optionality
