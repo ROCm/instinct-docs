@@ -1,0 +1,87 @@
+.small-sd-card-large.sd-card {}
+#buttonWrapper:hover {
+  border-color: hsla(231, 99%, 66%, 1);
+  transform: scale(1.05);
+  background-color: var(--hover-background-colour);
+}
+h2 {
+  margin: 0;
+  font-size: 1.5em;
+}
+.card-header {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 10px;
+  color: var(--text-color-light);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-rendering: optimizeSpeed; 
+}
+.small-sd-card-img-top.sd-card-img-top {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block;
+  border-bottom: none !important;
+  border-radius: 0 !important;
+  flex-shrink: 0 !important;
+  content-visibility: auto; 
+  will-change: transform, filter; 
+  contain: layout paint style; 
+  transition: filter 0.2s ease-in-out !important;
+}
+.paragraph {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  color: var(--paragraph-color-light);
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-rendering: optimizeSpeed; 
+}
+.small-sd-card-img-top.sd-card-img-top {
+  width: 100%;
+  height: 5vw;
+  object-fit: cover;
+}
+.small-sd-card.sd-card-body {
+  display: none;
+  padding: 0 !important;
+  margin: 0 !important;
+  height: 0 !important;
+}
+.small-sd-card {
+  border-radius: 0 !important;
+  box-shadow: 0 4px 12px var(--shadow-light) !important;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out !important;
+  overflow: hidden;
+  margin-bottom: 20px;
+  background-color: var(--card-bg-light);
+  border: none !important;
+  height: 510px !important; 
+  display: flex !important;
+  flex-direction: column !important;
+  will-change: transform, box-shadow; 
+  transform: translateZ(0) !important; 
+  backface-visibility: hidden; 
+  contain: layout style; 
+}
+.sd-card-footer {
+  border-top: none !important;
+  background-color: var(--card-bg-light) !important;
+  padding: 16px !important;
+  flex-grow: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  contain: content; 
+}
+
