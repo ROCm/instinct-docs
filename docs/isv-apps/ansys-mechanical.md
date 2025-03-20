@@ -9,14 +9,6 @@
 - Industry-leading advanced simulation capabilities 
 - Interoperability Advantage through seamless integration with industry-standard tools
 
-
-## Single-Node Server Requirements
-
-| CPUs | GPUs | Operating Systems | ROCm™ Driver | 
-|---- |---- |----------------- |------------ |
-| X86_64 CPU(s) |[ AMD Instinct MI325X GPU(s) <br> AMD Instinct MI300X GPU(s) <br> AMD Instinct MI300A GPU(s) <br>  AMD Instinct MI200 GPU(s)](https://rocm.docs.amd.com/projects/install-on-linux/en/latest/reference/system-requirements.html#supported-gpus) | Ubuntu <br> RHEL <br>  SLES | [ROCm 5.x ](https://rocm.docs.amd.com/en/latest/release/versions.html) 
-
-
 ## Supported Versions
 
 - 2025 R1 
