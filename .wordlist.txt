@@ -13,6 +13,7 @@ optionality
 Simcenter
 CCM
 Devito
+Omnistat
 DevitoPRO
 Gorman
 Holzhauer
