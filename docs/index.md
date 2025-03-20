@@ -281,60 +281,22 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :::::::
 
 :::::::{tab-item} Core Reference Material
-::::::{tab-set}
+::::::{grid} 2 2 2 2
 
-:::::{tab-item} GPU Architecture
-
-::::{grid} 2 2 2 2
-
-:::{grid-item-card}
+:::::{grid-item-card}
 :padding: 1
 :img-top: ./images/generic.jpg
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
-  <h2 class="card-header">MI300 series</h2>
+<a href="https://rocm.docs.amd.com/en/latest/conceptual/gpu-arch.html" class="card-header-link">
+  <h2 class="card-header">Instinct Micro-architecture</h2>
 </a>
-<p class="paragraph">Enable virtualization using SRIOV on Linux with KVM and VMWare.</p>
-:::
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/generic.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
-  <h2 class="card-header">MI200 Series</h2>
-</a>
-<p class="paragraph">Learn how to split the compute units and memory to partition a GPU.</p>
-:::
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/generic.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
-  <h2 class="card-header">MI100 Series</h2>
-</a>
-<p class="paragraph"></p>
-:::
-
-::::
-
+<p class="paragraph">Review hardware aspects of the AMD Instinct™.</p>
 :::::
 
-:::::{tab-item} System Management APIs
-
-::::{grid} 2 2 2 2
-
-:::{grid-item-card}
+:::::{grid-item-card}
 :padding: 1
 :img-top: ./images/generic.jpg
 :class-img-top: small-sd-card-img-top
@@ -345,11 +307,9 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
   <h2 class="card-header">AMD SMI API doc </h2>
 </a>
 <p class="paragraph">AMD SMI documentation covering all use cases.</p>
-:::
-
-::::
-
 :::::
+
+::::::
 
 :::::::
 
