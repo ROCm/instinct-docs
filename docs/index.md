@@ -293,7 +293,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <a href="https://rocm.docs.amd.com/en/latest/conceptual/gpu-arch.html" class="card-header-link">
   <h2 class="card-header">Instinct Micro-architecture</h2>
 </a>
-<p class="paragraph">Review hardware aspects of the AMD Instinct™.</p>
+<p class="paragraph">Review hardware aspects of the AMD Instinct™ MI300, MI200 and MI100 series of GPU accelerators.</p>
 :::::
 
 :::::{grid-item-card}
