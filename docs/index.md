@@ -159,7 +159,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :class: small-sd-card
 +++
 <a href="isv-apps\siemens.html" class="card-header-link">
-  <h2 class="card-header">Siemens Sincenter STAR-CCM+</h2>
+  <h2 class="card-header">Siemens Simcenter STAR-CCM+</h2>
 </a>
 <p class="paragraph">Simcenter STAR-CCM+ 2402+ supports MI200.
 </p>
@@ -308,7 +308,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
   <h2 class="card-header">Telemetry</h2>
 </a>
-<p class="paragraph">Telemtry tools.</p>
+<p class="paragraph">Telemetry tools.</p>
 :::
 
 :::{grid-item-card}
