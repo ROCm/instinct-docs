@@ -1,53 +1,3 @@
-<style>
-  .small-sd-card-large.sd-card {}
-  #buttonWrapper:hover {
-    border-color: hsla(231, 99%, 66%, 1);
-    transform: scale(1.05);
-    background-color: var(--hover-background-colour);
-  }
-  h2 {
-    margin: 0;
-    font-size: 1.5em;
-  }
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    box-sizing: border-box;
-    width: 100%;
-  }
-  .date {
-    font-size: 13px;
-    font-weight: 300;
-    line-height: 22.5px;
-    text-transform: none;
-    margin-bottom: 10px;
-  }
-  .paragraph {
-    font-size: 16px;
-    line-height: 24px;
-    margin-bottom: 10px;
-  }
-  .small-sd-card-img-top.sd-card-img-top {
-    width: 100%;
-    height: 30%;
-    object-fit: cover;
-  }
-  .small-sd-card.sd-card-body {
-    width: 100%;
-    height: 60%;
-  }
-  .small-sd-card {
-    width: 145px;
-    height: 0;
-    display: none;
-  }
-  .bd-content .sd-card .sd-card-footer {
-    border-top: none;
-  }
-</style>
-
 # AMD Instinct Data Center GPU Documentation
 
 The AMD Instinct Documentation site provides comprehensive guides and technical documentation for system administrators and technical users deploying AMD Instinct Data Center GPUs in enterprise environments. This site focuses on large-scale deployment, cluster management, monitoring, and operational best practices for both HPC and AI workloads. For API documentation and core software stack details, please visit the [ROCm documentation](https://rocm.docs.amd.com).
@@ -107,79 +57,11 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :::::::
 
 :::::::{tab-item} HPC
-::::::{tab-set}
+::::::{grid} 2 2 2 2
 
-:::::{tab-item} HPC Solutions Architect
+:::::{grid} 2 2 2 2
 
-::::{grid} 2 2 2 2
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/generic.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
-  <h2 class="card-header">Content placeholder</h2>
-</a>
-<p class="paragraph">Content for the user that works on running and building models efficiently
-.</p>
-:::
-
-::::
-
-:::::
-
-:::::{tab-item} HPC Core Developer
-
-::::{grid} 2 2 2 2
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/generic.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
-  <h2 class="card-header">Content placeholder</h2>
-</a>
-<p class="paragraph"> Content for user who works to understand the core libraries and optimize performance via low level coding (e.g. C++)
-</p>
-:::
-
-::::
-
-:::::
-
-:::::{tab-item} Open Source Applications
-
-::::{grid} 2 2 2 2
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/generic.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
-  <h2 class="card-header">Content placeholder</h2>
-</a>
-<p class="paragraph"> Showcase our open source HPC partners (Kokkos, Trilinos, HPCToolkit, etc.)
-</p>
-:::
-
-::::
-
-:::::
-
-:::::{tab-item} ISV Applications
-
-::::{grid} 2 2 2 2
-
-:::{grid-item-card}
+::::{grid-item-card}
 :padding: 1
 :img-top: ./images/AnsysFluent-tile.png
 :class-img-top: small-sd-card-img-top
@@ -191,9 +73,9 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 </a>
 <p class="paragraph"> Ansys Fluent is a computational fluid dynamics (CFD) software that leverages AMD GPU acceleration through ROCm for high-performance simulations. The AMD partnership enables exascale-ready CFD solutions for complex engineering challenges.
 </p>
-:::
+::::
 
-:::{grid-item-card}
+::::{grid-item-card}
 :padding: 1
 :img-top: ./images/AnsysMech-tile.png
 :class-img-top: small-sd-card-img-top
@@ -205,9 +87,9 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 </a>
 <p class="paragraph"> Ansys Mechanical 2023R2+ supports MI200
 </p>
-:::
+::::
 
-:::{grid-item-card}
+::::{grid-item-card}
 :padding: 1
 :img-top: ./images/DevitoPRO-tile.png
 :class-img-top: small-sd-card-img-top
@@ -219,9 +101,9 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 </a>
 <p class="paragraph">DevitoPRO 4.8.2+ supports MI200 and MI300X.
 </p>
-:::
+::::
 
-:::{grid-item-card}
+::::{grid-item-card}
 :padding: 1
 :img-top: ./images/Starccm-tile.png
 :class-img-top: small-sd-card-img-top
@@ -233,9 +115,9 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 </a>
 <p class="paragraph">Simcenter STAR-CCM+ 2402+ supports MI200.
 </p>
-:::
+::::
 
-:::{grid-item-card}
+::::{grid-item-card}
 :padding: 1
 :img-top: ./images/ECHELON-tile.png
 :class-img-top: small-sd-card-img-top
@@ -247,9 +129,9 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 </a>
 <p class="paragraph">ECHELON 2023.3+ supports MI200.
 </p>
-:::
+::::
 
-:::{grid-item-card}
+::::{grid-item-card}
 :padding: 1
 :img-top: ./images/FCharLES-tile.png
 :class-img-top: small-sd-card-img-top
@@ -261,8 +143,6 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 </a>
 <p class="paragraph">Fidelity LES Solver supports MI200.
 </p>
-:::
-
 ::::
 
 :::::
