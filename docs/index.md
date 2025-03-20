@@ -19,33 +19,11 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+<a href="https://www.amd.com/en/developer/resources/rocm-hub/dev-ai.html" class="card-header-link">
   <h2 class="card-header">GPU AI Dev Hub</h2>
 </a>
 <p class="paragraph">Content for the user that works on running and building models efficiently. They are creating chat bots, using OpenAI APIs to build something, using vLLM to build another model, etc.
 .</p>
-:::
-
-::::
-
-:::::
-
-:::::{tab-item} AI Core Developer
-
-::::{grid} 2 2 2 2
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/generic.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
-  <h2 class="card-header">Content placeholder</h2>
-</a>
-<p class="paragraph"> Content for user who works to understand the core libraries and optimize performance via low level coding (e.g. C++). How to guides for expert model builders and tips and tricks.
-</p>
 :::
 
 ::::
@@ -237,7 +215,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+<a href="https://rocm.docs.amd.com/projects/amdsmi/en/latest/" class="card-header-link">
   <h2 class="card-header">AMD SMI</h2>
 </a>
 <p class="paragraph"></p>
