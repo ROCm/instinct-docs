@@ -4,9 +4,9 @@ Stone Ridge Technology (SRT) pioneered the use of GPUs for high performance rese
 
 ## Single-Node Server Requirements
 
-| CPUs | GPUs | Operating Systems | ROCm™ Driver | 
+| CPUs | GPUs | Operating Systems | ROCm™ Driver |
 |---- |---- |----------------- |------------ |
-| X86_64 CPU(s) |[ AMD Instinct MI200 GPU(s)](https://rocm.docs.amd.com/projects/install-on-linux/en/latest/reference/system-requirements.html#supported-gpus) | Ubuntu <br> RHEL <br>  SLES | [ROCm 5.x ](https://rocm.docs.amd.com/en/latest/release/versions.html) 
+| X86_64 CPU(s) |[AMD Instinct MI200 GPU(s)](https://rocm.docs.amd.com/projects/install-on-linux/en/latest/reference/system-requirements.html#supported-gpus) | Ubuntu <br> RHEL <br>  SLES | [ROCm 5.x](https://rocm.docs.amd.com/en/latest/release/versions.html)
 
 ## Supported Versions
 
@@ -17,4 +17,5 @@ Stone Ridge Technology (SRT) pioneered the use of GPUs for high performance rese
 - [Stone Ridge and AMD Partnership](https://rocm.blogs.amd.com/ecosystems-and-partners/stone-ridge/README.html)
 
 ## Technical Documentation
+
 - [Installing AMD GPU Drivers](https://www.amd.com/en/support/download/drivers.html)
