@@ -7,4 +7,5 @@ The MIVisionX toolkit provides you with all the necessary tools you need through
 ## Documentation
 
 For full documentation, please refer to the ROCm docs site:
+
 - [MIVisionX](https://rocm.docs.amd.com/projects/MIVisionX/en/latest/index.html)
