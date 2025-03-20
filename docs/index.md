@@ -56,7 +56,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 :::::::
 
-:::::::{tab-item} HPC
+:::::::{tab-item} ISV Applications
 ::::::{grid} 2 2 2 2
 
 :::::{grid-item-card}
