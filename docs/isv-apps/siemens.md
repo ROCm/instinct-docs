@@ -1,4 +1,4 @@
-# Siemens Sincenter STAR-CCM+
+# Siemens Simcenter STAR-CCM+
 
 Siemens recently announced that its Simcenter STAR-CCM+ multi-physics computational fluid dynamics (CFD) software now supports AMD Instinct™ GPUs for GPU-native computation. This move addresses its users’ needs for computational efficiency, reduced simulation costs and energy usage, and greater hardware choice.
 
