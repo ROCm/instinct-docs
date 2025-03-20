@@ -162,7 +162,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :class: small-sd-card
 +++
 <a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
-  <h2 class="card-header">Instinct Virtualization Driver</h2>
+  <h2 class="card-header">AMD GPU Driver</h2>
 </a>
 <p class="paragraph">Enable virtualization using SRIOV on Linux with KVM and VMWare.</p>
 :::
