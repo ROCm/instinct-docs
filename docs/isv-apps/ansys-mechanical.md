@@ -4,6 +4,8 @@
 
 [Ansys Mechanical](https://www.ansys.com/products/structures/ansys-mechanical) is a leading finite element analysis (FEA) platform used for structural engineering.
 
+[Get Mechanical here.](https://www.ansys.com/products/fluids/ansys-mechanical)
+
 ## Key Features
 - One-stop-shop for multi physics structural analysis
 - Industry-leading advanced simulation capabilities 
