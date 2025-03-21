@@ -2,6 +2,8 @@
 
 Ansys Fluent is the industry-leading CFD software tool widely used across aerospace, automotive, energy, high tech, and biomedical industries to simulate complex fluids phenomena and optimize product design.
 
+[Get Fluent here.](https://www.ansys.com/products/fluids/ansys-fluent)
+
 ## Key Features
 - GPU Enabled supporting Instinct products on 2024 R2 release for MI200 and MI300 series
 - Advanced Physics Models and High Accuracy
