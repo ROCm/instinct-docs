@@ -37,14 +37,14 @@ subtrees:
             title: Kubernetes
             subtrees:
               - entries:
-                - url: https://instinct.docs.amd.com/projects/amdgpu-docs/en/latest/
-                  title: Instinct Driver  
+                - url: https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/
+                  title: GPU-Operator  
           - file: system-admin/cluster.md
             title: Cluster
             subtrees:
               - entries:
-                - url: https://instinct.docs.amd.com/projects/amdgpu-docs/en/latest/
-                  title: Instinct Driver                                                                       
+                - url: https://instinct.docs.amd.com/projects/gpu-cluster-networking/en/latest/
+                  title: Networking                                                                      
     - file: core/index.md
       title: Common Reference Material         
 
