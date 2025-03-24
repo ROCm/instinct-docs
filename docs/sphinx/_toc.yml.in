@@ -28,11 +28,23 @@ subtrees:
       subtrees:
         - entries:
           - file: system-admin/bare-metal.md
-            title: Instinct Driver
+            title: Bare Metal
             subtrees:
               - entries:
                 - url: https://instinct.docs.amd.com/projects/amdgpu-docs/en/latest/
-                  title: Instinct Driver                                 
+                  title: Instinct Driver
+          - file: system-admin/k8s.md
+            title: Kubernetes
+            subtrees:
+              - entries:
+                - url: https://instinct.docs.amd.com/projects/amdgpu-docs/en/latest/
+                  title: Instinct Driver  
+          - file: system-admin/cluster.md
+            title: Cluster
+            subtrees:
+              - entries:
+                - url: https://instinct.docs.amd.com/projects/amdgpu-docs/en/latest/
+                  title: Instinct Driver                                                                       
     - file: core/index.md
       title: Common Reference Material         
 
