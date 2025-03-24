@@ -47,10 +47,10 @@ subtrees:
                   title: Networking                                                                      
     - file: core/index.md
       title: Common Reference Material
-            subtrees:
-              - entries:
-                - url: https://rocm.docs.amd.com/en/latest/conceptual/gpu-arch.html
-                  title: GPU architecture                 
+      subtrees:
+        - entries:
+          - url: https://rocm.docs.amd.com/en/latest/conceptual/gpu-arch.html
+            title: GPU architecture                 
 
 - caption: Components alphabetically 
   entries:
