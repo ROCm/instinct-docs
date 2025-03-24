@@ -1,6 +1,7 @@
 root: index.md
 subtrees:
-  - entries:
+  - caption: Alphabetically 
+    entries:
       - url: https://instinct.docs.amd.com/projects/device-metrics-exporter/en/latest/
         title: Device Metrics Exporter
       - url: https://github.com/ROCm/k8s-device-plugin
@@ -12,6 +13,8 @@ subtrees:
       - url: https://instinct.docs.amd.com/projects/system-acceptance/en/latest/
         title: System Acceptance Tests
       - file: isv-apps/index.md
+  - caption: Persona 
+    entries:      
         title: ISV Applications
         subtrees:
           - entries:
