@@ -34,7 +34,7 @@ subtrees:
                 - url: https://instinct.docs.amd.com/projects/amdgpu-docs/en/latest/
                   title: Instinct Driver                                 
     - file: core/index.md
-      title: CCommon Reference Material         
+      title: Common Reference Material         
 
 - caption: Components alphabetically 
   entries:
