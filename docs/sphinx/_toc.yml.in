@@ -1,6 +1,6 @@
 root: index.md
 subtrees:
-  - caption: Alphabetically 
+  - caption: Components alphabetically 
     entries:
       - url: https://instinct.docs.amd.com/projects/device-metrics-exporter/en/latest/
         title: Device Metrics Exporter
@@ -13,10 +13,10 @@ subtrees:
       - url: https://instinct.docs.amd.com/projects/system-acceptance/en/latest/
         title: System Acceptance Tests
       - file: isv-apps/index.md
-subtrees:      
-  - caption: Persona 
-    entries:      
         title: ISV Applications
+subtrees:      
+  - caption: Find by persona 
+    entries:      
         subtrees:
           - entries:
               - file: isv-apps/ansys-fluent.md
