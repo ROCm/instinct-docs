@@ -32,7 +32,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 :::::::
 
-:::::::{tab-item} Vision
+:::::::{tab-item} Computer Vision
 
 ::::{grid} 2 2 2 2
 
