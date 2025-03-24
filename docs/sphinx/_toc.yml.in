@@ -1,5 +1,24 @@
 root: index.md
 subtrees:
+- caption: Browse by persona 
+  entries: 
+    - file: isv-apps/index.md
+      title: Scientific Applications         
+      subtrees:
+        - entries:
+          - file: isv-apps/ansys-fluent.md
+            title: Fluent
+          - file: isv-apps/ansys-mechanical.md
+            title: Mechanical
+          - file: isv-apps/siemens.md
+            title: Siemens
+          - file: isv-apps/cadence-fidelity.md
+            title: Cadence Fidelity
+          - file: isv-apps/stone-ridge.md
+            title: Stone Ridge
+          - file: isv-apps/devito.md
+            title: DevitoPRO
+
 - caption: Components alphabetically 
   entries:
     - url: https://instinct.docs.amd.com/projects/device-metrics-exporter/en/latest/
@@ -15,21 +34,3 @@ subtrees:
     - url: https://instinct.docs.amd.com/projects/system-acceptance/en/latest/
       title: System Acceptance Tests
      
-- caption: Browse by persona 
-  entries: 
-    - file: isv-apps/index.md
-      title: ISV Applications         
-      subtrees:
-        - entries:
-          - file: isv-apps/ansys-fluent.md
-            title: Fluent
-          - file: isv-apps/ansys-mechanical.md
-            title: Mechanical
-          - file: isv-apps/siemens.md
-            title: Siemens
-          - file: isv-apps/cadence-fidelity.md
-            title: Cadence Fidelity
-          - file: isv-apps/stone-ridge.md
-            title: Stone Ridge
-          - file: isv-apps/devito.md
-            title: DevitoPRO
