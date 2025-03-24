@@ -4,7 +4,9 @@ subtrees:
 - caption: Browse by persona 
   entries:
     - url: https://www.amd.com/en/developer/resources/rocm-hub/dev-ai.html
-      title: AI Solutions Architect           
+      title: AI Solutions Architect
+    - file: ai/vision.md
+      title: Visions                   
     - file: isv-apps/index.md
       title: Scientific Applications         
       subtrees:
