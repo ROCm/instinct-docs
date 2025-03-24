@@ -21,9 +21,9 @@ subtrees:
             title: Stone Ridge
           - file: isv-apps/devito.md
             title: DevitoPRO
-    - file: isv-apps/index.md
+    - file: isv-apps/inds4x.md
       title: Scientific Applications         
-    - file: isv-apps/index.md
+    - file: isv-apps/inde4123.md
       title: Scientific Applications         
 
 - caption: Components alphabetically 
