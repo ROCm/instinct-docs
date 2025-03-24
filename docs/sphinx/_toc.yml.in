@@ -1,7 +1,10 @@
 root: index.md
 subtrees:
+
 - caption: Browse by persona 
-  entries: 
+  entries:
+    - file: AI/ai-solutions-architect.md
+      title: AI Solutions Architect           
     - file: isv-apps/index.md
       title: Scientific Applications         
       subtrees:
@@ -18,6 +21,10 @@ subtrees:
             title: Stone Ridge
           - file: isv-apps/devito.md
             title: DevitoPRO
+    - file: isv-apps/index.md
+      title: Scientific Applications         
+    - file: isv-apps/index.md
+      title: Scientific Applications         
 
 - caption: Components alphabetically 
   entries:
