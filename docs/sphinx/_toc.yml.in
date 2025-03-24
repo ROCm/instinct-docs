@@ -2,8 +2,6 @@ root: index.md
 subtrees:
 - caption: Components alphabetically 
   entries:
-    - url: https://instinct.docs.amd.com/projects/amdgpu-docs/en/latest/
-      title: Device Metrics Exporter
     - url: https://instinct.docs.amd.com/projects/device-metrics-exporter/en/latest/
       title: Device Metrics Exporter
     - url: https://github.com/ROCm/k8s-device-plugin
@@ -11,7 +9,9 @@ subtrees:
     - url: https://instinct.docs.amd.com/projects/gpu-cluster-networking/en/latest/
       title: Cluster Networking
     - url: https://instinct.docs.amd.com/projects/gpu-operator/en/latest/
-      title: GPU Operator       
+      title: GPU Operator
+    - url: https://instinct.docs.amd.com/projects/amdgpu-docs/en/latest/
+      title: Instinct Driver           
     - url: https://instinct.docs.amd.com/projects/system-acceptance/en/latest/
       title: System Acceptance Tests
      
