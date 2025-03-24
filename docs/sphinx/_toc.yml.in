@@ -2,6 +2,8 @@ root: index.md
 subtrees:
 - caption: Components alphabetically 
   entries:
+    - url: https://instinct.docs.amd.com/projects/amdgpu-docs/en/latest/
+      title: Device Metrics Exporter
     - url: https://instinct.docs.amd.com/projects/device-metrics-exporter/en/latest/
       title: Device Metrics Exporter
     - url: https://github.com/ROCm/k8s-device-plugin
