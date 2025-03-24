@@ -12,11 +12,12 @@ subtrees:
         title: GPU Operator       
       - url: https://instinct.docs.amd.com/projects/system-acceptance/en/latest/
         title: System Acceptance Tests
-      - file: isv-apps/index.md
-        title: ISV Applications
+
 subtrees:      
   - caption: Find by persona 
-    entries:      
+    entries: 
+      - file: isv-apps/index.md
+        title: ISV Applications         
         subtrees:
           - entries:
               - file: isv-apps/ansys-fluent.md
