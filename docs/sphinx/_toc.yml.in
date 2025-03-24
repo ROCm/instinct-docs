@@ -46,7 +46,11 @@ subtrees:
                 - url: https://instinct.docs.amd.com/projects/gpu-cluster-networking/en/latest/
                   title: Networking                                                                      
     - file: core/index.md
-      title: Common Reference Material         
+      title: Common Reference Material
+            subtrees:
+              - entries:
+                - url: https://rocm.docs.amd.com/en/latest/conceptual/gpu-arch.html
+                  title: GPU architecture                 
 
 - caption: Components alphabetically 
   entries:
