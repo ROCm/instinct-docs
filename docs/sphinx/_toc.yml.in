@@ -21,8 +21,12 @@ subtrees:
             title: Stone Ridge
           - file: isv-apps/devito.md
             title: DevitoPRO
-    - file: isv-apps/inds4x.md
-      title: Scientific Applications         
+    - file: system-admin/index.md
+      title: System Administrator
+      subtrees:
+        - entries:
+          - url: https://instinct.docs.amd.com/projects/amdgpu-docs/en/latest/
+            title: Instinct Driver                  
     - file: isv-apps/inde4123.md
       title: Scientific Applications         
 
