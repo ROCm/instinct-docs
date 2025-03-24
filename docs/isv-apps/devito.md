@@ -6,7 +6,7 @@ In the high-stakes world of oil and gas exploration, the ability to accurately m
 
 ## Supported Versions
 
-- DevitoPRO 4.8.2+
+- Devito & DevitoPRO 4.8.2 though 4.8.14
 
 ## Related News
 
