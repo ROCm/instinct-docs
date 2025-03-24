@@ -8,7 +8,7 @@ subtrees:
     - file: ai/vision.md
       title: Vision Architects                  
     - file: isv-apps/index.md
-      title: Simulation & Modeling         
+      title: Simulation & Modeling Apps        
       subtrees:
         - entries:
           - file: isv-apps/ansys-fluent.md
