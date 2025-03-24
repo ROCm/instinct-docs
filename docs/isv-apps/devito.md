@@ -1,8 +1,14 @@
-# DevitoPRO
+A# DevitoPRO
 
-In the high-stakes world of oil and gas exploration, the ability to accurately model and predict the location of valuable resources can mean the difference between a dry well and a gusher. High-performance computing (HPC) plays a crucial role in this process, but the complexity of HPC software often creates a barrier for domain specialists. Enter Devito Codes, a software company that's breaking down these barriers with its innovative product, Devito Pro. In a recent conversation, Devito Codes' co-founders, CEO Gerard Gorman and Director of Business Development and Strategy Paul Holzhauer, shared insights on the company's objectives and its strategic collaboration with AMD.
+DevitoPRO is a domain-specific language (DSL) and code generation framework designed for highly optimized finite-difference kernels for solutions for seismic imaging and exploration, geophysical research, engineering and environmental sciences.
 
-[Get Devito here]()
+[Get Devito here](https://github.com/devitocodes/devito)
+
+## Key Features
+
+- HPC Optimization: based on advanced compiler technology
+- Symbolic Computation: It allows the definition of operators from high-level symbolic equations, facilitating complex mathematical modeling
+- GA support for MI210, MI250, MI300A, MI300X, MI325X
 
 ## Supported Versions
 
@@ -16,3 +22,4 @@ In the high-stakes world of oil and gas exploration, the ability to accurately m
 
 ## Technical Documentation
 - [Installing AMD GPU Drivers](https://www.amd.com/en/support/download/drivers.html)
+- [Build Recipe](https://github.com/amd/InfinityHub-CI/tree/main/devitopro)
