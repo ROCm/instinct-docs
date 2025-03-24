@@ -9,6 +9,7 @@ ECHELON is a leading reservoir simulation software  serving the petroleum indus
 - Speed: Utilizes GPU technology to perform simulations much faster than traditional CPU-based solutions
 - Scalability: Handles large, complex models efficiently
 - Accuracy: Provides precise and reliable simulation results
+- GA support for MI210 & MI250
 
 ## Supported Versions
 
@@ -21,3 +22,4 @@ ECHELON is a leading reservoir simulation software  serving the petroleum indus
 
 ## Technical Documentation
 - [Installing AMD GPU Drivers](https://www.amd.com/en/support/download/drivers.html)
+- [Build Recipe](https://github.com/amd/InfinityHub-CI/tree/main/srt-echelon)
