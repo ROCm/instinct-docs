@@ -29,8 +29,8 @@ subtrees:
         - entries:
           - url: https://instinct.docs.amd.com/projects/amdgpu-docs/en/latest/
             title: Instinct Driver                  
-    - file: isv-apps/inde4123.md
-      title: Scientific Applications         
+    - file: core/index.md
+      title: Core Refernce Material         
 
 - caption: Components alphabetically 
   entries:
