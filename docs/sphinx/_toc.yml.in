@@ -13,7 +13,7 @@ subtrees:
     - url: https://instinct.docs.amd.com/projects/system-acceptance/en/latest/
       title: System Acceptance Tests
      
-- caption: Find by persona 
+- caption: Browse by persona 
   entries: 
     - file: isv-apps/index.md
       title: ISV Applications         
