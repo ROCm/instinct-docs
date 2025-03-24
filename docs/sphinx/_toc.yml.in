@@ -27,8 +27,12 @@ subtrees:
       title: System Administrators
       subtrees:
         - entries:
-          - url: https://instinct.docs.amd.com/projects/amdgpu-docs/en/latest/
-            title: Instinct Driver                  
+          - file: system-admin/bare-metal.md
+            title: Instinct Driver
+            subtrees:
+              - entries:
+                - url: https://instinct.docs.amd.com/projects/amdgpu-docs/en/latest/
+                  title: Instinct Driver                                 
     - file: core/index.md
       title: CCommon Reference Material         
 
