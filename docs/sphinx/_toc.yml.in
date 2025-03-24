@@ -4,11 +4,11 @@ subtrees:
 - caption: Browse by persona 
   entries:
     - url: https://www.amd.com/en/developer/resources/rocm-hub/dev-ai.html
-      title: AI Solutions Architect
+      title: AI Solutions Architects
     - file: ai/vision.md
-      title: Visions                   
+      title: Vision Architects                  
     - file: isv-apps/index.md
-      title: Scientific Applications         
+      title: Modeling for Scientists & Engineers         
       subtrees:
         - entries:
           - file: isv-apps/ansys-fluent.md
@@ -24,13 +24,13 @@ subtrees:
           - file: isv-apps/devito.md
             title: DevitoPRO
     - file: system-admin/index.md
-      title: System Administrator
+      title: System Administrators
       subtrees:
         - entries:
           - url: https://instinct.docs.amd.com/projects/amdgpu-docs/en/latest/
             title: Instinct Driver                  
     - file: core/index.md
-      title: Core Refernce Material         
+      title: CCommon Reference Material         
 
 - caption: Components alphabetically 
   entries:
