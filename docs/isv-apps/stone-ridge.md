@@ -1,16 +1,12 @@
 # Stone Ridge Technology ECHELON
 
-ECHELON is a leading reservoir simulation software  serving the petroleum industry, including applications in deep-ocean drilling and unconventional reservoirs
- known for its speed and scalability.
+Stone Ridge Technology (SRT) pioneered the use of GPUs for high performance reservoir simulation (HPC) nearly a decade ago with ECHELON, its flagship software product. ECHELON, the first of its kind, engineered from the outset to harness the full potential of massively parallel GPUs, stands apart in the industry for its power, efficiency, and accuracy. Now, ECHELON has added support for AMDInstinct accelerators into its simulation engine, offering new flexibility and optionality to its clients.
 
-[Get ECHELON here.](https://stoneridgetechnology.com/echelon-reservoir-simulation-software/)
+## Single-Node Server Requirements
 
-## Key Features
-
-- Speed: Utilizes GPU technology to perform simulations much faster than traditional CPU-based solutions
-- Scalability: Handles large, complex models efficiently
-- Accuracy: Provides precise and reliable simulation results
-- GA support for MI210 & MI250
+| CPUs | GPUs | Operating Systems | ROCm™ Driver | 
+|---- |---- |----------------- |------------ |
+| X86_64 CPU(s) |[ AMD Instinct MI200 GPU(s)](https://rocm.docs.amd.com/projects/install-on-linux/en/latest/reference/system-requirements.html#supported-gpus) | Ubuntu <br> RHEL <br>  SLES | [ROCm 5.x ](https://rocm.docs.amd.com/en/latest/release/versions.html) 
 
 ## Supported Versions
 
@@ -18,10 +14,7 @@ ECHELON is a leading reservoir simulation software  serving the petroleum indus
 
 ## Related News
 
-- [Stone Ridge Expands Reservoir Simulation Options with AMD Instinct™ Accelerators](https://www.hpcwire.com/2024/06/17/stone-ridge-expands-reservoir-simulation-options-with-amd-instinct-accelerators/)
-- [Eni launches new supercomputer HPC6 that ranks No.5. in the TOP500 list](https://www.eni.com/en-IT/media/press-release/2024/11/eni-launches-supercomputer-hpc6-top500-list.html)
+- [Stone Ridge and AMD Partnership](https://rocm.blogs.amd.com/ecosystems-and-partners/stone-ridge/README.html)
 
 ## Technical Documentation
-
 - [Installing AMD GPU Drivers](https://www.amd.com/en/support/download/drivers.html)
-- [Build Recipe](https://github.com/amd/InfinityHub-CI/tree/main/srt-echelon)

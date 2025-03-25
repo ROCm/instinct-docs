@@ -1,25 +1,20 @@
 # Siemens Sincenter STAR-CCM+
 
-Simcenter STAR-CCM+ is a best-in-class computational fluid dynamics (CFD) software to enable engineers and analysts to drive accelerated innovation on aerodynamics, turbulence, reacting flows, fluid-structure interaction, and multiphase flows.
+Siemens recently announced that its Simcenter STAR-CCM+ multi-physics computational fluid dynamics (CFD) software now supports AMD Instinct™ GPUs for GPU-native computation. This move addresses its users’ needs for computational efficiency, reduced simulation costs and energy usage, and greater hardware choice.
 
+## Single-Node Server Requirements
 
-## Key Features
-
-- Accelerated Product Development to help reduce time-to-market
-- Optimized design development thru multi-virtual design alternatives for Cost Savings
-- Multi-physics simulation capabilities including fluid dynamics, heat transfer, electromagnetics and structural characteristics for complex product interaction analysis
-- GA support for MI210 & MI250
+| CPUs | GPUs | Operating Systems | ROCm™ Driver | 
+|---- |---- |----------------- |------------ |
+| X86_64 CPU(s) |[ AMD Instinct MI200 GPU(s)](https://rocm.docs.amd.com/projects/install-on-linux/en/latest/reference/system-requirements.html#supported-gpus) | Ubuntu <br> RHEL <br>  SLES | [ROCm 5.x ](https://rocm.docs.amd.com/en/latest/release/versions.html) 
 
 ## Supported Versions
 
-- Simcenter STAR-CCM+ 2402 and above
+- Simcenter STAR-CCM+ 2402+
 
 ## Related News
 
 - [Siemens and AMD Partnership](https://rocm.blogs.amd.com/ecosystems-and-partners/Siemens/README.html)
-- [Supercharge your CFD simulations with GPUs](https://blogs.sw.siemens.com/simcenter/cfd-simulations-with-gpus/)
-- [FD on GPU. A seamless disruption with Simcenter STAR-CCM+](https://blogs.sw.siemens.com/simcenter/cfd-on-gpu-a-seamless-disruption/)
 
 ## Technical Documentation
 - [Installing AMD GPU Drivers](https://www.amd.com/en/support/download/drivers.html)
-- [Build Recipe](https://github.com/amd/InfinityHub-CI/tree/main/siemens-star-ccm)
