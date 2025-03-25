@@ -5,6 +5,7 @@ Cadence Fidelity LES Solver, formerly Cascade CharLES, is the industry’s first
 [Get Fidelity LES Solver here.](https://www.cadence.com/en_US/home/resources/technical-briefs/fidelity-les-solver-tb.html)
 
 ## KeyFeatures
+
 - Designed to scale, Fidelity LES Solver addresses the most demanding fluid dynamics challenges
 - Accurate predictions of complex problems for CFD in aeroacoustics, aerodynamics, combustion, heat transfer, as well as multiphase applications
 - GA support on MI210 & MI250
@@ -18,4 +19,5 @@ Cadence Fidelity LES Solver, formerly Cascade CharLES, is the industry’s first
 - [Fidelity LES Solver](https://www.cadence.com/en_US/home/resources/technical-briefs/fidelity-les-solver-tb.html)
 
 ## Technical Documentation
+
 - [Installing AMD GPU Drivers](https://www.amd.com/en/support/download/drivers.html)
