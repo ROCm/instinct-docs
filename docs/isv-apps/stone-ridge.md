@@ -6,6 +6,7 @@ ECHELON is a leading reservoir simulation software  serving the petroleum indus
 [Get ECHELON here.](https://stoneridgetechnology.com/echelon-reservoir-simulation-software/)
 
 ## Key Features
+
 - Speed: Utilizes GPU technology to perform simulations much faster than traditional CPU-based solutions
 - Scalability: Handles large, complex models efficiently
 - Accuracy: Provides precise and reliable simulation results
@@ -21,5 +22,6 @@ ECHELON is a leading reservoir simulation software  serving the petroleum indus
 - [Eni launches new supercomputer HPC6 that ranks No.5. in the TOP500 list](https://www.eni.com/en-IT/media/press-release/2024/11/eni-launches-supercomputer-hpc6-top500-list.html)
 
 ## Technical Documentation
+
 - [Installing AMD GPU Drivers](https://www.amd.com/en/support/download/drivers.html)
 - [Build Recipe](https://github.com/amd/InfinityHub-CI/tree/main/srt-echelon)
