@@ -5,6 +5,7 @@ Ansys Fluent is the industry-leading CFD software tool widely used across aerosp
 [Get Fluent here.](https://www.ansys.com/products/fluids/ansys-fluent)
 
 ## Key Features
+
 - Advanced Physics Models and High Accuracy
 - Supports multiple industries
 - GA support for MI210, MI250, MI300X, MI325X
@@ -15,6 +16,7 @@ Ansys Fluent is the industry-leading CFD software tool widely used across aerosp
 - 2024 R1 & R2
 
 ## Installation and Licensing Information
+
 - [AMD Infinity Hub Recipe](https://github.com/amd/InfinityHub-CI/tree/main/ansys-fluent)
 
 ## Related News
@@ -24,5 +26,6 @@ Ansys Fluent is the industry-leading CFD software tool widely used across aerosp
 - [Ansys Fluent® Adds AMD Instinct™ MI200 and MI300 Acceleration to Power CFD Simulations](https://www.hpcwire.com/2024/09/23/ansys-fluent-adds-amd-instinct-mi200-and-mi300-acceleration-to-power-cfd-simulations/)
 
 ## Technical Documentation
+
 - [Installing AMD GPU Drivers](https://www.amd.com/en/support/download/drivers.html)
 - [Ansys Fluent GPU Acceleration Guide](https://www.ansys.com/resources/documentation)
