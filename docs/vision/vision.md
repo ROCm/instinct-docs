@@ -4,7 +4,7 @@
 
 :::{grid-item-card}
 :padding: 1
-:img-top: ./images/models.png
+:img-top: ../images/models.png
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
@@ -18,7 +18,7 @@
 
 :::{grid-item-card}
 :padding: 1
-:img-top: ./images/decoding.png
+:img-top: ../images/decoding.png
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
@@ -32,7 +32,7 @@
 
 :::{grid-item-card}
 :padding: 1
-:img-top: ./images/processing.png
+:img-top: ../images/processing.png
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
