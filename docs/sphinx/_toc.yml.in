@@ -5,7 +5,7 @@ subtrees:
   entries:
     - url: https://www.amd.com/en/developer/resources/rocm-hub/dev-ai.html
       title: AI Solutions Architects
-    - file: ai/vision.md
+    - file: vision/vision.md
       title: Computer Vision
       subtrees:
         - entries:
