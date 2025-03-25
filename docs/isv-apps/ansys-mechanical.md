@@ -7,6 +7,7 @@
 [Get Mechanical here.](https://www.ansys.com/products/structures/ansys-mechanical)
 
 ## Key Features
+
 - One-stop-shop for multi physics structural analysis
 - Industry-leading advanced simulation capabilities 
 - Interoperability Advantage through seamless integration with industry-standard tools
@@ -19,6 +20,7 @@
 - 2023 R2
 
 ## Installation and Licensing Information
+
 - [AMD Infinity Hub Recipe](https://github.com/amd/InfinityHub-CI/tree/main/ansys-mechanical)
 
 ## Related News
@@ -27,3 +29,5 @@
 - [Powering Mechanical Simulations: AMD Vs. Intel](https://semiengineering.com/powering-mechanical-simulations-amd-vs-intel)
 
 ## Technical Documentation
+
+- [Installing AMD GPU Drivers](https://www.amd.com/en/support/download/drivers.html)
