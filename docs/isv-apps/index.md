@@ -52,7 +52,7 @@
 :class: small-sd-card
 +++
 <a href="isv-apps\siemens.html" class="card-header-link">
-  <h2 class="card-header">Siemens Simcenter STAR-CCM+</h2>
+  <h2 class="card-header">Siemens Sincenter STAR-CCM+</h2>
 </a>
 <p class="paragraph">Simcenter STAR-CCM+ 2402+ supports MI200.
 </p>
