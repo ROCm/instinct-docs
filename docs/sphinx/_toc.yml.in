@@ -16,3 +16,7 @@ subtrees:
     entries:      
     - url: https://instinct.docs.amd.com/projects/device-metrics-exporter/en/latest/
       title: Device Metrics Exporter      
+  - caption: AI/ML
+    entries: 
+    - title: "Torchserve"
+      url: "torchserve/torchserve.md"
