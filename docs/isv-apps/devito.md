@@ -21,5 +21,6 @@ DevitoPRO is a domain-specific language (DSL) and code generation framework desi
 - [DevitoPRO getting HIP with AMD Instinct™ | Devito Codes](https://www.devitocodes.com/instinct)
 
 ## Technical Documentation
+
 - [Installing AMD GPU Drivers](https://www.amd.com/en/support/download/drivers.html)
 - [Build Recipe](https://github.com/amd/InfinityHub-CI/tree/main/devitopro)
