@@ -75,6 +75,8 @@ subtrees:
 
 - caption: Components alphabetically 
   entries:
+    - url: https://rocm.docs.amd.com/projects/amdsmi/en/latest/
+      title: AMD-SMI   
     - url: https://instinct.docs.amd.com/projects/device-metrics-exporter/en/latest/
       title: Device Metrics Exporter
     - url: https://github.com/ROCm/k8s-device-plugin
@@ -83,8 +85,10 @@ subtrees:
       title: Cluster Networking
     - url: https://instinct.docs.amd.com/projects/gpu-operator/en/latest/
       title: GPU Operator
-    - url: https://instinct.docs.amd.com/projects/amdgpu-docs/en/latest/
+    - url: https://instinct.docs.amd.com/projects/amdgpu-docs/en/latest/   
       title: Instinct Driver 
+    - url: https://rocm.docs.amd.com/projects/ROCmValidationSuite/en/latest/ 
+      title: ROCm Validatation Suite     
     - url: https://amdresearch.github.io/omnistat/ 
       title: Omnistat    
     - url: https://instinct.docs.amd.com/projects/system-acceptance/en/latest/
