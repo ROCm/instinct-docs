@@ -48,16 +48,20 @@ subtrees:
             title: Kubernetes
             subtrees:
               - entries:
-                - url: https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/
+                - url: https://instinct.docs.amd.com/projects/gpu-operator/en/latest/
                   title: GPU-Operator
-
+                - url: https://github.com/ROCm/k8s-device-plugin
+                  title: K8s Device Plugin
+                - url: https://instinct.docs.amd.com/projects/device-metrics-exporter/en/latest/
+                  title: Device Metrics Exporter                  
           - file: system-admin/cluster.md
             title: Cluster
             subtrees:
               - entries:
                 - url: https://instinct.docs.amd.com/projects/gpu-cluster-networking/en/latest/
                   title: Networking                                                                      
-              
+                - url: https://amdresearch.github.io/omnistat/
+                  title: Omnistat                
 - caption: Common Reference Topics
   entries:
     - url: https://rocm.docs.amd.com/en/latest/conceptual/gpu-arch.html
