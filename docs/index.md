@@ -230,8 +230,6 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <p class="paragraph">System validation and diagnosis</p>
 :::
 
-
-
 :::{grid-item-card}
 :padding: 1
 :img-top: ./images/generic.jpg
