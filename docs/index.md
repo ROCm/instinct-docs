@@ -297,7 +297,9 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :::
 
 :::{grid-item-card}
-:padding: 2
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
 +++
