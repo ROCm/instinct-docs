@@ -312,7 +312,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 ::::::::
 
-## General Reference
+## Common Reference Topics
 
 ::::::{grid} 2 2 2 2
 
