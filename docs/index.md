@@ -10,7 +10,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 :::{grid-item-card}
 :padding: 1
-:img-top: ./images/generic.jpg
+:img-top: ./images/AI_instinct_grid.jpg
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
@@ -180,7 +180,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 :::{grid-item-card}
 :padding: 1
-:img-top: ./images/generic.jpg
+:img-top: ./images/System-Administrators-Bare-Metal-AMD-GPU-Driver.jpg
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
@@ -193,7 +193,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 :::{grid-item-card}
 :padding: 1
-:img-top: ./images/generic.jpg
+:img-top: ./images/System-Administrators-Bare-Metal-AMD-GPU-Partitioning.jpg
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
@@ -206,7 +206,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 :::{grid-item-card}
 :padding: 1
-:img-top: ./images/generic.jpg
+:img-top: ./images/System-Administrators-Bare-Metal-AMD-AMD-SMI.jpg
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
@@ -219,7 +219,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 :::{grid-item-card}
 :padding: 1
-:img-top: ./images/generic.jpg
+:img-top: ./images/System-Administrators-Bare-Metal-AMD-Tools.jpg
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
@@ -240,7 +240,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 :::{grid-item-card}
 :padding: 1
-:img-top: ./images/generic.jpg
+:img-top: ./images/gpu-operator.jpg
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
@@ -253,7 +253,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 :::{grid-item-card}
 :padding: 1
-:img-top: ./images/generic.jpg
+:img-top: ./images/device-plugin.jpg
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
@@ -285,7 +285,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 :::{grid-item-card}
 :padding: 1
-:img-top: ./images/generic.jpg
+:img-top: ./images/omnistat.jpg
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
@@ -298,7 +298,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 :::{grid-item-card}
 :padding: 1
-:img-top: ./images/generic.jpg
+:img-top: ./images/telemetry.jpg
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
@@ -323,7 +323,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 :::::{grid-item-card}
 :padding: 1
-:img-top: ./images/generic.jpg
+:img-top: ./images/instinct-microarchitecture.jpg
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
@@ -336,7 +336,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 :::::{grid-item-card}
 :padding: 1
-:img-top: ./images/generic.jpg
+:img-top: ./images/AMD-SMI-API-doc.jpg
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
