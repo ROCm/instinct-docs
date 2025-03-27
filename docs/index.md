@@ -310,7 +310,10 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 :::::::
 
-:::::::{tab-item} Core Reference Material
+::::::::
+
+## General Reference
+
 ::::::{grid} 2 2 2 2
 
 :::::{grid-item-card}
@@ -340,7 +343,3 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :::::
 
 ::::::
-
-:::::::
-
-::::::::
