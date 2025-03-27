@@ -1,6 +1,6 @@
 # Cadence Fidelity LES Solver
 
-Cadence Fidelity LES Solver, formerly Cascade CharLES, is the industry’s first high-fidelity computational fluid dynamics (CFD) analysis engine that expands the applicability of large eddy simulations (LES) into the mainstream aerospace, automotive, and turbomachinery domains. 
+Cadence Fidelity LES Solver, formerly Cascade CharLES, is the industry’s first high-fidelity computational fluid dynamics (CFD) analysis engine that expands the applicability of large eddy simulations (LES) into the mainstream aerospace, automotive, and turbomachinery domains.
 
 [Get Fidelity LES Solver here.](https://www.cadence.com/en_US/home/resources/technical-briefs/fidelity-les-solver-tb.html)
 

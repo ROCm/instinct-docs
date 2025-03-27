@@ -12,7 +12,7 @@ Ansys Fluent is the industry-leading CFD software tool widely used across aerosp
 
 ## Supported Versions
 
-- 2025 R1 
+- 2025 R1
 - 2024 R1 & R2
 
 ## Installation and Licensing Information

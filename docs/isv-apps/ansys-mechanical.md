@@ -9,13 +9,13 @@
 ## Key Features
 
 - One-stop-shop for multi physics structural analysis
-- Industry-leading advanced simulation capabilities 
+- Industry-leading advanced simulation capabilities
 - Interoperability Advantage through seamless integration with industry-standard tools
 - GA support on MI210 & MI250. WIP support for MI300A, MI300X & MI325X
 
 ## Supported Versions
 
-- 2025 R1 
+- 2025 R1
 - 2024 R1 & R2
 - 2023 R2
 
