@@ -264,6 +264,17 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <p class="paragraph">Kubernetes (k8s) device plugin to enable registration of AMD GPU to a container cluster</p>
 :::
 
+:::{grid-item-card}
+:padding: 2
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://instinct.docs.amd.com/projects/device-metrics-exporter/en/latest/" class="card-header-link">
+  <h2 class="card-header">AMD Device Metrics Exporter</h2>
+</a>
+<p class="paragraph">AMD Device Metrics Exporter enables Prometheus-format metrics collection for AMD GPUs in HPC and AI environments. </p>
+:::
+
 ::::
 
 :::::
