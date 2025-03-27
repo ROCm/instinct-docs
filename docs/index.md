@@ -80,7 +80,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 :::::::
 
-:::::::{tab-item} ISV Applications
+:::::::{tab-item} Simulation & Modelling Apps
 ::::::{grid} 2 2 2 2
 
 :::::{grid-item-card}
