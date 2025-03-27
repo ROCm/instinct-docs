@@ -41,6 +41,10 @@ subtrees:
               - entries:
                 - url: https://instinct.docs.amd.com/projects/amdgpu-docs/en/latest/
                   title: Instinct Driver
+                - url: https://rocm.blogs.amd.com/software-tools-optimization/compute-memory-modes/README.html
+                  title: GPU Partitioning
+                - url: https://rocm.docs.amd.com/projects/amdsmi/en/latest/
+                  title: AMD-SMI                                    
                 - url: https://rocm.docs.amd.com/projects/ROCmValidationSuite/en/latest/ 
                   title: ROCm Validatation Suite                  
                  
