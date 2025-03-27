@@ -230,6 +230,22 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <p class="paragraph">System validation and diagnosis</p>
 :::
 
+
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://instinct.docs.amd.com/projects/system-acceptance/en/latest/" class="card-header-link">
+  <h2 class="card-header">MI300X System Acceptance Tests</h2>
+</a>
+<p class="paragraph"> Test the correct functioning and optimal performance of server systems equipped with AMD Instinct MI300X GPU accelerators.</p>
+:::
+
+
 ::::
 
 :::::
