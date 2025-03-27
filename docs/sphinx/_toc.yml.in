@@ -77,7 +77,9 @@ subtrees:
     - url: https://instinct.docs.amd.com/projects/gpu-operator/en/latest/
       title: GPU Operator
     - url: https://instinct.docs.amd.com/projects/amdgpu-docs/en/latest/
-      title: Instinct Driver           
+      title: Instinct Driver 
+    - url: https://amdresearch.github.io/omnistat/ 
+      title: Omnistat    
     - url: https://instinct.docs.amd.com/projects/system-acceptance/en/latest/
       title: System Acceptance Tests
      
