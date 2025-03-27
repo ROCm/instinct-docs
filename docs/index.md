@@ -270,9 +270,9 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :class: small-sd-card
 +++
 <a href="https://instinct.docs.amd.com/projects/device-metrics-exporter/en/latest/" class="card-header-link">
-  <h2 class="card-header">AMD Device Metrics Exporter</h2>
+  <h2 class="card-header">Device Metrics Exporter</h2>
 </a>
-<p class="paragraph">AMD Device Metrics Exporter enables Prometheus-format metrics collection for AMD GPUs in HPC and AI environments. </p>
+<p class="paragraph">The AMD Device Metrics Exporter enables Prometheus-format metrics collection for AMD GPUs in HPC and AI environments. </p>
 :::
 
 ::::

@@ -41,12 +41,16 @@ subtrees:
               - entries:
                 - url: https://instinct.docs.amd.com/projects/amdgpu-docs/en/latest/
                   title: Instinct Driver
+                - url: https://rocm.docs.amd.com/projects/ROCmValidationSuite/en/latest/ 
+                  title:ROCm Validatation Suite                  
+                 
           - file: system-admin/k8s.md
             title: Kubernetes
             subtrees:
               - entries:
                 - url: https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/
-                  title: GPU-Operator  
+                  title: GPU-Operator
+
           - file: system-admin/cluster.md
             title: Cluster
             subtrees:
