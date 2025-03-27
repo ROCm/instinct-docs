@@ -1,4 +1,4 @@
-A# DevitoPRO
+# DevitoPRO
 
 DevitoPRO is a domain-specific language (DSL) and code generation framework designed for highly optimized finite-difference kernels for solutions for seismic imaging and exploration, geophysical research, engineering and environmental sciences.
 
