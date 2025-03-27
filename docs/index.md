@@ -224,10 +224,10 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
-  <h2 class="card-header">Tools placeholder</h2>
+<a href="https://rocm.docs.amd.com/projects/ROCmValidationSuite/en/latest/" class="card-header-link">
+  <h2 class="card-header">ROCmValidationSuite</h2>
 </a>
-<p class="paragraph">any Tools related to BM SYS admin</p>
+<p class="paragraph">System validation and diagnosis</p>
 :::
 
 ::::
