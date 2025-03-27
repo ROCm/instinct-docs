@@ -191,10 +191,10 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
-  <h2 class="card-header">AMD GPU Driver</h2>
+<a href="https://instinct.docs.amd.com/projects/amdgpu-docs/en/latest/" class="card-header-link">
+  <h2 class="card-header">Instinct GPU Driver</h2>
 </a>
-<p class="paragraph">Enable virtualization using SRIOV on Linux with KVM and VMWare.</p>
+<p class="paragraph">Install and configure the GPU. Learn about logging including error codes.</p>
 :::
 
 :::{grid-item-card}
@@ -204,7 +204,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="https://dcgpu.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
+<a href="https://rocm.blogs.amd.com/software-tools-optimization/compute-memory-modes/README.html" class="card-header-link">
   <h2 class="card-header">GPU Partitioning</h2>
 </a>
 <p class="paragraph">Learn how to split the compute units and memory to partition a GPU.</p>
