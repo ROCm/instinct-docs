@@ -243,7 +243,6 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <p class="paragraph"> Test the correct functioning and optimal performance of server systems equipped with AMD Instinct MI300X GPU accelerators.</p>
 :::
 
-
 ::::
 
 :::::
