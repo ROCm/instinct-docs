@@ -65,7 +65,13 @@ subtrees:
                 - url: https://instinct.docs.amd.com/projects/gpu-cluster-networking/en/latest/
                   title: Networking                                                                      
                 - url: https://amdresearch.github.io/omnistat/
-                  title: Omnistat                
+                  title: Omnistat   
+          - file: system-admin/cloud.md
+            title: Cloud
+            subtrees:
+              - entries:
+                - url: https://instinct.docs.amd.com/projects/instinct-azure/latest/
+                  title: Instinct on Azure                                                                                
 - caption: Common Reference Topics
   entries:
     - url: https://rocm.docs.amd.com/en/latest/conceptual/gpu-arch.html
