@@ -48,7 +48,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <a href="https://rocm.docs.amd.com/projects/amdsmi/en/latest/" class="card-header-link">
   <h2 class="card-header">AMD SMI</h2>
 </a>
-<p class="paragraph"></p>
+<p class="paragraph">The AMD System Management Interface (AMD SMI) library offers a unified tool for managing and monitoring GPUs, particularly in high-performance computing environments. It provides a user-space interface that allows applications to control GPU operations, monitor performance, and retrieve information about the system’s drivers and GPUs.</p>
 :::
 
 :::{grid-item-card}
@@ -66,7 +66,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 :::{grid-item-card}
 :padding: 1
-:img-top: ./images/generic.jpg
+:img-top: ./images/system-accpetance.jpg
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
@@ -176,7 +176,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <a href="https://instinct.docs.amd.com/projects/instinct-azure/latest/" class="card-header-link">
   <h2 class="card-header">Instinct on Azure</h2>
 </a>
-<p class="paragraph">Getting Started with AMD Instinct on Azure</p>
+<p class="paragraph">Get started with AMD Instinct on Azure</p>
 :::
 
 ::::
