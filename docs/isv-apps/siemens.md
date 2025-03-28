@@ -1,4 +1,4 @@
-# Siemens Sincenter STAR-CCM+
+# Siemens Simcenter STAR-CCM+
 
 Simcenter STAR-CCM+ is a best-in-class computational fluid dynamics (CFD) software to enable engineers and analysts to drive accelerated innovation on aerodynamics, turbulence, reacting flows, fluid-structure interaction, and multiphase flows.
 
