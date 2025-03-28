@@ -3,6 +3,19 @@ subtrees:
 
 - caption: Browse by persona 
   entries:
+                   
+    - url: https://www.amd.com/en/developer/resources/rocm-hub/dev-ai.html
+      title: AI Solutions Architects
+    - file: vision/index.md
+      title: Computer Vision
+      subtrees:
+        - entries:
+          - file: vision/ai.md
+            title: Models and applications
+          - file: vision/decode.md
+            title: Decoding
+          - file: vision/preprocess.md
+            title: Image processing
     - file: system-admin/index.md
       title: System Administrators
       subtrees:
@@ -43,20 +56,7 @@ subtrees:
             subtrees:
               - entries:
                 - url: https://instinct.docs.amd.com/projects/instinct-azure/latest/
-                  title: Instinct on Azure   
-                    
-    - url: https://www.amd.com/en/developer/resources/rocm-hub/dev-ai.html
-      title: AI Solutions Architects
-    - file: vision/index.md
-      title: Computer Vision
-      subtrees:
-        - entries:
-          - file: vision/ai.md
-            title: Models and applications
-          - file: vision/decode.md
-            title: Decoding
-          - file: vision/preprocess.md
-            title: Image processing
+                  title: Instinct on Azure              
     - file: isv-apps/index.md
       title: Simulation & Modeling Apps        
       subtrees:
