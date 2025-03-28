@@ -30,3 +30,4 @@ subcomponent
 finetune
 DSL
 TBD
+electromagnetics
