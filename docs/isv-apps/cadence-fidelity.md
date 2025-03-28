@@ -4,7 +4,7 @@ Cadence Fidelity LES Solver, formerly Cascade CharLES, is the industry’s first
 
 [Get Fidelity LES Solver here.](https://www.cadence.com/en_US/home/resources/technical-briefs/fidelity-les-solver-tb.html)
 
-## KeyFeatures
+## Key Features
 
 - Designed to scale, Fidelity LES Solver addresses the most demanding fluid dynamics challenges
 - Accurate predictions of complex problems for CFD in aeroacoustics, aerodynamics, combustion, heat transfer, as well as multiphase applications
