@@ -3,34 +3,6 @@ subtrees:
 
 - caption: Browse by persona 
   entries:
-    - url: https://www.amd.com/en/developer/resources/rocm-hub/dev-ai.html
-      title: AI Solutions Architects
-    - file: vision/index.md
-      title: Computer Vision
-      subtrees:
-        - entries:
-          - file: vision/ai.md
-            title: Models and applications
-          - file: vision/decode.md
-            title: Decoding
-          - file: vision/preprocess.md
-            title: Image processing
-    - file: isv-apps/index.md
-      title: Simulation & Modeling Apps        
-      subtrees:
-        - entries:
-          - file: isv-apps/ansys-fluent.md
-            title: Fluent
-          - file: isv-apps/ansys-mechanical.md
-            title: Mechanical
-          - file: isv-apps/siemens.md
-            title: Siemens
-          - file: isv-apps/cadence-fidelity.md
-            title: Cadence Fidelity
-          - file: isv-apps/stone-ridge.md
-            title: Stone Ridge
-          - file: isv-apps/devito.md
-            title: DevitoPRO
     - file: system-admin/index.md
       title: System Administrators
       subtrees:
@@ -71,7 +43,37 @@ subtrees:
             subtrees:
               - entries:
                 - url: https://instinct.docs.amd.com/projects/instinct-azure/latest/
-                  title: Instinct on Azure                                                                                
+                  title: Instinct on Azure   
+                    
+    - url: https://www.amd.com/en/developer/resources/rocm-hub/dev-ai.html
+      title: AI Solutions Architects
+    - file: vision/index.md
+      title: Computer Vision
+      subtrees:
+        - entries:
+          - file: vision/ai.md
+            title: Models and applications
+          - file: vision/decode.md
+            title: Decoding
+          - file: vision/preprocess.md
+            title: Image processing
+    - file: isv-apps/index.md
+      title: Simulation & Modeling Apps        
+      subtrees:
+        - entries:
+          - file: isv-apps/ansys-fluent.md
+            title: Fluent
+          - file: isv-apps/ansys-mechanical.md
+            title: Mechanical
+          - file: isv-apps/siemens.md
+            title: Siemens
+          - file: isv-apps/cadence-fidelity.md
+            title: Cadence Fidelity
+          - file: isv-apps/stone-ridge.md
+            title: Stone Ridge
+          - file: isv-apps/devito.md
+            title: DevitoPRO
+                                                                             
 - caption: Common Reference Topics
   entries:
     - url: https://rocm.docs.amd.com/en/latest/conceptual/gpu-arch.html
