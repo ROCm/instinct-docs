@@ -33,7 +33,7 @@ html_theme_options = {
 }
 extensions = ["rocm_docs"]
 
-html_static_path = ['_static']
+html_static_path = ['_static', 'images']
 
 html_css_files = ["index.css"]
 
