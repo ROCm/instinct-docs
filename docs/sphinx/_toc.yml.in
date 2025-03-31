@@ -1,11 +1,9 @@
 root: index.md
 subtrees:
 
-- caption: Browse by persona 
+- caption: Verticals
   entries:
                    
-    - url: https://www.amd.com/en/developer/resources/rocm-hub/dev-ai.html
-      title: AI Solutions Architects
     - file: vision/index.md
       title: Computer Vision
       subtrees:
@@ -16,47 +14,6 @@ subtrees:
             title: Decoding
           - file: vision/preprocess.md
             title: Image processing
-    - file: system-admin/index.md
-      title: System Administrators
-      subtrees:
-        - entries:
-          - file: system-admin/bare-metal.md
-            title: Bare Metal
-            subtrees:
-              - entries:
-                - url: https://instinct.docs.amd.com/projects/amdgpu-docs/en/latest/
-                  title: Instinct Driver
-                - url: https://rocm.blogs.amd.com/software-tools-optimization/compute-memory-modes/README.html
-                  title: GPU Partitioning
-                - url: https://rocm.docs.amd.com/projects/amdsmi/en/latest/
-                  title: AMD-SMI                                    
-                - url: https://rocm.docs.amd.com/projects/ROCmValidationSuite/en/latest/ 
-                  title: ROCm Validatation Suite                  
-                 
-          - file: system-admin/k8s.md
-            title: Kubernetes
-            subtrees:
-              - entries:
-                - url: https://instinct.docs.amd.com/projects/gpu-operator/en/latest/
-                  title: GPU-Operator
-                - url: https://github.com/ROCm/k8s-device-plugin
-                  title: K8s Device Plugin
-                - url: https://instinct.docs.amd.com/projects/device-metrics-exporter/en/latest/
-                  title: Device Metrics Exporter                  
-          - file: system-admin/cluster.md
-            title: Cluster
-            subtrees:
-              - entries:
-                - url: https://instinct.docs.amd.com/projects/gpu-cluster-networking/en/latest/
-                  title: Networking                                                                      
-                - url: https://amdresearch.github.io/omnistat/
-                  title: Omnistat   
-          - file: system-admin/cloud.md
-            title: Cloud
-            subtrees:
-              - entries:
-                - url: https://instinct.docs.amd.com/projects/instinct-azure/latest/
-                  title: Instinct on Azure              
     - file: isv-apps/index.md
       title: Simulation & Modeling Apps        
       subtrees:
@@ -73,32 +30,61 @@ subtrees:
             title: Stone Ridge
           - file: isv-apps/devito.md
             title: DevitoPRO
+    - url: https://rocm.docs.amd.com
+      title: Data Science
+    - url: https://rocm.docs.amd.com
+      title: High Performance Computing
                                                                              
-- caption: Common Reference Topics
+- caption: System Administrators
   entries:
+    - file: system-admin/bare-metal.md
+      title: Bare Metal
+      subtrees:
+        - entries:
+          - url: https://instinct.docs.amd.com/projects/amdgpu-docs/en/latest/
+            title: Instinct Driver
+          - url: https://rocm.blogs.amd.com/software-tools-optimization/compute-memory-modes/README.html
+            title: GPU Partitioning
+          - url: https://rocm.docs.amd.com/projects/amdsmi/en/latest/
+            title: AMD-SMI                                    
+          - url: https://rocm.docs.amd.com/projects/ROCmValidationSuite/en/latest/ 
+            title: ROCm Validatation Suite                  
+    - file: system-admin/k8s.md
+      title: Kubernetes
+      subtrees:
+        - entries:
+          - url: https://instinct.docs.amd.com/projects/gpu-operator/en/latest/
+            title: GPU-Operator
+          - url: https://github.com/ROCm/k8s-device-plugin
+            title: K8s Device Plugin
+          - url: https://instinct.docs.amd.com/projects/device-metrics-exporter/en/latest/
+            title: Device Metrics Exporter                  
+    - file: system-admin/cluster.md
+      title: Cluster
+      subtrees:
+        - entries:
+          - url: https://instinct.docs.amd.com/projects/gpu-cluster-networking/en/latest/
+            title: Networking                                                                      
+          - url: https://amdresearch.github.io/omnistat/
+            title: Omnistat   
+    - file: system-admin/cloud.md
+      title: Cloud
+      subtrees:
+        - entries:
+          - url: https://instinct.docs.amd.com/projects/instinct-azure/latest/
+            title: Instinct on Azure   
+    - url: https://rocm.docs.amd.com
+      title: Virtualization        
+- caption: Common Reference
+  entries:
+    - url: https://github.com/ROCm/hip
+      title: HIP C++ 
+    - url: https://rocm.docs.amd.com/projects/amdsmi/en/latest/
+      title: AMD-SMI   
     - url: https://rocm.docs.amd.com/en/latest/conceptual/gpu-arch.html
       title: GPU architecture
     - url: https://rocm.docs.amd.com/projects/amdsmi/en/latest/reference/amdsmi-cpp-api.html
-      title: AMD-SMI API      
-
-- caption: Components alphabetically 
-  entries:
-    - url: https://rocm.docs.amd.com/projects/amdsmi/en/latest/
-      title: AMD-SMI   
-    - url: https://instinct.docs.amd.com/projects/device-metrics-exporter/en/latest/
-      title: Device Metrics Exporter
-    - url: https://github.com/ROCm/k8s-device-plugin
-      title: Device Plugin      
-    - url: https://instinct.docs.amd.com/projects/gpu-cluster-networking/en/latest/
-      title: Cluster Networking
-    - url: https://instinct.docs.amd.com/projects/gpu-operator/en/latest/
-      title: GPU Operator
-    - url: https://instinct.docs.amd.com/projects/amdgpu-docs/en/latest/   
-      title: Instinct Driver 
-    - url: https://rocm.docs.amd.com/projects/ROCmValidationSuite/en/latest/ 
-      title: ROCm Validatation Suite     
-    - url: https://amdresearch.github.io/omnistat/ 
-      title: Omnistat    
-    - url: https://instinct.docs.amd.com/projects/system-acceptance/en/latest/
-      title: System Acceptance Tests
+      title: AMD-SMI API     
+    - url: https://rocm.docs.amd.com/en/docs-6.1.0/about/compatibility/openmp.html
+      title: OpenMP
      
