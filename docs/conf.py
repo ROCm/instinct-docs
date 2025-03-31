@@ -31,7 +31,7 @@ html_theme_options = {
     },
     # Add any additional theme options here
 }
-extensions = ["rocm_docs"]
+extensions = ["rocm_docs", "myst_parser"]
 
 html_static_path = ['_static', 'images']
 
