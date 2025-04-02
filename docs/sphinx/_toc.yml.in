@@ -55,7 +55,7 @@ subtrees:
         - entries:
           - url: https://instinct.docs.amd.com/projects/gpu-operator/en/latest/
             title: GPU-Operator
-          - url: https://github.com/ROCm/k8s-device-plugin
+          - url: ttps://instinct.docs.amd.com/projects/k8s-device-plugin/en/latest/
             title: K8s Device Plugin
           - url: https://instinct.docs.amd.com/projects/device-metrics-exporter/en/latest/
             title: Device Metrics Exporter                  
@@ -87,4 +87,5 @@ subtrees:
       title: AMD-SMI API     
     - url: https://rocm.docs.amd.com/projects/llvm-project/en/latest/conceptual/openmp.html
       title: OpenMP
+
      
