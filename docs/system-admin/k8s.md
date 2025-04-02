@@ -22,7 +22,7 @@
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="https://github.com/ROCm/k8s-device-plugin" class="card-header-link">
+<a href="https://instinct.docs.amd.com/projects/k8s-device-plugin/en/latest/" class="card-header-link">
   <h2 class="card-header">Device Plugin</h2>
 </a>
 <p class="paragraph">Kubernetes (k8s) device plugin to enable registration of AMD GPU to a container cluster</p>

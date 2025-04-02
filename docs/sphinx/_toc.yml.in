@@ -38,8 +38,8 @@ subtrees:
             subtrees:
               - entries:
                 - url: https://instinct.docs.amd.com/projects/gpu-operator/en/latest/
-                  title: GPU-Operator
-                - url: https://github.com/ROCm/k8s-device-plugin
+                  title: GPU Operator
+                - url: https://instinct.docs.amd.com/projects/k8s-device-plugin/en/latest/
                   title: K8s Device Plugin
                 - url: https://instinct.docs.amd.com/projects/device-metrics-exporter/en/latest/
                   title: Device Metrics Exporter                  
@@ -87,14 +87,16 @@ subtrees:
       title: AMD-SMI   
     - url: https://instinct.docs.amd.com/projects/device-metrics-exporter/en/latest/
       title: Device Metrics Exporter
-    - url: https://github.com/ROCm/k8s-device-plugin
+    - url: https://instinct.docs.amd.com/projects/k8s-device-plugin/en/latest/
       title: Device Plugin      
     - url: https://instinct.docs.amd.com/projects/gpu-cluster-networking/en/latest/
       title: Cluster Networking
     - url: https://instinct.docs.amd.com/projects/gpu-operator/en/latest/
       title: GPU Operator
     - url: https://instinct.docs.amd.com/projects/amdgpu-docs/en/latest/   
-      title: Instinct Driver 
+      title: Instinct Driver
+    - url: https://instinct.docs.amd.com/projects/instinct-azure/latest/ 
+      title: Instinct on Azure       
     - url: https://rocm.docs.amd.com/projects/ROCmValidationSuite/en/latest/ 
       title: ROCm Validatation Suite     
     - url: https://amdresearch.github.io/omnistat/ 
