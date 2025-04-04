@@ -30,10 +30,6 @@ subtrees:
             title: Stone Ridge
           - file: isv-apps/devito.md
             title: DevitoPRO
-    - url: https://rocm.docs.amd.com
-      title: Data Science
-    - url: https://rocm.docs.amd.com
-      title: High Performance Computing
                                                                              
 - caption: System Administrators
   entries:
@@ -73,8 +69,7 @@ subtrees:
         - entries:
           - url: https://instinct.docs.amd.com/projects/instinct-azure/latest/
             title: Instinct on Azure   
-    - url: https://rocm.docs.amd.com
-      title: Virtualization        
+        
 - caption: Common Reference
   entries:
     - url: https://github.com/ROCm/hip
