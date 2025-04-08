@@ -159,9 +159,8 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 ::::::::::
 
-:::::::{tab-item} System Administrators
-
-::::::{tab-set}
+::::::::::{dropdown} System Administrators
+:open:
 
 :::::{tab-item} Bare Metal
 
@@ -341,6 +340,8 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :::::::
 
 ::::::::
+
+::::::::::
 
 ## Common Reference Topics
 
