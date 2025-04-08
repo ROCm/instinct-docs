@@ -158,6 +158,8 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 ::::::::::{dropdown} System Administrators
 :open:
 
+::::::::{tab-set}
+
 :::::{tab-item} Bare Metal
 
 ::::{grid} 2 2 3 3
