@@ -16,6 +16,10 @@ subtrees:
             title: Decoding
           - file: vision/preprocess.md
             title: Image processing
+    - caption: ROCm Toolkits
+    entries:
+      - file: data-science/index.md
+        title: ROCm-DS
     - file: system-admin/index.md
       title: System Administrators
       subtrees:
