@@ -366,7 +366,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="https://rocm.docs.amd.com/projects/amdsmi/en/latest/reference/amdsmi-cpp-api.html" class="card-header-link">
+<a href="https://rocm.docs.amd.com/projects/amdsmi/en/latest/index.html" class="card-header-link">
   <h2 class="card-header">AMD SMI API Doc</h2>
 </a>
 <p class="paragraph">AMD SMI documentation covering all use cases.</p>
@@ -379,10 +379,10 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="https://rocm.docs.amd.com/projects/amdsmi/en/latest/reference/amdsmi-cpp-api.html" class="card-header-link">
+<a href="https://rocm.docs.amd.com/projects/HIP/en/latest/index.htmll" class="card-header-link">
   <h2 class="card-header">HIP C++</h2>
 </a>
-<p class="paragraph">AMD SMI documentation covering all use cases.</p>
+<p class="paragraph">Learn about HIP programming model.</p>
 :::::
 
 :::::{grid-item-card}
@@ -392,10 +392,10 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="https://rocm.docs.amd.com/projects/amdsmi/en/latest/reference/amdsmi-cpp-api.html" class="card-header-link">
-  <h2 class="card-header">Virtualization</h2>
+<a href="https://rocm.docs.amd.com/projects/llvm-project/en/latest/conceptual/openmp.html" class="card-header-link">
+  <h2 class="card-header">OpenMP</h2>
 </a>
-<p class="paragraph">AMD SMI documentation covering all use cases.</p>
+<p class="paragraph">Explore the OpenMP programming model.</p>
 :::::
 
 ::::::
