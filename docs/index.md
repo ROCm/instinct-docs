@@ -13,7 +13,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 :::::::{tab-item} Computer Vision
 
-::::{grid} 2 2 3 3
+::::{grid} 2 2 3 4
 
 :::{grid-item-card}
 :padding: 1
@@ -66,7 +66,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :::::::
 
 :::::::{tab-item} Simulation & Modelling Apps
-::::::{grid} 2 2 3 3
+::::::{grid} 2 2 3 4
 
 :::::{grid-item-card}
 :padding: 1
@@ -165,7 +165,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 :::::{tab-item} Bare Metal
 
-::::{grid} 2 2 3 3
+::::{grid} 2 2 3 4
 
 :::{grid-item-card}
 :padding: 1
@@ -238,7 +238,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 :::::{tab-item} Kubernetes
 
-::::{grid} 2 2 3 3
+::::{grid} 2 2 3 4
 
 :::{grid-item-card}
 :padding: 1
@@ -319,7 +319,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 :::::{tab-item} Cloud
 
-::::{grid} 2 2 3 3
+::::{grid} 2 2 3 4
 
 :::{grid-item-card}
 :padding: 1
@@ -345,7 +345,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 ::::::::::{dropdown} Common Reference
 :open:
 
-::::::{grid} 2 2 3 3
+::::::{grid} 2 2 3 4
 
 :::::{grid-item-card}
 :padding: 1
