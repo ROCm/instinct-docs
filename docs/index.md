@@ -342,7 +342,8 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 ::::::::::
 
-## Common Reference Topics
+::::::::::{dropdown} Common Reference
+:open:
 
 ::::::{grid} 2 2 3 3
 
@@ -399,3 +400,5 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :::::
 
 ::::::
+
+::::::::::
