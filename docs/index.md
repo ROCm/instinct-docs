@@ -2,6 +2,10 @@
 
 The AMD Instinct Documentation site provides comprehensive guides and technical documentation for system administrators and technical users deploying AMD Instinct Data Center GPUs in enterprise environments. This site focuses on large-scale deployment, cluster management, monitoring, and operational best practices for both HPC and AI workloads. For API documentation and core software stack details, please visit the [ROCm documentation](https://rocm.docs.amd.com).
 
+
+::::::::::{dropdown} Verticals
+:open:
+
 ::::::::{tab-set}
 
 :::::::{tab-item} Computer Vision
@@ -152,6 +156,8 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 ::::::::
 
 :::::::: {tab-set}
+
+::::::::::
 
 :::::::{tab-item} System Administrators
 
