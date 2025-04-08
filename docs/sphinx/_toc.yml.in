@@ -77,9 +77,7 @@ subtrees:
     - url: https://rocm.docs.amd.com/projects/amdsmi/en/latest/
       title: AMD-SMI   
     - url: https://rocm.docs.amd.com/en/latest/conceptual/gpu-arch.html
-      title: GPU architecture
-    - url: https://rocm.docs.amd.com/projects/amdsmi/en/latest/reference/amdsmi-cpp-api.html
-      title: AMD-SMI API     
+      title: GPU architecture  
     - url: https://rocm.docs.amd.com/projects/llvm-project/en/latest/conceptual/openmp.html
       title: OpenMP
 
