@@ -153,10 +153,6 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 :::::::
 
-::::::::
-
-:::::::: {tab-set}
-
 ::::::::::
 
 ::::::::::{dropdown} System Administrators
