@@ -285,7 +285,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 :::::{tab-item} Cluster Management
 
-::::{grid}2 2 3 3
+::::{grid} 2 2 3 4
 
 :::{grid-item-card}
 :padding: 1
