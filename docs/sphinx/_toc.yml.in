@@ -1,7 +1,7 @@
 root: index.md
 subtrees:
 
-- caption: Verticals
+- caption: Industries/Verticals
   entries:
                    
     - file: vision/index.md
