@@ -14,6 +14,14 @@ subtrees:
             title: Decoding
           - file: vision/preprocess.md
             title: Image processing
+    - file: data-science/index.md
+      title: Data Science (ROCm-DS)
+      subtrees:
+        -entries:
+          - file: data-science/hipDF.md
+            title: hipDF
+          - file: data-science/hipGRAPH.md
+            title: hipGRAPH
     - file: isv-apps/index.md
       title: Simulation & Modeling Apps        
       subtrees:

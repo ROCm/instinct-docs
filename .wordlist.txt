@@ -31,3 +31,8 @@ finetune
 DSL
 TBD
 electromagnetics
+DS
+hipDF
+hipGRAPH
+dataframe
+dataframes

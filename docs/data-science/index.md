@@ -15,16 +15,12 @@ Behind ROCm-DS lies a passionate, driven team dedicated to continuously expandin
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href=./hipDF.md class="card-header-link">
+<a href=./hipDF.html class="card-header-link">
   <h2 class="card-header">hipDF</h2>
 </a>
 <p class="paragraph"> GPU Accelerated dataframes to enhance your data manipulation and analysis tasks with AMD Instinct™ GPUs.
 .</p>
 ::::
-
-:::::
-
-:::::{grid} 2 2 2 2
 
 ::::{grid-item-card}
 :padding: 1
@@ -33,10 +29,24 @@ Behind ROCm-DS lies a passionate, driven team dedicated to continuously expandin
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href=./hipGRAPH.md class="card-header-link">
+<a href=./hipGRAPH.html class="card-header-link">
   <h2 class="card-header">hipGRAPH</h2>
 </a>
 <p class="paragraph"> Create, manipulate, and analyze complex networks and graphs on AMD Instinct™ GPUs.
+</p>
+::::
+
+::::{grid-item-card}
+:padding: 1
+:img-top: ./images/generic.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href=./ROCmDS-Blogs.html class="card-header-link">
+  <h2 class="card-header">ROCm-DS Blogs</h2>
+</a>
+<p class="paragraph"> Browse through blogs related to ROCm-DS and its individual components.
 </p>
 ::::
 
