@@ -1,10 +1,19 @@
 # ROCm-DS: ROCm Toolkit for Data Sciences
 
-Unlock the future of data science with the ROCm Data Science Toolkit (ROCm-DS), an innovative open-source toolkit built on the powerful ROCm™ platform. Tap into the unparalleled speed and efficiency of AMD Instinct GPUs, as ROCm-DS provides you with all of the necessary tools to tackle larger datasets and execute complex data science workloads with lightning speed. Transform your data science capabilities to accelerate both new and existing projects, and boost performance and productivity across various aspects of your business.
+Unlock the future of data science with the ROCm Data Science Toolkit (ROCm-DS), an innovative open-source toolkit built on
+the powerful ROCm™ platform. Tap into the unparalleled speed and efficiency of AMD Instinct GPUs, as ROCm-DS provides you
+with all of the necessary tools to tackle larger datasets and execute complex data science workloads with lightning speed.
+Transform your data science capabilities to accelerate both new and existing projects, and boost performance and productivity
+across various aspects of your business.
 
-With ROCm-DS you have access to a rapidly expanding set of tools, empowering you to build, manage, and run entire data science workflows directly on AMD Instinct GPUs. Say goodbye to data loading bottlenecks in your AI workloads, accelerate your traditional data processing and analysis tasks, and manipulate immense datasets quickly and efficiently in GPU memory. Experience the exhilaration of streamlined AI and data science workloads powered by cutting-edge GPU technology.
+With ROCm-DS you have access to a rapidly expanding set of tools, empowering you to build, manage, and run entire data science
+workflows directly on AMD Instinct GPUs. Say goodbye to data loading bottlenecks in your AI workloads, accelerate your
+traditional data processing and analysis tasks, and manipulate immense datasets quickly and efficiently in GPU memory.
+Experience the exhilaration of streamlined AI and data science workloads powered by cutting-edge GPU technology.
 
-Behind ROCm-DS lies a passionate, driven team dedicated to continuously expanding and improving this toolkit, ensuring you have everything you need to push the boundaries of data science. Get ready to revolutionize your data processing applications and unleash new possibilities with ROCm-DS!
+Behind ROCm-DS lies a passionate, driven team dedicated to continuously expanding and improving this toolkit, ensuring you
+have everything you need to push the boundaries of data science. Get ready to revolutionize your data processing applications
+and unleash new possibilities with ROCm-DS!
 
 :::::{grid} 2 2 2 2
 

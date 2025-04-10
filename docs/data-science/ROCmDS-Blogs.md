@@ -1,7 +1,7 @@
 # ROCm-DS Blogs
 
-This page contains a list of blogposts related to ROCm-DS and its individual components. Please
-see the [ROCm Blogs page](https://rocm.blogs.amd.com/) for blogs related to all AMD and ROCm™ 
+This page contains a list of blog posts related to ROCm-DS and its individual components. Please
+see the [ROCm Blogs page](https://rocm.blogs.amd.com/) for blogs related to all AMD and ROCm™
 products.
 
 ::::::::::{dropdown} ROCm-DS Blogs
@@ -71,4 +71,4 @@ products.
 
 ::::
 
-::::::::::
+::::::::::
