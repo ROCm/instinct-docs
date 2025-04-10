@@ -6,10 +6,6 @@ With ROCm-DS you have access to a rapidly expanding set of tools, empowering you
 
 Behind ROCm-DS lies a passionate, driven team dedicated to continuously expanding and improving this toolkit, ensuring you have everything you need to push the boundaries of data science. Get ready to revolutionize your data processing applications and unleash new possibilities with ROCm-DS!
 
-:::::::{tab-set}
-
-::::::{tab-item} hipDF
-
 :::::{grid} 2 2 2 2
 
 ::::{grid-item-card}
@@ -19,19 +15,15 @@ Behind ROCm-DS lies a passionate, driven team dedicated to continuously expandin
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="https://www.amd.com/en/developer/resources/rocm-hub/dev-ai.html" class="card-header-link">
-  <h2 class="card-header">Add Name</h2>
+<a href=./hipDF.md class="card-header-link">
+  <h2 class="card-header">hipDF</h2>
 </a>
-<p class="paragraph">Add description
+<p class="paragraph"> GPU Accelerated dataframes to enhance your data manipulation and analysis tasks with AMD Instinct™ GPUs.
 .</p>
 ::::
 
 :::::
 
-::::::
-
-::::::{tab-item} hipGraph
-
 :::::{grid} 2 2 2 2
 
 ::::{grid-item-card}
@@ -41,15 +33,11 @@ Behind ROCm-DS lies a passionate, driven team dedicated to continuously expandin
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="https://www.amd.com/en/developer/resources/rocm-hub/dev-ai.html" class="card-header-link">
-  <h2 class="card-header">Add Name</h2>
+<a href=./hipGRAPH.md class="card-header-link">
+  <h2 class="card-header">hipGRAPH</h2>
 </a>
-<p class="paragraph"> Add description
+<p class="paragraph"> Create, manipulate, and analyze complex networks and graphs on AMD Instinct™ GPUs.
 </p>
 ::::
 
 :::::
-
-::::::
-
-:::::::
