@@ -1,15 +1,10 @@
 # ROCm-DS Blogs
 
-This page contains a list of blog posts related to ROCm-DS and its individual components. Please
+This page contains a list of blog posts related to ROCm-DS and its individual components. Please
 see the [ROCm Blogs page](https://rocm.blogs.amd.com/) for blogs related to all AMD and ROCm™
-products.
-
-:::::{dropdown} ROCm-DS Blogs
+products.
 
 :::::{dropdown} ROCm-DS Blogs
-
-
-::::::::::{dropdown} ROCm-DS Blogs
 :open:
 
 ::::{grid} 2 2 3 4
@@ -25,16 +20,13 @@ products.
   <h2 class="card-header">Introducing ROCm-DS: Revolutionizing Data Processing with AMD Instinct GPUs</h2>
 </a>
 <p class="paragraph"> AMD is thrilled to announce the release of ROCm-DS, a toolkit aimed at accelerating data science workloads on AMD Instinct GPUs.
-:::::
 :::
-:::::{dropdown} hipDF Blogs
+
+::::
+
 :::::
 
-
 :::::{dropdown} hipDF Blogs
-
-
-::::::::::{dropdown} hipDF Blogs
 :open:
 
 ::::{grid} 2 2 3 4
@@ -62,12 +54,10 @@ products.
 +++
 <a href="https://rocm.blogs.amd.com/artificial-intelligence/hipDF_pandas_accelerated/README.html" class="card-header-link">
   <h2 class="card-header">DataFrame Acceleration: hipDF and hipDF.pandas on AMD GPUs.</h2>
-:::::
 <p class="paragraph"> This blog post demonstrates how hipDF significantly enhances and accelerates data manipulation, aggregation, and transformation tasks on AMD hardware using ROCm.
 </p>
 :::
 
+::::
+
 :::::
-
-
-::::::::::
