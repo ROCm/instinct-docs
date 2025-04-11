@@ -58,10 +58,6 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 ::::
 
-:::::
-
-::::::
-
 :::::::
 
 :::::::{tab-item} Data Science
@@ -111,10 +107,6 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :::
 
 ::::
-
-:::::
-
-::::::
 
 :::::::
 
