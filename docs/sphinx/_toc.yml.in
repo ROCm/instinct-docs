@@ -17,7 +17,7 @@ subtrees:
     - file: data-science/index.md
       title: Data Science (ROCm-DS)
       subtrees:
-        -entries:
+        - entries:
           - file: data-science/hipDF.md
             title: hipDF
           - file: data-science/hipGRAPH.md
