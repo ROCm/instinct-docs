@@ -80,7 +80,7 @@ subtrees:
         
 - caption: Common Reference
   entries:
-    - url: https://github.com/ROCm/hip
+    - url: https://rocm.docs.amd.com/projects/HIP/en/latest/
       title: HIP C++ 
     - url: https://rocm.docs.amd.com/projects/amdsmi/en/latest/
       title: AMD-SMI   

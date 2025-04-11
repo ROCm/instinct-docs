@@ -425,7 +425,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="https://rocm.docs.amd.com/projects/HIP/en/latest/index.htmll" class="card-header-link">
+<a href="https://rocm.docs.amd.com/projects/HIP/en/latest/index.html" class="card-header-link">
   <h2 class="card-header">HIP C++</h2>
 </a>
 <p class="paragraph">Learn about HIP programming model.</p>
