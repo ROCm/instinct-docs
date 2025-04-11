@@ -2,7 +2,9 @@
 
 This page contains a list of blog posts related to ROCm-DS and its individual components. Please
 see the [ROCm Blogs page](https://rocm.blogs.amd.com/) for blogs related to all AMD and ROCm™
-products.
+see the [ROCm Blogs page](https://rocm.blogs.amd.com/) for blogs related to all AMD and ROCm™
+
+:::::{dropdown} ROCm-DS Blogs
 
 ::::::::::{dropdown} ROCm-DS Blogs
 :open:
@@ -23,9 +25,9 @@ products.
 </p>
 :::
 
-::::
+:::::
 
-::::::::::
+:::::{dropdown} hipDF Blogs
 
 ::::::::::{dropdown} hipDF Blogs
 :open:
@@ -60,15 +62,6 @@ products.
 </p>
 :::
 
-::::
+:::::
 
 ::::::::::
-
-::::::::::{dropdown} hipGRAPH Blogs
-:open:
-
-::::{grid} 2 2 3 4
-
-::::
-
-::::::::::
