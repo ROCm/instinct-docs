@@ -1,8 +1,8 @@
 # hipGRAPH
 
-hipGRAPH enables GPU accelerated complex networks and graphs, along with a suite of graph algorithms. This
-library, built on top of ROCm™, enables you to build, analyze, and otherwise manipulate complex graphs on
-AMD Instinct™ GPUs.
+hipGRAPH enables GPU accelerated complex networks and graphs, and contains a set of well-known graph
+algorithms. This library, built on top of ROCm™, enables you to build, analyze, and otherwise manipulate
+complex graphs on AMD Instinct™ GPUs.
 
 hipGRAPH is currently in an Early Access state and is intended as a preview to the production ready release
 planned for later this year.
@@ -30,11 +30,11 @@ planned for later this year.
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href=./ROCMDS_Blogs.html class="card-header-link">
+<a href=./ROCmDS-Blogs.html class="card-header-link">
   <h2 class="card-header">Blogs</h2>
 </a>
 <p class="paragraph"> View blog posts related to ROCm-DS and hipGRAPH.
 </p>
 :::
 
-::::
+::::
