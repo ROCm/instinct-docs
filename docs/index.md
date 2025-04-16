@@ -405,7 +405,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="https://rocm.docs.amd.com/projects/llvm-project/en/latest/conceptual/openmp.html" class="card-header-link">
+<a href="https://docs.amd.com/v/u/en-US/ug1729-amd-instinct-accelerators" class="card-header-link">
   <h2 class="card-header">Secure content</h2>
 </a>
 <p class="paragraph"> Access password protected hardware management documentation for OEM manufacturers, cloud administrators, and very large scale deployments. Direct permissions inquiries to your AMD sales representatives.</p>
