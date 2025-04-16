@@ -408,7 +408,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <a href="https://docs.amd.com/v/u/en-US/ug1729-amd-instinct-accelerators" class="card-header-link">
   <h2 class="card-header">Secure content</h2>
 </a>
-<p class="paragraph"> Access password protected hardware management documentation for OEM manufacturers, cloud administrators, and very large scale deployments. Direct permissions inquiries to your AMD sales representatives.</p>
+<p class="paragraph"> Passowrd protected hardware management documentation for OEMs, clouds, and large deployments. </p>
 :::::
 
 ::::::
