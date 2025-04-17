@@ -187,7 +187,7 @@ requests==2.32.3
     # via
     #   pygithub
     #   sphinx
-rocm-docs-core==1.18.1
+rocm-docs-core==1.18.2
     # via -r requirements.in
 rpds-py==0.22.3
     # via
@@ -224,7 +224,7 @@ sphinx-external-toc==1.0.1
     # via rocm-docs-core
 sphinx-notfound-page==1.0.4
     # via rocm-docs-core
-sphinx-reredirects==0.1.5
+sphinx-reredirects==0.1.6
     # via -r requirements.in
 sphinxcontrib-applehelp==2.0.0
     # via sphinx

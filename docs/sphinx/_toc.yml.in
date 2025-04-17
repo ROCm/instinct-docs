@@ -1,22 +1,87 @@
 root: index.md
 subtrees:
-  - caption: Deploy
-    entries:
-    - url: https://instinct.docs.amd.com/projects/gpu-cluster-networking/en/latest/
-      title: Cluster Networking
-    - url: https://instinct.docs.amd.com/projects/system-acceptance/en/latest/      
-      title: System Acceptance Tests
-  - caption: Kubernetes
-    entries:
-    - url: https://github.com/ROCm/k8s-device-plugin
-      title: Device Plugin
-    - url: https://instinct.docs.amd.com/projects/gpu-operator/en/latest/
-      title: GPU Operator
-  - caption: Telemetry
-    entries:      
-    - url: https://instinct.docs.amd.com/projects/device-metrics-exporter/en/latest/
-      title: Device Metrics Exporter      
-  - caption: AI/ML
-    entries: 
-    - title: "Torchserve"
-      file: "torchserve/torchserve.md"
+
+- caption: Industries/Verticals
+  entries:
+                   
+    - file: vision/index.md
+      title: Computer Vision
+      subtrees:
+        - entries:
+          - file: vision/ai.md
+            title: Models and applications
+          - file: vision/decode.md
+            title: Decoding
+          - file: vision/preprocess.md
+            title: Image processing
+    - file: isv-apps/index.md
+      title: Simulation & Modeling Apps        
+      subtrees:
+        - entries:
+          - file: isv-apps/ansys-fluent.md
+            title: Fluent
+          - file: isv-apps/ansys-mechanical.md
+            title: Mechanical
+          - file: isv-apps/siemens.md
+            title: Siemens
+          - file: isv-apps/cadence-fidelity.md
+            title: Cadence Fidelity
+          - file: isv-apps/stone-ridge.md
+            title: Stone Ridge
+          - file: isv-apps/devito.md
+            title: DevitoPRO
+                                                                             
+- caption: System Administrators
+  entries:
+    - file: system-admin/bare-metal.md
+      title: Bare Metal
+      subtrees:
+        - entries:
+          - url: https://instinct.docs.amd.com/projects/amdgpu-docs/en/latest/
+            title: Instinct Driver
+          - url: https://rocm.blogs.amd.com/software-tools-optimization/compute-memory-modes/README.html
+            title: GPU Partitioning
+          - url: https://rocm.docs.amd.com/projects/amdsmi/en/latest/
+            title: AMD-SMI                                    
+          - url: https://rocm.docs.amd.com/projects/ROCmValidationSuite/en/latest/ 
+            title: ROCm Validatation Suite                  
+    - file: system-admin/k8s.md
+      title: Kubernetes
+      subtrees:
+        - entries:
+          - url: https://instinct.docs.amd.com/projects/gpu-operator/en/latest/
+            title: GPU-Operator
+          - url: https://instinct.docs.amd.com/projects/k8s-device-plugin/en/latest/
+            title: K8s Device Plugin
+          - url: https://instinct.docs.amd.com/projects/device-metrics-exporter/en/latest/
+            title: Device Metrics Exporter                  
+    - file: system-admin/cluster.md
+      title: Cluster
+      subtrees:
+        - entries:
+          - url: https://instinct.docs.amd.com/projects/gpu-cluster-networking/en/latest/
+            title: Networking                                                                      
+          - url: https://amdresearch.github.io/omnistat/
+            title: Omnistat   
+    - file: system-admin/cloud.md
+      title: Cloud
+      subtrees:
+        - entries:
+          - url: https://instinct.docs.amd.com/projects/instinct-azure/latest/
+            title: Instinct on Azure   
+        
+- caption: Common Reference
+  entries:
+    - url: https://rocm.docs.amd.com/projects/HIP/en/latest/
+      title: HIP C++ 
+    - url: https://rocm.docs.amd.com/projects/amdsmi/en/latest/
+      title: AMD-SMI   
+    - url: https://rocm.docs.amd.com/en/latest/conceptual/gpu-arch.html
+      title: GPU architecture  
+    - url: https://rocm.docs.amd.com/projects/llvm-project/en/latest/conceptual/openmp.html
+      title: OpenMP
+
+- caption: AI/ML
+  entries: 
+  - title: "Torchserve"
+    file: "torchserve/torchserve.md"    

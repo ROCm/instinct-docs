@@ -27,13 +27,14 @@ html_theme_options = {
     "nav_secondary_items": {
         "Community": "https://github.com/ROCm/ROCm/discussions",
         "Blogs": "https://rocm.blogs.amd.com/",
-        "ROCm&#8482 docs": "https://rocm.docs.amd.com"
+        "ROCm&#8482 Docs": "https://rocm.docs.amd.com",
+        "ROCm Developer Hub": "https://www.amd.com/en/developer/resources/rocm-hub.html",
     },
     # Add any additional theme options here
 }
 extensions = ["rocm_docs"]
 
-html_static_path = ['_static']
+html_static_path = ['_static', 'images']
 
 html_css_files = ["index.css"]
 

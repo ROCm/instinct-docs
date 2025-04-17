@@ -4,3 +4,4 @@ projects:
   dcgpu: https://instinct.docs.amd.com/en/${version}
   gpu-operator: https://instinct.docs.amd.com/projects/gpu-operator/en/${version}
   metrics-exporter: https://instinct.docs.amd.com/projects/metrics-exporter/en/${version}
+  k8s-device-plugin: https://instinct.docs.amd.com/projects/k8s-device-plugin/en/${version}
