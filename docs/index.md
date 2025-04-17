@@ -349,7 +349,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :class: small-sd-card
 +++
 <a href="https://instinct.docs.amd.com/projects/virt-drv/en/latest/" class="card-header-link">
-  <h2 class="card-header">Virtual Driver</h2>
+  <h2 class="card-header">Instinct Virtualization Driver</h2>
 </a>
 <p class="paragraph">Explore the Virtualization Driver for Instinct GPUs.</p>
 :::
