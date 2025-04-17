@@ -19,4 +19,4 @@ subtrees:
   - caption: AI/ML
     entries: 
     - title: "Torchserve"
-      url: "torchserve/torchserve.md"
+      file: "torchserve/torchserve.md"
