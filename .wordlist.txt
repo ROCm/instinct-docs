@@ -38,3 +38,4 @@ dataframe
 dataframes
 CuPy
 Markowitz
+cuDF
