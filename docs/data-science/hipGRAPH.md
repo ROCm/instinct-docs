@@ -11,7 +11,7 @@ planned for later this year.
 
 :::{grid-item-card}
 :padding: 1
-:img-top: ../images/generic.jpg
+:img-top: ../images/ROCm-DS_Docs.jpg
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
@@ -25,7 +25,7 @@ planned for later this year.
 
 :::{grid-item-card}
 :padding: 1
-:img-top: ../images/generic.jpg
+:img-top: ../images/ROCm-DS_Blogs.jpg
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
