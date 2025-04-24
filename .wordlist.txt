@@ -22,6 +22,8 @@ Redhat
 SYS
 FEA
 Mechnical
+NDA
+OEMs
 OSL
 UIUC
 merchantability
