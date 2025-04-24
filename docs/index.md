@@ -408,8 +408,8 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <a href="https://docs.amd.com/v/u/en-US/ug1729-amd-instinct-accelerators" class="card-header-link">
   <h2 class="card-header">Secure content</h2>
 </a>
-<p class="paragraph"> Additional NDA technical documentation, software, and design collateral for AMD Instinct products
-Login Required -  Some content is available only to authorized users. </p>
+<p class="paragraph"> Additional NDA technical documentation, software, and design collateral for AMD Instinct products;
+Login Required </p>
 :::::
 
 ::::::
