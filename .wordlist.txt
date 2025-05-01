@@ -36,6 +36,8 @@ hipDF
 hipGRAPH
 dataframe
 dataframes
+DataFrame
+DataFrames
 CuPy
 Markowitz
 cuDF
