@@ -16,10 +16,6 @@ subtrees:
             title: Image processing
     - file: data-science/hipDF.md
       title: Data Science
-      subtrees:
-        - entries:
-          - file: data-science/hipDF.md
-            title: hipDF
     - file: isv-apps/index.md
       title: Simulation & Modeling Apps        
       subtrees:
