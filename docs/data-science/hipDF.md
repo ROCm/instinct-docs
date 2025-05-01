@@ -30,18 +30,4 @@ planned for later this year.
 </p>
 :::
 
-:::{grid-item-card}
-:padding: 1
-:img-top: ../images/ROCm-DS_Blogs.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href=./ROCmDS-Blogs.html class="card-header-link">
-  <h2 class="card-header">Blogs</h2>
-</a>
-<p class="paragraph"> View blog posts related to ROCm-DS and hipDF.
-</p>
-:::
-
 ::::
