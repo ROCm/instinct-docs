@@ -74,7 +74,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <a href=./data-science/hipDF.html class="card-header-link">
   <h2 class="card-header">hipDF</h2>
 </a>
-<p class="paragraph"> GPU Accelerated dataframes to enhance your data manipulation and analysis tasks with AMD Instinct™ GPUs.
+<p class="paragraph"> GPU Accelerated DataFrames to enhance your data manipulation and analysis tasks with AMD Instinct™ GPUs.
 </p>
 :::
 
