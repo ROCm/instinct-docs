@@ -33,3 +33,13 @@ finetune
 DSL
 TBD
 electromagnetics
+DS
+hipDF
+hipGRAPH
+dataframe
+dataframes
+DataFrame
+DataFrames
+CuPy
+Markowitz
+cuDF
