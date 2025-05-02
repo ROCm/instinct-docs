@@ -416,6 +416,20 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <p class="paragraph">Explore the OpenMP programming model.</p>
 :::::
 
+:::::{grid-item-card}
+:padding: 1
+:img-top: ./images/secure-docs.png
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://docs.amd.com/v/u/en-US/ug1729-amd-instinct-accelerators" class="card-header-link">
+  <h2 class="card-header">AMD Technical Information Portal</h2>
+</a>
+<p class="paragraph"> Additional NDA technical documentation, software, and design collateral for AMD Instinct products;
+Login Required </p>
+:::::
+
 ::::::
 
 ::::::::::
