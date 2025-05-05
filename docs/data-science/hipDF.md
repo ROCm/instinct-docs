@@ -1,6 +1,6 @@
 # hipDF
 
-hipDF enables GPU accelerated dataframes and dataframe operations. This library, built on top of ROCm, enables
+hipDF enables GPU accelerated DataFrames and DataFrame operations. This library, built on top of ROCm™, enables
 large scale data processing on AMD Instinct™ GPUs, allowing you to perform many data manipulation operations
 at breakneck speeds. Built on the familiar [Apache Arrow](https://arrow.apache.org/) memory format and using
 APIs similar to the well known Python [Pandas library](https://pandas.pydata.org/), hipDF allows you to not

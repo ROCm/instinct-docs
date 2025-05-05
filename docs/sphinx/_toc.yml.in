@@ -76,7 +76,13 @@ subtrees:
       subtrees:
         - entries:
           - url: https://instinct.docs.amd.com/projects/instinct-azure/latest/
-            title: Instinct on Azure   
+            title: Instinct on Azure
+    - file: system-admin/virtualization.md
+      title: Virtualization
+      subtrees:
+        - entries:
+          - url: https://instinct.docs.amd.com/projects/virt-drv/en/latest/
+            title: Virtualization Driver
         
 - caption: Common Reference
   entries:

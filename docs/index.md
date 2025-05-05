@@ -88,7 +88,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <a href=./data-science/hipDF.html class="card-header-link">
   <h2 class="card-header">hipDF</h2>
 </a>
-<p class="paragraph"> GPU Accelerated dataframes to enhance your data manipulation and analysis tasks with AMD Instinct™ GPUs.
+<p class="paragraph"> GPU Accelerated DataFrames to enhance your data manipulation and analysis tasks with AMD Instinct™ GPUs.
 </p>
 :::
 
@@ -103,7 +103,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
   <h2 class="card-header">hipGRAPH</h2>
 </a>
 <p class="paragraph"> Create, manipulate, and analyze complex networks and graphs on AMD Instinct™ GPUs.
-</p>
+
 :::
 
 ::::
@@ -383,6 +383,27 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 :::::
 
+:::::{tab-item} Virtualization
+
+::::{grid} 2 2 3 4
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/virtualization_image.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://instinct.docs.amd.com/projects/virt-drv/en/latest/" class="card-header-link">
+  <h2 class="card-header">Instinct Virtualization Driver</h2>
+</a>
+<p class="paragraph">Explore the Virtualization Driver for Instinct GPUs.</p>
+:::
+
+::::
+
+:::::
+
 ::::::::
 
 ::::::::::
@@ -442,6 +463,20 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
   <h2 class="card-header">OpenMP</h2>
 </a>
 <p class="paragraph">Explore the OpenMP programming model.</p>
+:::::
+
+:::::{grid-item-card}
+:padding: 1
+:img-top: ./images/secure-docs.png
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://docs.amd.com/v/u/en-US/ug1729-amd-instinct-accelerators" class="card-header-link">
+  <h2 class="card-header">AMD Technical Information Portal</h2>
+</a>
+<p class="paragraph"> Additional NDA technical documentation, software, and design collateral for AMD Instinct products;
+Login Required </p>
 :::::
 
 ::::::
