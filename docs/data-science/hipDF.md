@@ -32,6 +32,20 @@ planned for later this year.
 
 :::{grid-item-card}
 :padding: 1
+:img-top: ../images/hipDF.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://github.com/ROCm-DS/hipDF" class="card-header-link">
+  <h2 class="card-header">Github</h2>
+</a>
+<p class="paragraph"> View the hipDF source code on Github.
+</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
 :img-top: ../images/ROCm-DS_Blogs.jpg
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
