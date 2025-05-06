@@ -32,6 +32,20 @@
 
 :::::{grid-item-card}
 :padding: 1
+:img-top: ./images/FCharLES-tile.png
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="isv-apps\cadence-fidelity.html" class="card-header-link">
+  <h2 class="card-header">Cadence Fidelity LES Solver</h2>
+</a>
+<p class="paragraph">Fidelity LES Solver supports MI200.
+</p>
+:::::
+
+:::::{grid-item-card}
+:padding: 1
 :img-top: ./images/DevitoPRO-tile.png
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
@@ -69,20 +83,6 @@
   <h2 class="card-header">Stone Ridge Technology ECHELON</h2>
 </a>
 <p class="paragraph">ECHELON 2023.3+ supports MI200.
-</p>
-:::::
-
-:::::{grid-item-card}
-:padding: 1
-:img-top: ./images/FCharLES-tile.png
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="isv-apps\cadence-fidelity.html" class="card-header-link">
-  <h2 class="card-header">Cadence Fidelity LES Solver</h2>
-</a>
-<p class="paragraph">Fidelity LES Solver supports MI200.
 </p>
 :::::
 
