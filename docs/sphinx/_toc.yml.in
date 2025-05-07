@@ -24,15 +24,14 @@ subtrees:
             title: Fluent
           - file: isv-apps/ansys-mechanical.md
             title: Mechanical
-          - file: isv-apps/cadence-fidelity.md
-            title: Cadence Fidelity
-          - file: isv-apps/devito.md
-            title: DevitoPRO
           - file: isv-apps/siemens.md
             title: Siemens
+          - file: isv-apps/cadence-fidelity.md
+            title: Cadence Fidelity
           - file: isv-apps/stone-ridge.md
             title: Stone Ridge
-
+          - file: isv-apps/devito.md
+            title: DevitoPRO
                                                                              
 - caption: System Administrators
   entries:
