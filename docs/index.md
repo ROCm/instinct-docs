@@ -382,7 +382,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <a href="https://instinct.docs.amd.com/projects/amd-smi-virt/en/latest/" class="card-header-link">
   <h2 class="card-header">AMD SMI Documentation</h2>
 </a>
-<p class="paragraph">AMD SMI LIB is a library that enables you to manage and monitor AMD Virtualization Enabled GPUs.</p>
+<p class="paragraph">AMD SMI LIB enables you to manage and monitor AMD Virtualization Enabled GPUs.</p>
 :::
 
 ::::
