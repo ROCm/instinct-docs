@@ -32,7 +32,6 @@ subtrees:
             title: Siemens
           - file: isv-apps/stone-ridge.md
             title: Stone Ridge
-
                                                                              
 - caption: System Administrators
   entries:
@@ -78,6 +77,8 @@ subtrees:
         - entries:
           - url: https://instinct.docs.amd.com/projects/virt-drv/en/latest/
             title: Virtualization Driver
+          - url: https://instinct.docs.amd.com/projects/amd-smi-virt/en/latest/
+            title: AMD SMI Documentation
         
 - caption: Common Reference
   entries:
