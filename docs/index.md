@@ -210,7 +210,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <p class="paragraph">Learn how to split the compute units and memory to partition a GPU.</p>
 :::
 
-:::{grid-item-card}s
+:::{grid-item-card}
 :padding: 1
 :img-top: ./images/System-Administrators-Bare-Metal-AMD-AMD-SMI.jpg
 :class-img-top: small-sd-card-img-top
