@@ -54,7 +54,7 @@ planned for later this year.
 <a href=./ROCmDS-Blogs.html class="card-header-link">
   <h2 class="card-header">Blogs</h2>
 </a>
-<p class="paragraph"> View blog posts related to ROCm-DS and hipDF.
+<p class="paragraph"> View blog posts related to hipDF.
 </p>
 :::
 
