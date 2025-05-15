@@ -47,12 +47,10 @@ subtrees:
             title: AMD-SMI                                    
           - url: https://rocm.docs.amd.com/projects/ROCmValidationSuite/en/latest/ 
             title: ROCm Validatation Suite                  
-    - file: system-admin/co-tools.md
-      title: Containers and Orchestration
+    - file: system-admin/k8s.md
+      title: Kubernetes
       subtrees:
         - entries:
-          - url: https://instinct.docs.amd.com/projects/container-toolkit/en/latest/
-            title: AMD Container Toolkit
           - url: https://instinct.docs.amd.com/projects/gpu-operator/en/latest/
             title: GPU-Operator
           - url: https://instinct.docs.amd.com/projects/k8s-device-plugin/en/latest/
