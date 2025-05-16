@@ -52,13 +52,13 @@ subtrees:
       subtrees:
         - entries:
           - url: https://instinct.docs.amd.com/projects/gpu-operator/en/latest/
-            title: GPU-Operator
+            title: K8s GPU-Operator
           - url: https://instinct.docs.amd.com/projects/k8s-device-plugin/en/latest/
             title: K8s Device Plugin
           - url: https://instinct.docs.amd.com/projects/device-metrics-exporter/en/latest/
             title: Device Metrics Exporter
           - url: https://instinct.docs.amd.com/projects/container-toolkit/en/latest/
-            title: AMD Container Runtime Toolkit                  
+            title: AMD Container Toolkit                  
     - file: system-admin/cluster.md
       title: Cluster
       subtrees:
