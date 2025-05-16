@@ -91,4 +91,7 @@ subtrees:
     - url: https://rocm.docs.amd.com/projects/llvm-project/en/latest/conceptual/openmp.html
       title: OpenMP
 
-     
+- caption: AI/ML
+  entries: 
+  - title: "Torchserve"
+    file: "torchserve/torchserve.md"    
