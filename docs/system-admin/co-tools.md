@@ -48,7 +48,7 @@
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="https://instinct.docs.amd.com/projects/container-toolkit/en/latest/" class="card-header-link">
+<a href="https://instinct.docs.amd.com/projects/advanced-micro-devices-container-toolkit/en/latest/" class="card-header-link">
   <h2 class="card-header">AMD Container Toolkit</h2>
 </a>
 <p class="paragraph">The AMD Container Toolkit enables seamless integration of AMD Instinct GPUs with Docker, offering streamlined GPU access, enhanced container runtime support, and optimized performance for ML and HPC workloads.</p>
