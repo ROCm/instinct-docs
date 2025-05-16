@@ -103,7 +103,21 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
   <h2 class="card-header">hipGRAPH</h2>
 </a>
 <p class="paragraph"> Create, manipulate, and analyze complex networks and graphs on AMD Instinct™ GPUs.
+</p>
+:::
 
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/ROCm-DS_Blogs.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href=./data-science/ROCmDS-Blogs.html class="card-header-link">
+  <h2 class="card-header">Blogs</h2>
+</a>
+<p class="paragraph"> Browse blogs detailing how to accelerate your data science workloads on AMD Instinct™ GPUs.
+</p>
 :::
 
 ::::
@@ -138,6 +152,20 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
   <h2 class="card-header">Ansys Mechanical</h2>
 </a>
 <p class="paragraph"> Ansys Mechanical 2023R2+ supports MI200
+</p>
+:::::
+
+:::::{grid-item-card}
+:padding: 1
+:img-top: ./images/FCharLES-tile.png
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="isv-apps\cadence-fidelity.html" class="card-header-link">
+  <h2 class="card-header">Cadence Fidelity LES Solver</h2>
+</a>
+<p class="paragraph">Fidelity LES Solver supports MI200.
 </p>
 :::::
 
@@ -180,20 +208,6 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
   <h2 class="card-header">Stone Ridge Technology ECHELON</h2>
 </a>
 <p class="paragraph">ECHELON 2023.3+ supports MI200.
-</p>
-:::::
-
-:::::{grid-item-card}
-:padding: 1
-:img-top: ./images/FCharLES-tile.png
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="isv-apps\cadence-fidelity.html" class="card-header-link">
-  <h2 class="card-header">Cadence Fidelity LES Solver</h2>
-</a>
-<p class="paragraph">Fidelity LES Solver supports MI200.
 </p>
 :::::
 
@@ -281,7 +295,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 :::::
 
-:::::{tab-item} Kubernetes
+:::::{tab-item} Containers and Orchestration Tools
 
 ::::{grid} 2 2 3 4
 
@@ -322,6 +336,19 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
   <h2 class="card-header">Device Metrics Exporter</h2>
 </a>
 <p class="paragraph">The AMD Device Metrics Exporter enables Prometheus-format metrics collection for AMD GPUs in HPC and AI environments. </p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/container-toolkit.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://instinct.docs.amd.com/projects/container-toolkit/en/latest/" class="card-header-link">
+  <h2 class="card-header">AMD Container Toolkit</h2>
+</a>
+<p class="paragraph">The AMD Container Toolkit enables seamless integration of AMD Instinct GPUs with Docker, offering streamlined GPU access, enhanced container runtime support, and optimized performance for ML and HPC workloads.</p>
 :::
 
 ::::
@@ -398,6 +425,19 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
   <h2 class="card-header">Instinct Virtualization Driver</h2>
 </a>
 <p class="paragraph">Explore the Virtualization Driver for Instinct GPUs.</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/instinct_virtualization_SMI.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://instinct.docs.amd.com/projects/amd-smi-virt/en/latest/" class="card-header-link">
+  <h2 class="card-header">AMD SMI Documentation</h2>
+</a>
+<p class="paragraph">AMD SMI LIB enables you to manage and monitor AMD Virtualization Enabled GPUs.</p>
 :::
 
 ::::
