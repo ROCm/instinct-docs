@@ -57,7 +57,7 @@ subtrees:
             title: K8s Device Plugin
           - url: https://instinct.docs.amd.com/projects/device-metrics-exporter/en/latest/
             title: Device Metrics Exporter
-          - url: https://instinct.docs.amd.com/projects/container-toolkit/en/latest/
+          - url: https://instinct.docs.amd.com/projects/advanced-micro-devices-container-toolkit/en/latest/
             title: AMD Container Toolkit                  
     - file: system-admin/cluster.md
       title: Cluster
