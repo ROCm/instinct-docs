@@ -26,7 +26,35 @@ planned for later this year.
 <a href="https://rocm.docs.amd.com/projects/hipDF/en/latest/" class="card-header-link">
   <h2 class="card-header">Documentation</h2>
 </a>
-<p class="paragraph"> Installation instructions and API reference material for hipDF can be found on the ROCm Documentation site.
+<p class="paragraph"> Installation instructions, how-to guides, and API reference material can all be found on the ROCm Documentation site.
+</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ../images/hipDF.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://github.com/ROCm-DS/hipDF" class="card-header-link">
+  <h2 class="card-header">Github</h2>
+</a>
+<p class="paragraph"> View the hipDF source code on Github.
+</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ../images/ROCm-DS_Blogs.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href=./ROCmDS-Blogs.html class="card-header-link">
+  <h2 class="card-header">Blogs</h2>
+</a>
+<p class="paragraph"> View blog posts related to hipDF.
 </p>
 :::
 

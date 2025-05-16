@@ -78,6 +78,20 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 </p>
 :::
 
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/ROCm-DS_Blogs.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href=./data-science/ROCmDS-Blogs.html class="card-header-link">
+  <h2 class="card-header">Blogs</h2>
+</a>
+<p class="paragraph"> Browse blogs detailing how to accelerate your data science workloads on AMD Instinct™ GPUs.
+</p>
+:::
+
 ::::
 
 :::::::
