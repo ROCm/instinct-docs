@@ -265,7 +265,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :class: small-sd-card
 +++
 <a href="https://instinct.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
-  <h2 class="card-header">Kubernetes GPU Operator</h2>
+  <h2 class="card-header">GPU Operator</h2>
 </a>
 <p class="paragraph">The AMD GPU Operator simplifies the deployment and management of AMD Instinct GPU accelerators within Kubernetes clusters.</p>
 :::
@@ -278,7 +278,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :class: small-sd-card
 +++
 <a href="https://instinct.docs.amd.com/projects/k8s-device-plugin/en/latest/" class="card-header-link">
-  <h2 class="card-header">Kubernetes Device Plugin</h2>
+  <h2 class="card-header">Device Plugin</h2>
 </a>
 <p class="paragraph">Kubernetes (k8s) device plugin to enable registration of AMD GPU to a container cluster</p>
 :::

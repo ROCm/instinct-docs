@@ -52,7 +52,7 @@ subtrees:
       subtrees:
         - entries:
           - url: https://instinct.docs.amd.com/projects/gpu-operator/en/latest/
-            title: K8s GPU-Operator
+            title: GPU-Operator
           - url: https://instinct.docs.amd.com/projects/k8s-device-plugin/en/latest/
             title: K8s Device Plugin
           - url: https://instinct.docs.amd.com/projects/device-metrics-exporter/en/latest/
