@@ -23,7 +23,7 @@ planned for later this year.
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="https://rocm.docs.amd.com/projects/hipDF/en/latest/" class="card-header-link">
+<a href="https://rocm.docs.amd.com/projects/hipDF/" class="card-header-link">
   <h2 class="card-header">Documentation</h2>
 </a>
 <p class="paragraph"> Installation instructions, how-to guides, and API reference material can all be found on the ROCm Documentation site.
@@ -54,7 +54,7 @@ planned for later this year.
 <a href=./ROCmDS-Blogs.html class="card-header-link">
   <h2 class="card-header">Blogs</h2>
 </a>
-<p class="paragraph"> View blog posts related to hipDF.
+<p class="paragraph"> View blog posts related to ROCm-DS and hipDF.
 </p>
 :::
 

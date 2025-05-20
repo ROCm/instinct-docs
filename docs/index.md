@@ -66,6 +66,20 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 :::{grid-item-card}
 :padding: 1
+:img-top: ./images/ROCm-DS.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href=./data-science/index.html class="card-header-link">
+  <h2 class="card-header">ROCm-DS</h2>
+</a>
+<p class="paragraph"> Accelerate your data science workloads with the ROCm Toolkit for Data Science (ROCm-DS).
+</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
 :img-top: ./images/hipDF.jpg
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
@@ -75,6 +89,20 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
   <h2 class="card-header">hipDF</h2>
 </a>
 <p class="paragraph"> GPU Accelerated DataFrames to enhance your data manipulation and analysis tasks with AMD Instinct™ GPUs.
+</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/hipGRAPH.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href=./data-science/hipGRAPH.html class="card-header-link">
+  <h2 class="card-header">hipGRAPH</h2>
+</a>
+<p class="paragraph"> Create, manipulate, and analyze complex networks and graphs on AMD Instinct™ GPUs.
 </p>
 :::
 
