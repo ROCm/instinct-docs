@@ -16,7 +16,7 @@ products.
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="https://rocm.blogs.amd.com/software-tools-optimization/introducing-rocm-ds:-revolutionizing-data-processing-with-amd-instinct-gpus/README.html" class="card-header-link">
+<a href="https://rocm.blogs.amd.com/software-tools-optimization/introducing-rocm-ds-revolutionizing-data-processing-with-amd-instinct-gpus/README.html" class="card-header-link">
   <h2 class="card-header">Introducing ROCm-DS: Revolutionizing Data Processing with AMD Instinct GPUs</h2>
 </a>
 <p class="paragraph"> AMD is thrilled to announce the release of ROCm-DS, a toolkit aimed at accelerating data science workloads on AMD Instinct GPUs.
