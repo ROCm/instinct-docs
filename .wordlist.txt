@@ -43,3 +43,4 @@ DataFrames
 CuPy
 Markowitz
 cuDF
+latencies
