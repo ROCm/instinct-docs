@@ -44,3 +44,9 @@ CuPy
 Markowitz
 cuDF
 latencies
+ACEs
+APU
+TF
+XCD
+XCDs
+lang

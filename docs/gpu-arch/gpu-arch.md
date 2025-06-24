@@ -18,10 +18,10 @@
 Review hardware aspects of the AMD Instinct™ MI350 series of GPU accelerators and the CDNA™ 4
 architecture.
 
-* AMD Instinct™ MI350 microarchitecture **Comming Soon!**
-* AMD Instinct MI350/CDNA4 ISA **Comming Soon!**
+* AMD Instinct™ MI350 microarchitecture **Coming Soon!**
+* AMD Instinct MI350/CDNA4 ISA **Coming Soon!**
 * [White paper](https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/white-papers/amd-cdna-4-architecture-whitepaper.pdf)
-* Performance counters **Comming Soon!**
+* Performance counters **Coming Soon!**
 :::
 
 :::{grid-item-card}
