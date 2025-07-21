@@ -102,6 +102,8 @@ subtrees:
           title: MI350 microarchitecture
           subtrees:
           - entries:
+            - url: https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/instruction-set-architectures/amd-instinct-cdna4-instruction-set-architecture.pdf
+              title: AMD Instinct MI350/CDNA4 ISA
             - url: https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/white-papers/amd-cdna-4-architecture-whitepaper.pdf
               title: White paper
         - file: gpu-arch/mi300.md
