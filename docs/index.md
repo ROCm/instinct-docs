@@ -124,6 +124,56 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 :::::::
 
+:::::::{tab-item} Life Science
+
+::::{grid} 2 2 3 4
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/ROCm-LS.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href=./life-science/index.html class="card-header-link">
+  <h2 class="card-header">ROCm-LS</h2>
+</a>
+<p class="paragraph"> Accelerate your life science workloads with the ROCm Toolkit for Life Science (ROCm-LS).
+</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/hipCIM.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href=./life-science/hipCIM.html class="card-header-link">
+  <h2 class="card-header">hipCIM</h2>
+</a>
+<p class="paragraph"> Run image processing and computer vision workloads on N-dimensional images for medical imaging workloads on AMD Instinct™ GPUs.
+</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/ROCm-LS_Blogs.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href=./life-science/ROCmLS-Blogs.html class="card-header-link">
+  <h2 class="card-header">Blogs</h2>
+</a>
+<p class="paragraph"> Browse blogs detailing how to accelerate your life science workloads on AMD Instinct™ GPUs.
+</p>
+:::
+
+::::
+
+:::::::
+
 :::::::{tab-item} Simulation & Modelling Apps
 ::::::{grid} 2 2 3 4
 

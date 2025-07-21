@@ -43,6 +43,9 @@ DataFrames
 CuPy
 Markowitz
 cuDF
+hipCIM
+cuCIM
+transformative
 latencies
 ACEs
 APU

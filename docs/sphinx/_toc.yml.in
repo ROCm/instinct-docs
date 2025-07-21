@@ -22,6 +22,12 @@ subtrees:
             title: hipDF
           - file: data-science/hipGRAPH.md
             title: hipGRAPH
+    - file: life-science/index.md
+      title: Life Science (ROCm-LS)
+      subtrees:
+        - entries:
+          - file: life-science/hipCIM.md
+            title: hipCIM
     - file: isv-apps/index.md
       title: Simulation & Modeling Apps        
       subtrees:
