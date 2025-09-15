@@ -442,7 +442,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="https://instinct.docs.amd.com/projects/enterprise-AI/en/latest/" class="card-header-link">
+<a href="./system-admin/enterprise-AI.html" class="card-header-link">
   <h2 class="card-header">Enterprise AI</h2>
 </a>
 <p class="paragraph">Tools to help enterprise customers address the growing need for AI infrastructure management.</p>
