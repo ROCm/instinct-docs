@@ -139,10 +139,10 @@
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href=enterprise-AI/index.html class="card-header-link">
+<a href="https://instinct.docs.amd.com/projects/enterprise-AI/latest/" class="card-header-link">
   <h2 class="card-header">Enterprise AI</h2>
 </a>
-<p class="paragraph">Tools to help enterprise customers address the growing need for AI infrastructure management.</p>
+<p class="paragraph">Tools to help enterprise customers address the growing need for AI infrastructure management</p>
 :::
 
 :::{grid-item-card}
@@ -172,4 +172,3 @@
 :::
 
 ::::
-
