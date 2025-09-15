@@ -38,7 +38,8 @@
 <a href="https://instinct.docs.amd.com/projects/enterprise-AI/en/latest/" class="card-header-link">
   <h2 class="card-header">Enterprise AI</h2>
 </a>
-<p class="paragraph">Tools to help enterprise customers address the growing need for AI infrastructure management.</p>
+<p class="paragraph">Tools for enterprise customers for AI infrastructure management.</p>
 :::
 
 ::::
+
