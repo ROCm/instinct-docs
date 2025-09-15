@@ -1,4 +1,4 @@
-# Enterprise AI: Open, Scalable, and Ready for Deployment**
+# Enterprise AI: Open, Scalable, and Ready for Deployment
 
 With ROCm 7.0, AMD is releasing new tools to help enterprise customers address the growing need for AI infrastructure management. This release delivers two key components:
 
