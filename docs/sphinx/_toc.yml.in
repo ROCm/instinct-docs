@@ -80,7 +80,7 @@ subtrees:
           - url: https://amdresearch.github.io/omnistat/
             title: Omnistat
           - url: https://instinct.docs.amd.com/projects/enterprise-AI/en/latest/
-            title: Enterprise AI
+            title: enterprise-AI
     - file: system-admin/cloud.md
       title: Cloud
       subtrees:
