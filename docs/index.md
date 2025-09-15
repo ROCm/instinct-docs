@@ -435,6 +435,19 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <p class="paragraph">Optimize the network for Instinct GPU applications </p>
 :::
 
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/enterpriseAI.png
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://instinct.docs.amd.com/projects/enterprise-AI/en/latest/" class="card-header-link">
+  <h2 class="card-header">Enterprise AI</h2>
+</a>
+<p class="paragraph">Tools to help enterprise customers address the growing need for AI infrastructure management.</p>
+:::
+
 ::::
 
 :::::
