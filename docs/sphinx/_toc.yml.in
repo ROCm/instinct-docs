@@ -79,7 +79,7 @@ subtrees:
             title: Networking                                                                      
           - url: https://amdresearch.github.io/omnistat/
             title: Omnistat
-          - url: https://instinct.docs.amd.com/projects/Enterprise-AI/en/latest/
+          - url: https://instinct.docs.amd.com/projects/enterprise-AI/en/latest/
             title: Enterprise AI
     - file: system-admin/cloud.md
       title: Cloud
