@@ -35,10 +35,11 @@
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="enterprise-AI.html" class="card-header-link">
+<a href="https://account.amd.com/en/forms/registration/enterpriseai-ea.html" class="card-header-link">
   <h2 class="card-header">Enterprise AI</h2>
 </a>
 <p class="paragraph">Tools for enterprise customers for AI infrastructure management.</p>
 :::
 
 ::::
+
