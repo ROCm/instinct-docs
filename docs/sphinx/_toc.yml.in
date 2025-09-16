@@ -52,7 +52,7 @@ subtrees:
       subtrees:
         - entries:
           - url: https://instinct.docs.amd.com/projects/amdgpu-docs/en/latest/
-            title: Instinct Driver
+            title: AMD GPU Driver
           - url: https://rocm.blogs.amd.com/software-tools-optimization/compute-memory-modes/README.html
             title: GPU Partitioning
           - url: https://rocm.docs.amd.com/projects/amdsmi/en/latest/
