@@ -1,9 +1,9 @@
 # MONAI
 
 The Medical Open Network for Artificial Intelligence ([MONAI](https://monai.io/)) is a domain-optimized,
-open-source framework based on PyTorch designed to faciliate deep learning for medical images. The
+open-source framework based on PyTorch designed to facilitate deep learning for medical images. The
 [MONAI Model Zoo](https://monai.io/model-zoo.html#/) contains a variety of biomedical imaging models that
-may be deployed or finetuned to suit your purposes.
+may be deployed or fine-tuned to suit your purposes.
 
 MONAI provides out-of-the-box integration with hipCIM, enabling researcher and healthcare professionals to
 streamline scientific imaging pipelines, boost computation performance, and speed up innovation across a
