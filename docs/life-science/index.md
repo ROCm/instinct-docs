@@ -30,6 +30,20 @@ scientific innovation with ROCm-LS and realize the full potential of your resear
 
 ::::{grid-item-card}
 :padding: 1
+:img-top: ../images/MONAI.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href=./MONAI.html class="card-header-link">
+  <h2 class="card-header">MONAI</h2>
+</a>
+<p class="paragraph"> AI and deep learning for medical imaging use cases on AMD Instinct™ GPUs.
+.</p>
+::::
+
+::::{grid-item-card}
+:padding: 1
 :img-top: ../images/ROCm-LS.jpg
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
