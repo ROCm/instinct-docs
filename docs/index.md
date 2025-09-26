@@ -336,9 +336,9 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :class: small-sd-card
 +++
 <a href="https://instinct.docs.amd.com/projects/system-acceptance/en/latest/" class="card-header-link">
-  <h2 class="card-header">MI300X System Acceptance Tests</h2>
+  <h2 class="card-header">Instinct Customer Acceptance Guide</h2>
 </a>
-<p class="paragraph"> Test the correct functioning and optimal performance of server systems equipped with AMD Instinct MI300X GPU accelerators.</p>
+<p class="paragraph">Comprehensive guide for configuring, validating, benchmarking, and baselining AMD Instinct™ GPUs.</p>
 :::
 
 ::::
