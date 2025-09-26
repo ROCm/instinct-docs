@@ -158,6 +158,20 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 :::{grid-item-card}
 :padding: 1
+:img-top: ./images/MONAI.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href=./life-science/MONAI.html class="card-header-link">
+  <h2 class="card-header">MONAI</h2>
+</a>
+<p class="paragraph"> Train and deploy AI and computer vision models for medical imaging use cases on AMD Instinct™ GPUs.
+</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
 :img-top: ./images/ROCm-LS_Blogs.jpg
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
