@@ -28,9 +28,6 @@ subtrees:
         - entries:
           - file: life-science/hipCIM.md
             title: hipCIM
-        - entries:
-          - file: life-science/MONAI.md
-            title: MONAI
     - file: isv-apps/index.md
       title: Simulation & Modeling Apps        
       subtrees:

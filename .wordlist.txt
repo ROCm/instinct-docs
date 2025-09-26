@@ -45,7 +45,6 @@ Markowitz
 cuDF
 hipCIM
 cuCIM
-MONAI
 transformative
 latencies
 ACEs
