@@ -58,7 +58,9 @@ subtrees:
           - url: https://rocm.docs.amd.com/projects/amdsmi/en/latest/
             title: AMD-SMI                                    
           - url: https://rocm.docs.amd.com/projects/ROCmValidationSuite/en/latest/ 
-            title: ROCm Validatation Suite                  
+            title: ROCm Validatation Suite
+          - url: https://instinct.docs.amd.com/projects/system-acceptance/en/latest/
+            title: Instinct Customer Acceptance Guide             
     - file: system-admin/co-tools.md
       title: Containers and Orchestration Tools
       subtrees:
