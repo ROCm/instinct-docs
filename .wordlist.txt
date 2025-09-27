@@ -53,3 +53,8 @@ TF
 XCD
 XCDs
 lang
+GSplat
+gsplat
+Gaussians
+rasterization
+DGS
