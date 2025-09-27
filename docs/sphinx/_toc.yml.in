@@ -44,6 +44,8 @@ subtrees:
             title: Siemens
           - file: isv-apps/stone-ridge.md
             title: Stone Ridge
+          - file: simulation/gsplat.md
+            title: GSplat
                                                                              
 - caption: System Administrators
   entries:
