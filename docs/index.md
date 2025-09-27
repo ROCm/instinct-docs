@@ -261,6 +261,20 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 </p>
 :::::
 
+:::::{grid-item-card}
+:padding: 1
+:img-top: ./images/gsplat.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="simulation\gsplat.html" class="card-header-link">
+  <h2 class="card-header">GSplat</h2>
+</a>
+<p class="paragraph">Render 3D scenes and models with Gaussian splatting on MI300X.
+</p>
+:::::
+
 ::::::
 
 :::::::
