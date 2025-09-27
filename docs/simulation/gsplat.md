@@ -9,6 +9,6 @@ images and render these in real time.
 
 - For full documentation, installation instructions, and API reference guide, please refer to the
 [ROCm docs site](https://rocm.docs.amd.com/projects/gsplat/en/latest/).
-- View the AMD enabled GSplat code on [Github](https://github.com/ROCm/gsplat).
+- View the ROCm enabled GSplat code on [Github](https://github.com/ROCm/gsplat).
 - Learn more about Gaussian splatting and see examples of its use in the
 [GSplat blog](https://rocm.blogs.amd.com/software-tools-optimization/gsplat/README.html).
