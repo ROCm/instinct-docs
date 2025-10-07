@@ -49,3 +49,26 @@ products.
 ::::
 
 :::::
+
+:::::{dropdown} MONAI Blogs
+:open:
+
+::::{grid} 2 2 3 4
+
+:::{grid-item-card}
+:padding: 1
+:img-top: "https://rocm.blogs.amd.com/_images/monai-hipcim-thumbnail.webp"
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://rocm.blogs.amd.com/artificial-intelligence/monai-rocm/README.html" class="card-header-link">
+  <h2 class="card-header">Announcing MONAI 1.0.0 for AMD ROCm: Breakthrough AI Acceleration for Medical Imaging Models on AMD Instinct™ GPUs</h2>
+</a>
+<p class="paragraph"> Learn how to use Medical Open Network for Artificial Intelligence (MONAI) 1.0 on ROCm, with examples and demonstrations.
+</p>
+:::
+
+::::
+
+:::::
