@@ -27,7 +27,7 @@ products.
 
 :::::
 
-:::::{dropdown} hipCIM Blogs
+:::::{dropdown} Medical Imaging Blogs
 :open:
 
 ::::{grid} 2 2 3 4
@@ -45,15 +45,6 @@ products.
 <p class="paragraph"> Fully utilize the power of AMD's Instinct GPUs to process and interpret detailed multidimensional images with lightning speed.
 </p>
 :::
-
-::::
-
-:::::
-
-:::::{dropdown} MONAI Blogs
-:open:
-
-::::{grid} 2 2 3 4
 
 :::{grid-item-card}
 :padding: 1
