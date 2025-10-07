@@ -34,20 +34,6 @@ products.
 
 :::{grid-item-card}
 :padding: 1
-:img-top: "https://rocm.blogs.amd.com/_images/2025-06-30-hipcim.webp"
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://rocm.blogs.amd.com/software-tools-optimization/hipcim-intro/README.html" class="card-header-link">
-  <h2 class="card-header">Announcing hipCIM: A Cutting-Edge Solution for Accelerated Multidimensional Image Processing</h2>
-</a>
-<p class="paragraph"> Fully utilize the power of AMD's Instinct GPUs to process and interpret detailed multidimensional images with lightning speed.
-</p>
-:::
-
-:::{grid-item-card}
-:padding: 1
 :img-top: "https://rocm.blogs.amd.com/_images/monai-hipcim-thumbnail.webp"
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
@@ -57,6 +43,20 @@ products.
   <h2 class="card-header">Announcing MONAI 1.0.0 for AMD ROCm: Breakthrough AI Acceleration for Medical Imaging Models on AMD Instinct™ GPUs</h2>
 </a>
 <p class="paragraph"> Learn how to use Medical Open Network for Artificial Intelligence (MONAI) 1.0 on ROCm, with examples and demonstrations.
+</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: "https://rocm.blogs.amd.com/_images/2025-06-30-hipcim.webp"
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://rocm.blogs.amd.com/software-tools-optimization/hipcim-intro/README.html" class="card-header-link">
+  <h2 class="card-header">Announcing hipCIM: A Cutting-Edge Solution for Accelerated Multidimensional Image Processing</h2>
+</a>
+<p class="paragraph"> Fully utilize the power of AMD's Instinct GPUs to process and interpret detailed multidimensional images with lightning speed.
 </p>
 :::
 
