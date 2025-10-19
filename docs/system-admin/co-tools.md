@@ -17,6 +17,19 @@
 
 :::{grid-item-card}
 :padding: 1
+:img-top: ./images/network-operator.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://instinct.docs.amd.com/projects/network-operator/en/latest/" class="card-header-link">
+  <h2 class="card-header">Network Operator</h2>
+</a>
+<p class="paragraph">Network Operator simplifies the use of AMD AINICs in Kubernetes environments.</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
 :img-top: ./images/device-plugin.jpg
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
