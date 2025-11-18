@@ -63,3 +63,26 @@ products.
 ::::
 
 :::::
+
+:::::{dropdown} hipVS Blogs
+:open:
+
+::::{grid} 2 2 3 4
+
+:::{grid-item-card}
+:padding: 1
+:img-top: "https://rocm.blogs.amd.com/_images/hipvs_thumbnail.webp"
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://rocm.blogs.amd.com/software-tools-optimization/hipvs/README.html" class="card-header-link">
+  <h2 class="card-header">Accelerating Vector Search: hipVS and hipRAFT on AMD</h2>
+</a>
+<p class="paragraph"> Learn how hipVS accelerates vector search on AMD Instinct GPUs, with notebook demos for semantic search, RAG, and recommendation systems.
+</p>
+:::
+
+::::
+
+:::::
