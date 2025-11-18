@@ -20,7 +20,7 @@ to run on supported AMD devices, allowing you to use the ROCm platform for your 
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="https://rocm.docs.amd.com/projects/hipDF/" class="card-header-link">
+<a href="https://rocm.docs.amd.com/projects/hipDF/en/latest/" class="card-header-link">
   <h2 class="card-header">Documentation</h2>
 </a>
 <p class="paragraph"> Installation instructions, how-to guides, and API reference material can all be found on the ROCm Documentation site.
@@ -56,4 +56,5 @@ to run on supported AMD devices, allowing you to use the ROCm platform for your 
 :::
 
 ::::
+
 
