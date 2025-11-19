@@ -67,4 +67,18 @@
 <p class="paragraph">The AMD Container Toolkit enables seamless integration of AMD Instinct GPUs with Docker, offering streamlined GPU access, enhanced container runtime support, and optimized performance for ML and HPC workloads.</p>
 :::
 
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/k8-reference-archictecture.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://instinct.docs.amd.com/projects/k8s-reference-arch/en/latest/" class="card-header-link">
+  <h2 class="card-header">Kubernetes Reference Architecture</h2>
+</a>
+<p class="paragraph">Kubernetes Reference Architecture establishes a comprehensive, automated health check framework for AMD Instinct™ GPU infrastructure using the AMD GPU Operator’s AGFHC (AMD GPU Fleet Health Check) capability.</p>
+:::
+
+
 ::::
