@@ -35,5 +35,3 @@ form a part of ROCm-DS, including hipDF, hipGRAPH, and hipVS.
 :::
 
 ::::
-
-
