@@ -81,7 +81,9 @@ subtrees:
           - url: https://instinct.docs.amd.com/projects/device-metrics-exporter/en/latest/
             title: Device Metrics Exporter
           - url: https://instinct.docs.amd.com/projects/container-toolkit/en/latest/
-            title: AMD Container Toolkit                  
+            title: AMD Container Toolkit 
+          - url: https://instinct.docs.amd.com/projects/k8s-reference-arch/en/latest/
+            title: Kubernetes Reference Architecture
     - file: system-admin/cluster.md
       title: Cluster
       subtrees:
