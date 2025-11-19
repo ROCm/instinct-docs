@@ -113,7 +113,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href=./hipVS.html class="card-header-link">
+<a href=./data-science/hipVS.html class="card-header-link">
   <h2 class="card-header">hipVS</h2>
 </a>
 <p class="paragraph"> Accelerate a variety of Vector Search operations on AMD Instinct™ GPUs.
@@ -127,7 +127,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href=./hipMM.html class="card-header-link">
+<a href=./data-science/hipMM.html class="card-header-link">
   <h2 class="card-header">hipMM</h2>
 </a>
 <p class="paragraph"> Advanced memory management utilities for the various ROCm-DS libraries.
@@ -141,7 +141,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href=./hipRAFT.html class="card-header-link">
+<a href=./data-science/hipRAFT.html class="card-header-link">
   <h2 class="card-header">hipRAFT</h2>
 </a>
 <p class="paragraph"> Fundamental algorithms and primitives used by the various ROCm-DS libraries.
