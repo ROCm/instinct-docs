@@ -1,7 +1,7 @@
-# ROCm-DS: ROCm Toolkit for Data Sciences
+# ROCm-DS: The AMD ROCm™ Data Science Toolkit
 
-Unlock the future of data science with the ROCm Data Science Toolkit (ROCm-DS), an innovative open-source toolkit built on
-the powerful ROCm™ platform. Tap into the unparalleled speed and efficiency of AMD Instinct GPUs, as ROCm-DS provides you
+Unlock the future of data science with the AMD ROCm™ Data Science Toolkit (ROCm-DS), an innovative open-source toolkit built on
+the powerful ROCm™ platform. Tap into the unparalleled speed and efficiency of AMD Instinct™ GPUs, as ROCm-DS provides you
 with all of the necessary tools to tackle larger datasets and execute complex data science workloads with lightning speed.
 Transform your data science capabilities to accelerate both new and existing projects, and boost performance and productivity
 across various aspects of your business.
