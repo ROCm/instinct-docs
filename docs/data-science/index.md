@@ -55,7 +55,7 @@ and unleash new possibilities with ROCm-DS!
 <a href=./hipVS.html class="card-header-link">
   <h2 class="card-header">hipVS</h2>
 </a>
-<p class="paragraph"> Accelerate a variety of Vector Search operations on AMD Instinct™ GPUs.
+<p class="paragraph"> Accelerate a variety of vector search operations on AMD Instinct™ GPUs.
 </p>
 ::::
 
