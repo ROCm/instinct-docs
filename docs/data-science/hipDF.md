@@ -56,5 +56,3 @@ to run on supported AMD devices, allowing you to use the ROCm platform for your 
 :::
 
 ::::
-
-
