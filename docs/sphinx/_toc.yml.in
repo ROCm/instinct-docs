@@ -22,6 +22,12 @@ subtrees:
             title: hipDF
           - file: data-science/hipGRAPH.md
             title: hipGRAPH
+          - file: data-science/hipVS.md
+            title: hipVS
+          - file: data-science/hipMM.md
+            title: hipMM
+          - file: data-science/hipRAFT.md
+            title: hipRAFT
     - file: life-science/index.md
       title: Life Science (ROCm-LS)
       subtrees:
