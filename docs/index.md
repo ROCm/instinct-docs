@@ -108,6 +108,48 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 :::{grid-item-card}
 :padding: 1
+:img-top: ../images/hipVS.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href=./hipVS.html class="card-header-link">
+  <h2 class="card-header">hipVS</h2>
+</a>
+<p class="paragraph"> Accelerate a variety of Vector Search operations on AMD Instinct™ GPUs.
+</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ../images/hipMM.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href=./hipMM.html class="card-header-link">
+  <h2 class="card-header">hipMM</h2>
+</a>
+<p class="paragraph"> Advanced memory management utilities for the various ROCm-DS libraries.
+</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ../images/hipRAFT.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href=./hipRAFT.html class="card-header-link">
+  <h2 class="card-header">hipRAFT</h2>
+</a>
+<p class="paragraph"> Fundamental algorithms and primitives used by the various ROCm-DS libraries.
+</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
 :img-top: ./images/ROCm-DS_Blogs.jpg
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
