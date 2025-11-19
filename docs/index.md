@@ -74,7 +74,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <a href=./data-science/index.html class="card-header-link">
   <h2 class="card-header">ROCm-DS</h2>
 </a>
-<p class="paragraph"> Accelerate your data science workloads with the ROCm Toolkit for Data Science (ROCm-DS).
+<p class="paragraph"> Accelerate your data science workloads with the AMD ROCm™ Data Science Toolkit (ROCm-DS).
 </p>
 :::
 
