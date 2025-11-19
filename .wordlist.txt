@@ -36,6 +36,9 @@ electromagnetics
 DS
 hipDF
 hipGRAPH
+hipVS
+hipMM
+hipRAFT
 dataframe
 dataframes
 DataFrame
