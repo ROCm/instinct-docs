@@ -465,7 +465,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <a href="https://instinct.docs.amd.com/projects/k8s-reference-arch/en/latest/" class="card-header-link">
   <h2 class="card-header">Kubernetes Reference Architecture</h2>
 </a>
-<p class="paragraph">Kubernetes Reference Architecture establishes a comprehensive, automated health check framework for AMD Instinct™ GPU infrastructure using the AMD GPU Operator’s AGFHC (AMD GPU Fleet Health Check) capability</p>
+<p class="paragraph">Kubernetes Reference Architectures provide a comprehensive and real-world solution guides, through which we will demonstrate AMD's high-performance AI networking and AMD AINIC technology.</p>
 :::
 
 ::::
