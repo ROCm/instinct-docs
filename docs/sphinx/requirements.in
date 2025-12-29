@@ -1,2 +1,2 @@
-rocm-docs-core==1.20.0
+git+https://github.com/ROCm/rocm-docs-core.git@alexxu12/instinct-rename#egg=rocm-docs-core
 sphinx-reredirects
