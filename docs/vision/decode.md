@@ -12,7 +12,7 @@ The [rocJPEG](https://github.com/ROCm/rocJPEG) library enables fast and efficien
 
 ## Documentation
 
-For full documentation, please refer to the ROCm docs site:
+For full documentation, refer to the ROCm docs site:
 
 - [rocDecode](https://rocm.docs.amd.com/projects/rocDecode/en/latest/)
 - [rocPyDecode](https://rocm.docs.amd.com/projects/rocPyDecode/en/latest/index.html)

@@ -1,9 +1,9 @@
 ---
 html_theme.sidebar_secondary.remove: true   
 ---
-# AMD Instinct Data Center GPU Documentation
+# AMD GPU Systems and Infrastructure documentation
 
-The AMD Instinct Documentation site provides comprehensive guides and technical documentation for system administrators and technical users deploying AMD Instinct Data Center GPUs in enterprise environments. This site focuses on large-scale deployment, cluster management, monitoring, and operational best practices for both HPC and AI workloads. For API documentation and core software stack details, please visit the [ROCm documentation](https://rocm.docs.amd.com).
+The AMD GPU Systems and Infrastructure Documentation site provides comprehensive guides and technical documentation for system administrators and technical users deploying AMD Instinct Data Center GPUs in enterprise environments. This site focuses on large-scale deployment, cluster management, monitoring, and operational best practices for both HPC and AI workloads. For API documentation and core software stack details, please visit the [ROCm documentation](https://rocm.docs.amd.com).
 
 ::::::::::{dropdown} Industries/Verticals
 :open:
@@ -88,7 +88,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <a href=./data-science/hipDF.html class="card-header-link">
   <h2 class="card-header">hipDF</h2>
 </a>
-<p class="paragraph"> GPU Accelerated DataFrames to enhance your data manipulation and analysis tasks with AMD Instinct™ GPUs.
+<p class="paragraph"> GPU Accelerated DataFrames to enhance your data manipulation and analysis tasks with AMD Instinct GPUs.
 </p>
 :::
 
@@ -102,7 +102,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <a href=./data-science/hipGRAPH.html class="card-header-link">
   <h2 class="card-header">hipGRAPH</h2>
 </a>
-<p class="paragraph"> Create, manipulate, and analyze complex networks and graphs on AMD Instinct™ GPUs.
+<p class="paragraph"> Create, manipulate, and analyze complex networks and graphs on AMD Instinct GPUs.
 </p>
 :::
 
@@ -116,7 +116,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <a href=./data-science/ROCmDS-Blogs.html class="card-header-link">
   <h2 class="card-header">Blogs</h2>
 </a>
-<p class="paragraph"> Browse blogs detailing how to accelerate your data science workloads on AMD Instinct™ GPUs.
+<p class="paragraph"> Browse blogs detailing how to accelerate your data science workloads on AMD Instinct GPUs.
 </p>
 :::
 
@@ -152,7 +152,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <a href=./life-science/hipCIM.html class="card-header-link">
   <h2 class="card-header">hipCIM</h2>
 </a>
-<p class="paragraph"> Run image processing and computer vision workloads on N-dimensional images for medical imaging workloads on AMD Instinct™ GPUs.
+<p class="paragraph"> Run image processing and computer vision workloads on N-dimensional images for medical imaging workloads on AMD Instinct GPUs.
 </p>
 :::
 
@@ -166,7 +166,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <a href=./life-science/MONAI.html class="card-header-link">
   <h2 class="card-header">MONAI</h2>
 </a>
-<p class="paragraph"> Train and deploy AI and computer vision models for medical imaging use cases on AMD Instinct™ GPUs.
+<p class="paragraph"> Train and deploy AI and computer vision models for medical imaging use cases on AMD Instinct GPUs.
 </p>
 :::
 
@@ -180,7 +180,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <a href=./life-science/ROCmLS-Blogs.html class="card-header-link">
   <h2 class="card-header">Blogs</h2>
 </a>
-<p class="paragraph"> Browse blogs detailing how to accelerate your life science workloads on AMD Instinct™ GPUs.
+<p class="paragraph"> Browse blogs detailing how to accelerate your life science workloads on AMD Instinct GPUs.
 </p>
 :::
 
@@ -366,7 +366,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <a href="https://instinct.docs.amd.com/projects/system-acceptance/en/latest/" class="card-header-link">
   <h2 class="card-header">Instinct Customer Acceptance Guide</h2>
 </a>
-<p class="paragraph">Comprehensive guide for configuring, validating, benchmarking, and baselining AMD Instinct™ GPUs.</p>
+<p class="paragraph">Comprehensive guide for configuring, validating, benchmarking, and baselining AMD Instinct GPUs.</p>
 :::
 
 :::{grid-item-card}
@@ -580,7 +580,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <a href=./gpu-arch/gpu-arch.html class="card-header-link">
   <h2 class="card-header">Instinct Micro-architecture</h2>
 </a>
-<p class="paragraph">Review hardware aspects of the AMD Instinct™ MI350, MI300, MI200 and MI100 series of GPU accelerators.</p>
+<p class="paragraph">Review hardware aspects of the AMD Instinct MI350, MI300, MI200 and MI100 series of GPU</p>
 :::::
 
 :::::{grid-item-card}

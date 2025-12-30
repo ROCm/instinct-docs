@@ -12,7 +12,7 @@ The [ROCm Performance Primitives (RPP)](https://github.com/ROCm/rpp) library con
 
 ## Documentation
 
-For full documentation, please refer to the ROCm docs site:
+For full documentation, refer to the ROCm docs site:
 
 - [rocAL](https://rocm.docs.amd.com/projects/rocAL/en/latest/)
 - [RPP](https://rocm.docs.amd.com/projects/rpp/en/latest/)
