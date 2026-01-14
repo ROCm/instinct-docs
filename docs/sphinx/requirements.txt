@@ -185,7 +185,7 @@ requests==2.32.5
     # via
     #   pygithub
     #   sphinx
-rocm-docs-core @ git+https://github.com/ROCm/rocm-docs-core.git@alexxu12/instinct-rename
+rocm-docs-core==1.31.2
     # via -r requirements.in
 rpds-py==0.30.0
     # via
@@ -242,7 +242,7 @@ stack-data==0.6.3
     # via ipython
 tabulate==0.9.0
     # via jupyter-cache
-tomli==2.3.0
+tomli==2.4.0
     # via sphinx
 tornado==6.5.4
     # via
