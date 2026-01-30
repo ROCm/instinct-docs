@@ -1,8 +1,8 @@
 # ROCm-DS Blogs
 
-This page contains a list of blog posts related to ROCm-DS and its individual components. Please
-see the [ROCm Blogs page](https://rocm.blogs.amd.com/) for blogs related to all AMD and ROCm™
-products.
+This page contains a list of blog posts related to the AMD ROCm™ Data Science Toolkit (ROCm-DS)
+and its individual components. Please see the [ROCm Blogs page](https://rocm.blogs.amd.com/) for
+blogs related to all AMD and ROCm products.
 
 :::::{dropdown} ROCm-DS Blogs
 :open:
@@ -57,6 +57,29 @@ products.
   <h2 class="card-header">DataFrame Acceleration: hipDF and hipDF.pandas on AMD GPUs.</h2>
 </a>
 <p class="paragraph"> This blog post demonstrates how hipDF significantly enhances and accelerates data manipulation, aggregation, and transformation tasks on AMD hardware using ROCm.
+</p>
+:::
+
+::::
+
+:::::
+
+:::::{dropdown} hipVS Blogs
+:open:
+
+::::{grid} 2 2 3 4
+
+:::{grid-item-card}
+:padding: 1
+:img-top: "https://rocm.blogs.amd.com/_images/hipvs_thumbnail.webp"
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://rocm.blogs.amd.com/software-tools-optimization/hipvs/README.html" class="card-header-link">
+  <h2 class="card-header">Accelerating Vector Search: hipVS and hipRAFT on AMD</h2>
+</a>
+<p class="paragraph"> Learn how hipVS accelerates vector search on AMD Instinct GPUs, with notebook demos for semantic search, RAG, and recommendation systems.
 </p>
 :::
 

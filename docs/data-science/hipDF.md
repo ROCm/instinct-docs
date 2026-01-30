@@ -11,9 +11,6 @@ By adopting the well-known cuDF API on AMD hardware, hipDF ensures compatibility
 computing environments. This API compatibility enables existing cuDF workloads to be effortlessly transitioned
 to run on supported AMD devices, allowing you to use the ROCm platform for your data processing tasks.
 
-hipDF is currently in an Early Access state and is intended as a preview to the production ready release
-planned for later this year.
-
 ::::{grid} 2 2 2 2
 
 :::{grid-item-card}
@@ -23,7 +20,7 @@ planned for later this year.
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="https://rocm.docs.amd.com/projects/hipDF/" class="card-header-link">
+<a href="https://rocm.docs.amd.com/projects/hipDF/en/latest/" class="card-header-link">
   <h2 class="card-header">Documentation</h2>
 </a>
 <p class="paragraph"> Installation instructions, how-to guides, and API reference material can all be found on the ROCm Documentation site.
