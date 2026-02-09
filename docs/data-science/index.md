@@ -4,7 +4,7 @@ Unlock the future of data science with the AMD ROCm™ Data Science Toolkit (ROC
 the powerful ROCm platform. Tap into the unparalleled speed and efficiency of AMD Instinct™ GPUs, as ROCm-DS provides you
 with all of the necessary tools to tackle larger datasets and execute complex data science workloads with lightning speed.
 Transform your data science capabilities to accelerate both new and existing projects, and boost performance and productivity
-across various aspects of your business.
+across your business.
 
 With ROCm-DS you have access to a rapidly expanding set of tools, empowering you to build, manage, and run entire data science
 workflows directly on AMD Instinct GPUs. Say goodbye to data loading bottlenecks in your AI workloads, accelerate your
