@@ -7,7 +7,7 @@ Transform your data science capabilities to accelerate both new and existing pro
 across your business.
 
 With ROCm-DS you have access to a rapidly expanding set of tools, empowering you to build, manage, and run entire data science
-workflows directly on AMD Instinct GPUs. Say goodbye to data loading bottlenecks in your AI workloads, accelerate your
+workflows directly on AMD Instinct GPUs. Say goodbye to data-loading bottlenecks in AI workloads, accelerate your
 traditional data processing and analysis tasks, and manipulate immense datasets quickly and efficiently in GPU memory.
 Experience the exhilaration of streamlined AI and data science workloads powered by cutting-edge GPU technology.
 
