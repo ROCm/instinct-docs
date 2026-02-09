@@ -1,6 +1,6 @@
 # hipRAFT
 
-hipRAFT contains a variety of fundamental primitives and algorithms for machine-learning and data mining
+hipRAFT contains a variety of fundamental primitives and algorithms for machine learning and data mining
 workloads. As part of AMD ROCm™ Data Science Toolkit (ROCm-DS), it provides functionality for other ROCm-DS libraries, including hipDF, hipGRAPH, and hipVS.
 
 ::::{grid} 2 2 2 2
