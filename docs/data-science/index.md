@@ -13,7 +13,7 @@ Experience the exhilaration of streamlined AI and data science workloads powered
 
 Behind ROCm-DS lies a passionate, driven team dedicated to continuously expanding and improving this toolkit, ensuring you
 have everything you need to push the boundaries of data science. Get ready to revolutionize your data processing applications
-and unleash new possibilities with ROCm-DS!
+and unleash new possibilities with ROCm-DS.
 
 :::::{grid} 2 2 2 2
 
