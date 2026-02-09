@@ -1,6 +1,6 @@
 # hipMM
 
-The hip Memory Manager (hipMM) provides advanced GPU memory management utilities for a variety of libraries in
+HIP Memory Manager (hipMM) provides advanced GPU memory management utilities for a variety of libraries in
 the AMD ROCm™ Data Science Toolkit (ROCm-DS). hipMM focuses on improving memory usage efficiency for workloads that
 leverage hipDF, hipGRAPH, hipVS, and hipRAFT.
 
