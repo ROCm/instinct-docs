@@ -15,7 +15,7 @@ workloads. As part of AMD ROCm™ Data Science Toolkit (ROCm-DS), it provides fu
 <a href="https://rocm.docs.amd.com/projects/hipRaft/en/latest/" class="card-header-link">
   <h2 class="card-header">Documentation</h2>
 </a>
-<p class="paragraph"> Installation instructions, how-to guides, and API reference material can all be found on the ROCm Documentation site.
+<p class="paragraph"> Installation instructions, how-to guides, and API reference material are on the ROCm Documentation site.
 </p>
 :::
 
