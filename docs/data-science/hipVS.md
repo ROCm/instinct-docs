@@ -1,6 +1,6 @@
 # hipVS
 
-hipVS enables GPU accelerated vector search operations running on AMD Instinct™ GPUs. As a part of the AMD ROCm™
+hipVS enables GPU-accelerated vector search operations on AMD Instinct™ GPUs. As a part of the AMD ROCm™
 Data Science Toolkit (ROCm-DS), hipVS builds upon the core ROCm libraries to accelerate operations such as
 approximate and exact nearest neighbor algorithms, as well as a variety of clustering algorithms. hipVS seamlessly
 integrates with other ROCm-DS libraries such as hipDF, enabling DataFrames to be used for vector search operations.
@@ -17,7 +17,7 @@ integrates with other ROCm-DS libraries such as hipDF, enabling DataFrames to be
 <a href="https://rocm.docs.amd.com/projects/hipVS/en/latest/" class="card-header-link">
   <h2 class="card-header">Documentation</h2>
 </a>
-<p class="paragraph"> Installation instructions, how-to guides, and API reference material can all be found on the ROCm Documentation site.
+<p class="paragraph"> Installation instructions, how-to guides, and API reference material are on the ROCm Documentation site.
 </p>
 :::
 
