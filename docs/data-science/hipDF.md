@@ -9,7 +9,7 @@ effort.
 
 By adopting the well-known cuDF API on AMD hardware, hipDF ensures compatibility and ease of use across various
 computing environments. This API compatibility enables existing cuDF workloads to be effortlessly transitioned
-to run on supported AMD devices, allowing you to use the ROCm platform for your data processing tasks.
+to run on supported AMD devices, allowing you to use the ROCm platform for all of your data processing tasks.
 
 ::::{grid} 2 2 2 2
 
