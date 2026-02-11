@@ -111,7 +111,7 @@ and unleash new possibilities with ROCm-DS!
 <a href=./ROCmDS-Blogs.html class="card-header-link">
   <h2 class="card-header">ROCm-DS Blogs</h2>
 </a>
-<p class="paragraph"> Browse through blogs related to ROCm-DS and its individual components.
+<p class="paragraph"> Browse blogs detailing how to accelerate your data science workloads on AMD Instinct GPUs.
 </p>
 ::::
 

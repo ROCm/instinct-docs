@@ -4,8 +4,7 @@ hipGRAPH enables GPU accelerated complex networks and graphs, and contains a set
 algorithms. This library, built on top of ROCm™, enables you to build, analyze, and otherwise manipulate
 complex graphs on AMD Instinct™ GPUs.
 
-hipGRAPH is currently in an Early Access state and is intended as a preview to the production ready release
-planned for later this year.
+hipGRAPH is currently in an Early Access state. Running production workloads is not recommended.
 
 ::::{grid} 2 2 2 2
 
