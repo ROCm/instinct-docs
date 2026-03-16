@@ -11,7 +11,7 @@ products.
 
 :::{grid-item-card}
 :padding: 1
-:img-top: "https://rocm.blogs.amd.com/_images/2025-06-30-rocm-ls.webp"
+:img-top: "https://rocm.blogs.amd.com/_images/2025-06-30-rocm-ls.web"
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
