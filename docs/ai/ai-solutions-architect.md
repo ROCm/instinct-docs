@@ -1,3 +1,1 @@
 # AI solutions architecture
-
-
