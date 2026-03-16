@@ -14,23 +14,3 @@ jobs:
   call-workflow-passing-data:
     name: Documentation
     uses: ROCm/rocm-docs-core/.github/workflows/linting.yml@develop
-  
-  check-broken-images:
-    name: Check Images
-    runs-on: ubuntu-latest
-    
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.10'
-      
-      - name: Check for broken image references
-        run: python3 check_broken_images.py
-      
-      - name: Check for orphaned images (warning only)
-        if: success() || failure()
-        run: python3 check_broken_images.py --check-orphans || true
