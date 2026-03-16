@@ -11,7 +11,7 @@ products.
 
 :::{grid-item-card}
 :padding: 1
-:img-top: "https://rocm.blogs.amd.com/_images/2025-06-30-rocm-ls.web"
+:img-top: "https://rocm.blogs.amd.com/_images/images-2025-06-30-rocm-ls.webp"
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
@@ -34,7 +34,7 @@ products.
 
 :::{grid-item-card}
 :padding: 1
-:img-top: "https://rocm.blogs.amd.com/_images/monai-hipcim-thumbnail.webp"
+:img-top: "https://rocm.blogs.amd.com/_images/images-monai-hipcim-thumbnail.webp"
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
@@ -48,7 +48,7 @@ products.
 
 :::{grid-item-card}
 :padding: 1
-:img-top: "https://rocm.blogs.amd.com/_images/2025-06-30-hipcim.webp"
+:img-top: "https://rocm.blogs.amd.com/_images/images-2025-06-30-hipcim.webp"
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
