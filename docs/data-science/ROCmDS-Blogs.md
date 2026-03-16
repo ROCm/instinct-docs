@@ -34,7 +34,8 @@ blogs related to all AMD and ROCm products.
 
 :::{grid-item-card}
 :padding: 1
-:img-top: "https://rocm.blogs.amd.com/_images/images-cupy_hipdf.webp"
+:img-top: "https://rocm.blogs.amd.com/_images/artificial-intelligence-cupy_hipdf_portfolio_opt-images-cupy_hipdf.webp"
+
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
@@ -48,7 +49,7 @@ blogs related to all AMD and ROCm products.
 
 :::{grid-item-card}
 :padding: 1
-:img-top: "https://rocm.blogs.amd.com/_images/images-hipDF_Dataframe.webp"
+:img-top: "https://rocm.blogs.amd.com/_images/artificial-intelligence-hipDF_pandas_accelerated-images-hipDF_Dataframe.webp"
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
@@ -71,7 +72,7 @@ blogs related to all AMD and ROCm products.
 
 :::{grid-item-card}
 :padding: 1
-:img-top: "https://rocm.blogs.amd.com/_images/images-hipvs_thumbnail.webp"
+:img-top: "https://rocm.blogs.amd.com/_images/software-tools-optimization-hipvs-images-hipvs_thumbnail.webp"
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
