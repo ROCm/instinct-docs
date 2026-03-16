@@ -2,7 +2,7 @@
 
 This page contains a list of blog posts related to ROCm-LS and its individual components. Please
 see the [ROCm Blogs page](https://rocm.blogs.amd.com/) for blogs related to all AMD and ROCm™
-products
+products..
 
 :::::{dropdown} ROCm-LS Blogs
 :open:
