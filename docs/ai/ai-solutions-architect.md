@@ -1,1 +1,1 @@
-# AI solutions architect
+# AI solutions architec
