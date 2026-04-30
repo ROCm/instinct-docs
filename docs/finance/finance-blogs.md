@@ -1,6 +1,6 @@
 # ROCm-Finance Blogs
 
-This page contains a list of blog posts related to the AMD ROCm™ Data Science Toolkit (ROCm-DS)
+This page contains a list of blog posts related to the AMD ROCm™ Finance Toolkit (ROCm-Finance)
 and its individual components. See [ROCm Blogs](https://rocm.blogs.amd.com/) for
 blogs related to all AMD and ROCm products.
 
