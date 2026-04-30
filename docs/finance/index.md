@@ -93,7 +93,7 @@ reference, see the [ROCm-Finance documentation](https://rocm.docs.amd.com/projec
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href=./xgboost.html class="card-header-link">
+<a href=./finance-blogs.html class="card-header-link">
   <h2 class="card-header">ROCm-Finance Blogs</h2>
 </a>
 <p class="paragraph"> Browse blogs detailing how to accelerate your finance boost workloads on AMD Instinct GPUs.
