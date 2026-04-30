@@ -4,7 +4,7 @@ Use ThunderGBM when parallelism and raw throughput dominate the story:
 massively parallel trees, simulation-scale batches, and scenario grids that want the accelerator
 to do the heavy lifting today—not in some speculative later hardware generation. ThunderGBM collapses the
 signal-to-decision distance, optimized for highly parallel,
-GPU-intensive training runs on [AMD Instinct](https://www.amd.com/en/products/accelerators/instinct) silicon.
+GPU-intensive training runs on [AMD Instinct](https://www.amd.com/en/products/accelerators/instinct.html) silicon.
 
 ::::{grid} 2 2 2 2
 
