@@ -29,7 +29,7 @@ GPU-intensive training runs on [AMD Instinct](https://www.amd.com/en/products/ac
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="https://github.com/ROCm-DS/hipRAFT" class="card-header-link">
+<a href="https://github.com/ROCm/ThunderGBM/" class="card-header-link">
   <h2 class="card-header">Github</h2>
 </a>
 <p class="paragraph"> View the ThunderGBM source code on Github.

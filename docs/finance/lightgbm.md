@@ -31,7 +31,7 @@ with GPU-native backing.
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="https://github.com/ROCm-DS/hipRAFT" class="card-header-link">
+<a href="https://github.com/ROCm/LightGBM/" class="card-header-link">
   <h2 class="card-header">Github</h2>
 </a>
 <p class="paragraph"> View the LightGBM source code on Github.
