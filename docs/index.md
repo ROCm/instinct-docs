@@ -166,6 +166,112 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 :::::::
 
+:::::::{tab-item} Finance
+
+::::{grid} 2 2 3 4
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/ROCm-LS.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href=./finance/index.html class="card-header-link">
+  <h2 class="card-header">ROCm-Finance</h2>
+</a>
+<p class="paragraph"> Boost your financial workloads with the ROCm Toolkit for Finance (ROCm-Finance).
+</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/ROCm-DS_Docs.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href=./xgboost.html class="card-header-link">
+  <h2 class="card-header">XGBoost</h2>
+</a>
+<p class="paragraph"> General-purpose GPU gradient boosting. Start here for many finance tabular workflows.
+</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/ROCm-DS_Docs.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href=./lightgbm.html class="card-header-link">
+  <h2 class="card-header">LightGBM</h2>
+</a>
+<p class="paragraph"> Leaf-wise training. Strong fit when dataset size drives the bottleneck.
+</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/ROCm-DS_Docs.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href=./thundergbm.html class="card-header-link">
+  <h2 class="card-header">ThunderGBM</h2>
+</a>
+<p class="paragraph"> GPU-oriented boosting for highly parallel, GPU-intensive training and simulation-style runs.
+</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/ROCm-DS.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://github.com/ROCm/ROCm-Finance" class="card-header-link">
+  <h2 class="card-header">GitHub</h2>
+</a>
+<p class="paragraph"> Source for ROCm-Finance and related packaging on GitHub.
+</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/ROCm-DS_Docs.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://github.com/ROCm/rocm-finance/tree/release/26.01/examples" class="card-header-link">
+  <h2 class="card-header">Examples</h2>
+</a>
+<p class="paragraph"> Runnable examples on GitHub to explore the code.
+</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/ROCm-DS_Docs.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href=./finance-blogs.html class="card-header-link">
+  <h2 class="card-header">ROCm-Finance Blogs</h2>
+</a>
+<p class="paragraph"> Browse blogs detailing how to accelerate your finance boost workloads on AMD Instinct GPUs.
+</p>
+:::
+
+::::
+
+:::::::
+
 :::::::{tab-item} Life Science
 
 ::::{grid} 2 2 3 4

@@ -37,6 +37,16 @@ subtrees:
         - entries:
           - file: life-science/MONAI.md
             title: MONAI
+    - file: finance/index.md
+      title: Finance (ROCm-Finance)
+      subtrees:
+        - entries:
+          - file: finance/xgboost.md
+            title: XGBoost
+          - file: finance/lightgbm.md
+            title: LightGBM
+          - file: finance/thundergbm.md
+            title: ThunderGBM
     - file: isv-apps/index.md
       title: Simulation & Modeling Apps        
       subtrees:
