@@ -49,6 +49,9 @@ cuDF
 hipCIM
 cuCIM
 MONAI
+LightGBM
+Runnable
+ThunderGBM
 transformative
 latencies
 ACEs

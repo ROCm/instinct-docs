@@ -12,7 +12,7 @@ into the high-bandwidth, multi-GPU computing ROCm was built to serve. ROCm-Finan
 they arrived from the next generation, even on this week's cluster.
 
 For more information on ROCm-Finance, including comparisons, prerequisites, install, and deep API
-reference, see the [ROCm-Finance documentation](https://rocm.docs.amd.com/projects/rocm-finance/en/latest/index.html). 
+reference, see the [ROCm-Finance documentation](https://rocm.docs.amd.com/projects/rocm-finance/en/latest/index.html).
 
 :::::{grid} 2 2 2 2
 
