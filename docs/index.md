@@ -191,7 +191,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href=./xgboost.html class="card-header-link">
+<a href=./finance/xgboost.html class="card-header-link">
   <h2 class="card-header">XGBoost</h2>
 </a>
 <p class="paragraph"> General-purpose GPU gradient boosting. Start here for many finance tabular workflows.
@@ -205,10 +205,10 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href=./lightgbm.html class="card-header-link">
+<a href=./finance/lightgbm.html class="card-header-link">
   <h2 class="card-header">LightGBM</h2>
 </a>
-<p class="paragraph"> Leaf-wise training. Strong fit when dataset size drives the bottleneck.
+<p class="paragraph"> Leaf-wise training is the way to go. It is a strong fit when dataset size drives the bottleneck.
 </p>
 :::
 
@@ -219,7 +219,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href=./thundergbm.html class="card-header-link">
+<a href=./finance/thundergbm.html class="card-header-link">
   <h2 class="card-header">ThunderGBM</h2>
 </a>
 <p class="paragraph"> GPU-oriented boosting for highly parallel, GPU-intensive training and simulation-style runs.
@@ -261,7 +261,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href=./finance-blogs.html class="card-header-link">
+<a href=./finance/finance-blogs.html class="card-header-link">
   <h2 class="card-header">ROCm-Finance Blogs</h2>
 </a>
 <p class="paragraph"> Browse blogs detailing how to accelerate your finance boost workloads on AMD Instinct GPUs.
