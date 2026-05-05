@@ -12,7 +12,7 @@ with GPU-native backing.
 
 :::{grid-item-card}
 :padding: 1
-:img-top: ../images/finance-6.jpg
+:img-top: ../images/finance-6.png
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
@@ -26,7 +26,7 @@ with GPU-native backing.
 
 :::{grid-item-card}
 :padding: 1
-:img-top: ../images/finance-2.jpg
+:img-top: ../images/finance-2.png
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card

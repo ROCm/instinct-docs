@@ -8,7 +8,7 @@ straightforward on-ramp from yesterday's pipelines to tomorrow's throughput.
 
 :::{grid-item-card}
 :padding: 1
-:img-top: ../images/finance-6.jpg
+:img-top: ../images/finance-6.png
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
@@ -22,7 +22,7 @@ straightforward on-ramp from yesterday's pipelines to tomorrow's throughput.
 
 :::{grid-item-card}
 :padding: 1
-:img-top: ../images/finance-1.jpg
+:img-top: ../images/finance-1.png
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card

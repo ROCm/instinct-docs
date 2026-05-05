@@ -172,7 +172,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 :::{grid-item-card}
 :padding: 1
-:img-top: ./images/ROCm-LS.jpg
+:img-top: ./images/finance-7.png
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
@@ -186,7 +186,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 :::{grid-item-card}
 :padding: 1
-:img-top: ./images/ROCm-DS_Docs.jpg
+:img-top: ./images/finance-1.png
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
@@ -200,7 +200,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 :::{grid-item-card}
 :padding: 1
-:img-top: ./images/ROCm-DS_Docs.jpg
+:img-top: ./images/finance-2.png
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
@@ -214,7 +214,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 :::{grid-item-card}
 :padding: 1
-:img-top: ./images/ROCm-DS_Docs.jpg
+:img-top: ./images/finance-3.png
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
@@ -228,7 +228,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 :::{grid-item-card}
 :padding: 1
-:img-top: ./images/ROCm-DS.jpg
+:img-top: ./images/finance-4.png
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
@@ -242,7 +242,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 :::{grid-item-card}
 :padding: 1
-:img-top: ./images/ROCm-DS_Docs.jpg
+:img-top: ./images/finance-5.png
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
@@ -256,7 +256,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 :::{grid-item-card}
 :padding: 1
-:img-top: ./images/ROCm-DS_Docs.jpg
+:img-top: ./images/finance-6.png
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card

@@ -18,7 +18,7 @@ reference, see the [ROCm-Finance documentation](https://rocm.docs.amd.com/projec
 
 ::::{grid-item-card}
 :padding: 1
-:img-top: ../images/finance-1.jpg
+:img-top: ../images/finance-1.png
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
@@ -32,7 +32,7 @@ reference, see the [ROCm-Finance documentation](https://rocm.docs.amd.com/projec
 
 ::::{grid-item-card}
 :padding: 1
-:img-top: ../images/finance-2.jpg
+:img-top: ../images/finance-2.png
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
@@ -46,7 +46,7 @@ reference, see the [ROCm-Finance documentation](https://rocm.docs.amd.com/projec
 
 ::::{grid-item-card}
 :padding: 1
-:img-top: ../images/finance-3.jpg
+:img-top: ../images/finance-3.png
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
@@ -60,7 +60,7 @@ reference, see the [ROCm-Finance documentation](https://rocm.docs.amd.com/projec
 
 ::::{grid-item-card}
 :padding: 1
-:img-top: ../images/finance-4.jpg
+:img-top: ../images/finance-4.png
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
@@ -74,7 +74,7 @@ reference, see the [ROCm-Finance documentation](https://rocm.docs.amd.com/projec
 
 ::::{grid-item-card}
 :padding: 1
-:img-top: ../images/finance-5.jpg
+:img-top: ../images/finance-5.png
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
@@ -88,7 +88,7 @@ reference, see the [ROCm-Finance documentation](https://rocm.docs.amd.com/projec
 
 ::::{grid-item-card}
 :padding: 1
-:img-top: ../images/finance-6.jpg
+:img-top: ../images/finance-6.png
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
