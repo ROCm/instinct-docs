@@ -12,7 +12,7 @@ with GPU-native backing.
 
 :::{grid-item-card}
 :padding: 1
-:img-top: ../images/ROCm-DS_Docs.jpg
+:img-top: ../images/finance-6.jpg
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
@@ -26,7 +26,7 @@ with GPU-native backing.
 
 :::{grid-item-card}
 :padding: 1
-:img-top: ../images/ROCm-DS_Docs.jpg
+:img-top: ../images/finance-2.jpg
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card

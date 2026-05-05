@@ -8,7 +8,7 @@ blogs related to all AMD and ROCm products.
 
 :::{grid-item-card}
 :padding: 1
-:img-top: "https://rocm.blogs.amd.com/_images/images-2025-04-21-ROCm-DS.webp"
+:img-top: ../images/finance-6.jpg
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
@@ -21,7 +21,7 @@ blogs related to all AMD and ROCm products.
 
 :::{grid-item-card}
 :padding: 1
-:img-top: "https://rocm.blogs.amd.com/_images/artificial-intelligence-cupy_hipdf_portfolio_opt-images-cupy_hipdf.webp"
+:img-top: ../images/finance-7.jpg
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card

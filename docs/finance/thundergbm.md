@@ -10,7 +10,7 @@ GPU-intensive training runs on [AMD Instinct](https://www.amd.com/en/products/ac
 
 :::{grid-item-card}
 :padding: 1
-:img-top: ../images/ROCm-DS_Docs.jpg
+:img-top: ../images/finance-6.jpg
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
@@ -24,7 +24,7 @@ GPU-intensive training runs on [AMD Instinct](https://www.amd.com/en/products/ac
 
 :::{grid-item-card}
 :padding: 1
-:img-top: ../images/ROCm-DS_Docs.jpg
+:img-top: ../images/finance-3.jpg
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
