@@ -11,7 +11,7 @@ queued overnight now run in minutes. Risk, fraud, forecasting, and simulation pi
 into the high-bandwidth, multi-GPU computing ROCm was built to serve. ROCm-Finance provides production-oriented kernels, memory paths, and scaling behavior so your boosting jobs feel like
 they arrived from the next generation, even on this week's cluster.
 
-For more information on ROCm-Finance, including comparisons, prerequisites, install, and deep API
+For more information on ROCm-Finance, including comparisons, prerequisites, installation, and deep API
 reference, see the [ROCm-Finance documentation](https://rocm.docs.amd.com/projects/rocm-finance/en/latest/index.html).
 
 :::::{grid} 2 2 2 2
