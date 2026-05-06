@@ -1,6 +1,6 @@
 # XGBoost (ROCm-Finance)
 
-**XGBoost** is the general-purpose engine in ROCm-Finance: tabular risk, fraud, pricing-side features, and trading-adjacent workloads.
+XGBoost is the general-purpose engine in ROCm-Finance: tabular risk, fraud, pricing-side features, and trading-adjacent workloads.
 Use it when you want a familiar level-wise boosting path with broad finance coverage and a
 straightforward on-ramp from yesterday's pipelines to tomorrow's throughput.  
 
