@@ -5,7 +5,7 @@ feature stores, long histories, dense microstructure matrices—would otherwise 
 decisions into the next shift. On Instinct, that wall between overnight queues and minutes
 thins out; the same boosting idiom, routed through ROCm's high-bandwidth, multi-GPU environment.
 
-Reach for LightGBM when volume is the bottleneck and you still want gradient boosting semantics
+Reach for LightGBM when volume is the bottleneck, and you still want gradient boosting semantics
 with GPU-native backing.
 
 ::::{grid} 2 2 2 2
