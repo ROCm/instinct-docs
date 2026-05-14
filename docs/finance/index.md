@@ -40,7 +40,7 @@ reference, see the [ROCm-Finance documentation](https://rocm.docs.amd.com/projec
 <a href=./lightgbm.html class="card-header-link">
   <h2 class="card-header">LightGBM</h2>
 </a>
-<p class="paragraph"> Leaf-wise training. Strong fit when dataset size drives the bottleneck.
+<p class="paragraph"> Leaf-wise training. Strong fit when sparsity abounds and dataset size drives the bottleneck.
 </p>
 ::::
 
