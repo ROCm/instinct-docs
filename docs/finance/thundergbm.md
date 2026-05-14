@@ -18,7 +18,7 @@ GPU-intensive training runs on [AMD Instinct](https://www.amd.com/en/products/ac
 <a href="https://rocm.docs.amd.com/projects/thundergbm/en/latest/" class="card-header-link">
   <h2 class="card-header">Documentation</h2>
 </a>
-<p class="paragraph"> ThunderGBM on ROCm—component documentation on the ROCm Documentation site.
+<p class="paragraph"> ThunderGBM on ROCm—component documentation is available on the ROCm Documentation site.
 </p>
 :::
 
