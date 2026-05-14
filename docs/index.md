@@ -208,7 +208,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <a href=./finance/lightgbm.html class="card-header-link">
   <h2 class="card-header">LightGBM</h2>
 </a>
-<p class="paragraph"> Leaf-wise training is the way to go. It is a strong fit when dataset size drives the bottleneck.
+<p class="paragraph"> Leaf-wise training is the way to go. LightGBM is a strong fit when sparsity abounds and dataset size drives the bottleneck.
 </p>
 :::
 
