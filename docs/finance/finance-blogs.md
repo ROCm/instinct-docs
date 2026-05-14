@@ -8,7 +8,7 @@ blogs related to all AMD and ROCm products.
 
 :::{grid-item-card}
 :padding: 1
-:img-top: ../images/finance-7.png
+:img-top: ../images/rocm-finance.png
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
