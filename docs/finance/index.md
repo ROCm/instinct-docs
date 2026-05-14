@@ -54,7 +54,7 @@ reference, see the [ROCm-Finance documentation](https://rocm.docs.amd.com/projec
 <a href=./thundergbm.html class="card-header-link">
   <h2 class="card-header">ThunderGBM</h2>
 </a>
-<p class="paragraph"> GPU-oriented boosting for highly parallel, GPU-intensive training and simulation-style runs.
+<p class="paragraph"> GPU-oriented boosting for highly parallel, GPU-intensive training and simulation-style runs on high-dimensional datasets.
 </p>
 ::::
 
