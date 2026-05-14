@@ -3,7 +3,7 @@
 ROCm-Finance pulls the trajectory of tomorrow into today: an open toolkit on the [ROCm](https://rocm.docs.amd.com/) stack that
 delivers GPU-native gradient-boosting stacks that the industry already trusts. XGBoost,
 LightGBM, and ThunderGBM, tuned for [AMD Instinct](https://www.amd.com/en/products/accelerators/instinct.html)
-accelerators, so training, scoring, and scenario work land closer to real time than the CPU-era
+accelerators, so training, scoring, and simulation work land closer to real time than the CPU-era
 baselines could achieve.
 
 ROCm-Finance collapses the distance between signal and decision. The same workloads that once
