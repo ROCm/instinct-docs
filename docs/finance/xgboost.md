@@ -16,7 +16,7 @@ straightforward on-ramp from yesterday's pipelines to tomorrow's throughput.
 <a href="https://rocm.docs.amd.com/projects/xgboost/en/latest/" class="card-header-link">
   <h2 class="card-header">Documentation</h2>
 </a>
-<p class="paragraph"> XGBoost on ROCm—installation, tuning, and API reference on the ROCm Documentation site.
+<p class="paragraph"> XGBoost on ROCm—installation, tuning, and API reference are available on the ROCm Documentation site.
 </p>
 :::
 
