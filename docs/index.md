@@ -264,7 +264,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <a href=./finance/finance-blogs.html class="card-header-link">
   <h2 class="card-header">ROCm-Finance Blogs</h2>
 </a>
-<p class="paragraph"> Browse blogs detailing how to accelerate your finance boost workloads on AMD Instinct GPUs.
+<p class="paragraph"> Browse blogs detailing how to accelerate your finance workloads using gradient boosting on AMD Instinct GPUs.
 </p>
 :::
 
