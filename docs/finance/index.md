@@ -26,7 +26,7 @@ reference, see the [ROCm-Finance documentation](https://rocm.docs.amd.com/projec
 <a href=./xgboost.html class="card-header-link">
   <h2 class="card-header">XGBoost</h2>
 </a>
-<p class="paragraph"> General-purpose GPU gradient boosting. Start here for many finance tabular workflows.
+<p class="paragraph"> General-purpose GPU gradient boosting. Start here for high-performance workloads for data-intensive applications.
 </p>
 ::::
 
