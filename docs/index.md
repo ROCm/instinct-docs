@@ -194,7 +194,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <a href=./finance/xgboost.html class="card-header-link">
   <h2 class="card-header">XGBoost</h2>
 </a>
-<p class="paragraph"> General-purpose GPU gradient boosting. Start here for many finance tabular workflows.
+<p class="paragraph"> General-purpose GPU gradient boosting. Start here for high-performance workloads for data-intensive applications.
 </p>
 :::
 
