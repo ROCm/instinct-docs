@@ -20,7 +20,7 @@ with GPU-native backing.
 <a href="https://rocm.docs.amd.com/projects/lightgbm/en/latest/" class="card-header-link">
   <h2 class="card-header">Documentation</h2>
 </a>
-<p class="paragraph"> Installation instructions, how-to guides, and API reference material are on the ROCm Documentation site.
+<p class="paragraph"> Installation instructions, how-to guides, and API reference material are available on the ROCm Documentation site.
 </p>
 :::
 
