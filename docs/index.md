@@ -222,7 +222,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <a href=./finance/thundergbm.html class="card-header-link">
   <h2 class="card-header">ThunderGBM</h2>
 </a>
-<p class="paragraph"> GPU-oriented boosting for highly parallel, GPU-intensive training and simulation-style runs.
+<p class="paragraph"> GPU-oriented boosting for highly parallel, GPU-intensive training and simulation-style runs on high-dimensional datasets.
 </p>
 :::
 
