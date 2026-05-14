@@ -68,7 +68,7 @@ reference, see the [ROCm-Finance documentation](https://rocm.docs.amd.com/projec
 <a href="https://github.com/ROCm/ROCm-Finance" class="card-header-link">
   <h2 class="card-header">GitHub</h2>
 </a>
-<p class="paragraph"> Source for ROCm-Finance and related packaging on GitHub.
+<p class="paragraph"> Source for all ROCm-Finance libraries on GitHub.
 </p>
 ::::
 
