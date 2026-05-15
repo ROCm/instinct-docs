@@ -7,8 +7,8 @@ accelerators, so training, scoring, and simulation work land closer to real time
 baselines could achieve.
 
 ROCm-Finance collapses the distance between signal and decision. The same workloads that once
-queued overnight now run in minutes. Risk, fraud, forecasting, and simulation pipelines step
-into the high-bandwidth, multi-GPU computing ROCm was built to serve. ROCm-Finance provides production-oriented kernels, memory paths, and scaling behavior so your boosting jobs feel like
+queued overnight now run in minutes. Risk, fraud detection, forecasting, and simulation pipelines step
+into the high-bandwidth GPU computing ROCm was built to serve. ROCm-Finance provides production-oriented kernels, memory paths, and scaling behavior so your boosting jobs feel like
 they arrived from the next generation, even on this week's cluster.
 
 For more information on ROCm-Finance, including comparisons, prerequisites, installation, and deep API
