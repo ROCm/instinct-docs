@@ -64,19 +64,23 @@ def generate_combined_markdown(app, exception):
         return
 
     docs_root = Path(app.srcdir)
-
     output_file = Path(app.outdir) / "llms.txt"
+    base_file = docs_root / "llms.txt"
 
-    print(output_file)
+    combined = []
+
+    if base_file.exists():
+        combined.append(base_file.read_text(encoding="utf-8"))
+    else:
+        combined.append("# AMD Instinct Data Center GPU Documentation\n")
 
     all_files = sorted(docs_root.rglob("*.md"))
 
-    combined = []
-    combined.append("# Combined Documentation\n")
-
     for doc_file in all_files:
-
         if should_skip(doc_file):
+            continue
+
+        if doc_file == base_file:
             continue
 
         relative = doc_file.relative_to(docs_root)
