@@ -1,8 +1,7 @@
 """Configuration file for the Sphinx documentation builder."""
 import os
-from sphinx import addnodes
+import re
 from pathlib import Path
-import shutil
 
 external_projects_remote_repository = ""
 external_projects_current_project = "dcgpu"
@@ -46,16 +45,6 @@ html_css_files = ["index.css"]
 external_toc_path = "./sphinx/_toc.yml"
 
 exclude_patterns = ['.venv']
-
-EXCLUDED_DIRS = {
-    "_build",
-    "_templates",
-    "_static",
-    ".git",
-    ".venv",
-}
-
-import re
 
 EXCLUDED_DIRS = {
     "_build",
