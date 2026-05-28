@@ -161,10 +161,17 @@ def generate_combined_markdown(app, exception):
             continue
 
         relative = doc_file.relative_to(docs_root)
-        cleaned = "\n".join(
-            line for line in lines
-            if line.strip() == "" or is_prose_line(line)
-        )
+        in_code_block = False
+        kept = []
+        for line in lines:
+            if line.strip().startswith("```"):
+                in_code_block = not in_code_block
+                kept.append(line)
+            elif in_code_block:
+                kept.append(line)
+            elif line.strip() == "" or is_prose_line(line):
+                kept.append(line)
+        cleaned = "\n".join(kept)
 
         combined.append(f"\n\n---\n\n# {relative}\n")
         combined.append(cleaned.strip())

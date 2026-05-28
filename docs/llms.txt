@@ -14,8 +14,8 @@
 
 ### Bare metal
 
-- [Instinct GPU Driver](https://instinct.docs.amd.com/projects/amdgpu-docs/en/latest/): Install and configure the AMD GPU driver. Covers logging and error codes.
-- [Instinct Customer Acceptance Guide](https://instinct.docs.amd.com/projects/system-acceptance/en/latest/): Configure, validate, benchmark, and baseline AMD Instinct GPUs.
+- [AMD GPU Driver (amdgpu)](https://instinct.docs.amd.com/projects/amdgpu-docs/en/latest/): Install and configure the AMD GPU driver. Covers logging and error codes.
+- [AMD Instinct Customer Acceptance Guide](https://instinct.docs.amd.com/projects/system-acceptance/en/latest/): Configure, validate, benchmark, and baseline AMD Instinct GPUs.
 - [AMD SMI](https://rocm.docs.amd.com/projects/amdsmi/en/latest/): System management interface for monitoring and managing AMD GPUs.
 - [ROCm Validation Suite](https://rocm.docs.amd.com/projects/ROCmValidationSuite/en/latest/): System validation and diagnostics.
 - [Cluster Validation Suite](https://rocm.docs.amd.com/projects/cvs/en/latest/): Test scripts to validate AMD AI clusters.
@@ -34,11 +34,11 @@
 
 ### Cloud
 
-- [Instinct on Azure](https://instinct.docs.amd.com/projects/instinct-azure/latest/): Get started with AMD Instinct on Microsoft Azure.
+- [AMD Instinct GPUs on Azure](https://instinct.docs.amd.com/projects/instinct-azure/latest/): Get started with AMD Instinct on Microsoft Azure.
 
 ### Virtualization
 
-- [Instinct Virtualization Driver](https://instinct.docs.amd.com/projects/virt-drv/en/latest/): Virtualization driver for AMD Instinct GPUs.
+- [AMD Instinct Virtualization Driver](https://instinct.docs.amd.com/projects/virt-drv/en/latest/): Virtualization driver for AMD Instinct GPUs.
 - [AMD SMI for Virtualization](https://instinct.docs.amd.com/projects/amd-smi-virt/en/latest/): Manage and monitor AMD virtualization-enabled GPUs.
 
 ## Workloads
