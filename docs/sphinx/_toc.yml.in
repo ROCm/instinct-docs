@@ -74,16 +74,6 @@ subtrees:
         - entries:
           - url: https://instinct.docs.amd.com/projects/amdgpu-docs/en/latest/
             title: AMD GPU Driver
-          - url: https://rocm.docs.amd.com/projects/amdsmi/en/latest/
-            title: AMD-SMI
-          - url: https://rocm.docs.amd.com/projects/cvs/en/latest/index.html
-            title: Cluster Validation Suite                             
-          - url: https://rocm.blogs.amd.com/software-tools-optimization/compute-memory-modes/README.html
-            title: GPU Partitioning
-          - url: https://instinct.docs.amd.com/projects/system-acceptance/en/latest/
-            title: Instinct Customer Acceptance Guide                                  
-          - url: https://rocm.docs.amd.com/projects/ROCmValidationSuite/en/latest/ 
-            title: ROCm Validatation Suite
     - file: system-admin/co-tools.md
       title: Containers and Orchestration Tools
       subtrees:
@@ -102,12 +92,10 @@ subtrees:
       title: Cluster
       subtrees:
         - entries:
-          - url: https://account.amd.com/en/forms/registration/enterpriseai-ea.html
-            title: Enterprise AI
+          - url: https://instinct.docs.amd.com/projects/system-acceptance/en/latest/
+            title: Instinct Customer Acceptance Guide                                  
           - url: https://instinct.docs.amd.com/projects/gpu-cluster-networking/en/latest/
             title: Networking                                                                      
-          - url: https://amdresearch.github.io/omnistat/
-            title: Omnistat
     - file: system-admin/cloud.md
       title: Cloud
       subtrees:
@@ -122,52 +110,72 @@ subtrees:
             title: Virtualization Driver
           - url: https://instinct.docs.amd.com/projects/amd-smi-virt/en/latest/
             title: AMD SMI Documentation
-        
-- caption: Common Reference
-  entries:
-    - url: https://rocm.docs.amd.com/projects/HIP/en/latest/
-      title: HIP C++ 
-    - url: https://rocm.docs.amd.com/projects/amdsmi/en/latest/
-      title: AMD-SMI   
-    - file: gpu-arch/gpu-arch.md
-      title: GPU architecture  
-      subtrees:
-      - entries:
-        - file: gpu-arch/mi350.md
-          title: MI350 microarchitecture
-          subtrees:
-          - entries:
-            - url: https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/instruction-set-architectures/amd-instinct-cdna4-instruction-set-architecture.pdf
-              title: AMD Instinct MI350/CDNA4 ISA
-            - url: https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/white-papers/amd-cdna-4-architecture-whitepaper.pdf
-              title: White paper
-        - file: gpu-arch/mi300.md
-          title: MI300 microarchitecture
-          subtrees:
-          - entries:
-            - url: https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/instruction-set-architectures/amd-instinct-mi300-cdna3-instruction-set-architecture.pdf
-              title: AMD Instinct MI300/CDNA3 ISA
-            - url: https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/white-papers/amd-cdna-3-white-paper.pdf
-              title: White paper
-            - file: gpu-arch/mi300-mi200-performance-counters.rst
-              title: MI300 and MI200 Performance counter
-        - file: gpu-arch/mi250.md
-          title: MI250 microarchitecture
-          subtrees:
-          - entries:
-            - url: https://www.amd.com/system/files/TechDocs/instinct-mi200-cdna2-instruction-set-architecture.pdf
-              title: AMD Instinct MI200/CDNA2 ISA
-            - url: https://www.amd.com/content/dam/amd/en/documents/instinct-business-docs/white-papers/amd-cdna2-white-paper.pdf
-              title: White paper
-        - file: gpu-arch/mi100.md
-          title: MI100 microarchitecture
-          subtrees:
-          - entries:
-            - url: https://www.amd.com/system/files/TechDocs/instinct-mi100-cdna1-shader-instruction-set-architecture%C2%A0.pdf
-              title: AMD Instinct MI100/CDNA1 ISA
-            - url: https://www.amd.com/content/dam/amd/en/documents/instinct-business-docs/white-papers/amd-cdna-white-paper.pdf
-              title: White paper 
-    - url: https://rocm.docs.amd.com/projects/llvm-project/en/latest/conceptual/openmp.html
-      title: OpenMP
 
-     
+- caption: Resources
+  entries:
+    - file: resources/index.md
+      title: Tools
+      subtrees:
+        - entries:
+          - url: https://account.amd.com/en/forms/registration/enterpriseai-ea.html
+            title: Enterprise AI
+          - url: https://amdresearch.github.io/omnistat/
+            title: Omnistat
+          - url: https://rocm.docs.amd.com/projects/cvs/en/latest/index.html
+            title: Cluster Validation Suite
+          - url: https://rocm.docs.amd.com/projects/amdsmi/en/latest/
+            title: AMD SMI
+          - url: https://rocm.docs.amd.com/projects/ROCmValidationSuite/en/latest/
+            title: ROCmValidationSuite
+    - file: resources/common-reference.md
+      title: Common Reference
+      subtrees:
+        - entries:
+          - url: https://rocm.blogs.amd.com/software-tools-optimization/compute-memory-modes/README.html
+            title: GPU Partitioning
+          - file: gpu-arch/gpu-arch.md
+            title: Instinct Micro-architecture
+            subtrees:
+            - entries:
+              - file: gpu-arch/mi350.md
+                title: MI350 microarchitecture
+                subtrees:
+                - entries:
+                  - url: https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/instruction-set-architectures/amd-instinct-cdna4-instruction-set-architecture.pdf
+                    title: AMD Instinct MI350/CDNA4 ISA
+                  - url: https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/white-papers/amd-cdna-4-architecture-whitepaper.pdf
+                    title: White paper
+              - file: gpu-arch/mi300.md
+                title: MI300 microarchitecture
+                subtrees:
+                - entries:
+                  - url: https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/instruction-set-architectures/amd-instinct-mi300-cdna3-instruction-set-architecture.pdf
+                    title: AMD Instinct MI300/CDNA3 ISA
+                  - url: https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/white-papers/amd-cdna-3-white-paper.pdf
+                    title: White paper
+                  - file: gpu-arch/mi300-mi200-performance-counters.rst
+                    title: MI300 and MI200 Performance counter
+              - file: gpu-arch/mi250.md
+                title: MI250 microarchitecture
+                subtrees:
+                - entries:
+                  - url: https://www.amd.com/system/files/TechDocs/instinct-mi200-cdna2-instruction-set-architecture.pdf
+                    title: AMD Instinct MI200/CDNA2 ISA
+                  - url: https://www.amd.com/content/dam/amd/en/documents/instinct-business-docs/white-papers/amd-cdna2-white-paper.pdf
+                    title: White paper
+              - file: gpu-arch/mi100.md
+                title: MI100 microarchitecture
+                subtrees:
+                - entries:
+                  - url: https://www.amd.com/system/files/TechDocs/instinct-mi100-cdna1-shader-instruction-set-architecture%C2%A0.pdf
+                    title: AMD Instinct MI100/CDNA1 ISA
+                  - url: https://www.amd.com/content/dam/amd/en/documents/instinct-business-docs/white-papers/amd-cdna-white-paper.pdf
+                    title: White paper
+          - url: https://rocm.docs.amd.com/projects/amdsmi/en/latest/index.html
+            title: AMD SMI API Doc
+          - url: https://rocm.docs.amd.com/projects/HIP/en/latest/index.html
+            title: HIP C++
+          - url: https://rocm.docs.amd.com/projects/llvm-project/en/latest/conceptual/openmp.html
+            title: OpenMP
+          - url: https://docs.amd.com/v/u/en-US/ug1729-amd-instinct-accelerators
+            title: AMD Technical Information Portal

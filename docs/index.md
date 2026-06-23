@@ -465,71 +465,6 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 <p class="paragraph">Install and configure the GPU. Learn about logging including error codes.</p>
 :::
 
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/System-Administrators-Bare-Metal-AMD-GPU-Partitioning.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://rocm.blogs.amd.com/software-tools-optimization/compute-memory-modes/README.html" class="card-header-link">
-  <h2 class="card-header">GPU Partitioning</h2>
-</a>
-<p class="paragraph">Learn how to split the compute units and memory to partition a GPU.</p>
-:::
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/System-Administrators-Bare-Metal-AMD-AMD-SMI.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://rocm.docs.amd.com/projects/amdsmi/en/latest/" class="card-header-link">
-  <h2 class="card-header">AMD SMI</h2>
-</a>
-<p class="paragraph">The AMD System Management Interface (AMD SMI) library offers a unified tool for managing and monitoring GPUs, particularly in high-performance computing environments. It provides a user-space interface that allows applications to control GPU operations, monitor performance, and retrieve information about the system’s drivers and GPUs.</p>
-:::
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/System-Administrators-Bare-Metal-AMD-Tools.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://rocm.docs.amd.com/projects/ROCmValidationSuite/en/latest/" class="card-header-link">
-  <h2 class="card-header">ROCmValidationSuite</h2>
-</a>
-<p class="paragraph">System validation and diagnosis</p>
-:::
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/system-acceptance.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://instinct.docs.amd.com/projects/system-acceptance/en/latest/" class="card-header-link">
-  <h2 class="card-header">Instinct Customer Acceptance Guide</h2>
-</a>
-<p class="paragraph">Comprehensive guide for configuring, validating, benchmarking, and baselining AMD Instinct™ GPUs.</p>
-:::
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/gpu-operator.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://rocm.docs.amd.com/projects/cvs/en/latest/index.html" class="card-header-link">
-  <h2 class="card-header">Cluster Validation Suite</h2>
-</a>
-<p class="paragraph">CVS is a collection of test scripts that validate AMD AI clusters.</p>
-:::
-
 ::::
 
 :::::
@@ -613,28 +548,15 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 :::{grid-item-card}
 :padding: 1
-:img-top: ./images/enterpriseAI.png
+:img-top: ./images/system-acceptance.jpg
 :class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="https://account.amd.com/en/forms/registration/enterpriseai-ea.html" class="card-header-link">
-  <h2 class="card-header">Enterprise AI</h2>
+<a href="https://instinct.docs.amd.com/projects/system-acceptance/en/latest/" class="card-header-link">
+  <h2 class="card-header">Instinct Customer Acceptance Guide</h2>
 </a>
-<p class="paragraph">Tools to help enterprise customers address the growing need for AI infrastructure management.</p>
-:::
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/omnistat.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://amdresearch.github.io/omnistat/" class="card-header-link">
-  <h2 class="card-header">Omnistat</h2>
-</a>
-<p class="paragraph">Profile across the cluster.</p>
+<p class="paragraph">Comprehensive guide for configuring, validating, benchmarking, and baselining AMD Instinct™ GPUs.</p>
 :::
 
 :::{grid-item-card}
@@ -645,9 +567,22 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :class: small-sd-card
 +++
 <a href="https://instinct.docs.amd.com/projects/gpu-cluster-networking/en/latest/" class="card-header-link">
-  <h2 class="card-header">Cluster Networking</h2>
+  <h2 class="card-header">Cluster Networking Guide</h2>
 </a>
 <p class="paragraph">Optimize the network for Instinct GPU applications </p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/mi3xx-reference.png
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://instinct.docs.amd.com/projects/mi3xx-reference/en/latest/overview.html" class="card-header-link">
+  <h2 class="card-header">MI3XX Reference Design</h2>
+</a>
+<p class="paragraph">Reference design materials and topology examples for the AMD Instinct MI3XX platform.</p>
 :::
 
 ::::
@@ -713,12 +648,89 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 
 ::::::::::
 
-::::::::::{dropdown} Common Reference
+::::::::::{dropdown} Resources
 :open:
 
-::::::{grid} 2 2 3 4
+::::::::{tab-set}
 
-:::::{grid-item-card}
+:::::{tab-item} Tools
+
+::::{grid} 2 2 3 4
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/enterpriseAI.png
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://account.amd.com/en/forms/registration/enterpriseai-ea.html" class="card-header-link">
+  <h2 class="card-header">Enterprise AI</h2>
+</a>
+<p class="paragraph">Tools to help enterprise customers address the growing need for AI infrastructure management.</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/omnistat.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://rocm.github.io/omnistat/" class="card-header-link">
+  <h2 class="card-header">Omnistat</h2>
+</a>
+<p class="paragraph">Profile across the cluster.</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/gpu-operator.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://rocm.docs.amd.com/projects/cvs/en/latest/index.html" class="card-header-link">
+  <h2 class="card-header">Cluster Validation Suite</h2>
+</a>
+<p class="paragraph">CVS is a collection of test scripts that validate AMD AI clusters.</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/System-Administrators-Bare-Metal-AMD-AMD-SMI.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://rocm.docs.amd.com/projects/amdsmi/en/latest/" class="card-header-link">
+  <h2 class="card-header">AMD SMI</h2>
+</a>
+<p class="paragraph">The AMD System Management Interface (AMD SMI) library offers a unified tool for managing and monitoring GPUs, particularly in high-performance computing environments. It provides a user-space interface that allows applications to control GPU operations, monitor performance, and retrieve information about the system’s drivers and GPUs.</p>
+:::
+
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/System-Administrators-Bare-Metal-AMD-Tools.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://rocm.docs.amd.com/projects/ROCmValidationSuite/en/latest/" class="card-header-link">
+  <h2 class="card-header">ROCmValidationSuite</h2>
+</a>
+<p class="paragraph">System validation and diagnosis</p>
+:::
+
+::::
+
+:::::
+
+:::::{tab-item} Common Reference
+
+::::{grid} 2 2 3 4
+
+:::{grid-item-card}
 :padding: 1
 :img-top: ./images/instinct-microarchitecture.jpg
 :class-img-top: small-sd-card-img-top
@@ -729,9 +741,9 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
   <h2 class="card-header">Instinct Micro-architecture</h2>
 </a>
 <p class="paragraph">Review hardware aspects of the AMD Instinct™ MI350, MI300, MI200 and MI100 series of GPU accelerators.</p>
-:::::
+:::
 
-:::::{grid-item-card}
+:::{grid-item-card}
 :padding: 1
 :img-top: ./images/AMD-SMI-API-doc.jpg
 :class-img-top: small-sd-card-img-top
@@ -742,9 +754,22 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
   <h2 class="card-header">AMD SMI API Doc</h2>
 </a>
 <p class="paragraph">AMD SMI documentation covering all use cases.</p>
-:::::
+:::
 
-:::::{grid-item-card}
+:::{grid-item-card}
+:padding: 1
+:img-top: ./images/System-Administrators-Bare-Metal-AMD-GPU-Partitioning.jpg
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://rocm.blogs.amd.com/software-tools-optimization/compute-memory-modes/README.html" class="card-header-link">
+  <h2 class="card-header">GPU Partitioning</h2>
+</a>
+<p class="paragraph">Learn how to split the compute units and memory to partition a GPU.</p>
+:::
+
+:::{grid-item-card}
 :padding: 1
 :img-top: ./images/hipcpp.jpg
 :class-img-top: small-sd-card-img-top
@@ -755,9 +780,9 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
   <h2 class="card-header">HIP C++</h2>
 </a>
 <p class="paragraph">Learn about HIP programming model.</p>
-:::::
+:::
 
-:::::{grid-item-card}
+:::{grid-item-card}
 :padding: 1
 :img-top: ./images/virtualization_image.jpg
 :class-img-top: small-sd-card-img-top
@@ -768,9 +793,9 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
   <h2 class="card-header">OpenMP</h2>
 </a>
 <p class="paragraph">Explore the OpenMP programming model.</p>
-:::::
+:::
 
-:::::{grid-item-card}
+:::{grid-item-card}
 :padding: 1
 :img-top: ./images/secure-docs.png
 :class-img-top: small-sd-card-img-top
@@ -782,8 +807,12 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 </a>
 <p class="paragraph"> Additional NDA technical documentation, software, and design collateral for AMD Instinct products;
 Login Required </p>
+:::
+
+::::
+
 :::::
 
-::::::
+::::::::
 
 ::::::::::

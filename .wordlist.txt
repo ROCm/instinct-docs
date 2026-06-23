@@ -69,3 +69,4 @@ gsplat
 Gaussians
 rasterization
 DGS
+DeepSeek
