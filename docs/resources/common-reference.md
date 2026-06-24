@@ -1,8 +1,5 @@
 # Common Reference
 
-::::::::::{dropdown} Common Reference
-:open:
-
 ::::::{grid} 2 2 3 4
 
 :::::{grid-item-card}
@@ -25,23 +22,10 @@
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href=./gpu-arch/gpu-arch.html class="card-header-link">
+<a href="../gpu-arch/gpu-arch.html" class="card-header-link">
   <h2 class="card-header">Instinct Micro-architecture</h2>
 </a>
 <p class="paragraph">Review hardware aspects of the AMD Instinct™ MI350, MI300, MI200 and MI100 series of GPU accelerators.</p>
-:::::
-
-:::::{grid-item-card}
-:padding: 1
-:img-top: ../images/AMD-SMI-API-doc.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://rocm.docs.amd.com/projects/amdsmi/en/latest/index.html" class="card-header-link">
-  <h2 class="card-header">AMD SMI API Doc</h2>
-</a>
-<p class="paragraph">AMD SMI documentation covering all use cases.</p>
 :::::
 
 :::::{grid-item-card}

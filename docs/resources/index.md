@@ -1,7 +1,4 @@
-# Resources
-
-::::::::::{dropdown} Tools
-:open:
+# Tools
 
 ::::{grid} 2 2 3 4
 

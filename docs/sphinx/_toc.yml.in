@@ -3,7 +3,6 @@ subtrees:
 
 - caption: Industries/Verticals
   entries:
-                   
     - file: vision/index.md
       title: Computer Vision
       subtrees:
@@ -48,7 +47,7 @@ subtrees:
           - file: finance/thundergbm.md
             title: ThunderGBM
     - file: isv-apps/index.md
-      title: Simulation & Modeling Apps        
+      title: Simulation & Modeling Apps
       subtrees:
         - entries:
           - file: isv-apps/ansys-fluent.md
@@ -87,15 +86,15 @@ subtrees:
           - url: https://instinct.docs.amd.com/projects/device-metrics-exporter/en/latest/
             title: Device Metrics Exporter
           - url: https://instinct.docs.amd.com/projects/container-toolkit/en/latest/
-            title: AMD Container Toolkit                  
+            title: AMD Container Toolkit
     - file: system-admin/cluster.md
       title: Cluster
       subtrees:
         - entries:
           - url: https://instinct.docs.amd.com/projects/system-acceptance/en/latest/
-            title: Instinct Customer Acceptance Guide                                  
+            title: Instinct Customer Acceptance Guide
           - url: https://instinct.docs.amd.com/projects/gpu-cluster-networking/en/latest/
-            title: Networking                                                                      
+            title: Networking
     - file: system-admin/cloud.md
       title: Cloud
       subtrees:
@@ -121,7 +120,7 @@ subtrees:
             title: Enterprise AI
           - url: https://amdresearch.github.io/omnistat/
             title: Omnistat
-          - url: https://rocm.docs.amd.com/projects/cvs/en/latest/index.html
+          - url: https://rocm.github.io/omnistat/
             title: Cluster Validation Suite
           - url: https://rocm.docs.amd.com/projects/amdsmi/en/latest/
             title: AMD SMI
