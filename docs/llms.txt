@@ -1,0 +1,83 @@
+# AMD Instinct Data Center GPU Documentation
+
+> Comprehensive guides and technical documentation for deploying AMD Instinct Data Center GPUs in enterprise environments. Covers system administration, cluster management, monitoring, and operational best practices for HPC and AI workloads. For API documentation and the ROCm software stack, see https://rocm.docs.amd.com.
+
+## GPU architecture
+
+- [AMD Instinct GPU architecture overview](https://instinct.docs.amd.com/en/latest/gpu-arch/gpu-arch.html): Microarchitecture overview of AMD Instinct MI350, MI300, MI250, and MI100 GPU accelerators.
+- [AMD Instinct MI350](https://instinct.docs.amd.com/en/latest/gpu-arch/mi350.html): Architecture and specifications for the MI350 series.
+- [AMD Instinct MI300](https://instinct.docs.amd.com/en/latest/gpu-arch/mi300.html): Architecture and specifications for the MI300 series, including MI300X and MI300A.
+- [AMD Instinct MI250](https://instinct.docs.amd.com/en/latest/gpu-arch/mi250.html): Architecture and specifications for the MI250 series.
+- [AMD Instinct MI100](https://instinct.docs.amd.com/en/latest/gpu-arch/mi100.html): Architecture and specifications for the MI100 series.
+
+## System administration
+
+### Bare metal
+
+- [AMD GPU Driver (amdgpu)](https://instinct.docs.amd.com/projects/amdgpu-docs/en/latest/): Install and configure the AMD GPU driver. Covers logging and error codes.
+- [AMD Instinct Customer Acceptance Guide](https://instinct.docs.amd.com/projects/system-acceptance/en/latest/): Configure, validate, benchmark, and baseline AMD Instinct GPUs.
+- [AMD SMI](https://rocm.docs.amd.com/projects/amdsmi/en/latest/): System management interface for monitoring and managing AMD GPUs.
+- [ROCm Validation Suite](https://rocm.docs.amd.com/projects/ROCmValidationSuite/en/latest/): System validation and diagnostics.
+- [Cluster Validation Suite](https://rocm.docs.amd.com/projects/cvs/en/latest/): Test scripts to validate AMD AI clusters.
+
+### Containers and orchestration
+
+- [AMD GPU Operator](https://instinct.docs.amd.com/projects/gpu-operator/en/latest/): Deploy and manage AMD Instinct GPUs within Kubernetes clusters.
+- [Network Operator](https://instinct.docs.amd.com/projects/network-operator/en/main/): Use AMD AINICs in Kubernetes environments.
+- [Kubernetes Device Plugin](https://instinct.docs.amd.com/projects/k8s-device-plugin/en/latest/): Register AMD GPUs to Kubernetes container clusters.
+- [Device Metrics Exporter](https://instinct.docs.amd.com/projects/device-metrics-exporter/en/latest/): Prometheus-format GPU metrics collection.
+- [AMD Container Toolkit](https://instinct.docs.amd.com/projects/container-toolkit/en/latest/): Integrate AMD Instinct GPUs with Docker.
+
+### Cluster management
+
+- [Cluster Networking](https://instinct.docs.amd.com/projects/gpu-cluster-networking/en/latest/): Optimize networking for Instinct GPU applications.
+
+### Cloud
+
+- [AMD Instinct GPUs on Azure](https://instinct.docs.amd.com/projects/instinct-azure/latest/): Get started with AMD Instinct on Microsoft Azure.
+
+### Virtualization
+
+- [AMD Instinct Virtualization Driver](https://instinct.docs.amd.com/projects/virt-drv/en/latest/): Virtualization driver for AMD Instinct GPUs.
+- [AMD SMI for Virtualization](https://instinct.docs.amd.com/projects/amd-smi-virt/en/latest/): Manage and monitor AMD virtualization-enabled GPUs.
+
+## Workloads
+
+### Computer vision
+
+- [Models and applications](https://instinct.docs.amd.com/en/latest/vision/ai.html): Design, train, and infer computer vision models on AMD Instinct GPUs.
+- [Image and video decoding](https://instinct.docs.amd.com/en/latest/vision/decode.html): Decode image and video formats using AMD Instinct GPUs.
+- [Image processing](https://instinct.docs.amd.com/en/latest/vision/preprocess.html): Eliminate image preprocessing bottlenecks with AMD Instinct GPUs.
+
+### Data science
+
+- [ROCm Data Science Toolkit (ROCm-DS)](https://instinct.docs.amd.com/en/latest/data-science/index.html): Accelerate data science workloads on AMD Instinct GPUs.
+- [hipDF](https://instinct.docs.amd.com/en/latest/data-science/hipDF.html): GPU-accelerated DataFrames for data manipulation and analysis.
+- [hipGRAPH](https://instinct.docs.amd.com/en/latest/data-science/hipGRAPH.html): Create and analyze graphs and complex networks on AMD Instinct GPUs.
+- [hipVS](https://instinct.docs.amd.com/en/latest/data-science/hipVS.html): Vector search operations on AMD Instinct GPUs.
+- [hipMM](https://instinct.docs.amd.com/en/latest/data-science/hipMM.html): Advanced memory management for ROCm-DS libraries.
+- [hipRAFT](https://instinct.docs.amd.com/en/latest/data-science/hipRAFT.html): Fundamental algorithms and primitives for ROCm-DS libraries.
+
+### Life science
+
+- [ROCm Toolkit for Life Science (ROCm-LS)](https://instinct.docs.amd.com/en/latest/life-science/index.html): Accelerate life science workloads on AMD Instinct GPUs.
+- [hipCIM](https://instinct.docs.amd.com/en/latest/life-science/hipCIM.html): N-dimensional image processing for medical imaging on AMD Instinct GPUs.
+- [MONAI](https://instinct.docs.amd.com/en/latest/life-science/MONAI.html): Train and deploy AI models for medical imaging on AMD Instinct GPUs.
+
+## ISV applications
+
+- [Ansys Fluent](https://instinct.docs.amd.com/en/latest/isv-apps/ansys-fluent.html): Computational fluid dynamics with AMD GPU acceleration.
+- [Ansys Mechanical](https://instinct.docs.amd.com/en/latest/isv-apps/ansys-mechanical.html): Structural simulation on AMD Instinct GPUs.
+- [Cadence Fidelity LES Solver](https://instinct.docs.amd.com/en/latest/isv-apps/cadence-fidelity.html): Computational fluid dynamics on AMD Instinct GPUs.
+- [Devito Codes DevitoPRO](https://instinct.docs.amd.com/en/latest/isv-apps/devito.html): Seismic imaging on AMD Instinct GPUs.
+- [Siemens Simcenter STAR-CCM+](https://instinct.docs.amd.com/en/latest/isv-apps/siemens.html): Multiphysics CFD simulation on AMD Instinct GPUs.
+- [Stone Ridge Technology ECHELON](https://instinct.docs.amd.com/en/latest/isv-apps/stone-ridge.html): Reservoir simulation on AMD Instinct GPUs.
+- [GSplat](https://instinct.docs.amd.com/en/latest/simulation/gsplat.html): Gaussian splatting on AMD Instinct MI300X.
+
+## Programming reference
+
+- [HIP C++](https://rocm.docs.amd.com/projects/HIP/en/latest/): HIP programming model and API for AMD GPUs.
+- [OpenMP](https://rocm.docs.amd.com/projects/llvm-project/en/latest/conceptual/openmp.html): OpenMP programming model for AMD GPUs.
+- [AMD SMI API](https://rocm.docs.amd.com/projects/amdsmi/en/latest/): Full AMD SMI API reference.
+
+---
