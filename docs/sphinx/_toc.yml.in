@@ -120,7 +120,7 @@ subtrees:
             title: Enterprise AI
           - url: https://amdresearch.github.io/omnistat/
             title: Omnistat
-          - url: https://rocm.github.io/omnistat/
+          - url: https://rocm.docs.amd.com/projects/cvs/en/latest/index.html
             title: Cluster Validation Suite
           - url: https://rocm.docs.amd.com/projects/amdsmi/en/latest/
             title: AMD SMI
