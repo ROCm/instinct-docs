@@ -579,7 +579,7 @@ The AMD Instinct Documentation site provides comprehensive guides and technical 
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="https://instinct.docs.amd.com/projects/MI3XX-reference/latest/overview.html" class="card-header-link">
+<a href="https://instinct.docs.amd.com/projects/MI3XX-reference/latest/index.html" class="card-header-link">
   <h2 class="card-header">MI3XX Reference Design</h2>
 </a>
 <p class="paragraph">Reference design materials and topology examples for the AMD Instinct MI3XX platform.</p>
