@@ -266,6 +266,36 @@ def generate_combined_markdown(app, exception):
         encoding="utf-8",
     )
 
+# Pages (by docname) whose primary (left) sidebar should be collapsed by default.
+# #pst-primary-sidebar-checkbox restores the sidebar.
+
+COLLAPSE_PRIMARY_SIDEBAR = {"system-admin/cluster"}
+
+_COLLAPSE_SIDEBAR_STYLE = """
+<style id="default-collapsed-primary-sidebar">
+  html .bd-container .bd-sidebar-primary {
+    margin-left: -20%;
+    opacity: 0;
+    visibility: hidden;
+  }
+  html body #pst-primary-sidebar-checkbox:checked ~ .bd-container .bd-sidebar-primary {
+    margin-left: 0;
+    opacity: 1;
+    visibility: visible;
+  }
+  html body .prev-next-footer {
+    display: none;
+  }
+</style>
+"""
+
+
+def collapse_primary_sidebar(app, pagename, templatename, context, doctree):
+    if pagename in COLLAPSE_PRIMARY_SIDEBAR:
+        context["metatags"] = context.get("metatags", "") + _COLLAPSE_SIDEBAR_STYLE
+
+
 def setup(app):
     app.add_css_file("css/index.css")
+    app.connect("html-page-context", collapse_primary_sidebar)
     app.connect("build-finished", generate_combined_markdown)

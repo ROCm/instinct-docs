@@ -95,6 +95,8 @@ subtrees:
             title: Instinct Customer Acceptance Guide
           - url: https://instinct.docs.amd.com/projects/gpu-cluster-networking/en/latest/
             title: Networking
+          - url: https://instinct.docs.amd.com/projects/MI3XX-reference/latest/overview.html
+            title: MI3XX Reference Design
     - file: system-admin/cloud.md
       title: Cloud
       subtrees:

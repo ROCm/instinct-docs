@@ -1,4 +1,4 @@
-# Cluster
+# Cluster Networking and Design Hub
 
 ## System and Design Guides
 
