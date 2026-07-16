@@ -26,6 +26,9 @@ html_theme = "rocm_docs_theme"
 html_theme_options = {
     "flavor": "instinct",
     "link_main_doc": True,
+    "repository_url": "https://github.com/rocm/instinct-docs",
+    "use_repository_button": True,
+    "use_issues_button": True,
     "use_download_button": True,
     "nav_secondary_items": {
         "Community": "https://github.com/ROCm/ROCm/discussions",
