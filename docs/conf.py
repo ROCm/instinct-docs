@@ -25,7 +25,7 @@ html_copy_source = True
 html_theme = "rocm_docs_theme"
 html_theme_options = {
     "flavor": "instinct",
-    "link_main_doc": True,
+    "link_main_doc": False,
     "repository_url": "https://github.com/rocm/instinct-docs",
     "use_repository_button": True,
     "use_issues_button": True,
@@ -38,6 +38,7 @@ html_theme_options = {
     },
     # Add any additional theme options here
 }
+html_title = "Systems and Infrastructure"
 extensions = ["rocm_docs"]
 
 html_static_path = ['_static', 'images']
