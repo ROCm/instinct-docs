@@ -23,6 +23,20 @@ products.
 </p>
 :::
 
+:::{grid-item-card}
+:padding: 1
+:img-top: "https://www.amd.com/content/dam/amd/en/images/blogs/designs/5160000-woman-in-a-workstation-blog.jpg"
+:class-img-top: small-sd-card-img-top
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://www.amd.com/en/blogs/2026/supercharging-genomics-alignment-with-amd-instinct-gpus.html">
+  <h2 class="card-header">Supercharging Genomics Alignment with AMD Instinct™ GPUs</h2>
+</a>
+<p class="paragraph"> Bringing minimap2 DNA/RNA alignment closer to production-scale sequencing analysis with ROCm and HIP.
+</p>
+:::
+
 ::::
 
 :::::
