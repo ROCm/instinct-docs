@@ -71,3 +71,4 @@ rasterization
 DGS
 DeepSeek
 DriveNets
+minimap
