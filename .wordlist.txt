@@ -72,3 +72,6 @@ DGS
 DeepSeek
 DriveNets
 minimap
+FFI
+Slurm's
+WireGuard
