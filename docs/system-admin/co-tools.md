@@ -67,4 +67,15 @@
 <p class="paragraph">The AMD Container Toolkit enables seamless integration of AMD Instinct GPUs with Docker, offering streamlined GPU access, enhanced container runtime support, and optimized performance for ML and HPC workloads.</p>
 :::
 
+:::{grid-item-card}
+:padding: 1
+:class-body: small-sd-card
+:class: small-sd-card
++++
+<a href="https://instinct.docs.amd.com/projects/spur/en/latest/" class="card-header-link">
+  <h2 class="card-header">Spur</h2>
+</a>
+<p class="paragraph">An AI-native job scheduler written in Rust. Drop-in compatible with Slurm's CLI, REST API, and C FFI — with WireGuard mesh networking, GPU-first scheduling, and Raft-based state that survives restarts.</p>
+:::
+
 ::::

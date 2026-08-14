@@ -87,6 +87,8 @@ subtrees:
             title: Device Metrics Exporter
           - url: https://instinct.docs.amd.com/projects/container-toolkit/en/latest/
             title: AMD Container Toolkit
+          - url: https://instinct.docs.amd.com/projects/spur/en/latest/
+            title: Spur
     - file: system-admin/cluster.md
       title: Cluster
       subtrees:
