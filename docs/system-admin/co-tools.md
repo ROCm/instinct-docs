@@ -69,6 +69,8 @@
 
 :::{grid-item-card}
 :padding: 1
+:img-top: ./images/telemetry.jpg
+:class-img-top: small-sd-card-img-top
 :class-body: small-sd-card
 :class: small-sd-card
 +++
