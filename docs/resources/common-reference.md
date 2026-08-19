@@ -22,7 +22,7 @@
 :class-body: small-sd-card
 :class: small-sd-card
 +++
-<a href="../gpu-arch/gpu-arch.html" class="card-header-link">
+<a href="https://rocm.docs.amd.com/en/latest/reference/gpu-arch/index.html" class="card-header-link">
   <h2 class="card-header">Instinct Micro-architecture</h2>
 </a>
 <p class="paragraph">Review hardware aspects of the AMD Instinct™ MI350, MI300, MI200 and MI100 series of GPU accelerators.</p>
