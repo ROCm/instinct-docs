@@ -37,7 +37,7 @@ html_theme_options = {
     # Add any additional theme options here
 }
 html_title = "Systems and Infrastructure"
-extensions = ["rocm_docs"]
+extensions = ["rocm_docs", "sphinx_reredirects"]
 
 html_static_path = ['_static', 'images']
 
@@ -47,6 +47,19 @@ html_css_files = ["index.css"]
 external_toc_path = "./sphinx/_toc.yml"
 
 exclude_patterns = ['.venv']
+
+# Redirects for pages removed in favor of the canonical ROCm-hosted docs.
+# sphinx-reredirects generates a static meta-refresh/JS redirect file at each
+# old docname's build path, so old bookmarks/links land on the live page
+# instead of 404ing.
+redirects = {
+    "gpu-arch/gpu-arch": "https://rocm.docs.amd.com/en/latest/reference/gpu-arch/index.html",
+    "gpu-arch/mi100": "https://rocm.docs.amd.com/en/latest/reference/gpu-arch/mi100.html",
+    "gpu-arch/mi250": "https://rocm.docs.amd.com/en/latest/reference/gpu-arch/mi250.html",
+    "gpu-arch/mi300": "https://rocm.docs.amd.com/en/latest/reference/gpu-arch/mi300.html",
+    "gpu-arch/mi300-mi200-performance-counters": "https://rocm.docs.amd.com/en/latest/reference/gpu-arch/mi300-mi200-performance-counters.html",
+    "gpu-arch/mi350": "https://rocm.docs.amd.com/en/latest/reference/gpu-arch/mi350.html",
+}
 
 # Generate llms.txt and llms-full.txt after each build (the llms.txt standard,
 # https://llmstxt.org/). See the rocm-docs-core guide:
