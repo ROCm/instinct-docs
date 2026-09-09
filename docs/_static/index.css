@@ -8,8 +8,206 @@
     max-width: 1440px !important;
     width: 100% !important;
     margin: 0 auto !important;
-    contain: layout; 
+    contain: layout;
 }
+
+/* ─── Landing page only: give the card grid + "on this page" rail extra
+   room beyond the site's standard 1440px page width. The primary sidebar is
+   hidden by default here (see the .id-sidebar-toggle-input rules below), so
+   this 1432px cap is sized to match the main content's width in that default
+   state — the same effective width the card grid already had when the
+   sidebar used to always take its 20%-of-container cut out of a wider 1790px
+   box. If a visitor opts back into the sidebar, the grid shrinks to make
+   room for it rather than the page growing, which is an acceptable trade for
+   an opt-in control. Scoped via :has() on our own .id-landing-layout wrapper
+   so every other page is unaffected. ─── */
+.bd-main .bd-content .bd-article-container:has(.id-landing-layout) {
+    max-width: 1432px !important;
+}
+/* Upstream instinct-design.css also caps the nested <article> itself (and
+   .bd-page-width, further up the tree) at 1180px for any page with a hero —
+   both need the same landing-page escape hatch as .bd-article-container
+   above, or the grid stays starved regardless of the container override. */
+.bd-main .bd-content .bd-article-container:has(.id-landing-layout) > .bd-article {
+    max-width: 1432px !important;
+}
+.bd-page-width:has(.id-landing-layout) {
+    max-width: 1432px !important;
+}
+
+/* The primary ("System Administrators" / "Common Reference" / ...) sidebar
+   duplicates the landing grid below it, so default it to collapsed here and
+   let visitors opt back in with the checkbox-driven toggle above. This can't
+   reuse the theme's own "Toggle primary sidebar" control (rocm_docs_theme's
+   toggle-primary-sidebar.html + custom.css) — that targets a checkbox
+   (input#__primary) from an older theme generation that no longer exists in
+   the pydata-sphinx-theme version this site runs, so the label is dead
+   markup on every page, not just this one. This is a plain checkbox hack
+   instead: the input lives inside .id-landing-main, and :has() reaches back
+   up to .bd-container (the nearest ancestor shared with .bd-sidebar-primary,
+   which lives in a separate branch of the DOM) to flip its display. */
+.id-sidebar-toggle-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
+}
+.id-sidebar-toggle-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--id-muted-text);
+    cursor: pointer;
+    margin-bottom: 1rem;
+    user-select: none;
+}
+html[data-theme="light"] .id-sidebar-toggle-label {
+    color: var(--id-muted-text-light);
+}
+.id-sidebar-toggle-label:hover {
+    color: var(--id-teal);
+}
+html[data-theme="light"] .id-sidebar-toggle-label:hover {
+    color: var(--id-secondary);
+}
+.id-sidebar-toggle-label svg {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.2s ease-in-out;
+}
+.id-sidebar-toggle-input:checked ~ .id-sidebar-toggle-label svg {
+    transform: rotate(90deg);
+}
+/* Desktop only (matches the theme's own $breakpoint-sidebar-primary: lg /
+   960px, see pydata-sphinx-theme's _layout.scss) — below that width the
+   sidebar is already an off-canvas drawer opened via the theme's own mobile
+   hamburger toggle, which our checkbox has nothing to do with. Forcing
+   display:none unconditionally would fight that drawer and make it
+   impossible to open the sidebar at all on mobile. */
+@media (min-width: 960px) {
+    .bd-container:has(.id-landing-layout) .bd-sidebar-primary {
+        display: none;
+    }
+    .bd-container:has(.id-sidebar-toggle-input:checked) .bd-sidebar-primary {
+        display: flex;
+    }
+    /* rocm_docs_theme's own "Toggle primary sidebar" label (for="__primary")
+       duplicates our toggle here — it turns out not to be fully dead: a
+       pydata-sphinx-theme script grabs the first .primary-toggle element on
+       the page by class (regardless of the stale `for` target) and wires it
+       to the mobile off-canvas drawer's real checkbox. But that drawer only
+       has a visual effect below this same 960px breakpoint, so on desktop
+       clicking it does nothing — pure duplicate clutter next to our working
+       toggle. Hide it here only; leave it alone below 960px where it's still
+       the sole way to open the sidebar drawer on the landing page. */
+    .bd-container:has(.id-landing-layout) label.primary-toggle {
+        display: none;
+    }
+}
+@media (max-width: 959.98px) {
+    .id-sidebar-toggle-label {
+        display: none;
+    }
+}
+
+.id-landing-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 240px;
+    gap: 2.5rem;
+    align-items: start;
+}
+.id-landing-main {
+    min-width: 0;
+}
+
+/* Plain vertical whitespace where the id-glow-line divider used to sit —
+   the divider itself is gone, but a bare margin-bottom on .id-hero-actions
+   read as too tight once it was removed. No visual mark, just breathing
+   room, roughly a <p> tag's worth. */
+.id-hero-spacer {
+    height: 10px;
+}
+
+/* Deliberate 4-per-row card grid on the landing page at desktop widths.
+   The upstream default (auto-fill, minmax(248px, 1fr)) is what subpages
+   use, but here it would silently drop to 3 or 5 columns depending on
+   which deck a grid sits in (the tinted "Start Here" deck has its own
+   padding subpages don't), so pin it explicitly for a consistent look. */
+@media (min-width: 1000px) {
+    .id-landing-main .id-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* "On this page" rail — reuses the same .bd-toc-nav/.page-toc classes and
+   markup shape as the interior-page Contents sidebar so it inherits the
+   site-wide Bootstrap scrollspy (data-bs-spy on <body>) and matches its
+   look, without depending on the theme's own (heading-driven) secondary
+   sidebar, which the landing page's raw-HTML sections don't populate. */
+.id-page-rail {
+    position: sticky;
+    top: calc(var(--pst-header-height, 4rem) + 1.5rem);
+    align-self: start;
+    max-height: calc(100vh - var(--pst-header-height, 4rem) - 3rem);
+    overflow-y: auto;
+    padding-top: 0.25rem;
+}
+.id-page-rail .page-toc.onthispage {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--id-muted-text);
+    margin-bottom: 0.75rem;
+}
+html[data-theme="light"] .id-page-rail .page-toc.onthispage {
+    color: var(--id-muted-text-light);
+}
+/* .bd-toc-nav never normally holds external links (the real Contents rail
+   is anchor-only), so the theme's external-link icon rule is scoped to
+   nav.bd-links and doesn't reach here — add it back for our one external
+   entry (Industries & Verticals) so it matches the sidebar's treatment. */
+.id-page-rail .bd-toc-nav a.reference.external::after {
+    content: var(--pst-icon-external-link);
+    font: var(--fa-font-solid);
+    font-size: 0.75em;
+    margin-left: 0.3em;
+}
+
+.id-page-rail .bd-toc-nav a.active {
+    color: var(--id-teal);
+    font-weight: 600;
+}
+html[data-theme="light"] .id-page-rail .bd-toc-nav a.active {
+    color: var(--id-secondary);
+}
+
+@media (max-width: 1200px) {
+    .id-landing-layout {
+        grid-template-columns: 1fr;
+    }
+    .id-page-rail {
+        display: none;
+    }
+}
+
+/* Section names are plain links to their subpage, not a collapse toggle —
+   drop instinct-design.css's disclosure-triangle chevron so the link
+   doesn't still read as a dropdown, and suppress the browser's default
+   anchor underline (never needed when this was a <summary>). */
+.id-subhead::before {
+    display: none;
+}
+.id-subhead {
+    text-decoration: none;
+}
+
 .small-sd-card-large.sd-card {}
 #buttonWrapper:hover {
   border-color: hsla(231, 99%, 66%, 1);
@@ -20,10 +218,11 @@ h2 {
   margin: 0;
   font-size: 1.5em;
 }
-.card-header {
+.bd-main h2.card-header {
   font-size: 18px;
   font-weight: 700;
   line-height: 1.4;
+  margin-top: 0;
   margin-bottom: 10px;
   color: var(--text-color-light);
   display: -webkit-box;

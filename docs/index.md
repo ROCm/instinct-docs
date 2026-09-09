@@ -1,805 +1,264 @@
 ---
-html_theme.sidebar_secondary.remove: true   
+html_theme.sidebar_secondary.remove: true
 ---
-# AMD Instinct Data Center GPU Documentation
 
-The AMD Instinct Documentation site provides comprehensive guides and technical documentation for system administrators and technical users deploying AMD Instinct Data Center GPUs in enterprise environments. This site focuses on large-scale deployment, cluster management, monitoring, and operational best practices for both HPC and AI workloads. For API documentation and core software stack details, visit the [ROCm documentation](https://rocm.docs.amd.com).
+<div class="id-landing-layout">
+<div class="id-landing-main">
 
-::::::::::{dropdown} Industries/Verticals
-:open:
+<input type="checkbox" id="id-sidebar-toggle" class="id-sidebar-toggle-input">
+<label for="id-sidebar-toggle" class="id-sidebar-toggle-label" aria-label="Toggle site navigation">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+</label>
 
-::::::::{tab-set}
+<div class="id-hero-eyebrow">
+  <span class="id-hero-eyebrow-rule"></span>AMD Instinct™ · Data Center GPU
+</div>
 
-:::::::{tab-item} Computer Vision
+# Systems &amp; Infrastructure Documentation
 
-::::{grid} 2 2 3 4
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/models.png
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href=./vision/ai.html class="card-header-link">
-  <h2 class="card-header">Models and applications</h2>
-</a>
-<p class="paragraph"> Design, develop, train, finetune, and infer your computer vision models on AMD Instinct GPUs.
+<p class="id-hero-lede">
+Everything you need to <strong>deploy, validate, and operate</strong> AMD Instinct™ Data Center GPUs at scale — drivers, orchestration, cluster management, and acceptance testing for HPC and AI. For API and software-stack reference, see the <a href="https://rocm.docs.amd.com">ROCm documentation</a>.
 </p>
-:::
 
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/decoding.png
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href=./vision/decode.html class="card-header-link">
-  <h2 class="card-header">Image and video decoding</h2>
+<div class="id-hero-actions">
+  <a class="id-btn id-btn-primary" href="https://instinct.docs.amd.com/projects/amdgpu-docs/en/latest/">
+    Install the GPU driver
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+  </a>
+  <a class="id-btn id-btn-ghost" href="https://instinct.docs.amd.com/projects/system-acceptance/en/latest/">
+    Customer Acceptance Guide
+  </a>
+</div>
+
+<div class="id-hero-spacer"></div>
+
+<!-- ════════════════ SYSTEM ADMINISTRATORS — primary, frequently updated ════════════════ -->
+
+<div class="id-deck id-deck--primary">
+
+<div class="id-deck-head">
+  <div class="id-section-label">Start here</div>
+  <h2 class="id-deck-title" id="system-administrators">System Administrators</h2>
+  <p class="id-deck-sub">Deploy and run AMD Instinct GPUs on bare metal, in containers, and across clusters. These guides are the most frequently updated content on this site.</p>
+</div>
+
+<div class="id-group" open>
+<a class="id-subhead" href="system-admin/bare-metal.html">Bare metal</a>
+<div class="id-grid">
+
+<a class="id-card" href="https://instinct.docs.amd.com/projects/amdgpu-docs/en/latest/">
+  <span class="id-card-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M20 9h2M20 14h2M2 9h2M2 14h2"/></svg></span>
+  <span class="id-card-title">Instinct GPU Driver</span>
+  <span class="id-card-desc">Install and configure the GPU, including logging and error codes.</span>
+  <span class="id-card-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
 </a>
-<p class="paragraph"> Decode a wide variety of image and video formats leveraging the speed of AMD Instinct GPUs.
-</p>
-:::
 
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/processing.png
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href=./vision/preprocess.html class="card-header-link">
-  <h2 class="card-header">Image processing</h2>
+<a class="id-card" href="https://rocm.docs.amd.com/projects/amdsmi/en/latest/conceptual/partition.html">
+  <span class="id-card-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg></span>
+  <span class="id-card-title">GPU Partitioning</span>
+  <span class="id-card-desc">Split compute units and memory to partition a single GPU.</span>
+  <span class="id-card-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
 </a>
-<p class="paragraph"> Eliminate the image preprocessing bottleneck in your computer vision workloads with AMD Instinct GPUs.
-</p>
-:::
 
-::::
-
-:::::::
-
-:::::::{tab-item} Data Science
-
-::::{grid} 2 2 3 4
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/ROCm-DS.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href=./data-science/index.html class="card-header-link">
-  <h2 class="card-header">ROCm-DS</h2>
+<a class="id-card" href="https://rocm.docs.amd.com/projects/amdsmi/en/latest/">
+  <span class="id-card-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 14 16 10"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg></span>
+  <span class="id-card-title">AMD SMI</span>
+  <span class="id-card-desc">Unified user-space tool to manage and monitor GPUs and drivers.</span>
+  <span class="id-card-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
 </a>
-<p class="paragraph"> Accelerate your data science workloads with the AMD ROCm™ Data Science Toolkit (ROCm-DS).
-</p>
-:::
 
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/hipDF.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href=./data-science/hipDF.html class="card-header-link">
-  <h2 class="card-header">hipDF</h2>
+<a class="id-card" href="https://rocm.docs.amd.com/projects/ROCmValidationSuite/en/latest/">
+  <span class="id-card-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>
+  <span class="id-card-title">ROCm Validation Suite</span>
+  <span class="id-card-desc">System validation and hardware diagnostics.</span>
+  <span class="id-card-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
 </a>
-<p class="paragraph"> GPU Accelerated DataFrames to enhance your data manipulation and analysis tasks with AMD Instinct™ GPUs.
-</p>
-:::
 
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/hipGRAPH.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href=./data-science/hipGRAPH.html class="card-header-link">
-  <h2 class="card-header">hipGRAPH</h2>
+<a class="id-card" href="https://instinct.docs.amd.com/projects/system-acceptance/en/latest/">
+  <span class="id-card-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg></span>
+  <span class="id-card-title">Customer Acceptance Guide</span>
+  <span class="id-card-desc">Configure, validate, benchmark, and baseline Instinct GPUs.</span>
+  <span class="id-card-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
 </a>
-<p class="paragraph"> Create, manipulate, and analyze complex networks and graphs on AMD Instinct™ GPUs.
-</p>
-:::
 
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/hipVS.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href=./data-science/hipVS.html class="card-header-link">
-  <h2 class="card-header">hipVS</h2>
+<a class="id-card" href="https://rocm.docs.amd.com/projects/cvs/en/latest/index.html">
+  <span class="id-card-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="8" x="2" y="2" rx="2"/><rect width="20" height="8" x="2" y="14" rx="2"/><path d="M6 6h.01M6 18h.01"/></svg></span>
+  <span class="id-card-title">Cluster Validation Suite</span>
+  <span class="id-card-desc">Test scripts that validate AMD AI clusters end to end.</span>
+  <span class="id-card-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
 </a>
-<p class="paragraph"> Accelerate a variety of vector search operations on AMD Instinct™ GPUs.
-</p>
-:::
 
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/hipMM.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href=./data-science/hipMM.html class="card-header-link">
-  <h2 class="card-header">hipMM</h2>
+</div>
+</div>
+
+<div class="id-group" open>
+<a class="id-subhead" href="system-admin/co-tools.html">Containers &amp; orchestration</a>
+<div class="id-grid">
+
+<a class="id-card" href="https://instinct.docs.amd.com/projects/gpu-operator/en/latest/">
+  <span class="id-card-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg></span>
+  <span class="id-card-title">GPU Operator</span>
+  <span class="id-card-desc">Deploy and manage Instinct GPUs in Kubernetes clusters.</span>
+  <span class="id-card-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
 </a>
-<p class="paragraph"> Advanced memory management utilities for the various ROCm-DS libraries.
-</p>
-:::
 
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/hipRAFT.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href=./data-science/hipRAFT.html class="card-header-link">
-  <h2 class="card-header">hipRAFT</h2>
+<a class="id-card" href="https://instinct.docs.amd.com/projects/network-operator/en/main/">
+  <span class="id-card-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></svg></span>
+  <span class="id-card-title">Network Operator</span>
+  <span class="id-card-desc">Simplify AMD AINICs in Kubernetes environments.</span>
+  <span class="id-card-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
 </a>
-<p class="paragraph"> Fundamental algorithms and primitives used by the various ROCm-DS libraries.
-</p>
-:::
 
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/ROCm-DS_Blogs.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href=./data-science/ROCmDS-Blogs.html class="card-header-link">
-  <h2 class="card-header">Blogs</h2>
+<a class="id-card" href="https://instinct.docs.amd.com/projects/k8s-device-plugin/en/latest/">
+  <span class="id-card-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z"/></svg></span>
+  <span class="id-card-title">Device Plugin</span>
+  <span class="id-card-desc">Register AMD GPUs with a Kubernetes container cluster.</span>
+  <span class="id-card-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
 </a>
-<p class="paragraph"> Browse blogs detailing how to accelerate your data science workloads on AMD Instinct™ GPUs.
-</p>
-:::
 
-::::
-
-:::::::
-
-:::::::{tab-item} Finance
-
-::::{grid} 2 2 3 4
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/finance-6.png
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href=./finance/index.html class="card-header-link">
-  <h2 class="card-header">ROCm-Finance</h2>
+<a class="id-card" href="https://instinct.docs.amd.com/projects/device-metrics-exporter/en/latest/">
+  <span class="id-card-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/></svg></span>
+  <span class="id-card-title">Device Metrics Exporter</span>
+  <span class="id-card-desc">Prometheus-format GPU metrics for HPC and AI environments.</span>
+  <span class="id-card-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
 </a>
-<p class="paragraph"> Boost your financial workloads with the ROCm Toolkit for Finance (ROCm-Finance).
-</p>
-:::
 
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/finance-5.png
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href=./finance/xgboost.html class="card-header-link">
-  <h2 class="card-header">XGBoost</h2>
+<a class="id-card" href="https://instinct.docs.amd.com/projects/container-toolkit/en/latest/">
+  <span class="id-card-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></span>
+  <span class="id-card-title">AMD Container Toolkit</span>
+  <span class="id-card-desc">Integrate Instinct GPUs with Docker and container runtimes.</span>
+  <span class="id-card-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
 </a>
-<p class="paragraph"> General-purpose GPU gradient boosting. Start here for high-performance workloads for data-intensive applications.
-</p>
-:::
 
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/finance-10.png
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href=./finance/lightgbm.html class="card-header-link">
-  <h2 class="card-header">LightGBM</h2>
+<a class="id-card" href="https://instinct.docs.amd.com/projects/spur/en/latest/">
+  <span class="id-card-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="18" height="6" rx="1"/><path d="M7 7h.01M7 17h.01M12 7h4M12 17h4"/></svg></span>
+  <span class="id-card-title">Spur</span>
+  <span class="id-card-desc">AI-native job scheduler, drop-in compatible with Slurm, with GPU-first scheduling and Raft-based state.</span>
+  <span class="id-card-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
 </a>
-<p class="paragraph"> Leaf-wise training is the way to go. LightGBM is a strong fit when sparsity abounds and dataset size drives the bottleneck.
-</p>
-:::
 
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/finance-8.png
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href=./finance/thundergbm.html class="card-header-link">
-  <h2 class="card-header">ThunderGBM</h2>
+</div>
+</div>
+
+<div class="id-group" open>
+<a class="id-subhead" href="system-admin/index.html#cluster-cloud-virtualization">Cluster, cloud &amp; virtualization</a>
+<div class="id-grid">
+
+<a class="id-card" href="https://account.amd.com/en/forms/registration/enterpriseai-ea.html">
+  <span class="id-card-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01"/></svg></span>
+  <span class="id-card-title">Enterprise AI</span>
+  <span class="id-card-desc">Tools to manage enterprise AI infrastructure at scale.</span>
+  <span class="id-card-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
 </a>
-<p class="paragraph"> GPU-oriented boosting for highly parallel, GPU-intensive training and simulation-style runs on high-dimensional datasets.
-</p>
-:::
 
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/finance-4.png
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://github.com/ROCm/ROCm-Finance" class="card-header-link">
-  <h2 class="card-header">GitHub</h2>
+<a class="id-card" href="https://amdresearch.github.io/omnistat/">
+  <span class="id-card-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></span>
+  <span class="id-card-title">Omnistat</span>
+  <span class="id-card-desc">Profile GPU resource utilization across the cluster.</span>
+  <span class="id-card-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
 </a>
-<p class="paragraph"> Source for all ROCm-Finance libraries on GitHub.
-</p>
-:::
 
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/finance-9.png
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://github.com/ROCm/rocm-finance/tree/release/26.01/examples" class="card-header-link">
-  <h2 class="card-header">Examples</h2>
+<a class="id-card" href="https://instinct.docs.amd.com/projects/gpu-cluster-networking/en/latest/">
+  <span class="id-card-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/></svg></span>
+  <span class="id-card-title">Cluster Networking</span>
+  <span class="id-card-desc">Optimize the network for Instinct GPU applications.</span>
+  <span class="id-card-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
 </a>
-<p class="paragraph"> Runnable examples on GitHub to explore the code.
-</p>
-:::
 
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/finance-7.png
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href=./finance/finance-blogs.html class="card-header-link">
-  <h2 class="card-header">ROCm-Finance Blogs</h2>
+<a class="id-card" href="https://instinct.docs.amd.com/projects/instinct-azure/latest/">
+  <span class="id-card-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg></span>
+  <span class="id-card-title">Instinct on Azure</span>
+  <span class="id-card-desc">Get started with AMD Instinct GPUs on Microsoft Azure.</span>
+  <span class="id-card-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
 </a>
-<p class="paragraph"> Browse blogs detailing how to accelerate your finance workloads using gradient boosting on AMD Instinct GPUs.
-</p>
-:::
 
-::::
-
-:::::::
-
-:::::::{tab-item} Life Science
-
-::::{grid} 2 2 3 4
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/ROCm-LS.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href=./life-science/index.html class="card-header-link">
-  <h2 class="card-header">ROCm-LS</h2>
+<a class="id-card" href="https://instinct.docs.amd.com/projects/virt-drv/en/latest/">
+  <span class="id-card-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></span>
+  <span class="id-card-title">Virtualization Driver</span>
+  <span class="id-card-desc">Explore the virtualization driver for Instinct GPUs.</span>
+  <span class="id-card-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
 </a>
-<p class="paragraph"> Accelerate your life science workloads with the ROCm Toolkit for Life Science (ROCm-LS).
-</p>
-:::
 
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/hipCIM.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href=./life-science/hipCIM.html class="card-header-link">
-  <h2 class="card-header">hipCIM</h2>
+<a class="id-card" href="https://instinct.docs.amd.com/projects/amd-smi-virt/en/latest/">
+  <span class="id-card-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg></span>
+  <span class="id-card-title">AMD SMI for Virtualization</span>
+  <span class="id-card-desc">Manage and monitor virtualization-enabled AMD GPUs.</span>
+  <span class="id-card-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
 </a>
-<p class="paragraph"> Run image processing and computer vision workloads on N-dimensional images for medical imaging workloads on AMD Instinct™ GPUs.
-</p>
-:::
 
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/MONAI.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href=./life-science/MONAI.html class="card-header-link">
-  <h2 class="card-header">MONAI</h2>
+</div>
+</div>
+
+</div>
+
+<!-- ════════════════ COMMON REFERENCE ════════════════ -->
+
+<div class="id-deck">
+
+<div class="id-deck-head">
+  <h2 class="id-deck-title" id="common-reference">Common Reference</h2>
+  <p class="id-deck-sub">Architecture, programming models, and technical collateral that span every deployment.</p>
+</div>
+
+<div class="id-grid">
+
+<a class="id-card" href="https://rocm.docs.amd.com/en/latest/reference/gpu-arch/index.html">
+  <span class="id-card-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M20 9h2M20 14h2M2 9h2M2 14h2"/></svg></span>
+  <span class="id-card-title">Instinct Micro-architecture</span>
+  <span class="id-card-desc">Hardware details for MI350, MI300, MI200, and MI100 accelerators.</span>
+  <span class="id-card-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
 </a>
-<p class="paragraph"> Train and deploy AI and computer vision models for medical imaging use cases on AMD Instinct™ GPUs.
-</p>
-:::
 
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/ROCm-LS_Blogs.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href=./life-science/ROCmLS-Blogs.html class="card-header-link">
-  <h2 class="card-header">Blogs</h2>
+<a class="id-card" href="https://rocm.docs.amd.com/projects/amdsmi/en/latest/index.html">
+  <span class="id-card-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg></span>
+  <span class="id-card-title">AMD SMI API Reference</span>
+  <span class="id-card-desc">Full AMD SMI documentation covering all use cases.</span>
+  <span class="id-card-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
 </a>
-<p class="paragraph"> Browse blogs detailing how to accelerate your life science workloads on AMD Instinct™ GPUs.
-</p>
-:::
 
-::::
-
-:::::::
-
-:::::::{tab-item} Simulation & Modelling Apps
-::::::{grid} 2 2 3 4
-
-:::::{grid-item-card}
-:padding: 1
-:img-top: ./images/AnsysFluent-tile.png
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="isv-apps/ansys-fluent.html" class="card-header-link">
-  <h2 class="card-header">Ansys Fluent</h2>
+<a class="id-card" href="https://rocm.docs.amd.com/projects/HIP/en/latest/index.html">
+  <span class="id-card-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+  <span class="id-card-title">HIP C++</span>
+  <span class="id-card-desc">Learn the HIP programming model.</span>
+  <span class="id-card-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
 </a>
-<p class="paragraph"> Ansys Fluent is a computational fluid dynamics (CFD) software that leverages AMD GPU acceleration through ROCm for high-performance simulations. The AMD partnership enables exascale-ready CFD solutions for complex engineering challenges.
-</p>
-:::::
 
-:::::{grid-item-card}
-:padding: 1
-:img-top: ./images/AnsysMech-tile.png
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="isv-apps\ansys-mechanical.html" class="card-header-link">
-  <h2 class="card-header">Ansys Mechanical</h2>
+<a class="id-card" href="https://rocm.docs.amd.com/projects/llvm-project/en/latest/conceptual/openmp.html">
+  <span class="id-card-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="14 2 14 8 20 8"/><path d="M4 4a2 2 0 0 1 2-2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="m9 13 2 2-2 2M15 13l-2 2 2 2"/></svg></span>
+  <span class="id-card-title">OpenMP</span>
+  <span class="id-card-desc">Explore the OpenMP programming model.</span>
+  <span class="id-card-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
 </a>
-<p class="paragraph"> Ansys Mechanical 2023R2+ supports MI200
-</p>
-:::::
 
-:::::{grid-item-card}
-:padding: 1
-:img-top: ./images/FCharLES-tile.png
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="isv-apps\cadence-fidelity.html" class="card-header-link">
-  <h2 class="card-header">Cadence Fidelity LES Solver</h2>
+<a class="id-card" href="https://docs.amd.com/v/u/en-US/ug1729-amd-instinct-accelerators">
+  <span class="id-card-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+  <span class="id-card-title">Technical Information Portal</span>
+  <span class="id-card-desc">NDA technical documentation and design collateral. <em>Login required.</em></span>
+  <span class="id-card-go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
 </a>
-<p class="paragraph">Fidelity LES Solver supports MI200.
-</p>
-:::::
 
-:::::{grid-item-card}
-:padding: 1
-:img-top: ./images/DevitoPRO-tile.png
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="isv-apps\devito.html" class="card-header-link">
-  <h2 class="card-header">Devito Codes DevitoPRO</h2>
-</a>
-<p class="paragraph">DevitoPRO 4.8.2+ supports MI200 and MI300X.
-</p>
-:::::
-
-:::::{grid-item-card}
-:padding: 1
-:img-top: ./images/Starccm-tile.png
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="isv-apps\siemens.html" class="card-header-link">
-  <h2 class="card-header">Siemens Simcenter STAR-CCM+</h2>
-</a>
-<p class="paragraph">Simcenter STAR-CCM+ 2402+ supports MI200.
-</p>
-:::::
-
-:::::{grid-item-card}
-:padding: 1
-:img-top: ./images/ECHELON-tile.png
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="isv-apps\stone-ridge.html" class="card-header-link">
-  <h2 class="card-header">Stone Ridge Technology ECHELON</h2>
-</a>
-<p class="paragraph">ECHELON 2023.3+ supports MI200.
-</p>
-:::::
-
-:::::{grid-item-card}
-:padding: 1
-:img-top: ./images/gsplat.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="simulation\gsplat.html" class="card-header-link">
-  <h2 class="card-header">GSplat</h2>
-</a>
-<p class="paragraph">Render 3D scenes and models with Gaussian splatting on MI300X.
-</p>
-:::::
-
-::::::
-
-:::::::
-
-::::::::::
-
-::::::::::{dropdown} System Administrators
-:open:
-
-::::::::{tab-set}
-
-:::::{tab-item} Bare Metal
-
-::::{grid} 2 2 3 4
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/System-Administrators-Bare-Metal-AMD-GPU-Driver.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://instinct.docs.amd.com/projects/amdgpu-docs/en/latest/" class="card-header-link">
-  <h2 class="card-header">Instinct GPU Driver</h2>
-</a>
-<p class="paragraph">Install and configure the GPU. Learn about logging including error codes.</p>
-:::
-
-::::
-
-:::::
-
-:::::{tab-item} Containers and Orchestration Tools
-
-::::{grid} 2 2 3 4
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/gpu-operator.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://instinct.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
-  <h2 class="card-header">GPU Operator</h2>
-</a>
-<p class="paragraph">The AMD GPU Operator simplifies the deployment and management of AMD Instinct GPU accelerators within Kubernetes clusters.</p>
-:::
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/network-operator.png
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://instinct.docs.amd.com/projects/network-operator/en/main/" class="card-header-link">
-  <h2 class="card-header">Network Operator</h2>
-</a>
-<p class="paragraph">Network Operator simplifies the use of AMD AINICs in Kubernetes environments.</p>
-:::
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/device-plugin.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://instinct.docs.amd.com/projects/k8s-device-plugin/en/latest/" class="card-header-link">
-  <h2 class="card-header">Device Plugin</h2>
-</a>
-<p class="paragraph">Kubernetes (k8s) device plugin to enable registration of AMD GPU to a container cluster</p>
-:::
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/device-metrics-exporter.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://instinct.docs.amd.com/projects/device-metrics-exporter/en/latest/" class="card-header-link">
-  <h2 class="card-header">Device Metrics Exporter</h2>
-</a>
-<p class="paragraph">The AMD Device Metrics Exporter enables Prometheus-format metrics collection for AMD GPUs in HPC and AI environments. </p>
-:::
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/container-toolkit.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://instinct.docs.amd.com/projects/container-toolkit/en/latest/" class="card-header-link">
-  <h2 class="card-header">AMD Container Toolkit</h2>
-</a>
-<p class="paragraph">The AMD Container Toolkit enables seamless integration of AMD Instinct GPUs with Docker, offering streamlined GPU access, enhanced container runtime support, and optimized performance for ML and HPC workloads.</p>
-:::
-
-::::
-
-:::::
-
-:::::{tab-item} Cluster Management
-
-::::{grid} 2 2 3 4
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/system-acceptance.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://instinct.docs.amd.com/projects/system-acceptance/en/latest/" class="card-header-link">
-  <h2 class="card-header">Instinct Customer Acceptance Guide</h2>
-</a>
-<p class="paragraph">Comprehensive guide for configuring, validating, benchmarking, and baselining AMD Instinct™ GPUs.</p>
-:::
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/telemetry.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://instinct.docs.amd.com/projects/gpu-cluster-networking/en/latest/" class="card-header-link">
-  <h2 class="card-header">Cluster Networking Guide</h2>
-</a>
-<p class="paragraph">Optimize the network for Instinct GPU applications </p>
-:::
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/mi3xx-reference.png
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://instinct.docs.amd.com/projects/MI3XX-reference/latest/index.html" class="card-header-link">
-  <h2 class="card-header">MI3XX Reference Design</h2>
-</a>
-<p class="paragraph">Reference design materials and topology examples for the AMD Instinct MI3XX platform.</p>
-:::
-
-::::
-
-:::::
-
-:::::{tab-item} Cloud
-
-::::{grid} 2 2 3 4
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/instinct-azure.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://instinct.docs.amd.com/projects/instinct-azure/latest/" class="card-header-link">
-  <h2 class="card-header">Instinct on Azure</h2>
-</a>
-<p class="paragraph">Get started with AMD Instinct on Azure</p>
-:::
-
-::::
-
-:::::
-
-:::::{tab-item} Virtualization
-
-::::{grid} 2 2 3 4
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/virtualization_image.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://instinct.docs.amd.com/projects/virt-drv/en/latest/" class="card-header-link">
-  <h2 class="card-header">Instinct Virtualization Driver</h2>
-</a>
-<p class="paragraph">Explore the Virtualization Driver for Instinct GPUs.</p>
-:::
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/instinct_virtualization_SMI.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://instinct.docs.amd.com/projects/amd-smi-virt/en/latest/" class="card-header-link">
-  <h2 class="card-header">AMD SMI Documentation</h2>
-</a>
-<p class="paragraph">AMD SMI LIB enables you to manage and monitor AMD Virtualization Enabled GPUs.</p>
-:::
-
-::::
-
-:::::
-
-::::::::
-
-::::::::::
-
-::::::::::{dropdown} Resources
-:open:
-
-::::::::{tab-set}
-
-:::::{tab-item} Tools
-
-::::{grid} 2 2 3 4
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/enterpriseAI.png
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://account.amd.com/en/forms/registration/enterpriseai-ea.html" class="card-header-link">
-  <h2 class="card-header">Enterprise AI</h2>
-</a>
-<p class="paragraph">Tools to help enterprise customers address the growing need for AI infrastructure management.</p>
-:::
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/omnistat.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://rocm.github.io/omnistat/" class="card-header-link">
-  <h2 class="card-header">Omnistat</h2>
-</a>
-<p class="paragraph">Profile across the cluster.</p>
-:::
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/gpu-operator.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://rocm.docs.amd.com/projects/cvs/en/latest/index.html" class="card-header-link">
-  <h2 class="card-header">Cluster Validation Suite</h2>
-</a>
-<p class="paragraph">CVS is a collection of test scripts that validate AMD AI clusters.</p>
-:::
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/System-Administrators-Bare-Metal-AMD-AMD-SMI.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://rocm.docs.amd.com/projects/amdsmi/en/latest/" class="card-header-link">
-  <h2 class="card-header">AMD SMI</h2>
-</a>
-<p class="paragraph">The AMD System Management Interface (AMD SMI) library offers a unified tool for managing and monitoring GPUs, particularly in high-performance computing environments. It provides a user-space interface that allows applications to control GPU operations, monitor performance, and retrieve information about the system’s drivers and GPUs.</p>
-:::
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/System-Administrators-Bare-Metal-AMD-Tools.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://rocm.docs.amd.com/projects/ROCmValidationSuite/en/latest/" class="card-header-link">
-  <h2 class="card-header">ROCmValidationSuite</h2>
-</a>
-<p class="paragraph">System validation and diagnosis</p>
-:::
-
-::::
-
-:::::
-
-:::::{tab-item} Common Reference
-
-::::{grid} 2 2 3 4
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/instinct-microarchitecture.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://rocm.docs.amd.com/en/latest/reference/gpu-arch/index.html" class="card-header-link">
-  <h2 class="card-header">Instinct Micro-architecture</h2>
-</a>
-<p class="paragraph">Review hardware aspects of the AMD Instinct™ MI350, MI300, MI200 and MI100 series of GPU accelerators.</p>
-:::
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/System-Administrators-Bare-Metal-AMD-GPU-Partitioning.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://rocm.blogs.amd.com/software-tools-optimization/compute-memory-modes/README.html" class="card-header-link">
-  <h2 class="card-header">GPU Partitioning</h2>
-</a>
-<p class="paragraph">Learn how to split the compute units and memory to partition a GPU.</p>
-:::
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/hipcpp.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://rocm.docs.amd.com/projects/HIP/en/latest/index.html" class="card-header-link">
-  <h2 class="card-header">HIP C++</h2>
-</a>
-<p class="paragraph">Learn about HIP programming model.</p>
-:::
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/virtualization_image.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://rocm.docs.amd.com/projects/llvm-project/en/latest/conceptual/openmp.html" class="card-header-link">
-  <h2 class="card-header">OpenMP</h2>
-</a>
-<p class="paragraph">Explore the OpenMP programming model.</p>
-:::
-
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/secure-docs.png
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://docs.amd.com/v/u/en-US/ug1729-amd-instinct-accelerators" class="card-header-link">
-  <h2 class="card-header">AMD Technical Information Portal</h2>
-</a>
-<p class="paragraph"> Additional NDA technical documentation, software, and design collateral for AMD Instinct products;
-Login Required </p>
-:::
-
-::::
-
-:::::
-
-::::::::
-
-::::::::::
+</div>
+
+</div>
+
+</div>
+<!-- /.id-landing-main -->
+
+<aside class="id-page-rail" aria-label="On this page">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list" aria-hidden="true"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+      <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#system-administrators">System Administrators</a></li>
+      <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-reference">Common Reference</a></li>
+      <li class="toc-h2 nav-item toc-entry"><a class="reference external nav-link" href="https://instinct.docs.amd.com/projects/gsid-verticals-docs/en/latest/">Industries &amp; Verticals</a></li>
+    </ul>
+  </nav>
+</aside>
+
+</div>
+<!-- /.id-landing-layout -->
+
+<!-- Industries/Verticals no longer gets featured landing placement — see docs/sphinx/_toc.yml.in,
+     now a single external nav link to the gsid-verticals-docs project, like any other subpage. -->

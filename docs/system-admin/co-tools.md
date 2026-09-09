@@ -1,83 +1,23 @@
 # Containers and Orchestration Tools
 
-::::{grid} 2 2 2 2
+<div class="id-grid">
 
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/gpu-operator.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://instinct.docs.amd.com/projects/gpu-operator/en/latest/" class="card-header-link">
-  <h2 class="card-header">GPU Operator</h2>
-</a>
-<p class="paragraph">The AMD GPU Operator simplifies the deployment and management of AMD Instinct GPU accelerators within Kubernetes clusters.</p>
-:::
+```{include} _cards/gpu-operator.md
+```
 
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/network-operator.png
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://instinct.docs.amd.com/projects/network-operator/en/main/" class="card-header-link">
-  <h2 class="card-header">Network Operator</h2>
-</a>
-<p class="paragraph">Network Operator simplifies the use of AMD AINICs in Kubernetes environments.</p>
-:::
+```{include} _cards/network-operator.md
+```
 
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/device-plugin.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://instinct.docs.amd.com/projects/k8s-device-plugin/en/latest/" class="card-header-link">
-  <h2 class="card-header">Device Plugin</h2>
-</a>
-<p class="paragraph">Kubernetes (k8s) device plugin to enable registration of AMD GPU to a container cluster</p>
-:::
+```{include} _cards/device-plugin.md
+```
 
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/device-metrics-exporter.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://instinct.docs.amd.com/projects/device-metrics-exporter/en/latest/" class="card-header-link">
-  <h2 class="card-header">Device Metrics Exporter</h2>
-</a>
-<p class="paragraph">The AMD Device Metrics Exporter enables Prometheus-format metrics collection for AMD GPUs in HPC and AI environments. </p>
-:::
+```{include} _cards/device-metrics-exporter.md
+```
 
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/container-toolkit.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://instinct.docs.amd.com/projects/container-toolkit/en/latest/" class="card-header-link">
-  <h2 class="card-header">AMD Container Toolkit</h2>
-</a>
-<p class="paragraph">The AMD Container Toolkit enables seamless integration of AMD Instinct GPUs with Docker, offering streamlined GPU access, enhanced container runtime support, and optimized performance for ML and HPC workloads.</p>
-:::
+```{include} _cards/amd-container-toolkit.md
+```
 
-:::{grid-item-card}
-:padding: 1
-:img-top: ./images/telemetry.jpg
-:class-img-top: small-sd-card-img-top
-:class-body: small-sd-card
-:class: small-sd-card
-+++
-<a href="https://instinct.docs.amd.com/projects/spur/en/latest/" class="card-header-link">
-  <h2 class="card-header">Spur</h2>
-</a>
-<p class="paragraph">An AI-native job scheduler written in Rust. Drop-in compatible with Slurm's CLI, REST API, and C FFI — with WireGuard mesh networking, GPU-first scheduling, and Raft-based state that survives restarts.</p>
-:::
+```{include} _cards/spur.md
+```
 
-::::
+</div>

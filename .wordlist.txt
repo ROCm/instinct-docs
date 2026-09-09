@@ -73,5 +73,6 @@ DeepSeek
 DriveNets
 minimap
 FFI
+Slurm
 Slurm's
 WireGuard

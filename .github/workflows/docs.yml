@@ -1,0 +1,54 @@
+name: Deploy Docs to GitHub Pages
+
+on:
+  push:
+    branches: [develop]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5.4.0
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: pip install -r docs/sphinx/requirements.txt
+
+      - name: Build Sphinx docs
+        env:
+          DOCS_BASE_URL: https://amd-tme.github.io/instinct-docs/
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: sphinx-build -b html docs/ docs/_build/html
+
+      - name: Add .nojekyll
+        run: touch docs/_build/html/.nojekyll
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: docs/_build/html
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-22.04
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

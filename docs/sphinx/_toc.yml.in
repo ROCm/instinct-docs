@@ -1,70 +1,6 @@
 root: index.md
 subtrees:
 
-- caption: Industries/Verticals
-  entries:
-    - file: vision/index.md
-      title: Computer Vision
-      subtrees:
-        - entries:
-          - file: vision/ai.md
-            title: Models and applications
-          - file: vision/decode.md
-            title: Decoding
-          - file: vision/preprocess.md
-            title: Image processing
-    - file: data-science/index.md
-      title: Data Science (ROCm-DS)
-      subtrees:
-        - entries:
-          - file: data-science/hipDF.md
-            title: hipDF
-          - file: data-science/hipGRAPH.md
-            title: hipGRAPH
-          - file: data-science/hipVS.md
-            title: hipVS
-          - file: data-science/hipMM.md
-            title: hipMM
-          - file: data-science/hipRAFT.md
-            title: hipRAFT
-    - file: life-science/index.md
-      title: Life Science (ROCm-LS)
-      subtrees:
-        - entries:
-          - file: life-science/hipCIM.md
-            title: hipCIM
-        - entries:
-          - file: life-science/MONAI.md
-            title: MONAI
-    - file: finance/index.md
-      title: Finance (ROCm-Finance)
-      subtrees:
-        - entries:
-          - file: finance/xgboost.md
-            title: XGBoost
-          - file: finance/lightgbm.md
-            title: LightGBM
-          - file: finance/thundergbm.md
-            title: ThunderGBM
-    - file: isv-apps/index.md
-      title: Simulation & Modeling Apps
-      subtrees:
-        - entries:
-          - file: isv-apps/ansys-fluent.md
-            title: Fluent
-          - file: isv-apps/ansys-mechanical.md
-            title: Mechanical
-          - file: isv-apps/cadence-fidelity.md
-            title: Cadence Fidelity
-          - file: isv-apps/devito.md
-            title: DevitoPRO
-          - file: isv-apps/siemens.md
-            title: Siemens
-          - file: isv-apps/stone-ridge.md
-            title: Stone Ridge
-          - file: simulation/gsplat.md
-            title: GSplat
-                                                                             
 - caption: System Administrators
   entries:
     - file: system-admin/bare-metal.md
@@ -73,6 +9,16 @@ subtrees:
         - entries:
           - url: https://instinct.docs.amd.com/projects/amdgpu-docs/en/latest/
             title: AMD GPU Driver
+          - url: https://rocm.docs.amd.com/projects/amdsmi/en/latest/
+            title: AMD-SMI
+          - url: https://rocm.docs.amd.com/projects/cvs/en/latest/index.html
+            title: Cluster Validation Suite
+          - url: https://rocm.docs.amd.com/projects/amdsmi/en/latest/conceptual/partition.html
+            title: GPU Partitioning
+          - url: https://instinct.docs.amd.com/projects/system-acceptance/en/latest/
+            title: Instinct Customer Acceptance Guide
+          - url: https://rocm.docs.amd.com/projects/ROCmValidationSuite/en/latest/
+            title: ROCm Validatation Suite
     - file: system-admin/co-tools.md
       title: Containers and Orchestration Tools
       subtrees:
@@ -99,6 +45,10 @@ subtrees:
             title: Networking
           - url: https://instinct.docs.amd.com/projects/MI3XX-reference/latest/overview.html
             title: MI3XX Reference Design
+          - url: https://docs.amd.com/v/u/en-US/AMD_Instinct_AMD-DriveNets_System_Reference_Architecture_RF-72513
+            title: AMD-DriveNets System Reference Architecture
+          - url: https://rocm.blogs.amd.com/artificial-intelligence/amd-comparative-analysis/README.html
+            title: Comparative Analysis of Scale-Out RoCE Network Traffic
     - file: system-admin/cloud.md
       title: Cloud
       subtrees:
@@ -114,35 +64,11 @@ subtrees:
           - url: https://instinct.docs.amd.com/projects/amd-smi-virt/en/latest/
             title: AMD SMI Documentation
 
-- caption: Resources
+# Industries/Verticals content moved to the dedicated gsid-verticals-docs
+# project. Local content under vision/, data-science/, life-science/,
+# finance/, isv-apps/, simulation/ has been removed from this repo now that
+# the migration is complete.
+- caption: Industries/Verticals
   entries:
-    - file: resources/index.md
-      title: Tools
-      subtrees:
-        - entries:
-          - url: https://account.amd.com/en/forms/registration/enterpriseai-ea.html
-            title: Enterprise AI
-          - url: https://amdresearch.github.io/omnistat/
-            title: Omnistat
-          - url: https://rocm.docs.amd.com/projects/cvs/en/latest/index.html
-            title: Cluster Validation Suite
-          - url: https://rocm.docs.amd.com/projects/amdsmi/en/latest/
-            title: AMD SMI
-          - url: https://rocm.docs.amd.com/projects/ROCmValidationSuite/en/latest/
-            title: ROCmValidationSuite
-    - file: resources/common-reference.md
-      title: Common Reference
-      subtrees:
-        - entries:
-          - url: https://rocm.blogs.amd.com/software-tools-optimization/compute-memory-modes/README.html
-            title: GPU Partitioning
-          - url: https://rocm.docs.amd.com/en/latest/reference/gpu-arch/index.html
-            title: Instinct Micro-architecture
-          - url: https://rocm.docs.amd.com/projects/amdsmi/en/latest/index.html
-            title: AMD SMI API Doc
-          - url: https://rocm.docs.amd.com/projects/HIP/en/latest/index.html
-            title: HIP C++
-          - url: https://rocm.docs.amd.com/projects/llvm-project/en/latest/conceptual/openmp.html
-            title: OpenMP
-          - url: https://docs.amd.com/v/u/en-US/ug1729-amd-instinct-accelerators
-            title: AMD Technical Information Portal
+    - url: https://instinct.docs.amd.com/projects/gsid-verticals-docs/en/latest/
+      title: Industries & Verticals
