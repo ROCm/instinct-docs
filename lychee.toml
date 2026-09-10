@@ -8,8 +8,10 @@ max_retries = 3
 # Accept 206 (partial content) for PDF/media links
 accept = [200, 206, 429]
 
-# Skip anchor fragment validation — anchors change frequently and cause false positives
-include_fragments = false
+# Skip anchor fragment validation — anchors change frequently and cause false positives.
+# lychee's --include-fragments is now a string enum (none|anchor-only|text-only|full),
+# not a bool — `false` fails to parse on current lychee releases.
+include_fragments = "none"
 
 # Exclude patterns that reliably cause false positives with automated checkers
 exclude = [
