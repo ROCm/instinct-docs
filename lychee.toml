@@ -1,0 +1,39 @@
+# Increase timeout for AMD PDF and documentation links, which can be slow
+timeout = 30
+
+# Retry transient failures (e.g., GitHub rate limiting, flaky CDN)
+max_retries = 3
+
+# Accept 429 (rate limited) as non-failure — the link exists, we're just throttled
+# Accept 206 (partial content) for PDF/media links
+accept = [200, 206, 429]
+
+# Skip anchor fragment validation — anchors change frequently and cause false positives.
+# lychee's --include-fragments is now a string enum (none|anchor-only|text-only|full),
+# not a bool — `false` fails to parse on current lychee releases.
+include_fragments = "none"
+
+# Exclude patterns that reliably cause false positives with automated checkers
+exclude = [
+  # LinkedIn blocks automated link checks
+  "^https?://(www\\.)?linkedin\\.com",
+  # Reddit returns 403 to bots/CI environments
+  "^https?://(www\\.)?reddit\\.com",
+  # AMD's PDF CDN is slow and often returns transient errors to bots
+  "^https?://www\\.amd\\.com/content/dam/.*\\.pdf",
+  # AMD's account/registration host rejects lychee's HTTP/2 requests
+  "^https?://account\\.amd\\.com/",
+  # Local/relative anchors
+  "^#",
+  # Raw HTML nav links in the instinct-design cards point at post-build
+  # `.html` paths (e.g. system-admin/co-tools.html) that only exist in the
+  # Sphinx build output, not in the markdown source tree — can't be
+  # validated without a full docs build, so skip local .html targets.
+  "^file://.+\\.html(#.*)?$",
+]
+
+# Do not check generated build output or version control metadata
+exclude_path = [".git", "docs/_build"]
+
+# User agent to use for requests
+user_agent = "lychee"
