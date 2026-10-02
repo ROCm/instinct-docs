@@ -1,0 +1,43 @@
+name: Check Links
+
+on:
+  push:
+    branches: [develop, main]
+    paths:
+      - 'docs/**/*.md'
+      - 'lychee.toml'
+      - '.github/workflows/links.yml'
+  pull_request:
+    branches: [develop, main]
+    paths:
+      - 'docs/**/*.md'
+      - 'lychee.toml'
+      - '.github/workflows/links.yml'
+  schedule:
+    # Run weekly on Sundays at midnight UTC
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  linkChecker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+
+      - name: Restore lychee cache
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        with:
+          path: .lycheecache
+          key: cache-lychee-${{ github.sha }}
+          restore-keys: cache-lychee-
+
+      - name: Check links
+        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2
+        with:
+          args: --config lychee.toml --cache --max-cache-age 1d --verbose --no-progress 'docs/**/*.md'
+          fail: true

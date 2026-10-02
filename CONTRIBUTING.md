@@ -24,6 +24,8 @@ python3 -m sphinx -b html -d _build/doctrees -D language=en ./docs/ docs/_build/
 
 Then serve `docs/_build/html/` locally to review your changes before submitting.
 
+Dependency pins are generated from `docs/sphinx/requirements.in` with Python 3.12 and `pip-compile`. For security fixes, use targeted `--upgrade-package` options to regenerate `docs/sphinx/requirements.txt` without upgrading unrelated packages, then check dependency compatibility and build the documentation.
+
 ## Linting and spelling
 
 Pull requests are checked by CI for:
@@ -32,6 +34,8 @@ Pull requests are checked by CI for:
 - **Spelling** — checked against a dictionary plus this repo's [`.wordlist.txt`](.wordlist.txt). If you introduce a legitimate technical term, product name, or acronym that isn't recognized, add it to `.wordlist.txt` in the same PR.
 
 Both checks run automatically on every pull request; please fix any reported issues before requesting review.
+
+GitHub Actions references are pinned to commit SHAs. When updating an action or the reusable linting workflow, resolve the intended release or branch to a commit and update its reference comment. Workflows use read-only repository permissions, and the link checker's checkout does not persist credentials. Dependabot waits seven days before proposing ordinary pip version updates; security updates are not subject to this cooldown.
 
 ## Reporting issues
 
