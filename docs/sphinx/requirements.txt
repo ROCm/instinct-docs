@@ -37,7 +37,7 @@ click==8.4.2
     #   sphinx-external-toc
 comm==0.2.3
     # via ipykernel
-cryptography==49.0.0
+cryptography==50.0.0
     # via pyjwt
 debugpy==1.8.21
     # via ipykernel
@@ -55,7 +55,7 @@ fastjsonschema==2.22.1
     #   rocm-docs-core
 gitdb==4.0.12
     # via gitpython
-gitpython==3.1.57
+gitpython==3.1.60
     # via rocm-docs-core
 greenlet==3.5.4
     # via sqlalchemy
@@ -162,7 +162,7 @@ pygments==2.20.0
     #   ipython-pygments-lexers
     #   pydata-sphinx-theme
     #   sphinx
-pyjwt[crypto]==2.13.0
+pyjwt[crypto]==2.14.0
     # via pygithub
 pynacl==1.6.2
     # via pygithub
@@ -254,7 +254,7 @@ tabulate==0.10.0
     # via
     #   jupyter-cache
     #   sphinx-markdown-builder
-tornado==6.5.7
+tornado==6.5.9
     # via
     #   ipykernel
     #   jupyter-client
@@ -276,7 +276,7 @@ typing-extensions==4.16.0
     #   pygithub
     #   referencing
     #   sqlalchemy
-urllib3==2.7.0
+urllib3==2.8.0
     # via
     #   pygithub
     #   requests

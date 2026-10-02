@@ -10,7 +10,10 @@ on:
     - develop
     - main
 
+permissions:
+  contents: read
+
 jobs:
   call-workflow-passing-data:
     name: Documentation
-    uses: ROCm/rocm-docs-core/.github/workflows/linting.yml@develop
+    uses: ROCm/rocm-docs-core/.github/workflows/linting.yml@da853ba17e83139317122b66752cf56dfe455385 # develop
