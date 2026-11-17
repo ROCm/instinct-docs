@@ -16,4 +16,4 @@ permissions:
 jobs:
   call-workflow-passing-data:
     name: Documentation
-    uses: ROCm/rocm-docs-core/.github/workflows/linting.yml@da853ba17e83139317122b66752cf56dfe455385 # develop
+    uses: ROCm/rocm-docs-core/.github/workflows/linting.yml@804b2648fd9026ba00ab16d930e07ca015eda3f9 # develop
