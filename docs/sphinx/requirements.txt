@@ -23,7 +23,7 @@ beautifulsoup4==4.15.0
     # via pydata-sphinx-theme
 breathe==4.36.0
     # via rocm-docs-core
-certifi==2026.7.22
+certifi==2026.10.23
     # via requests
 cffi==2.1.0
     # via
@@ -55,7 +55,7 @@ fastjsonschema==2.22.1
     #   rocm-docs-core
 gitdb==4.0.12
     # via gitpython
-gitpython==3.1.60
+gitpython==3.2.1
     # via rocm-docs-core
 greenlet==3.5.4
     # via sqlalchemy
@@ -162,7 +162,7 @@ pygments==2.20.0
     #   ipython-pygments-lexers
     #   pydata-sphinx-theme
     #   sphinx
-pyjwt[crypto]==2.14.0
+pyjwt[crypto]==2.15.1
     # via pygithub
 pynacl==1.6.2
     # via pygithub
@@ -186,8 +186,9 @@ referencing==0.37.0
 requests==2.34.2
     # via
     #   pygithub
+    #   rocm-docs-core
     #   sphinx
-rocm-docs-core[llms]==1.38.0
+rocm-docs-core[llms]==1.42.0
     # via -r requirements.in
 roman-numerals==4.1.0
     # via sphinx
@@ -201,7 +202,7 @@ smmap==5.0.3
     # via gitdb
 snowballstemmer==3.1.1
     # via sphinx
-soupsieve==2.9.1
+soupsieve==4.1.2
     # via beautifulsoup4
 sphinx==9.1.0
     # via
@@ -254,7 +255,7 @@ tabulate==0.10.0
     # via
     #   jupyter-cache
     #   sphinx-markdown-builder
-tornado==6.5.9
+tornado==6.6.1
     # via
     #   ipykernel
     #   jupyter-client
